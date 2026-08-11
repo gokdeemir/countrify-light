@@ -277,9 +277,8 @@ class _CountryDropdownFieldState extends State<CountryDropdownField> {
               color: widget.enabled ? null : Colors.grey,
             )
           : CountrifyDownArrowIcon(
-              size: 20,
               color: widget.enabled
-                  ? (theme.borderColor ?? Colors.grey.shade500)
+                  ? (theme.headerIconColor ?? Colors.grey.shade500)
                   : Colors.grey,
             ),
     );
