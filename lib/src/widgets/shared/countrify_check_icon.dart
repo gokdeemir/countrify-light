@@ -115,7 +115,9 @@ class CountrifyDownArrowIcon extends StatelessWidget {
     final resolved = color ??
         DefaultTextStyle.of(context).style.color ??
         const Color(0xFF000000);
-    return Center(
+    return Align(
+      widthFactor: 1,
+      heightFactor: 1,
       child: SizedBox.square(
         dimension: size,
         child: CustomPaint(
