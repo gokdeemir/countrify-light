@@ -30,18 +30,38 @@ void main() {
       expect(find.bySemanticsLabel('Flag of United States'), findsOneWidget);
     });
 
-    testWidgets('applies border radius', (tester) async {
+    testWidgets('renders without a decorative frame by default', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(body: CountryFlag(country: testCountry)),
+        ),
+      );
+
+      expect(find.byType(DecoratedBox), findsNothing);
+      expect(find.byType(ClipRRect), findsNothing);
+    });
+
+    testWidgets('applies an explicitly requested border and radius', (
+      tester,
+    ) async {
       const radius = BorderRadius.all(Radius.circular(8));
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: CountryFlag(country: testCountry, borderRadius: radius),
+            body: CountryFlag(
+              country: testCountry,
+              borderRadius: radius,
+              borderWidth: 1,
+            ),
           ),
         ),
       );
 
       final clipRRect = tester.widget<ClipRRect>(find.byType(ClipRRect));
       expect(clipRRect.borderRadius, radius);
+      expect(find.byType(DecoratedBox), findsOneWidget);
     });
 
     testWidgets('renders the country emoji without an image asset', (

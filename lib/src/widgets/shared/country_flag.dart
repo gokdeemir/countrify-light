@@ -11,13 +11,14 @@ import 'package:flutter/material.dart';
 /// )
 /// ```
 class CountryFlag extends StatelessWidget {
+  /// Creates a flag emoji for [country].
   const CountryFlag({
     required this.country,
     super.key,
     this.size = const Size(24, 18),
     this.borderRadius = const BorderRadius.all(Radius.circular(4)),
     this.borderColor,
-    this.borderWidth = 0.5,
+    this.borderWidth = 0,
     this.emojiTextStyle,
   });
 
@@ -30,10 +31,10 @@ class CountryFlag extends StatelessWidget {
   /// Border radius of the flag container.
   final BorderRadius borderRadius;
 
-  /// Border color. Defaults to `Colors.grey.shade300`.
+  /// Border color. Used only when [borderWidth] is greater than zero.
   final Color? borderColor;
 
-  /// Border width. Defaults to `0.5`.
+  /// Border width. Defaults to `0` so emoji flags render without a frame.
   final double borderWidth;
 
   /// Text style for the flag emoji.
@@ -41,34 +42,39 @@ class CountryFlag extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final flag = Center(
+      child: Text(
+        country.flagEmoji,
+        style:
+            emojiTextStyle ?? TextStyle(fontSize: size.width * 0.7, height: 1),
+        textAlign: TextAlign.center,
+        maxLines: 1,
+        overflow: TextOverflow.clip,
+        textScaler: TextScaler.noScaling,
+      ),
+    );
+
     return Semantics(
       label: 'Flag of ${country.name}',
       excludeSemantics: true,
       child: SizedBox(
         width: size.width,
         height: size.height,
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            borderRadius: borderRadius,
-            border: Border.all(
-              color: borderColor ?? Colors.grey.shade300,
-              width: borderWidth,
-            ),
-          ),
-          child: ClipRRect(
-            borderRadius: borderRadius,
-            child: Center(
-              child: Text(
-                country.flagEmoji,
-                style: emojiTextStyle ?? TextStyle(fontSize: size.width * 0.7),
-                textAlign: TextAlign.center,
-                maxLines: 1,
-                overflow: TextOverflow.clip,
-                textScaler: TextScaler.noScaling,
-              ),
-            ),
-          ),
-        ),
+        child: borderWidth > 0
+            ? DecoratedBox(
+                decoration: BoxDecoration(
+                  borderRadius: borderRadius,
+                  border: Border.all(
+                    color: borderColor ?? Colors.grey.shade300,
+                    width: borderWidth,
+                  ),
+                ),
+                child: ClipRRect(
+                  borderRadius: borderRadius,
+                  child: flag,
+                ),
+              )
+            : flag,
       ),
     );
   }
