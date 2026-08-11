@@ -43,14 +43,18 @@ class CountryFlag extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final flag = Center(
-      child: Text(
-        country.flagEmoji,
-        style:
-            emojiTextStyle ?? TextStyle(fontSize: size.width * 0.7, height: 1),
-        textAlign: TextAlign.center,
-        maxLines: 1,
-        overflow: TextOverflow.clip,
-        textScaler: TextScaler.noScaling,
+      child: FractionalTranslation(
+        // Emoji fonts paint flag glyphs slightly below their line-box center.
+        translation: const Offset(0, -0.08),
+        child: Text(
+          country.flagEmoji,
+          style: emojiTextStyle ??
+              TextStyle(fontSize: size.width * 0.7, height: 1),
+          textAlign: TextAlign.center,
+          maxLines: 1,
+          overflow: TextOverflow.clip,
+          textScaler: TextScaler.noScaling,
+        ),
       ),
     );
 

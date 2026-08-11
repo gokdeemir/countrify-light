@@ -80,5 +80,23 @@ void main() {
       expect(find.text(testCountry.flagEmoji), findsOneWidget);
       expect(find.byType(Image), findsNothing);
     });
+
+    testWidgets('optically centers the emoji above its low font baseline', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(body: CountryFlag(country: testCountry)),
+        ),
+      );
+
+      final translation = tester.widget<FractionalTranslation>(
+        find.descendant(
+          of: find.byType(CountryFlag),
+          matching: find.byType(FractionalTranslation),
+        ),
+      );
+      expect(translation.translation, const Offset(0, -0.08));
+    });
   });
 }

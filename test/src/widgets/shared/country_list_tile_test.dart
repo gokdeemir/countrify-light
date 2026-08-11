@@ -42,6 +42,17 @@ void main() {
       await tester.pumpWidget(buildSubject());
 
       expect(find.byType(CountryFlag), findsOneWidget);
+      expect(
+        tester
+            .widget<Row>(
+              find.descendant(
+                of: find.byType(CountryListTile),
+                matching: find.byType(Row),
+              ),
+            )
+            .crossAxisAlignment,
+        CrossAxisAlignment.center,
+      );
     });
 
     testWidgets('shows checkmark icon when isSelected is true', (tester) async {
