@@ -11,7 +11,7 @@ class CountryPickerConfig {
     this.locale,
     this.flagBorderRadius = const BorderRadius.all(Radius.circular(4)),
     this.flagBorderColor,
-    this.flagBorderWidth = 1.0,
+    this.flagBorderWidth = 0,
     this.enableSearch = true,
     this.includeRegions = const [],
     this.excludeRegions = const [],
@@ -34,7 +34,7 @@ class CountryPickerConfig {
   /// Border color of the flag.
   final Color? flagBorderColor;
 
-  /// Border width of the flag.
+  /// Border width of the flag. Defaults to `0` for emoji flags.
   final double flagBorderWidth;
 
   /// Whether to enable search.

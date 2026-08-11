@@ -6,6 +6,10 @@ void main() {
   final testCountry = CountryUtils.getCountryByAlpha2Code('US')!;
 
   group('CountryFlag', () {
+    test('country picker config leaves emoji flags unframed by default', () {
+      expect(const CountryPickerConfig().flagBorderWidth, 0);
+    });
+
     testWidgets('renders with correct size', (tester) async {
       await tester.pumpWidget(
         MaterialApp(

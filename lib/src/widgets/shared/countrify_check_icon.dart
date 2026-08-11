@@ -29,8 +29,9 @@ class CountrifyCheckIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final resolved =
-        color ?? DefaultTextStyle.of(context).style.color ?? const Color(0xFF000000);
+    final resolved = color ??
+        DefaultTextStyle.of(context).style.color ??
+        const Color(0xFF000000);
     return SizedBox.square(
       dimension: size,
       child: CustomPaint(
@@ -114,10 +115,12 @@ class CountrifyDownArrowIcon extends StatelessWidget {
     final resolved = color ??
         DefaultTextStyle.of(context).style.color ??
         const Color(0xFF000000);
-    return SizedBox.square(
-      dimension: size,
-      child: CustomPaint(
-        painter: _DownArrowPainter(resolved),
+    return Center(
+      child: SizedBox.square(
+        dimension: size,
+        child: CustomPaint(
+          painter: _DownArrowPainter(resolved),
+        ),
       ),
     );
   }
@@ -128,7 +131,7 @@ class _DownArrowPainter extends CustomPainter {
 
   final Color color;
   static const double _vb = 24;
-  static const double _strokeWidth = 2.0;
+  static const double _strokeWidth = 2;
 
   @override
   void paint(Canvas canvas, Size size) {
