@@ -22,8 +22,8 @@ import 'package:flutter/material.dart';
 // 3. Third-party package imports
 import 'package:mocktail/mocktail.dart';
 
-// 4. Internal package imports (from countrify)
-import 'package:countrify/countrify.dart';
+// 4. Internal package imports (from Countrify Light)
+import 'package:countrify_light/countrify_light.dart';
 
 // 5. Relative imports (within same package)
 import '../models/country.dart';
@@ -300,7 +300,7 @@ class Config {
 
 ```dart
 import 'package:flutter_test/flutter_test.dart';
-import 'package:countrify/countrify.dart';
+import 'package:countrify_light/countrify_light.dart';
 
 void main() {
   group('ClassName', () {
@@ -546,7 +546,7 @@ Always use the package parameter when loading flags:
 // ✅ CORRECT
 Image.asset(
   country.flagImagePath,
-  package: 'countrify',
+  package: 'countrify_light',
   width: 32,
   height: 24,
 )
@@ -851,4 +851,3 @@ const config = CountryPickerConfig(
 10. **Follow conventions**
 
 ---
-

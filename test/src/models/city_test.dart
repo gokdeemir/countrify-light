@@ -1,4 +1,4 @@
-import 'package:countrify/src/models/city.dart';
+import 'package:countrify_light/src/models/city.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

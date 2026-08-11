@@ -542,7 +542,7 @@ class _PhoneInputScreenState extends State<PhoneInputScreen> {
                             selectedCountry!.flagImagePath,
                             width: 24,
                             height: 18,
-                            package: 'countrify',
+                            package: 'countrify_light',
                           ),
                           const SizedBox(width: 8),
                           Text(
@@ -773,7 +773,7 @@ final config = CountryPickerConfig(
               country.flagImagePath,
               width: 40,
               height: 30,
-              package: 'countrify',
+              package: 'countrify_light',
               fit: BoxFit.cover,
             ),
           ),

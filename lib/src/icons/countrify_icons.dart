@@ -14,7 +14,7 @@ class CountrifyIcons {
   CountrifyIcons._();
 
   static const String _fontFamily = 'CountrifyIcons';
-  static const String _fontPackage = 'countrify';
+  static const String _fontPackage = 'countrify_light';
 
   /// Close / dismiss (Lucide: x)
   static const IconData x =

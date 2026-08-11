@@ -1,9 +1,9 @@
-import 'package:countrify/src/models/country.dart';
-import 'package:countrify/src/widgets/countrify_field_style.dart';
-import 'package:countrify/src/widgets/country_picker_mode.dart';
-import 'package:countrify/src/widgets/country_picker_theme.dart';
-import 'package:countrify/src/widgets/shared/countrify_check_icon.dart';
-import 'package:countrify/src/widgets/shared/country_flag.dart';
+import 'package:countrify_light/src/models/country.dart';
+import 'package:countrify_light/src/widgets/countrify_field_style.dart';
+import 'package:countrify_light/src/widgets/country_picker_mode.dart';
+import 'package:countrify_light/src/widgets/country_picker_theme.dart';
+import 'package:countrify_light/src/widgets/shared/countrify_check_icon.dart';
+import 'package:countrify_light/src/widgets/shared/country_flag.dart';
 import 'package:flutter/material.dart';
 
 /// Internal prefix widget for the phone number field.
@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 /// Displays the selected country flag, dial code, dropdown icon, and divider.
 /// This widget is not publicly exported.
 class PhonePrefix extends StatelessWidget {
+  /// Creates the interactive prefix displayed by a phone number field.
   const PhonePrefix({
     required this.style,
     required this.theme,

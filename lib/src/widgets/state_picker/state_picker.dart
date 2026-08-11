@@ -1,13 +1,13 @@
 // ignore_for_file: avoid_positional_boolean_parameters, the `selected` flag matches Flutter's own builder-callback conventions.
 
-import 'package:countrify/src/data/geo_repository.dart';
-import 'package:countrify/src/models/state.dart';
-import 'package:countrify/src/utils/search_normalizer.dart';
-import 'package:countrify/src/widgets/country_picker_mode.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_item_picker.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_picker_config.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_picker_theme.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_sort_by.dart';
+import 'package:countrify_light/src/data/geo_repository.dart';
+import 'package:countrify_light/src/models/state.dart';
+import 'package:countrify_light/src/utils/search_normalizer.dart';
+import 'package:countrify_light/src/widgets/country_picker_mode.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_item_picker.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_picker_config.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_picker_theme.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_sort_by.dart';
 import 'package:flutter/material.dart';
 
 /// Signature for a custom state item row. [selected] reflects whether the

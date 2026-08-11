@@ -1,13 +1,13 @@
 import 'dart:async';
 
-import 'package:countrify/src/icons/countrify_icons.dart';
-import 'package:countrify/src/models/country.dart';
-import 'package:countrify/src/utils/country_utils.dart';
-import 'package:countrify/src/widgets/country_picker_config.dart';
-import 'package:countrify/src/widgets/country_picker_theme.dart';
-import 'package:countrify/src/widgets/shared/countrify_check_icon.dart';
-import 'package:countrify/src/widgets/shared/country_flag.dart';
-import 'package:countrify/src/widgets/shared/empty_state.dart';
+import 'package:countrify_light/src/icons/countrify_icons.dart';
+import 'package:countrify_light/src/models/country.dart';
+import 'package:countrify_light/src/utils/country_utils.dart';
+import 'package:countrify_light/src/widgets/country_picker_config.dart';
+import 'package:countrify_light/src/widgets/country_picker_theme.dart';
+import 'package:countrify_light/src/widgets/shared/countrify_check_icon.dart';
+import 'package:countrify_light/src/widgets/shared/country_flag.dart';
+import 'package:countrify_light/src/widgets/shared/empty_state.dart';
 import 'package:flutter/material.dart';
 
 /// Internal modal country list used by bottom sheet, dialog, and full-screen
@@ -15,6 +15,7 @@ import 'package:flutter/material.dart';
 ///
 /// This widget is not publicly exported.
 class PhoneModalCountryList extends StatefulWidget {
+  /// Creates a country list for a modal phone number picker.
   const PhoneModalCountryList({
     required this.theme,
     required this.searchEnabled,
@@ -29,15 +30,34 @@ class PhoneModalCountryList extends StatefulWidget {
     this.showHeader = true,
   });
 
+  /// Visual configuration for the picker.
   final CountryPickerTheme theme;
+
+  /// Whether the search field is displayed.
   final bool searchEnabled;
+
+  /// Optional country filtering and text configuration.
   final CountryPickerConfig? config;
+
+  /// Country currently selected in the phone number field.
   final Country? selectedCountry;
+
+  /// Whether country flags are displayed.
   final bool showFlag;
+
+  /// Size allocated to each country flag.
   final Size flagSize;
+
+  /// Border radius applied to each country flag.
   final BorderRadius flagBorderRadius;
+
+  /// Called when the user selects a country.
   final ValueChanged<Country> onSelected;
+
+  /// Whether the list is rendered inside a bottom sheet.
   final bool isBottomSheet;
+
+  /// Whether the modal header is displayed.
   final bool showHeader;
 
   @override
@@ -196,15 +216,20 @@ class _PhoneModalCountryListState extends State<PhoneModalCountryList> {
       ),
       child: Row(
         children: [
-          Text((widget.config ?? const CountryPickerConfig()).titleText,
-              style: theme.headerTextStyle),
+          Text(
+            (widget.config ?? const CountryPickerConfig()).titleText,
+            style: theme.headerTextStyle,
+          ),
           const Spacer(),
           Tooltip(
             message: 'Close',
             child: GestureDetector(
               onTap: () => Navigator.pop(context),
-              child: Icon(theme.closeIcon ?? CountrifyIcons.x,
-                  color: theme.headerIconColor, size: 22),
+              child: Icon(
+                theme.closeIcon ?? CountrifyIcons.x,
+                color: theme.headerIconColor,
+                size: 22,
+              ),
             ),
           ),
         ],
@@ -229,8 +254,10 @@ class _PhoneModalCountryListState extends State<PhoneModalCountryList> {
           suffixIcon: _searchQuery.isNotEmpty
               ? IconButton(
                   tooltip: 'Clear search',
-                  icon: Icon(theme.clearIcon ?? CountrifyIcons.circleX,
-                      color: theme.searchIconColor),
+                  icon: Icon(
+                    theme.clearIcon ?? CountrifyIcons.circleX,
+                    color: theme.searchIconColor,
+                  ),
                   onPressed: () {
                     _searchController.clear();
                     _applyFilter('');
@@ -243,19 +270,22 @@ class _PhoneModalCountryListState extends State<PhoneModalCountryList> {
           border: OutlineInputBorder(
             borderRadius: effectiveBorderRadius,
             borderSide: BorderSide(
-                color: theme.searchBarBorderColor ?? Colors.grey.shade300),
+              color: theme.searchBarBorderColor ?? Colors.grey.shade300,
+            ),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: effectiveBorderRadius,
             borderSide: BorderSide(
-                color: theme.searchBarBorderColor ?? Colors.grey.shade300),
+              color: theme.searchBarBorderColor ?? Colors.grey.shade300,
+            ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: effectiveBorderRadius,
             borderSide: BorderSide(
-                color: theme.searchFocusedBorderColor ??
-                    theme.searchBarBorderColor ??
-                    Colors.blue),
+              color: theme.searchFocusedBorderColor ??
+                  theme.searchBarBorderColor ??
+                  Colors.blue,
+            ),
           ),
         );
 
@@ -306,10 +336,12 @@ class _PhoneModalCountryListState extends State<PhoneModalCountryList> {
                   borderRadius: widget.flagBorderRadius,
                 )
               : null,
-          title: Text(_displayName(country),
-              style: theme.countryNameTextStyle,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis),
+          title: Text(
+            _displayName(country),
+            style: theme.countryNameTextStyle,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
           trailing: Text(
             '+${country.callingCodes.first}',
             style: theme.compactDialCodeTextStyle?.copyWith(

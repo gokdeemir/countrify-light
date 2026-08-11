@@ -1,7 +1,9 @@
-import 'package:countrify/src/models/country.dart';
-import 'package:countrify/src/widgets/country_picker_theme.dart';
-import 'package:countrify/src/widgets/shared/country_list_tile.dart';
-import 'package:countrify/src/widgets/shared/empty_state.dart';
+import 'package:countrify_light/src/models/country.dart';
+import 'package:countrify_light/src/widgets/country_picker_config.dart';
+import 'package:countrify_light/src/widgets/country_picker_theme.dart';
+import 'package:countrify_light/src/widgets/shared/country_flag.dart';
+import 'package:countrify_light/src/widgets/shared/country_list_tile.dart';
+import 'package:countrify_light/src/widgets/shared/empty_state.dart';
 import 'package:flutter/material.dart';
 
 /// A scrollable list of countries with selection support and empty state.
@@ -26,7 +28,15 @@ class CountryListView extends StatelessWidget {
     this.showCountryName = true,
     this.showDialCode = true,
     this.flagSize = const Size(24, 18),
+    this.flagShape = FlagShape.rectangular,
     this.flagBorderRadius = const BorderRadius.all(Radius.circular(4)),
+    this.flagBorderColor,
+    this.flagBorderWidth = 0,
+    this.flagShadowColor,
+    this.flagShadowBlur = 2,
+    this.flagShadowOffset = const Offset(0, 1),
+    this.flagEmojiTextStyle,
+    this.flagOpticalOffset = CountryFlag.defaultOpticalOffset,
     this.itemExtent = 44,
     this.emptyStateText = 'No countries found',
     this.emptyStateIcon,
@@ -57,8 +67,32 @@ class CountryListView extends StatelessWidget {
   /// Size of each country flag.
   final Size flagSize;
 
+  /// Shape of each country flag.
+  final FlagShape flagShape;
+
   /// Border radius of each country flag.
   final BorderRadius flagBorderRadius;
+
+  /// Border color of each country flag.
+  final Color? flagBorderColor;
+
+  /// Border width of each country flag. Defaults to zero.
+  final double flagBorderWidth;
+
+  /// Shadow color of each country flag.
+  final Color? flagShadowColor;
+
+  /// Blur radius of each optional flag shadow.
+  final double flagShadowBlur;
+
+  /// Offset of each optional flag shadow.
+  final Offset flagShadowOffset;
+
+  /// Text style applied to flag emoji glyphs.
+  final TextStyle? flagEmojiTextStyle;
+
+  /// Optical correction applied to flag emoji glyphs.
+  final Offset flagOpticalOffset;
 
   /// Fixed height for each list item. Defaults to `44`.
   final double itemExtent;
@@ -99,12 +133,22 @@ class CountryListView extends StatelessWidget {
           showCountryName: showCountryName,
           showDialCode: showDialCode,
           flagSize: flagSize,
+          flagShape: flagShape,
           flagBorderRadius: flagBorderRadius,
+          flagBorderColor: flagBorderColor,
+          flagBorderWidth: flagBorderWidth,
+          flagShadowColor: flagShadowColor,
+          flagShadowBlur: flagShadowBlur,
+          flagShadowOffset: flagShadowOffset,
+          flagEmojiTextStyle: flagEmojiTextStyle ?? theme?.flagEmojiTextStyle,
+          flagOpticalOffset: flagOpticalOffset,
           displayName: displayNameBuilder?.call(country),
           countryNameStyle: theme?.countryNameTextStyle,
           dialCodeStyle: theme?.compactDialCodeTextStyle,
           selectedColor: theme?.countryItemSelectedColor,
+          selectedBorderColor: theme?.countryItemSelectedBorderColor,
           selectedIconColor: theme?.countryItemSelectedIconColor,
+          selectedIcon: theme?.selectedIcon,
         );
       },
     );

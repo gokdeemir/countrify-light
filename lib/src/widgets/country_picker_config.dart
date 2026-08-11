@@ -101,22 +101,37 @@ class CountryPickerConfig {
 
 /// Flag shape options.
 enum FlagShape {
+  /// Displays the flag with a rectangular outline.
   rectangular,
+
+  /// Clips the flag to a circle.
   circular,
+
+  /// Displays the flag with rounded corners.
   rounded,
 }
 
 /// Country sorting options.
 enum CountrySortBy {
+  /// Sorts countries alphabetically by name.
   name,
+
+  /// Sorts countries by population.
   population,
+
+  /// Sorts countries by area.
   area,
+
+  /// Sorts countries alphabetically by region.
   region,
+
+  /// Sorts countries alphabetically by capital.
   capital,
 }
 
 /// Country filter configuration.
 class CountryFilter {
+  /// Creates country filtering and sorting options.
   const CountryFilter({
     this.regions = const [],
     this.subregions = const [],
@@ -130,17 +145,37 @@ class CountryFilter {
     this.searchQuery = '',
   });
 
+  /// Regions that countries must belong to.
   final List<String> regions;
+
+  /// Subregions that countries must belong to.
   final List<String> subregions;
+
+  /// Property used to sort matching countries.
   final CountrySortBy sortBy;
+
+  /// Whether independent countries are included.
   final bool includeIndependent;
+
+  /// Whether United Nations member countries are included.
   final bool includeUnMembers;
+
+  /// Minimum population required for a country to match.
   final int minPopulation;
+
+  /// Maximum population allowed for a country to match.
   final double maxPopulation;
+
+  /// Minimum area required for a country to match.
   final double minArea;
+
+  /// Maximum area allowed for a country to match.
   final double maxArea;
+
+  /// Text matched against searchable country fields.
   final String searchQuery;
 
+  /// Returns a copy with the supplied values replacing current values.
   CountryFilter copyWith({
     List<String>? regions,
     List<String>? subregions,

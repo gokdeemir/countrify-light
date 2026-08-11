@@ -34,8 +34,11 @@ class CountryState {
     );
   }
 
-  /// Numeric identifier from the upstream dataset. Stable across releases and
-  /// used as the lookup key for [CountryState] cities.
+  /// Numeric identifier from the pinned upstream dataset revision and lookup
+  /// key for [CountryState] cities.
+  ///
+  /// Persist [name] alongside this value because identifiers may change when
+  /// the package intentionally refreshes its vendored dataset.
   final int id;
 
   /// Display name in English (e.g. `Sindh`, `California`).
@@ -52,10 +55,16 @@ class CountryState {
   /// `state`, `region`, `district`).
   final String? type;
 
-  /// Latitude of the geographic centroid in decimal degrees.
+  /// Latitude of the geographic centroid when supplied by a custom source.
+  ///
+  /// The lightweight bundled dataset omits coordinates, so this is null for
+  /// states loaded from the package's default repository.
   final double? latitude;
 
-  /// Longitude of the geographic centroid in decimal degrees.
+  /// Longitude of the geographic centroid when supplied by a custom source.
+  ///
+  /// The lightweight bundled dataset omits coordinates, so this is null for
+  /// states loaded from the package's default repository.
   final double? longitude;
 
   /// ISO 3166-2 full code (e.g. `PK-SD`) when [iso2] is available.
@@ -71,5 +80,6 @@ class CountryState {
   int get hashCode => id.hashCode;
 
   @override
-  String toString() => 'CountryState(id: $id, name: $name, country: $countryIso2)';
+  String toString() =>
+      'CountryState(id: $id, name: $name, country: $countryIso2)';
 }

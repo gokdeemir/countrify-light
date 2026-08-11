@@ -1,5 +1,5 @@
-name: countrify_example
-description: Example app for the Countrify package
+name: countrify_light_example
+description: Example app for the Countrify Light package
 publish_to: 'none'
 
 version: 1.0.0+1
@@ -13,7 +13,7 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  countrify:
+  countrify_light:
     path: ../
 
 dev_dependencies:

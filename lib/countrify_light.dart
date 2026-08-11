@@ -1,9 +1,9 @@
-/// A beautiful and highly customizable country picker package for Flutter
+/// Countrify Light: offline country, state, and city pickers for Flutter.
 ///
 /// This package provides:
-/// - Comprehensive country data with ISO 3166-1 codes
-/// - Beautiful and customizable country picker widgets
-/// - Flag images for all countries
+/// - Source-backed data for 249 ISO 3166-1 entries plus XK/Kosovo
+/// - Customizable country, state, and city picker widgets
+/// - Platform emoji flags without bundled raster images
 /// - Utility functions for country data access
 /// - Multiple display modes (bottom sheet, dialog, full screen)
 /// - Advanced search and filtering capabilities
@@ -22,8 +22,8 @@ export 'src/models/state.dart';
 export 'src/utils/country_utils.dart';
 export 'src/utils/search_normalizer.dart';
 export 'src/widgets/city_dropdown_field/city_dropdown_field.dart';
-export 'src/widgets/city_search_field/city_search_field.dart';
 export 'src/widgets/city_picker/city_picker.dart';
+export 'src/widgets/city_search_field/city_search_field.dart';
 export 'src/widgets/countrify_field_style.dart';
 export 'src/widgets/country_dropdown_field/country_dropdown_field.dart';
 export 'src/widgets/country_picker/country_picker.dart';

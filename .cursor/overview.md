@@ -5,7 +5,7 @@
 Countrify is a **highly customizable, feature-rich Flutter package** for country selection with comprehensive country data, beautiful UI components, and extensive configuration options.
 
 ### Version & Metadata
-- **Package Name**: countrify
+- **Package Name**: countrify_light
 - **Version**: 2.1.0
 - **SDK Requirements**: 
   - Dart: ^3.0.0
@@ -14,7 +14,7 @@ Countrify is a **highly customizable, feature-rich Flutter package** for country
 ### Package Purpose
 A production-ready country picker package that provides developers with a complete solution for country selection in Flutter applications, featuring:
 - Multiple display modes (bottom sheet, dialog, full screen)
-- Rich country data (245+ countries)
+- Source-backed country data (249 ISO-assigned records plus XK/Kosovo)
 - Beautiful, customizable UI
 - Advanced search and filtering
 - ISO 3166-1 compliance
@@ -26,13 +26,12 @@ A production-ready country picker package that provides developers with a comple
 ## Project Structure
 
 ```
-countrify/
+countrify-light/
 ├── lib/
-│   ├── countrify.dart                      # Main library export file
+│   ├── countrify_light.dart                # Main library export file
 │   ├── generated/
 │   │   └── assets.dart                     # Generated asset paths
 │   └── src/
-│       ├── countrify.dart                  # Core Countrify class
 │       ├── data/
 │       │   ├── all_countries.dart          # AllCountries static class with country data access
 │       │   ├── countries_data.dart         # Country data definitions
@@ -50,13 +49,12 @@ countrify/
 │           ├── modal_country_picker.dart          # Modal basic picker
 │           └── phone_code_picker.dart             # Phone code specific picker
 ├── assets/
-│   ├── country_data.csv                   # Raw country data
-│   └── images/
-│       └── flags/                         # 245+ PNG flag images
+│   └── geo/                               # Split state/city JSON + source manifest
 ├── example/                               # Example application
 ├── test/                                  # Unit tests
 └── tool/
-    └── parse_csv.dart                     # Data parsing tool
+    ├── sync_country_data.dart             # Pinned country catalogue generator
+    └── sync_geo_data.dart                 # Pinned state/city asset generator
 
 ```
 
@@ -192,9 +190,9 @@ Specialized
 - **Full Screen**: Takes entire screen with app bar
 
 ### 2. Rich Country Data
-- 245+ countries with complete information
+- 250 country/territory records (249 ISO-assigned plus XK/Kosovo)
 - ISO 3166-1 alpha-2, alpha-3, numeric codes
-- Flag images (PNG format, 32x24 default)
+- Platform emoji flags without raster assets
 - Phone/calling codes
 - Capitals and largest cities
 - Geographic data (region, subregion)
@@ -273,13 +271,13 @@ Specialized
   - Better documentation organization
 
 ### 5. Asset Management
-- **Decision**: Include flag images as package assets
+- **Decision**: Render ISO-derived platform emoji flags
 - **Rationale**:
   - Offline support
   - No network dependencies
   - Consistent appearance
   - Fast load times
-- **Trade-off**: Larger package size (~2MB)
+- **Trade-off**: Flag appearance depends on the platform emoji font
 
 ---
 
@@ -328,18 +326,16 @@ test/
 
 ## Build & Development Tools
 
-### Code Generation
-- `assets.dart` generated from asset paths
-- Run: `flutter pub get` to trigger code generation
-
 ### Data Processing
-- `tool/parse_csv.dart` - Converts CSV country data to Dart code
-- Input: `assets/country_data.csv`
-- Output: `lib/src/data/countries_data.dart`
+- `tool/sync_country_data.dart` regenerates the country catalogue and ISO enum
+  from pinned, validated sources.
+- `tool/sync_geo_data.dart` regenerates the split state/city assets and source
+  manifest from a pinned snapshot.
+- Run either command with `--check` to verify committed outputs without replacing
+  them.
 
 ### Linting
 - Uses `very_good_analysis` - strict linting rules
-- Additional rules from `flutter_lints`
 - Custom rules in `analysis_options.yaml`
 
 ### CI/CD (Not included, but recommended)
@@ -408,29 +404,27 @@ final population = CountryUtils.getTotalWorldPopulation();
 ## Performance Characteristics
 
 ### Memory
-- **Initial Load**: ~5-8 MB (includes flag assets)
-- **Runtime**: Minimal additional memory (data pre-loaded)
-- **Flag Assets**: ~2 MB total (245 flags)
+- **Initial Load**: Country metadata is compiled in; geo assets load lazily
+- **Runtime**: State/city results are cached after first access
+- **Flag Assets**: None; flags use platform emoji
 
 ### Speed
-- **Picker Open**: < 100ms (instant, no async)
-- **Search**: < 50ms (local, no network)
-- **Country Selection**: < 10ms
-- **Rendering**: 60 FPS (optimized list view)
+- Picker and search performance depends on the device and selected dataset;
+  benchmark the consuming application when this is release-critical.
 
 ### Bundle Size
-- **Package**: ~2.5 MB (mostly flag images)
-- **Code**: ~50 KB (minified)
-- **Data**: ~100 KB (country information)
+- Measure the compressed pub archive and final application artifact for each
+  release; source-tree size is not a reliable app-size estimate.
 
 ---
 
 ## Maintenance Notes
 
 ### Updating Country Data
-1. Edit `assets/country_data.csv`
-2. Run `dart tool/parse_csv.dart`
-3. Verify generated code in `lib/src/data/`
+1. Update the pinned revisions in the sync tools intentionally.
+2. Run `dart run tool/sync_country_data.dart` and/or
+   `dart run tool/sync_geo_data.dart`.
+3. Run both tools with `--check` and verify the generated data integrity tests.
 4. Update tests if needed
 5. Increment package version
 
@@ -452,7 +446,7 @@ final population = CountryUtils.getTotalWorldPopulation();
 ## API Stability
 
 ### Public API (Stable)
-- All exported classes in `lib/countrify.dart`
+- All exported classes in `lib/countrify_light.dart`
 - CountryUtils methods
 - Model classes (Country, Currency, Language)
 - Modal picker methods
@@ -475,10 +469,10 @@ final population = CountryUtils.getTotalWorldPopulation();
 ## Known Limitations
 
 1. **Static Data**: Country data cannot be updated at runtime
-2. **Bundle Size**: Flag assets add ~2 MB to app size
+2. **Bundle Size**: Offline geo data still contributes to the final app size
 3. **No Network Sync**: Cannot fetch updated country data
 4. **Limited Translations**: Country names have limited language support
-5. **Fixed Flag Format**: PNG only, no SVG support
+5. **Platform Emoji**: Flag appearance varies by operating system and font
 
 ---
 
@@ -531,4 +525,3 @@ final population = CountryUtils.getTotalWorldPopulation();
 ## License
 
 MIT License - See LICENSE file for details
-

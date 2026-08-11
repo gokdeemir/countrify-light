@@ -1,14 +1,14 @@
-import 'package:countrify/src/data/geo_repository.dart';
-import 'package:countrify/src/models/city.dart';
-import 'package:countrify/src/utils/search_normalizer.dart';
-import 'package:countrify/src/widgets/city_picker/city_picker.dart';
-import 'package:countrify/src/widgets/countrify_field_style.dart';
-import 'package:countrify/src/widgets/country_picker_mode.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_picker_config.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_picker_theme.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_search_overlay.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_sort_by.dart';
-import 'package:countrify/src/widgets/shared/countrify_check_icon.dart';
+import 'package:countrify_light/src/data/geo_repository.dart';
+import 'package:countrify_light/src/models/city.dart';
+import 'package:countrify_light/src/utils/search_normalizer.dart';
+import 'package:countrify_light/src/widgets/city_picker/city_picker.dart';
+import 'package:countrify_light/src/widgets/countrify_field_style.dart';
+import 'package:countrify_light/src/widgets/country_picker_mode.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_picker_config.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_picker_theme.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_search_overlay.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_sort_by.dart';
+import 'package:countrify_light/src/widgets/shared/countrify_check_icon.dart';
 import 'package:flutter/material.dart';
 
 /// {@template city_dropdown_field}
@@ -90,7 +90,8 @@ class CityDropdownField extends StatefulWidget {
   /// Whether the picker shows a search field (when [searchable] is false).
   final bool searchEnabled;
 
-  /// Whether to show lat/lng as a subtitle in the default city row.
+  /// Whether to show lat/lng supplied by a custom repository in city rows.
+  /// The lightweight bundled dataset does not contain coordinates.
   final bool showCoordinates;
 
   /// Placeholder shown when no city is selected. Defaults to `"Select city"`.
@@ -110,7 +111,8 @@ class CityDropdownField extends StatefulWidget {
   final Widget Function(BuildContext, VoidCallback)? customHeaderBuilder;
 
   /// Custom search builder forwarded to the picker.
-  final Widget Function(BuildContext, TextEditingController)? customSearchBuilder;
+  final Widget Function(BuildContext, TextEditingController)?
+      customSearchBuilder;
 
   /// Custom empty-state builder forwarded to the picker.
   final WidgetBuilder? customEmptyStateBuilder;
@@ -145,8 +147,10 @@ class _CityDropdownFieldState extends State<CityDropdownField> {
   final GlobalKey _fieldKey = GlobalKey();
   OverlayEntry? _overlayEntry;
   FocusNode? _internalFocusNode;
-  FocusNode get _focusNode => widget.focusNode ?? (_internalFocusNode ??= FocusNode());
+  FocusNode get _focusNode =>
+      widget.focusNode ?? (_internalFocusNode ??= FocusNode());
   bool _isFocused = false;
+  int _hydrateGeneration = 0;
 
   @override
   void initState() {
@@ -158,10 +162,21 @@ class _CityDropdownFieldState extends State<CityDropdownField> {
   @override
   void didUpdateWidget(CityDropdownField oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (widget.stateId != oldWidget.stateId) {
+    if (widget.focusNode != oldWidget.focusNode) {
+      (oldWidget.focusNode ?? _internalFocusNode)
+          ?.removeListener(_onFocusChanged);
+      _focusNode.addListener(_onFocusChanged);
+      _isFocused = _focusNode.hasFocus;
+    }
+
+    final sourceChanged = widget.stateId != oldWidget.stateId ||
+        widget.repository != oldWidget.repository;
+    if (sourceChanged) {
+      _hydrateGeneration++;
       _selected = null;
       _available = const [];
       _filtered = const [];
+      _loading = false;
       _searchController.clear();
       _removeOverlay();
       WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -174,6 +189,7 @@ class _CityDropdownFieldState extends State<CityDropdownField> {
 
   @override
   void dispose() {
+    _hydrateGeneration++;
     _removeOverlay();
     _searchController.dispose();
     _focusNode.removeListener(_onFocusChanged);
@@ -246,25 +262,37 @@ class _CityDropdownFieldState extends State<CityDropdownField> {
   }
 
   Future<void> _hydrate(int stateId) async {
+    final generation = ++_hydrateGeneration;
+    final repository = _repo;
     setState(() => _loading = true);
-    final cities = await _repo.citiesOf(stateId);
-    if (!mounted) return;
+    final cities = await repository.citiesOf(stateId);
+    if (!mounted ||
+        generation != _hydrateGeneration ||
+        widget.stateId != stateId ||
+        !identical(_repo, repository)) {
+      return;
+    }
+
+    City? selected;
+    if (widget.initialCityId != null) {
+      selected = cities.cast<City?>().firstWhere(
+            (city) => city!.id == widget.initialCityId,
+            orElse: () => null,
+          );
+    }
+
     setState(() {
       _available = cities;
       _loading = false;
-      if (widget.initialCityId != null) {
-        _selected = cities.cast<City?>().firstWhere(
-              (c) => c!.id == widget.initialCityId,
-              orElse: () => null,
-            );
-        if (_selected != null) widget.onChanged?.call(_selected);
-      }
+      _selected = selected;
     });
+    if (selected != null) widget.onChanged?.call(selected);
   }
 
   Future<void> _openPicker() async {
     final id = widget.stateId;
     if (!widget.enabled || id == null || _available.isEmpty) return;
+    final repository = _repo;
 
     // Dismiss any currently-focused keyboard before opening the picker.
     FocusScope.of(context).unfocus();
@@ -310,7 +338,8 @@ class _CityDropdownFieldState extends State<CityDropdownField> {
           ),
         );
       case CountryPickerMode.fullScreen:
-        await Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => picker));
+        await Navigator.of(context)
+            .push(MaterialPageRoute<void>(builder: (_) => picker));
       case CountryPickerMode.dropdown:
         await showDialog<void>(
           context: context,
@@ -327,6 +356,9 @@ class _CityDropdownFieldState extends State<CityDropdownField> {
         return;
     }
 
+    if (!mounted || widget.stateId != id || !identical(_repo, repository)) {
+      return;
+    }
     if (picked != null && picked != _selected) {
       setState(() => _selected = picked);
       widget.onChanged?.call(picked);
@@ -353,7 +385,7 @@ class _CityDropdownFieldState extends State<CityDropdownField> {
                 height: 18,
                 child: CircularProgressIndicator(strokeWidth: 2),
               ))
-          : const CountrifyDownArrowIcon(size: 20),
+          : const CountrifyDownArrowIcon(),
     );
 
     final shadowDecoration = BoxDecoration(
@@ -382,9 +414,11 @@ class _CityDropdownFieldState extends State<CityDropdownField> {
                 onChanged: _onSearchTextChanged,
                 style: style.selectedCountryTextStyle,
                 cursorColor: style.cursorColor,
-                decoration: style.toInputDecoration(
-                  suffixIconOverride: searchSuffix,
-                ).copyWith(hintText: placeholder),
+                decoration: style
+                    .toInputDecoration(
+                      suffixIconOverride: searchSuffix,
+                    )
+                    .copyWith(hintText: placeholder),
               ),
             ),
           ),
@@ -395,7 +429,10 @@ class _CityDropdownFieldState extends State<CityDropdownField> {
 
     // ── Tap-to-open picker mode ────────────────────────────────────────
     final content = _selected == null
-        ? Text(placeholder, style: style.hintStyle ?? const TextStyle(color: Colors.grey))
+        ? Text(
+            placeholder,
+            style: style.hintStyle ?? const TextStyle(color: Colors.grey),
+          )
         : Text(_selected!.name, style: style.selectedCountryTextStyle);
 
     final field = DecoratedBox(
@@ -408,7 +445,8 @@ class _CityDropdownFieldState extends State<CityDropdownField> {
           child: IgnorePointer(
             ignoring: disabled || _loading,
             child: InkWell(
-              borderRadius: style.fieldBorderRadius ?? BorderRadius.circular(12),
+              borderRadius:
+                  style.fieldBorderRadius ?? BorderRadius.circular(12),
               onTap: _openPicker,
               child: InputDecorator(
                 decoration: style.toInputDecoration(suffixIconOverride: suffix),

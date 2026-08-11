@@ -1,6 +1,11 @@
-import 'package:countrify/src/data/geo_repository.dart';
-import 'package:countrify/src/widgets/city_search_field/city_search_field.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_search_overlay.dart';
+import 'dart:async';
+import 'dart:convert';
+
+import 'package:countrify_light/src/data/geo_repository.dart';
+import 'package:countrify_light/src/models/city.dart';
+import 'package:countrify_light/src/models/state.dart';
+import 'package:countrify_light/src/widgets/city_search_field/city_search_field.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_search_overlay.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -79,6 +84,48 @@ void main() {
       expect(results, hasLength(1));
     });
 
+    test('returns empty without loading data when limit is not positive',
+        () async {
+      final results = await repo.searchCities(
+        countryIso2: 'US',
+        query: 'san',
+        limit: 0,
+      );
+      expect(results, isEmpty);
+    });
+
+    test('ranks later-state prefix matches ahead of early contains matches',
+        () async {
+      final states = List.generate(
+        11,
+        (index) => {
+          'id': index + 1,
+          'name': 'State ${index + 1}',
+          'iso2': 'S${index + 1}',
+          'type': 'state',
+        },
+      );
+      final assets = <String, String>{
+        'packages/countrify_light/assets/geo/states/XX.json': jsonEncode(states),
+        for (var id = 1; id <= 10; id++)
+          'packages/countrify_light/assets/geo/cities/$id.json': jsonEncode([
+            {'id': id, 'name': 'Beta $id'},
+          ]),
+        'packages/countrify_light/assets/geo/cities/11.json': jsonEncode([
+          {'id': 11, 'name': 'Alpha'},
+        ]),
+      };
+      final completeRepo = GeoRepository(bundle: InMemoryBundle(assets));
+
+      final results = await completeRepo.searchCities(
+        countryIso2: 'XX',
+        query: 'a',
+        limit: 1,
+      );
+
+      expect(results.single.city.name, 'Alpha');
+    });
+
     test('case insensitive matching', () async {
       final results = await repo.searchCities(
         countryIso2: 'US',
@@ -95,6 +142,8 @@ void main() {
       String countryIso2 = 'US',
       ValueChanged<CitySearchResult?>? onChanged,
       int? initialCityId,
+      String? initialCityName,
+      FocusNode? focusNode,
     }) {
       return MaterialApp(
         home: Scaffold(
@@ -105,6 +154,8 @@ void main() {
               repository: repo,
               onChanged: onChanged,
               initialCityId: initialCityId,
+              initialCityName: initialCityName,
+              focusNode: focusNode,
             ),
           ),
         ),
@@ -141,10 +192,12 @@ void main() {
         (tester) async {
       final repo = buildFixtureRepository();
       CitySearchResult? result;
-      await tester.pumpWidget(wrap(
-        repo: repo,
-        onChanged: (r) => result = r,
-      ));
+      await tester.pumpWidget(
+        wrap(
+          repo: repo,
+          onChanged: (r) => result = r,
+        ),
+      );
       await tester.pumpAndSettle();
 
       await tester.tap(find.byType(TextField));
@@ -169,10 +222,12 @@ void main() {
     testWidgets('empty query clears selection', (tester) async {
       final repo = buildFixtureRepository();
       CitySearchResult? result;
-      await tester.pumpWidget(wrap(
-        repo: repo,
-        onChanged: (r) => result = r,
-      ));
+      await tester.pumpWidget(
+        wrap(
+          repo: repo,
+          onChanged: (r) => result = r,
+        ),
+      );
       await tester.pumpAndSettle();
 
       // Select a city first via overlay callback.
@@ -213,5 +268,109 @@ void main() {
       expect(find.text('Las Vegas'), findsNothing);
       expect(find.text('Los Angeles'), findsNothing);
     });
+
+    testWidgets('falls back to exact city name when persisted ID is stale',
+        (tester) async {
+      CitySearchResult? restored;
+      await tester.pumpWidget(
+        wrap(
+          repo: buildFixtureRepository(),
+          initialCityId: 999999,
+          initialCityName: 'reno',
+          onChanged: (result) => restored = result,
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.text('Reno'), findsOneWidget);
+      expect(restored?.city.id, 401);
+      expect(restored?.state.name, 'Nevada');
+    });
+
+    testWidgets('ignores an older search that completes last', (tester) async {
+      final repo = _ControlledSearchRepository();
+      await tester.pumpWidget(wrap(repo: repo));
+
+      await tester.tap(find.byType(TextField));
+      await tester.pump();
+      await tester.enterText(find.byType(TextField), 'old');
+      await tester.pump(const Duration(milliseconds: 301));
+      await tester.enterText(find.byType(TextField), 'new');
+      await tester.pump(const Duration(milliseconds: 301));
+
+      repo.complete('new', _result(cityId: 2, cityName: 'New City'));
+      await tester.pumpAndSettle();
+      expect(find.text('New City'), findsOneWidget);
+
+      repo.complete('old', _result(cityId: 1, cityName: 'Old City'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('New City'), findsOneWidget);
+      expect(find.text('Old City'), findsNothing);
+    });
+
+    testWidgets('moves its focus listener when focusNode changes',
+        (tester) async {
+      final first = _InspectableFocusNode();
+      final second = _InspectableFocusNode();
+      final focusNode = ValueNotifier<FocusNode>(first);
+
+      await tester.pumpWidget(
+        ValueListenableBuilder<FocusNode>(
+          valueListenable: focusNode,
+          builder: (_, value, __) => wrap(
+            repo: buildFixtureRepository(),
+            focusNode: value,
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+      expect(first.hasRegisteredListeners, isTrue);
+
+      focusNode.value = second;
+      await tester.pumpAndSettle();
+
+      expect(first.hasRegisteredListeners, isFalse);
+      expect(second.hasRegisteredListeners, isTrue);
+
+      await tester.pumpWidget(const SizedBox.shrink());
+      focusNode.dispose();
+      first.dispose();
+      second.dispose();
+    });
   });
+}
+
+class _ControlledSearchRepository extends GeoRepository {
+  _ControlledSearchRepository() : super(bundle: InMemoryBundle(const {}));
+
+  final Map<String, Completer<List<CitySearchResult>>> _requests = {};
+
+  @override
+  Future<void> preloadCities(String countryIso2) async {}
+
+  @override
+  Future<List<CitySearchResult>> searchCities({
+    required String countryIso2,
+    required String query,
+    int limit = 20,
+  }) {
+    return _requests.putIfAbsent(query, Completer.new).future;
+  }
+
+  void complete(String query, CitySearchResult result) {
+    _requests[query]!.complete([result]);
+  }
+}
+
+CitySearchResult _result({required int cityId, required String cityName}) {
+  const state = CountryState(id: 1, name: 'State', countryIso2: 'US');
+  return (
+    city: City(id: cityId, name: cityName, stateId: state.id),
+    state: state,
+  );
+}
+
+class _InspectableFocusNode extends FocusNode {
+  bool get hasRegisteredListeners => hasListeners;
 }

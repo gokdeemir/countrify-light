@@ -1,14 +1,14 @@
-import 'package:countrify/src/data/geo_repository.dart';
-import 'package:countrify/src/models/state.dart';
-import 'package:countrify/src/utils/search_normalizer.dart';
-import 'package:countrify/src/widgets/countrify_field_style.dart';
-import 'package:countrify/src/widgets/country_picker_mode.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_picker_config.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_picker_theme.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_search_overlay.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_sort_by.dart';
-import 'package:countrify/src/widgets/shared/countrify_check_icon.dart';
-import 'package:countrify/src/widgets/state_picker/state_picker.dart';
+import 'package:countrify_light/src/data/geo_repository.dart';
+import 'package:countrify_light/src/models/state.dart';
+import 'package:countrify_light/src/utils/search_normalizer.dart';
+import 'package:countrify_light/src/widgets/countrify_field_style.dart';
+import 'package:countrify_light/src/widgets/country_picker_mode.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_picker_config.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_picker_theme.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_search_overlay.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_sort_by.dart';
+import 'package:countrify_light/src/widgets/shared/countrify_check_icon.dart';
+import 'package:countrify_light/src/widgets/state_picker/state_picker.dart';
 import 'package:flutter/material.dart';
 
 /// {@template state_dropdown_field}
@@ -128,7 +128,8 @@ class StateDropdownField extends StatefulWidget {
   final Widget Function(BuildContext, VoidCallback)? customHeaderBuilder;
 
   /// Custom search builder forwarded to the picker.
-  final Widget Function(BuildContext, TextEditingController)? customSearchBuilder;
+  final Widget Function(BuildContext, TextEditingController)?
+      customSearchBuilder;
 
   /// Custom empty-state builder forwarded to the picker.
   final WidgetBuilder? customEmptyStateBuilder;
@@ -163,8 +164,10 @@ class _StateDropdownFieldState extends State<StateDropdownField> {
   final GlobalKey _fieldKey = GlobalKey();
   OverlayEntry? _overlayEntry;
   FocusNode? _internalFocusNode;
-  FocusNode get _focusNode => widget.focusNode ?? (_internalFocusNode ??= FocusNode());
+  FocusNode get _focusNode =>
+      widget.focusNode ?? (_internalFocusNode ??= FocusNode());
   bool _isFocused = false;
+  int _hydrateGeneration = 0;
 
   @override
   void initState() {
@@ -176,10 +179,21 @@ class _StateDropdownFieldState extends State<StateDropdownField> {
   @override
   void didUpdateWidget(StateDropdownField oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (widget.countryIso2 != oldWidget.countryIso2) {
+    if (widget.focusNode != oldWidget.focusNode) {
+      (oldWidget.focusNode ?? _internalFocusNode)
+          ?.removeListener(_onFocusChanged);
+      _focusNode.addListener(_onFocusChanged);
+      _isFocused = _focusNode.hasFocus;
+    }
+
+    final sourceChanged = widget.countryIso2 != oldWidget.countryIso2 ||
+        widget.repository != oldWidget.repository;
+    if (sourceChanged) {
+      _hydrateGeneration++;
       _selected = null;
       _available = const [];
       _filtered = const [];
+      _loading = false;
       _searchController.clear();
       _removeOverlay();
       WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -224,6 +238,7 @@ class _StateDropdownFieldState extends State<StateDropdownField> {
 
   @override
   void dispose() {
+    _hydrateGeneration++;
     _removeOverlay();
     _searchController.dispose();
     _focusNode.removeListener(_onFocusChanged);
@@ -253,10 +268,12 @@ class _StateDropdownFieldState extends State<StateDropdownField> {
       _filtered = q.isEmpty
           ? _available
           : _available
-              .where((s) =>
-                  SearchNormalizer.basic(s.name).contains(q) ||
-                  (s.iso2 != null &&
-                      SearchNormalizer.basic(s.iso2!).contains(q)))
+              .where(
+                (s) =>
+                    SearchNormalizer.basic(s.name).contains(q) ||
+                    (s.iso2 != null &&
+                        SearchNormalizer.basic(s.iso2!).contains(q)),
+              )
               .toList();
     });
     _showOverlay();
@@ -275,7 +292,6 @@ class _StateDropdownFieldState extends State<StateDropdownField> {
         items: _filtered,
         query: _searchController.text,
         nameOf: (s) => s.name,
-        subtitleOf: null,
         selected: _selected,
         theme: widget.pickerTheme,
         onSelected: _onItemSelected,
@@ -301,40 +317,49 @@ class _StateDropdownFieldState extends State<StateDropdownField> {
   }
 
   Future<void> _hydrate(String iso2) async {
+    final generation = ++_hydrateGeneration;
+    final repository = _repo;
     setState(() => _loading = true);
-    final states = await _repo.statesOf(iso2);
-    if (!mounted) return;
+    final states = await repository.statesOf(iso2);
+    if (!mounted ||
+        generation != _hydrateGeneration ||
+        widget.countryIso2 != iso2 ||
+        !identical(_repo, repository)) {
+      return;
+    }
+
+    CountryState? selected;
+    if (widget.initialStateId != null) {
+      selected = states.cast<CountryState?>().firstWhere(
+            (state) => state!.id == widget.initialStateId,
+            orElse: () => null,
+          );
+    }
+    if (selected == null &&
+        widget.initialStateName != null &&
+        widget.initialStateName!.isNotEmpty) {
+      final query = widget.initialStateName!.toLowerCase();
+      selected = states.cast<CountryState?>().firstWhere(
+            (state) => state!.name.toLowerCase() == query,
+            orElse: () => null,
+          );
+    }
+
     setState(() {
       _available = states;
       _loading = false;
-
-      // Try ID-based match first, then fall back to name-based match.
-      if (widget.initialStateId != null) {
-        _selected = states.cast<CountryState?>().firstWhere(
-              (s) => s!.id == widget.initialStateId,
-              orElse: () => null,
-            );
-      }
-      if (_selected == null &&
-          widget.initialStateName != null &&
-          widget.initialStateName!.isNotEmpty) {
-        final q = widget.initialStateName!.toLowerCase();
-        _selected = states.cast<CountryState?>().firstWhere(
-              (s) => s!.name.toLowerCase() == q,
-              orElse: () => null,
-            );
-      }
-
-      if (_selected != null) {
-        if (widget.searchable) _searchController.text = _selected!.name;
-        widget.onChanged?.call(_selected);
-      }
+      _selected = selected;
     });
+    if (selected != null) {
+      if (widget.searchable) _searchController.text = selected.name;
+      widget.onChanged?.call(selected);
+    }
   }
 
   Future<void> _openPicker() async {
     final iso2 = widget.countryIso2;
     if (!widget.enabled || iso2 == null || _available.isEmpty) return;
+    final repository = _repo;
 
     // Dismiss any currently-focused keyboard before opening the picker.
     FocusScope.of(context).unfocus();
@@ -380,7 +405,8 @@ class _StateDropdownFieldState extends State<StateDropdownField> {
           ),
         );
       case CountryPickerMode.fullScreen:
-        await Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => picker));
+        await Navigator.of(context)
+            .push(MaterialPageRoute<void>(builder: (_) => picker));
       case CountryPickerMode.dropdown:
         await showDialog<void>(
           context: context,
@@ -397,6 +423,11 @@ class _StateDropdownFieldState extends State<StateDropdownField> {
         return;
     }
 
+    if (!mounted ||
+        widget.countryIso2 != iso2 ||
+        !identical(_repo, repository)) {
+      return;
+    }
     if (picked != null && picked != _selected) {
       setState(() => _selected = picked);
       widget.onChanged?.call(picked);
@@ -423,7 +454,7 @@ class _StateDropdownFieldState extends State<StateDropdownField> {
                 height: 18,
                 child: CircularProgressIndicator(strokeWidth: 2),
               ))
-          : const CountrifyDownArrowIcon(size: 20),
+          : const CountrifyDownArrowIcon(),
     );
 
     final shadowDecoration = BoxDecoration(
@@ -435,9 +466,7 @@ class _StateDropdownFieldState extends State<StateDropdownField> {
 
     // ── Searchable mode ────────────────────────────────────────────────
     if (widget.searchable) {
-      final searchSuffix = _loading
-          ? suffix
-          : null;
+      final searchSuffix = _loading ? suffix : null;
       final field = DecoratedBox(
         decoration: shadowDecoration,
         child: CompositedTransformTarget(
@@ -454,9 +483,11 @@ class _StateDropdownFieldState extends State<StateDropdownField> {
                 onChanged: _onSearchTextChanged,
                 style: style.selectedCountryTextStyle,
                 cursorColor: style.cursorColor,
-                decoration: style.toInputDecoration(
-                  suffixIconOverride: searchSuffix,
-                ).copyWith(hintText: placeholder),
+                decoration: style
+                    .toInputDecoration(
+                      suffixIconOverride: searchSuffix,
+                    )
+                    .copyWith(hintText: placeholder),
               ),
             ),
           ),
@@ -467,7 +498,10 @@ class _StateDropdownFieldState extends State<StateDropdownField> {
 
     // ── Tap-to-open picker mode ────────────────────────────────────────
     final content = _selected == null
-        ? Text(placeholder, style: style.hintStyle ?? const TextStyle(color: Colors.grey))
+        ? Text(
+            placeholder,
+            style: style.hintStyle ?? const TextStyle(color: Colors.grey),
+          )
         : Text(_selected!.name, style: style.selectedCountryTextStyle);
 
     final field = DecoratedBox(
@@ -480,7 +514,8 @@ class _StateDropdownFieldState extends State<StateDropdownField> {
           child: IgnorePointer(
             ignoring: disabled || _loading,
             child: InkWell(
-              borderRadius: style.fieldBorderRadius ?? BorderRadius.circular(12),
+              borderRadius:
+                  style.fieldBorderRadius ?? BorderRadius.circular(12),
               onTap: _openPicker,
               child: InputDecorator(
                 decoration: style.toInputDecoration(suffixIconOverride: suffix),

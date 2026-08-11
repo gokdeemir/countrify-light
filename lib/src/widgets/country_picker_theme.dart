@@ -1,4 +1,7 @@
-import 'package:countrify/src/icons/countrify_icons.dart';
+// Static theme factories are retained to preserve the established public API.
+// ignore_for_file: prefer_constructors_over_static_methods
+
+import 'package:countrify_light/src/icons/countrify_icons.dart';
 import 'package:flutter/material.dart';
 
 /// {@template country_picker_theme}

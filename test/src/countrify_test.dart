@@ -1,4 +1,4 @@
-import 'package:countrify/countrify.dart';
+import 'package:countrify_light/countrify_light.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -12,7 +12,7 @@ void main() {
         alpha3Code: 'USA',
         numericCode: '840',
         flagEmoji: '🇺🇸',
-        flagImagePath: 'packages/countrify/src/flag_images/US.png',
+        flagImagePath: 'packages/countrify_light/src/flag_images/US.png',
         capital: 'Washington, D.C.',
         region: 'Americas',
         subregion: 'Northern America',
@@ -21,14 +21,15 @@ void main() {
         callingCodes: ['1'],
         topLevelDomains: ['.us'],
         currencies: [
-          Currency(code: 'USD', name: 'United States dollar', symbol: r'$')
+          Currency(code: 'USD', name: 'United States dollar', symbol: r'$'),
         ],
         languages: [
           Language(
-              iso6391: 'en',
-              iso6392: 'eng',
-              name: 'English',
-              nativeName: 'English')
+            iso6391: 'en',
+            iso6392: 'eng',
+            name: 'English',
+            nativeName: 'English',
+          ),
         ],
         timezones: ['UTC-05:00'],
         borders: ['CAN', 'MEX'],
@@ -64,7 +65,7 @@ void main() {
         alpha3Code: 'USA',
         numericCode: '840',
         flagEmoji: '🇺🇸',
-        flagImagePath: 'packages/countrify/src/flag_images/US.png',
+        flagImagePath: 'packages/countrify_light/src/flag_images/US.png',
         capital: 'Washington, D.C.',
         region: 'Americas',
         subregion: 'Northern America',
@@ -98,7 +99,7 @@ void main() {
         alpha3Code: 'USA',
         numericCode: '840',
         flagEmoji: '🇺🇸',
-        flagImagePath: 'packages/countrify/src/flag_images/US.png',
+        flagImagePath: 'packages/countrify_light/src/flag_images/US.png',
         capital: 'Washington, D.C.',
         region: 'Americas',
         subregion: 'Northern America',
@@ -121,7 +122,7 @@ void main() {
         alpha3Code: 'USA',
         numericCode: '840',
         flagEmoji: '🇺🇸',
-        flagImagePath: 'packages/countrify/src/flag_images/US.png',
+        flagImagePath: 'packages/countrify_light/src/flag_images/US.png',
         capital: 'Washington, D.C.',
         region: 'Americas',
         subregion: 'Northern America',
@@ -180,23 +181,27 @@ void main() {
       final results = CountryUtils.searchCountries('united');
       expect(results, isNotEmpty);
       expect(
-          results
-              .any((country) => country.name.toLowerCase().contains('united')),
-          isTrue);
+        results.any((country) => country.name.toLowerCase().contains('united')),
+        isTrue,
+      );
     });
 
     test('should get countries by region', () {
       final europeanCountries = CountryUtils.getCountriesByRegion('Europe');
       expect(europeanCountries, isNotEmpty);
-      expect(europeanCountries.every((country) => country.region == 'Europe'),
-          isTrue);
+      expect(
+        europeanCountries.every((country) => country.region == 'Europe'),
+        isTrue,
+      );
     });
 
     test('should get independent countries', () {
       final independentCountries = CountryUtils.getIndependentCountries();
       expect(independentCountries, isNotEmpty);
-      expect(independentCountries.every((country) => country.isIndependent),
-          isTrue);
+      expect(
+        independentCountries.every((country) => country.isIndependent),
+        isTrue,
+      );
     });
 
     test('should get UN member countries', () {

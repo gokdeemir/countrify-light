@@ -2,26 +2,29 @@
 
 # Countrify Light
 
-This is a lightweight fork of
-[Arhamss/countrify](https://github.com/Arhamss/countrify). It preserves
-offline country, state, and city search while removing bundled PNG flags and
-unused geo coordinates. Flags render as platform emoji.
+An independently maintained package derived from
+[Arhamss/countrify](https://github.com/Arhamss/countrify). Countrify Light has
+its own package identity, data-generation pipeline, release lifecycle, and
+widget fixes while retaining the original MIT attribution. Flags render as
+platform emoji and all country, state, and city lookups work offline.
 
-### The Ultimate Flutter Country Picker Package
+### Offline Country, State, and City Pickers for Flutter
 
-*Beautiful, Comprehensive, and Highly Customizable*
+*Bundled data, configurable widgets, and no network lookups*
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![Flutter](https://img.shields.io/badge/Flutter-%3E%3D3.0.0-02569B?style=for-the-badge&logo=flutter)](https://flutter.dev)
-[![Dart](https://img.shields.io/badge/Dart-%3E%3D3.0.0-0175C2?style=for-the-badge&logo=dart)](https://dart.dev)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+[![Data: ODbL 1.0](https://img.shields.io/badge/Data-ODbL--1.0-brightgreen.svg?style=for-the-badge)](LICENSES/ODbL-1.0.txt)
+[![Flutter](https://img.shields.io/badge/Flutter-%3E%3D3.27.0-02569B?style=for-the-badge&logo=flutter)](https://flutter.dev)
+[![Dart](https://img.shields.io/badge/Dart-%3E%3D3.6.0-0175C2?style=for-the-badge&logo=dart)](https://dart.dev)
 
 **[GitHub](https://github.com/gokdeemir/countrify-light)** | **[Upstream](https://github.com/Arhamss/countrify)** | **[Example](https://github.com/gokdeemir/countrify-light/tree/main/example)**
 
-<a href="https://buymeacoffee.com/abdullahzer" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="217" height="60"></a>
-
 ---
 
-A comprehensive Flutter package for country selection with **250 countries**, **5,296 states / provinces**, **153,823 cities**, **132 language translations**, beautiful UI, extensive theming, and **zero runtime dependencies**.
+A Flutter package for country selection with **250 country/territory records**
+(**249 officially assigned ISO 3166-1 entries plus XK/Kosovo**), **5,308
+states / provinces**, **152,970 cities**, **132 bundled language maps**, and
+no third-party runtime packages.
 
 </div>
 
@@ -76,17 +79,21 @@ A comprehensive Flutter package for country selection with **250 countries**, **
 
 ## Overview
 
-Countrify is the most feature-rich country picker for Flutter. It ships with **250 countries**, **132 language translations**, **5 display modes**, **4 built-in themes**, **40+ utility methods**, a dedicated **phone number input field**, and a rich country data model — all with **zero runtime dependencies**.
+Countrify Light provides offline country, state, and city selection for
+Flutter. It ships with **250 country/territory records** (**249 officially
+assigned ISO 3166-1 entries plus XK/Kosovo**), **132 language maps**, **5
+display modes**, **4 built-in themes**, utility methods, and a phone number
+input field, with no third-party runtime packages.
 
 | Metric | Value |
 |---|---|
-| Countries | 250 |
+| Country/territory records | 250 (249 ISO 3166-1 + XK/Kosovo) |
 | Language Translations | 132 (CLDR-based) |
 | Flag Assets | None (platform emoji) |
 | Utility Methods | 40+ |
 | Display Modes | 5 |
 | Built-in Themes | 4 |
-| Runtime Dependencies | 0 |
+| Runtime Dependencies | Flutter SDK only |
 | Platforms | iOS, Android, Web, macOS, Windows, Linux |
 
 ### Key Features
@@ -102,7 +109,7 @@ Countrify is the most feature-rich country picker for Flutter. It ships with **2
 - **Flag Customization** — Rectangular, circular, or rounded shapes with borders and shadows
 - **Custom Builders** — Provide your own widgets for country items, headers, search bars, and filters
 - **Customizable Strings** — Shared UI text via `CountryPickerConfig`, plus comprehensive filter labels via widget parameters
-- **132 Language Translations** — Auto-detects your app locale; all pickers display localized country names, search, and sorting out of the box. Zero runtime dependencies
+- **132 Language Maps** — Auto-detects your app locale; all pickers display localized country names, search, and sorting from compile-time maps
 - **Rich Country Data** — 15+ fields per country including capitals, currencies, languages, timezones, borders
 - **40+ Utility Methods** — Programmatic access to country data, search, statistics, and validation
 - **Haptic Feedback** — Tactile response on country selection
@@ -110,7 +117,6 @@ Countrify is the most feature-rich country picker for Flutter. It ships with **2
 - **Full Null Safety** — Sound null safety throughout
 - **Custom Icons** — Ships with its own icon font (CountrifyIcons) — no Material Icons dependency for picker UI
 - **Shared Building Blocks** — `CountryFlag`, `CountryListTile`, `CountrySearchBar`, `CountryListView` available as standalone widgets
-- **Phone Validation** — Lightweight `PhoneMetadata` with auto-validation on `PhoneNumberField`
 - **Accessibility** — `Semantics` labels and `Tooltip` on all interactive elements
 - **focusedFillColor** — Separate fill color when field has focus via `CountrifyFieldStyle`
 - **focusedBoxShadow** — Box shadow when field has focus via `CountrifyFieldStyle`
@@ -147,11 +153,11 @@ Countrify is the most feature-rich country picker for Flutter. It ships with **2
 
 ### Installation
 
-Add `countrify` to your `pubspec.yaml`:
+Add `countrify_light` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  countrify:
+  countrify_light:
     git:
       url: https://github.com/gokdeemir/countrify-light.git
       ref: <commit-sha>
@@ -166,7 +172,7 @@ flutter pub get
 ### Import
 
 ```dart
-import 'package:countrify/countrify.dart';
+import 'package:countrify_light/countrify_light.dart';
 ```
 
 ### Quick Start
@@ -371,7 +377,7 @@ CountryDropdownField(
   showPhoneCode: false,
   showFlag: true,
   searchEnabled: true,
-  pickerMode: CountryPickerMode.bottomSheet, // or .dialog, .fullScreen, .none
+  pickerMode: CountryPickerMode.bottomSheet, // or .dialog, .fullScreen, .dropdown, .none
   theme: CountryPickerTheme.defaultTheme(),
 )
 ```
@@ -384,10 +390,15 @@ CountryDropdownField(
 | `style` | `CountrifyFieldStyle?` | `null` | Unified style object for label/hint/borders/fill/text styles |
 | `showPhoneCode` | `bool` | `true` | Show calling code in display |
 | `showFlag` | `bool` | `true` | Show flag in prefix |
+| `showDropdownIcon` | `bool` | `true` | Show the built-in trailing caret; a style suffix icon takes precedence |
 | `pickerMode` | `CountryPickerMode` | `.bottomSheet` | How the picker opens (`.none` disables selection) |
 | `enabled` | `bool` | `true` | Whether the field is interactive |
 | `searchEnabled` | `bool` | `true` | Enables search in the picker |
 | `filterEnabled` | `bool` | `false` | Enables filter chips in the picker |
+| `customCountryBuilder` | `CountryDropdownItemBuilder?` | `null` | Custom country row forwarded to the picker |
+| `customHeaderBuilder` | `Widget Function(BuildContext)?` | `null` | Custom picker header |
+| `customSearchBuilder` | callback | `null` | Custom search field |
+| `customFilterBuilder` | callback | `null` | Custom filter controls |
 
 Use `style: CountrifyFieldStyle.defaultStyle().copyWith(...)` to customize field decoration and text styles.
 
@@ -434,11 +445,14 @@ CountryStateCityField(
 )
 ```
 
-The dataset ships with **250 countries**, **5,296 states / provinces**, and
-**153,823 cities** — sourced from
-[dr5hn/countries-states-cities-database](https://github.com/dr5hn/countries-states-cities-database)
+The dataset ships with **250 country/territory records** (**249 officially
+assigned ISO 3166-1 entries plus XK/Kosovo**), **5,308 states / provinces**,
+and **152,970 cities** — sourced from
+[dr5hn/countries-states-cities-database](https://github.com/dr5hn/countries-states-cities-database/tree/624a208c3928937d1262ab1646d0b8fc9cacceee)
 and split into per-country / per-state JSON files under `assets/geo/` so
-only the records for the currently selected country / state are decoded.
+only the records for the currently selected country / state are decoded. The
+bundled geo payload omits coordinates; the nullable coordinate fields remain
+available for custom `AssetBundle` data sources.
 
 For programmatic access, use `GeoRepository`:
 
@@ -540,12 +554,15 @@ CityPicker(
   stateId: 1416,
   initialCityId: 111825,
   pickerMode: CountryPickerMode.dialog,
-  showCoordinates: true,
   sortBy: CitySortBy.name,
   theme: GeoPickerTheme.dark(),
-  onCitySelected: (city) => print('${city.name} (${city.latitude}, ${city.longitude})'),
+  onCitySelected: (city) => print(city.name),
 )
 ```
+
+The bundled geo data omits coordinates. `showCoordinates` is only useful
+with a custom repository or `AssetBundle` that supplies latitude and
+longitude; bundled records return `null` for those fields.
 
 ---
 
@@ -598,7 +615,6 @@ CityDropdownField(
   initialCityId: _city?.id,
   style: CountrifyFieldStyle.outlineStyle(),
   pickerMode: CountryPickerMode.bottomSheet,
-  showCoordinates: false,
   onChanged: (c) => setState(() => _city = c),
 )
 ```
@@ -653,13 +669,18 @@ CitySearchField(
 
 #### Regenerating the bundled dataset
 
-When the upstream dataset releases a new revision, regenerate the vendored
-assets with:
+The default commands use the revisions recorded in
+[`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md). Verify or regenerate the
+vendored data with:
 
 ```bash
-dart run tool/sync_geo_data.dart                     # latest master
-dart run tool/sync_geo_data.dart --ref v2.6          # specific tag
-dart run tool/sync_geo_data.dart --input path.json   # offline source
+dart run tool/sync_geo_data.dart --check
+dart run tool/sync_geo_data.dart
+dart run tool/sync_geo_data.dart --ref <commit-or-tag>
+dart run tool/sync_geo_data.dart --ref <revision> --input <source.json>
+
+dart run tool/sync_country_data.dart --check
+dart run tool/sync_country_data.dart
 ```
 
 ---
@@ -1050,7 +1071,7 @@ Use `CountryUtils` to access country data programmatically without showing any p
 ### Fetching Countries
 
 ```dart
-// Get all 250 countries
+// Get all 250 country/territory records (249 ISO 3166-1 + XK/Kosovo)
 final countries = CountryUtils.getAllCountries();
 
 // Get by ISO code
@@ -1131,7 +1152,7 @@ CountryUtils.isValidAlpha2Code('XX');   // false
 
 ## Localization (132 Languages)
 
-Countrify ships with built-in country name translations for **132 languages**, sourced from [CLDR data](https://github.com/umpirsky/country-list). All translations are compile-time constants — zero runtime dependencies, no network requests, no JSON parsing.
+Countrify ships with built-in country name translations for **132 languages**, sourced from [CLDR data](https://github.com/umpirsky/country-list). All translations are compile-time constants — no third-party runtime packages, no network requests, and no runtime JSON parsing.
 
 ### Automatic Locale Detection (Recommended)
 
@@ -1234,7 +1255,7 @@ final locales = CountryUtils.getSupportedLocales();
 For lower-level access without going through `CountryUtils`:
 
 ```dart
-import 'package:countrify/countrify.dart';
+import 'package:countrify_light/countrify_light.dart';
 
 // Get a single translation
 final name = CountryNameL10n.getLocalizedName('DE', 'fr'); // "Allemagne"
@@ -1265,14 +1286,14 @@ Each `Country` object contains comprehensive data:
 ```dart
 class Country {
   final String name;                          // "United States"
-  final Map<String, String> nameTranslations; // {"es": "Estados Unidos", ...}
+  final Map<String, String> nameTranslations; // Canonical English compatibility map
   final String alpha2Code;                    // "US"
   final String alpha3Code;                    // "USA"
   final String numericCode;                   // "840"
   final String flagEmoji;                     // Unicode flag emoji
   final String flagImagePath;                 // Empty legacy compatibility field
   final String capital;                       // "Washington, D.C."
-  final String? largestCity;                  // "New York City"
+  final String? largestCity;                  // Null in the bundled catalogue
   final String region;                        // "Americas"
   final String subregion;                     // "Northern America"
   final int population;                       // 331002651
@@ -1281,10 +1302,11 @@ class Country {
   final List<String> topLevelDomains;         // [".us"]
   final List<Currency> currencies;            // [Currency(code: "USD", ...)]
   final List<Language> languages;             // [Language(name: "English", ...)]
-  final List<String> timezones;               // ["UTC-12:00", ...]
+  final List<String> timezones;               // ["America/New_York", ...]
   final List<String> borders;                 // ["CAN", "MEX"]
   final bool isIndependent;                   // true
   final bool isUnMember;                      // true
+  final PhoneMetadata? phoneMetadata;         // Null in the bundled catalogue
 }
 
 class Currency {
@@ -1294,12 +1316,17 @@ class Currency {
 }
 
 class Language {
-  final String iso6391;    // "en"
-  final String iso6392;    // "eng"
-  final String name;       // "English"
-  final String nativeName; // "English"
+  final String iso6391;    // "en", or empty when unavailable
+  final String iso6392;    // Legacy field containing ISO 639-3, e.g. "eng"
+  final String name;       // English source name
+  final String nativeName; // Native name when available; otherwise English
 }
 ```
+
+Localized country display names come from `CountryNameL10n`; they are not
+duplicated into every generated `Country.nameTranslations` map. The bundled
+sources also do not provide reliable largest-city or phone-validation metadata,
+so those optional fields remain null instead of containing guessed values.
 
 ---
 
@@ -1546,7 +1573,10 @@ The dropdown overlay dismisses when tapping outside it. If you're embedding `Pho
 <details>
 <summary><strong>Is this package free to use?</strong></summary>
 
-Yes. Countrify is open-source under the MIT License.
+Yes. The package code is available under the MIT License. Bundled geographic
+and country databases are separately licensed under ODbL 1.0, while bundled
+country-name translations retain their upstream MIT notice. See
+[`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
 </details>
 
 <details>
@@ -1572,7 +1602,7 @@ Yes. The package respects Flutter's text direction settings. Country name transl
 <details>
 <summary><strong>How does localization work?</strong></summary>
 
-All picker widgets **auto-detect** the locale from your `MaterialApp`. If your app sets `locale: Locale('de')` (with matching `supportedLocales` and `localizationsDelegates`), every Countrify picker will show German country names automatically — no per-widget configuration needed. You can also override per-widget with `CountryPickerConfig(locale: 'ja')`. Under the hood, all 132 language translations are sourced from [CLDR data](https://github.com/umpirsky/country-list) and stored as compile-time `static const` maps — no runtime dependencies, no network requests, no JSON parsing. See the [Localization](#localization-132-languages) section for full details.
+All picker widgets **auto-detect** the locale from your `MaterialApp`. If your app sets `locale: Locale('de')` (with matching `supportedLocales` and `localizationsDelegates`), every Countrify picker will show German country names automatically — no per-widget configuration needed. You can also override per-widget with `CountryPickerConfig(locale: 'ja')`. Under the hood, all 132 language translations are sourced from [CLDR data](https://github.com/umpirsky/country-list) and stored as compile-time `static const` maps — no third-party runtime packages, no network requests, and no runtime JSON parsing. See the [Localization](#localization-132-languages) section for full details.
 </details>
 
 <details>
@@ -1596,7 +1626,11 @@ Yes. Use `customCountryBuilder` (and related custom builders) on `CountryPicker`
 <details>
 <summary><strong>Is the country data accurate?</strong></summary>
 
-The data is sourced from public ISO 3166-1 records and is kept as current as possible. Please report any inaccuracies via GitHub issues.
+The country catalogue is generated from pinned dr5hn and mledoze revisions;
+the bundled state/city hierarchy is also derived from dr5hn. These are
+community-maintained datasets and can contain errors or lag geopolitical
+changes. See [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) for the exact
+sources and report inaccuracies via GitHub issues.
 </details>
 
 <details>
@@ -1637,7 +1671,7 @@ flutter analyze
 
 ---
 
-## Contributors
+## Original Project Contributors
 
 <table>
 <tr>
@@ -1695,16 +1729,14 @@ flutter analyze
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+The package source code is licensed under the [MIT License](LICENSE). Bundled
+databases and translations retain separate upstream terms and attribution;
+see [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) and [`LICENSES/`](LICENSES/).
 
 ---
 
 <div align="center">
 
 **[GitHub](https://github.com/gokdeemir/countrify-light)** | **[Issues](https://github.com/gokdeemir/countrify-light/issues)** | **[Upstream](https://github.com/Arhamss/countrify)**
-
-<a href="https://buymeacoffee.com/abdullahzer" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="217" height="60"></a>
-
-Built with ❤️ by **[Codeable](https://gocodeable.com)**
 
 </div>

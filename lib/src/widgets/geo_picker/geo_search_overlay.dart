@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:countrify/src/widgets/geo_picker/geo_picker_theme.dart';
-import 'package:countrify/src/widgets/shared/countrify_check_icon.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_picker_theme.dart';
+import 'package:countrify_light/src/widgets/shared/countrify_check_icon.dart';
 import 'package:flutter/material.dart';
 
 /// Generic dropdown overlay for searchable geo fields (state / city).
@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 /// Loads items asynchronously, filters on query changes, and calls
 /// [onSelected] when a row is tapped.
 class GeoSearchOverlay<T> extends StatefulWidget {
+  /// Creates an overlay that displays and selects geo items.
   const GeoSearchOverlay({
     required this.link,
     required this.fieldKey,
@@ -26,17 +27,40 @@ class GeoSearchOverlay<T> extends StatefulWidget {
     this.maxHeight = 240,
   });
 
+  /// Link shared with the composited anchor for overlay positioning.
   final LayerLink link;
+
+  /// Key of the anchor field used to determine available screen space.
   final GlobalKey fieldKey;
+
+  /// Width of the overlay, matching the anchor field.
   final double fieldWidth;
+
+  /// Items currently displayed by the overlay.
   final List<T> items;
+
+  /// Search query associated with the displayed items.
   final String query;
+
+  /// Returns the primary display name for an item.
   final String Function(T) nameOf;
+
+  /// Returns the optional secondary display text for an item.
   final String Function(T)? subtitleOf;
+
+  /// Item currently selected in the field.
   final T? selected;
+
+  /// Called when the user selects an item.
   final ValueChanged<T> onSelected;
+
+  /// Called after the overlay's exit animation completes.
   final VoidCallback onDismiss;
+
+  /// Optional visual configuration for the overlay.
   final GeoPickerTheme? theme;
+
+  /// Maximum height of the overlay in logical pixels.
   final double maxHeight;
 
   @override
@@ -62,7 +86,9 @@ class _GeoSearchOverlayState<T> extends State<GeoSearchOverlay<T>>
       reverseDuration: const Duration(milliseconds: 140),
     );
     _fade = CurvedAnimation(
-        parent: _animController, curve: Curves.easeOutCubic);
+      parent: _animController,
+      curve: Curves.easeOutCubic,
+    );
     _animController.forward();
   }
 
@@ -219,8 +245,9 @@ class _GeoSearchOverlayState<T> extends State<GeoSearchOverlay<T>>
                                 ))
                             : (widget.theme?.itemNameTextStyle ??
                                 const TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500)),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                )),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),

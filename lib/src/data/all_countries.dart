@@ -1,5885 +1,10656 @@
-import 'package:countrify/src/models/country.dart';
+// GENERATED CODE - DO NOT MODIFY BY HAND.
+// Run: dart run tool/sync_country_data.dart
+// Source strings intentionally use deterministic JSON quoting.
+// Dart 3.0 formatting omits commas in some generated data lists.
+// ignore_for_file: prefer_single_quotes, require_trailing_commas, use_raw_strings
 
-/// Complete list of all countries with ISO 3166-1 codes
-/// Generated from CSV data
+import 'package:countrify_light/src/models/country.dart';
+
+/// Compile-time country catalogue generated from pinned sources.
+///
+/// dr5hn `624a208c3928937d1262ab1646d0b8fc9cacceee` supplies population, calling codes, and IANA
+/// time zone identifiers. mledoze `9eff32e4eef26715aa59d99b200127d1ef150e7a` supplies display
+/// metadata, ISO identifiers, currencies, languages, borders, area,
+/// and status.
+/// Flag emoji are derived from ISO-2. `flagImagePath` is empty and
+/// `largestCity` is null for every entry. Missing source strings, lists,
+/// and population values remain empty or zero instead of being guessed.
+/// mledoze language map keys are ISO 639-3 codes. For compatibility
+/// they are stored in the legacy `Language.iso6392` field. Language
+/// names are English, so `nativeName` falls back to English. `iso6391`
+/// is empty when no two-letter mapping exists.
 class AllCountries {
   AllCountries._();
 
-  /// Complete list of all countries
   static const List<Country> _allCountries = [
-    // Afghanistan
     Country(
-      name: 'Afghanistan',
-      nameTranslations: {'en': 'Afghanistan'},
-      alpha2Code: 'AF',
-      alpha3Code: 'AFG',
-      numericCode: '004',
-      flagEmoji: '🇦🇫',
+      name: "Andorra",
+      nameTranslations: {
+        'en': "Andorra",
+      },
+      alpha2Code: "AD",
+      alpha3Code: "AND",
+      numericCode: "020",
+      flagEmoji: "🇦🇩",
       flagImagePath: '',
-      capital: 'Kabul',
-      largestCity: 'Kabul',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 38041754,
-      area: 0, // Not available in CSV
-      callingCodes: ['93'],
-      topLevelDomains: ['.af'],
-      currencies: [Currency(code: 'AFN', name: 'AFN', symbol: '')],
+      capital: "Andorra la Vella",
+      region: "Europe",
+      subregion: "Southern Europe",
+      population: 88306,
+      area: 468,
+      callingCodes: ["376"],
+      topLevelDomains: [".ad"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Pashto', nativeName: 'Pashto')
+          iso6391: "ca",
+          iso6392: "cat",
+          name: "Catalan",
+          nativeName: "Catalan",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Europe/Andorra"],
+      borders: ["ESP", "FRA"],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Albania
     Country(
-      name: 'Albania',
-      nameTranslations: {'en': 'Albania'},
-      alpha2Code: 'AL',
-      alpha3Code: 'ALB',
-      numericCode: '008',
-      flagEmoji: '🇦🇱',
+      name: "United Arab Emirates",
+      nameTranslations: {
+        'en': "United Arab Emirates",
+      },
+      alpha2Code: "AE",
+      alpha3Code: "ARE",
+      numericCode: "784",
+      flagEmoji: "🇦🇪",
       flagImagePath: '',
-      capital: 'Tirana',
-      largestCity: 'Tirana',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 2854191,
-      area: 0, // Not available in CSV
-      callingCodes: ['355'],
-      topLevelDomains: ['.al'],
-      currencies: [Currency(code: 'ALL', name: 'ALL', symbol: '')],
+      capital: "Abu Dhabi",
+      region: "Asia",
+      subregion: "Western Asia",
+      population: 10678556,
+      area: 83600,
+      callingCodes: ["971"],
+      topLevelDomains: [".ae", "امارات."],
+      currencies: [
+        Currency(
+          code: "AED",
+          name: "United Arab Emirates dirham",
+          symbol: "د.إ",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Albanian',
-            nativeName: 'Albanian')
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Asia/Dubai"],
+      borders: ["OMN", "SAU"],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Algeria
     Country(
-      name: 'Algeria',
-      nameTranslations: {'en': 'Algeria'},
-      alpha2Code: 'DZ',
-      alpha3Code: 'DZA',
-      numericCode: '012',
-      flagEmoji: '🇩🇿',
+      name: "Afghanistan",
+      nameTranslations: {
+        'en': "Afghanistan",
+      },
+      alpha2Code: "AF",
+      alpha3Code: "AFG",
+      numericCode: "004",
+      flagEmoji: "🇦🇫",
       flagImagePath: '',
-      capital: 'Algiers',
-      largestCity: 'Algiers',
-      region: 'Africa',
-      subregion: 'Northern Africa',
-      population: 43053054,
-      area: 0, // Not available in CSV
-      callingCodes: ['213'],
-      topLevelDomains: ['.dz'],
-      currencies: [Currency(code: 'DZD', name: 'DZD', symbol: '')],
+      capital: "Kabul",
+      region: "Asia",
+      subregion: "Southern Asia",
+      population: 43844000,
+      area: 652230,
+      callingCodes: ["93"],
+      topLevelDomains: [".af"],
+      currencies: [
+        Currency(
+          code: "AFN",
+          name: "Afghan afghani",
+          symbol: "؋",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Arabic', nativeName: 'Arabic')
+          iso6391: "",
+          iso6392: "prs",
+          name: "Dari",
+          nativeName: "Dari",
+        ),
+        Language(
+          iso6391: "ps",
+          iso6392: "pus",
+          name: "Pashto",
+          nativeName: "Pashto",
+        ),
+        Language(
+          iso6391: "tk",
+          iso6392: "tuk",
+          name: "Turkmen",
+          nativeName: "Turkmen",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Asia/Kabul"],
+      borders: ["CHN", "IRN", "PAK", "TJK", "TKM", "UZB"],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Andorra
     Country(
-      name: 'Andorra',
-      nameTranslations: {'en': 'Andorra'},
-      alpha2Code: 'AD',
-      alpha3Code: 'AND',
-      numericCode: '020',
-      flagEmoji: '🇦🇩',
+      name: "Antigua and Barbuda",
+      nameTranslations: {
+        'en': "Antigua and Barbuda",
+      },
+      alpha2Code: "AG",
+      alpha3Code: "ATG",
+      numericCode: "028",
+      flagEmoji: "🇦🇬",
       flagImagePath: '',
-      capital: 'Andorra la Vella',
-      largestCity: 'Andorra la Vella',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 77142,
-      area: 0, // Not available in CSV
-      callingCodes: ['376'],
-      topLevelDomains: ['.ad'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
+      capital: "Saint John's",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 103603,
+      area: 442,
+      callingCodes: ["1"],
+      topLevelDomains: [".ag"],
+      currencies: [
+        Currency(
+          code: "XCD",
+          name: "Eastern Caribbean dollar",
+          symbol: "\$",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Catalan',
-            nativeName: 'Catalan')
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["America/Antigua"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Angola
     Country(
-      name: 'Angola',
-      nameTranslations: {'en': 'Angola'},
-      alpha2Code: 'AO',
-      alpha3Code: 'AGO',
-      numericCode: '024',
-      flagEmoji: '🇦🇴',
+      name: "Anguilla",
+      nameTranslations: {
+        'en': "Anguilla",
+      },
+      alpha2Code: "AI",
+      alpha3Code: "AIA",
+      numericCode: "660",
+      flagEmoji: "🇦🇮",
       flagImagePath: '',
-      capital: 'Luanda',
-      largestCity: 'Luanda',
-      region: 'Africa',
-      subregion: 'Southern Africa',
-      population: 31825295,
-      area: 0, // Not available in CSV
-      callingCodes: ['244'],
-      topLevelDomains: ['.ao'],
-      currencies: [Currency(code: 'AOA', name: 'AOA', symbol: '')],
+      capital: "The Valley",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 16010,
+      area: 91,
+      callingCodes: ["1"],
+      topLevelDomains: [".ai"],
+      currencies: [
+        Currency(
+          code: "XCD",
+          name: "Eastern Caribbean dollar",
+          symbol: "\$",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Portuguese',
-            nativeName: 'Portuguese')
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["America/Anguilla"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
     ),
-
-    // Antigua and Barbuda
     Country(
-      name: 'Antigua and Barbuda',
-      nameTranslations: {'en': 'Antigua and Barbuda'},
-      alpha2Code: 'AG',
-      alpha3Code: 'ATG',
-      numericCode: '028',
-      flagEmoji: '🇦🇬',
+      name: "Albania",
+      nameTranslations: {
+        'en': "Albania",
+      },
+      alpha2Code: "AL",
+      alpha3Code: "ALB",
+      numericCode: "008",
+      flagEmoji: "🇦🇱",
       flagImagePath: '',
-      capital: "St. John's, Saint John",
-      largestCity: "St. John's, Saint John",
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 97118,
-      area: 0, // Not available in CSV
-      callingCodes: ['1'],
-      topLevelDomains: ['.ag'],
-      currencies: [Currency(code: 'XCD', name: 'XCD', symbol: '')],
+      capital: "Tirana",
+      region: "Europe",
+      subregion: "Southeast Europe",
+      population: 2363314,
+      area: 28748,
+      callingCodes: ["355"],
+      topLevelDomains: [".al"],
+      currencies: [
+        Currency(
+          code: "ALL",
+          name: "Albanian lek",
+          symbol: "L",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
+          iso6391: "sq",
+          iso6392: "sqi",
+          name: "Albanian",
+          nativeName: "Albanian",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Europe/Tirane"],
+      borders: ["GRC", "MKD", "MNE", "UNK"],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Argentina
     Country(
-      name: 'Argentina',
-      nameTranslations: {'en': 'Argentina'},
-      alpha2Code: 'AR',
-      alpha3Code: 'ARG',
-      numericCode: '032',
-      flagEmoji: '🇦🇷',
+      name: "Armenia",
+      nameTranslations: {
+        'en': "Armenia",
+      },
+      alpha2Code: "AM",
+      alpha3Code: "ARM",
+      numericCode: "051",
+      flagEmoji: "🇦🇲",
       flagImagePath: '',
-      capital: 'Buenos Aires',
-      largestCity: 'Buenos Aires',
-      region: 'Americas',
-      subregion: 'South America',
-      population: 44938712,
-      area: 0, // Not available in CSV
-      callingCodes: ['54'],
-      topLevelDomains: ['.ar'],
-      currencies: [Currency(code: 'ARS', name: 'ARS', symbol: '')],
+      capital: "Yerevan",
+      region: "Asia",
+      subregion: "Western Asia",
+      population: 3081100,
+      area: 29743,
+      callingCodes: ["374"],
+      topLevelDomains: [".am"],
+      currencies: [
+        Currency(
+          code: "AMD",
+          name: "Armenian dram",
+          symbol: "֏",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Spanish',
-            nativeName: 'Spanish')
+          iso6391: "hy",
+          iso6392: "hye",
+          name: "Armenian",
+          nativeName: "Armenian",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Asia/Yerevan"],
+      borders: ["AZE", "GEO", "IRN", "TUR"],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Armenia
     Country(
-      name: 'Armenia',
-      nameTranslations: {'en': 'Armenia'},
-      alpha2Code: 'AM',
-      alpha3Code: 'ARM',
-      numericCode: '051',
-      flagEmoji: '🇦🇲',
+      name: "Angola",
+      nameTranslations: {
+        'en': "Angola",
+      },
+      alpha2Code: "AO",
+      alpha3Code: "AGO",
+      numericCode: "024",
+      flagEmoji: "🇦🇴",
       flagImagePath: '',
-      capital: 'Yerevan',
-      largestCity: 'Yerevan',
-      region: 'Asia',
-      subregion: 'Eastern Asia',
-      population: 2957731,
-      area: 0, // Not available in CSV
-      callingCodes: ['374'],
-      topLevelDomains: ['.am'],
-      currencies: [Currency(code: 'AMD', name: 'AMD', symbol: '')],
+      capital: "Luanda",
+      region: "Africa",
+      subregion: "Middle Africa",
+      population: 36170961,
+      area: 1246700,
+      callingCodes: ["244"],
+      topLevelDomains: [".ao"],
+      currencies: [
+        Currency(
+          code: "AOA",
+          name: "Angolan kwanza",
+          symbol: "Kz",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Armenian',
-            nativeName: 'Armenian')
+          iso6391: "pt",
+          iso6392: "por",
+          name: "Portuguese",
+          nativeName: "Portuguese",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Africa/Luanda"],
+      borders: ["COD", "COG", "NAM", "ZMB"],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Australia
     Country(
-      name: 'Australia',
-      nameTranslations: {'en': 'Australia'},
-      alpha2Code: 'AU',
-      alpha3Code: 'AUS',
-      numericCode: '036',
-      flagEmoji: '🇦🇺',
+      name: "Antarctica",
+      nameTranslations: {
+        'en': "Antarctica",
+      },
+      alpha2Code: "AQ",
+      alpha3Code: "ATA",
+      numericCode: "010",
+      flagEmoji: "🇦🇶",
       flagImagePath: '',
-      capital: 'Canberra',
-      largestCity: 'Sydney',
-      region: 'Oceania',
-      subregion: 'Polynesia',
-      population: 25766605,
-      area: 0, // Not available in CSV
-      callingCodes: ['61'],
-      topLevelDomains: ['.au'],
-      currencies: [Currency(code: 'AUD', name: 'AUD', symbol: '')],
+      capital: "",
+      region: "Antarctic",
+      subregion: "",
+      population: 0,
+      area: 14000000,
+      callingCodes: ["672"],
+      topLevelDomains: [".aq"],
+      currencies: [],
+      languages: [],
+      timezones: [
+        "Antarctica/Casey",
+        "Antarctica/Davis",
+        "Antarctica/DumontDUrville",
+        "Antarctica/Mawson",
+        "Antarctica/McMurdo",
+        "Antarctica/Palmer",
+        "Antarctica/Rothera",
+        "Antarctica/Syowa",
+        "Antarctica/Troll",
+        "Antarctica/Vostok"
+      ],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Argentina",
+      nameTranslations: {
+        'en': "Argentina",
+      },
+      alpha2Code: "AR",
+      alpha3Code: "ARG",
+      numericCode: "032",
+      flagEmoji: "🇦🇷",
+      flagImagePath: '',
+      capital: "Buenos Aires",
+      region: "Americas",
+      subregion: "South America",
+      population: 46735004,
+      area: 2780400,
+      callingCodes: ["54"],
+      topLevelDomains: [".ar"],
+      currencies: [
+        Currency(
+          code: "ARS",
+          name: "Argentine peso",
+          symbol: "\$",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
+          iso6391: "gn",
+          iso6392: "grn",
+          name: "Guaraní",
+          nativeName: "Guaraní",
+        ),
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: [
+        "America/Argentina/Buenos_Aires",
+        "America/Argentina/Catamarca",
+        "America/Argentina/Cordoba",
+        "America/Argentina/Jujuy",
+        "America/Argentina/La_Rioja",
+        "America/Argentina/Mendoza",
+        "America/Argentina/Rio_Gallegos",
+        "America/Argentina/Salta",
+        "America/Argentina/San_Juan",
+        "America/Argentina/San_Luis",
+        "America/Argentina/Tucuman",
+        "America/Argentina/Ushuaia"
+      ],
+      borders: ["BOL", "BRA", "CHL", "PRY", "URY"],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Austria
     Country(
-      name: 'Austria',
-      nameTranslations: {'en': 'Austria'},
-      alpha2Code: 'AT',
-      alpha3Code: 'AUT',
-      numericCode: '040',
-      flagEmoji: '🇦🇹',
+      name: "American Samoa",
+      nameTranslations: {
+        'en': "American Samoa",
+      },
+      alpha2Code: "AS",
+      alpha3Code: "ASM",
+      numericCode: "016",
+      flagEmoji: "🇦🇸",
       flagImagePath: '',
-      capital: 'Vienna',
-      largestCity: 'Vienna',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 8877067,
-      area: 0, // Not available in CSV
-      callingCodes: ['43'],
-      topLevelDomains: ['.at'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
+      capital: "Pago Pago",
+      region: "Oceania",
+      subregion: "Polynesia",
+      population: 49710,
+      area: 199,
+      callingCodes: ["1"],
+      topLevelDomains: [".as"],
+      currencies: [
+        Currency(
+          code: "USD",
+          name: "United States dollar",
+          symbol: "\$",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en', iso6392: 'eng', name: 'German', nativeName: 'German')
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "sm",
+          iso6392: "smo",
+          name: "Samoan",
+          nativeName: "Samoan",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Pacific/Pago_Pago"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
     ),
-
-    // Azerbaijan
     Country(
-      name: 'Azerbaijan',
-      nameTranslations: {'en': 'Azerbaijan'},
-      alpha2Code: 'AZ',
-      alpha3Code: 'AZE',
-      numericCode: '031',
-      flagEmoji: '🇦🇿',
+      name: "Austria",
+      nameTranslations: {
+        'en': "Austria",
+      },
+      alpha2Code: "AT",
+      alpha3Code: "AUT",
+      numericCode: "040",
+      flagEmoji: "🇦🇹",
       flagImagePath: '',
-      capital: 'Baku',
-      largestCity: 'Baku',
-      region: 'Asia',
-      subregion: 'Eastern Asia',
-      population: 10023318,
-      area: 0, // Not available in CSV
-      callingCodes: ['994'],
-      topLevelDomains: ['.az'],
-      currencies: [Currency(code: 'AZN', name: 'AZN', symbol: '')],
+      capital: "Vienna",
+      region: "Europe",
+      subregion: "Central Europe",
+      population: 9200931,
+      area: 83871,
+      callingCodes: ["43"],
+      topLevelDomains: [".at"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Azerbaijani',
-            nativeName: 'Azerbaijani')
+          iso6391: "",
+          iso6392: "bar",
+          name: "Austro-Bavarian German",
+          nativeName: "Austro-Bavarian German",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Europe/Vienna"],
+      borders: ["CHE", "CZE", "DEU", "HUN", "ITA", "LIE", "SVK", "SVN"],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // The Bahamas
     Country(
-      name: 'The Bahamas',
-      nameTranslations: {'en': 'The Bahamas'},
-      alpha2Code: 'BS',
-      alpha3Code: 'BHS',
-      numericCode: '044',
-      flagEmoji: '🇧🇸',
+      name: "Australia",
+      nameTranslations: {
+        'en': "Australia",
+      },
+      alpha2Code: "AU",
+      alpha3Code: "AUS",
+      numericCode: "036",
+      flagEmoji: "🇦🇺",
       flagImagePath: '',
-      capital: 'Nassau, Bahamas',
-      largestCity: 'Nassau',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 389482,
-      area: 0, // Not available in CSV
-      callingCodes: ['1'],
-      topLevelDomains: ['.bs'],
-      currencies: [Currency(code: 'BSD', name: 'BSD', symbol: '')],
+      capital: "Canberra",
+      region: "Oceania",
+      subregion: "Australia and New Zealand",
+      population: 27400013,
+      area: 7692024,
+      callingCodes: ["61"],
+      topLevelDomains: [".au"],
+      currencies: [
+        Currency(
+          code: "AUD",
+          name: "Australian dollar",
+          symbol: "\$",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: [
+        "Antarctica/Macquarie",
+        "Australia/Adelaide",
+        "Australia/Brisbane",
+        "Australia/Broken_Hill",
+        "Australia/Currie",
+        "Australia/Darwin",
+        "Australia/Eucla",
+        "Australia/Hobart",
+        "Australia/Lindeman",
+        "Australia/Lord_Howe",
+        "Australia/Melbourne",
+        "Australia/Perth",
+        "Australia/Sydney"
+      ],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Bahrain
     Country(
-      name: 'Bahrain',
-      nameTranslations: {'en': 'Bahrain'},
-      alpha2Code: 'BH',
-      alpha3Code: 'BHR',
-      numericCode: '048',
-      flagEmoji: '🇧🇭',
+      name: "Aruba",
+      nameTranslations: {
+        'en': "Aruba",
+      },
+      alpha2Code: "AW",
+      alpha3Code: "ABW",
+      numericCode: "533",
+      flagEmoji: "🇦🇼",
       flagImagePath: '',
-      capital: 'Manama',
-      largestCity: 'Riffa',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 1501635,
-      area: 0, // Not available in CSV
-      callingCodes: ['973'],
-      topLevelDomains: ['.bh'],
-      currencies: [Currency(code: 'BHD', name: 'BHD', symbol: '')],
+      capital: "Oranjestad",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 107566,
+      area: 180,
+      callingCodes: ["297"],
+      topLevelDomains: [".aw"],
+      currencies: [
+        Currency(
+          code: "AWG",
+          name: "Aruban florin",
+          symbol: "ƒ",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Arabic', nativeName: 'Arabic')
+          iso6391: "nl",
+          iso6392: "nld",
+          name: "Dutch",
+          nativeName: "Dutch",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "pap",
+          name: "Papiamento",
+          nativeName: "Papiamento",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["America/Aruba"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
     ),
-
-    // Bangladesh
     Country(
-      name: 'Bangladesh',
-      nameTranslations: {'en': 'Bangladesh'},
-      alpha2Code: 'BD',
-      alpha3Code: 'BGD',
-      numericCode: '050',
-      flagEmoji: '🇧🇩',
+      name: "Åland Islands",
+      nameTranslations: {
+        'en': "Åland Islands",
+      },
+      alpha2Code: "AX",
+      alpha3Code: "ALA",
+      numericCode: "248",
+      flagEmoji: "🇦🇽",
       flagImagePath: '',
-      capital: 'Dhaka',
-      largestCity: 'Dhaka',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 167310838,
-      area: 0, // Not available in CSV
-      callingCodes: ['880'],
-      topLevelDomains: ['.bd'],
-      currencies: [Currency(code: 'BDT', name: 'BDT', symbol: '')],
+      capital: "Mariehamn",
+      region: "Europe",
+      subregion: "Northern Europe",
+      population: 30654,
+      area: 1580,
+      callingCodes: ["358"],
+      topLevelDomains: [".ax"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Bengali',
-            nativeName: 'Bengali')
+          iso6391: "sv",
+          iso6392: "swe",
+          name: "Swedish",
+          nativeName: "Swedish",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Europe/Mariehamn"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
     ),
-
-    // Barbados
     Country(
-      name: 'Barbados',
-      nameTranslations: {'en': 'Barbados'},
-      alpha2Code: 'BB',
-      alpha3Code: 'BRB',
-      numericCode: '052',
-      flagEmoji: '🇧🇧',
+      name: "Azerbaijan",
+      nameTranslations: {
+        'en': "Azerbaijan",
+      },
+      alpha2Code: "AZ",
+      alpha3Code: "AZE",
+      numericCode: "031",
+      flagEmoji: "🇦🇿",
       flagImagePath: '',
-      capital: 'Bridgetown',
-      largestCity: 'Bridgetown',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 287025,
-      area: 0, // Not available in CSV
-      callingCodes: ['1'],
-      topLevelDomains: ['.bb'],
-      currencies: [Currency(code: 'BBD', name: 'BBD', symbol: '')],
+      capital: "Baku",
+      region: "Asia",
+      subregion: "Western Asia",
+      population: 10241722,
+      area: 86600,
+      callingCodes: ["994"],
+      topLevelDomains: [".az"],
+      currencies: [
+        Currency(
+          code: "AZN",
+          name: "Azerbaijani manat",
+          symbol: "₼",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
+          iso6391: "az",
+          iso6392: "aze",
+          name: "Azerbaijani",
+          nativeName: "Azerbaijani",
+        ),
+        Language(
+          iso6391: "ru",
+          iso6392: "rus",
+          name: "Russian",
+          nativeName: "Russian",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Asia/Baku"],
+      borders: ["ARM", "GEO", "IRN", "RUS", "TUR"],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Belarus
     Country(
-      name: 'Belarus',
-      nameTranslations: {'en': 'Belarus'},
-      alpha2Code: 'BY',
-      alpha3Code: 'BLR',
-      numericCode: '112',
-      flagEmoji: '🇧🇾',
+      name: "Bosnia and Herzegovina",
+      nameTranslations: {
+        'en': "Bosnia and Herzegovina",
+      },
+      alpha2Code: "BA",
+      alpha3Code: "BIH",
+      numericCode: "070",
+      flagEmoji: "🇧🇦",
       flagImagePath: '',
-      capital: 'Minsk',
-      largestCity: 'Minsk',
-      region: 'Europe',
-      subregion: 'Northern Europe',
-      population: 9466856,
-      area: 0, // Not available in CSV
-      callingCodes: ['375'],
-      topLevelDomains: ['.by'],
-      currencies: [Currency(code: 'BYN', name: 'BYN', symbol: '')],
+      capital: "Sarajevo",
+      region: "Europe",
+      subregion: "Southeast Europe",
+      population: 3422000,
+      area: 51209,
+      callingCodes: ["387"],
+      topLevelDomains: [".ba"],
+      currencies: [
+        Currency(
+          code: "BAM",
+          name: "Bosnia and Herzegovina convertible mark",
+          symbol: "KM",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Russian',
-            nativeName: 'Russian')
+          iso6391: "bs",
+          iso6392: "bos",
+          name: "Bosnian",
+          nativeName: "Bosnian",
+        ),
+        Language(
+          iso6391: "hr",
+          iso6392: "hrv",
+          name: "Croatian",
+          nativeName: "Croatian",
+        ),
+        Language(
+          iso6391: "sr",
+          iso6392: "srp",
+          name: "Serbian",
+          nativeName: "Serbian",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Europe/Sarajevo"],
+      borders: ["HRV", "MNE", "SRB"],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Belgium
     Country(
-      name: 'Belgium',
-      nameTranslations: {'en': 'Belgium'},
-      alpha2Code: 'BE',
-      alpha3Code: 'BEL',
-      numericCode: '056',
-      flagEmoji: '🇧🇪',
+      name: "Barbados",
+      nameTranslations: {
+        'en': "Barbados",
+      },
+      alpha2Code: "BB",
+      alpha3Code: "BRB",
+      numericCode: "052",
+      flagEmoji: "🇧🇧",
       flagImagePath: '',
-      capital: 'City of Brussels',
-      largestCity: 'Brussels',
-      region: 'Europe',
-      subregion: 'Northern Europe',
-      population: 11484055,
-      area: 0, // Not available in CSV
-      callingCodes: ['32'],
-      topLevelDomains: ['.be'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
+      capital: "Bridgetown",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 267800,
+      area: 430,
+      callingCodes: ["1"],
+      topLevelDomains: [".bb"],
+      currencies: [
+        Currency(
+          code: "BBD",
+          name: "Barbadian dollar",
+          symbol: "\$",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["America/Barbados"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Belize
     Country(
-      name: 'Belize',
-      nameTranslations: {'en': 'Belize'},
-      alpha2Code: 'BZ',
-      alpha3Code: 'BLZ',
-      numericCode: '084',
-      flagEmoji: '🇧🇿',
+      name: "Bangladesh",
+      nameTranslations: {
+        'en': "Bangladesh",
+      },
+      alpha2Code: "BD",
+      alpha3Code: "BGD",
+      numericCode: "050",
+      flagEmoji: "🇧🇩",
       flagImagePath: '',
-      capital: 'Belmopan',
-      largestCity: 'Belize City',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 390353,
-      area: 0, // Not available in CSV
-      callingCodes: ['501'],
-      topLevelDomains: ['.bz'],
-      currencies: [Currency(code: 'BZD', name: 'BZD', symbol: '')],
+      capital: "Dhaka",
+      region: "Asia",
+      subregion: "Southern Asia",
+      population: 169828911,
+      area: 147570,
+      callingCodes: ["880"],
+      topLevelDomains: [".bd"],
+      currencies: [
+        Currency(
+          code: "BDT",
+          name: "Bangladeshi taka",
+          symbol: "৳",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
+          iso6391: "bn",
+          iso6392: "ben",
+          name: "Bengali",
+          nativeName: "Bengali",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Asia/Dhaka"],
+      borders: ["IND", "MMR"],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Benin
     Country(
-      name: 'Benin',
-      nameTranslations: {'en': 'Benin'},
-      alpha2Code: 'BJ',
-      alpha3Code: 'BEN',
-      numericCode: '204',
-      flagEmoji: '🇧🇯',
+      name: "Belgium",
+      nameTranslations: {
+        'en': "Belgium",
+      },
+      alpha2Code: "BE",
+      alpha3Code: "BEL",
+      numericCode: "056",
+      flagEmoji: "🇧🇪",
       flagImagePath: '',
-      capital: 'Porto-Novo',
-      largestCity: 'Cotonou',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 11801151,
-      area: 0, // Not available in CSV
-      callingCodes: ['229'],
-      topLevelDomains: ['.bj'],
-      currencies: [Currency(code: 'XOF', name: 'XOF', symbol: '')],
+      capital: "Brussels",
+      region: "Europe",
+      subregion: "Western Europe",
+      population: 11825551,
+      area: 30528,
+      callingCodes: ["32"],
+      topLevelDomains: [".be"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
+          iso6391: "de",
+          iso6392: "deu",
+          name: "German",
+          nativeName: "German",
+        ),
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+        Language(
+          iso6391: "nl",
+          iso6392: "nld",
+          name: "Dutch",
+          nativeName: "Dutch",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Europe/Brussels"],
+      borders: ["DEU", "FRA", "LUX", "NLD"],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Bhutan
     Country(
-      name: 'Bhutan',
-      nameTranslations: {'en': 'Bhutan'},
-      alpha2Code: 'BT',
-      alpha3Code: 'BTN',
-      numericCode: '064',
-      flagEmoji: '🇧🇹',
+      name: "Burkina Faso",
+      nameTranslations: {
+        'en': "Burkina Faso",
+      },
+      alpha2Code: "BF",
+      alpha3Code: "BFA",
+      numericCode: "854",
+      flagEmoji: "🇧🇫",
       flagImagePath: '',
-      capital: 'Thimphu',
-      largestCity: 'Thimphu',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 727145,
-      area: 0, // Not available in CSV
-      callingCodes: ['975'],
-      topLevelDomains: ['.bt'],
-      currencies: [Currency(code: 'BTN', name: 'BTN', symbol: '')],
+      capital: "Ouagadougou",
+      region: "Africa",
+      subregion: "Western Africa",
+      population: 24070553,
+      area: 272967,
+      callingCodes: ["226"],
+      topLevelDomains: [".bf"],
+      currencies: [
+        Currency(
+          code: "XOF",
+          name: "West African CFA franc",
+          symbol: "Fr",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Dzongkha',
-            nativeName: 'Dzongkha')
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Africa/Ouagadougou"],
+      borders: ["BEN", "CIV", "GHA", "MLI", "NER", "TGO"],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Bolivia
     Country(
-      name: 'Bolivia',
-      nameTranslations: {'en': 'Bolivia'},
-      alpha2Code: 'BO',
-      alpha3Code: 'BOL',
-      numericCode: '068',
-      flagEmoji: '🇧🇴',
+      name: "Bulgaria",
+      nameTranslations: {
+        'en': "Bulgaria",
+      },
+      alpha2Code: "BG",
+      alpha3Code: "BGR",
+      numericCode: "100",
+      flagEmoji: "🇧🇬",
       flagImagePath: '',
-      capital: 'Sucre',
-      largestCity: 'Santa Cruz de la Sierra',
-      region: 'Americas',
-      subregion: 'Central America',
-      population: 11513100,
-      area: 0, // Not available in CSV
-      callingCodes: ['591'],
-      topLevelDomains: ['.bo'],
-      currencies: [Currency(code: 'BOB', name: 'BOB', symbol: '')],
+      capital: "Sofia",
+      region: "Europe",
+      subregion: "Southeast Europe",
+      population: 6437360,
+      area: 110879,
+      callingCodes: ["359"],
+      topLevelDomains: [".bg"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Spanish',
-            nativeName: 'Spanish')
+          iso6391: "bg",
+          iso6392: "bul",
+          name: "Bulgarian",
+          nativeName: "Bulgarian",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Europe/Sofia"],
+      borders: ["GRC", "MKD", "ROU", "SRB", "TUR"],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Bosnia and Herzegovina
     Country(
-      name: 'Bosnia and Herzegovina',
-      nameTranslations: {'en': 'Bosnia and Herzegovina'},
-      alpha2Code: 'BA',
-      alpha3Code: 'BIH',
-      numericCode: '070',
-      flagEmoji: '🇧🇦',
+      name: "Bahrain",
+      nameTranslations: {
+        'en': "Bahrain",
+      },
+      alpha2Code: "BH",
+      alpha3Code: "BHR",
+      numericCode: "048",
+      flagEmoji: "🇧🇭",
       flagImagePath: '',
-      capital: 'Sarajevo',
-      largestCity: 'Tuzla Canton',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 3301000,
-      area: 0, // Not available in CSV
-      callingCodes: ['387'],
-      topLevelDomains: ['.ba'],
-      currencies: [Currency(code: 'BAM', name: 'BAM', symbol: '')],
+      capital: "Manama",
+      region: "Asia",
+      subregion: "Western Asia",
+      population: 1594654,
+      area: 765,
+      callingCodes: ["973"],
+      topLevelDomains: [".bh"],
+      currencies: [
+        Currency(
+          code: "BHD",
+          name: "Bahraini dinar",
+          symbol: ".د.ب",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Bosnian',
-            nativeName: 'Bosnian')
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Asia/Bahrain"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Botswana
     Country(
-      name: 'Botswana',
-      nameTranslations: {'en': 'Botswana'},
-      alpha2Code: 'BW',
-      alpha3Code: 'BWA',
-      numericCode: '072',
-      flagEmoji: '🇧🇼',
+      name: "Burundi",
+      nameTranslations: {
+        'en': "Burundi",
+      },
+      alpha2Code: "BI",
+      alpha3Code: "BDI",
+      numericCode: "108",
+      flagEmoji: "🇧🇮",
       flagImagePath: '',
-      capital: 'Gaborone',
-      largestCity: 'Gaborone',
-      region: 'Africa',
-      subregion: 'Southern Africa',
-      population: 2346179,
-      area: 0, // Not available in CSV
-      callingCodes: ['267'],
-      topLevelDomains: ['.bw'],
-      currencies: [Currency(code: 'BWP', name: 'BWP', symbol: '')],
+      capital: "Gitega",
+      region: "Africa",
+      subregion: "Eastern Africa",
+      population: 12332788,
+      area: 27834,
+      callingCodes: ["257"],
+      topLevelDomains: [".bi"],
+      currencies: [
+        Currency(
+          code: "BIF",
+          name: "Burundian franc",
+          symbol: "Fr",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+        Language(
+          iso6391: "rn",
+          iso6392: "run",
+          name: "Kirundi",
+          nativeName: "Kirundi",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Africa/Bujumbura"],
+      borders: ["COD", "RWA", "TZA"],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Brazil
     Country(
-      name: 'Brazil',
-      nameTranslations: {'en': 'Brazil'},
-      alpha2Code: 'BR',
-      alpha3Code: 'BRA',
-      numericCode: '076',
-      flagEmoji: '🇧🇷',
+      name: "Benin",
+      nameTranslations: {
+        'en': "Benin",
+      },
+      alpha2Code: "BJ",
+      alpha3Code: "BEN",
+      numericCode: "204",
+      flagEmoji: "🇧🇯",
       flagImagePath: '',
-      capital: 'Bras',
-      largestCity: 'Minsk',
-      region: 'Americas',
-      subregion: 'Central America',
-      population: 212559417,
-      area: 0, // Not available in CSV
-      callingCodes: ['55'],
-      topLevelDomains: ['.br'],
-      currencies: [Currency(code: 'BRL', name: 'BRL', symbol: '')],
+      capital: "Porto-Novo",
+      region: "Africa",
+      subregion: "Western Africa",
+      population: 13224860,
+      area: 112622,
+      callingCodes: ["229"],
+      topLevelDomains: [".bj"],
+      currencies: [
+        Currency(
+          code: "XOF",
+          name: "West African CFA franc",
+          symbol: "Fr",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Portuguese',
-            nativeName: 'Portuguese')
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Africa/Porto-Novo"],
+      borders: ["BFA", "NER", "NGA", "TGO"],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Brunei
     Country(
-      name: 'Brunei',
-      nameTranslations: {'en': 'Brunei'},
-      alpha2Code: 'BN',
-      alpha3Code: 'BRN',
-      numericCode: '096',
-      flagEmoji: '🇧🇳',
+      name: "Saint Barthélemy",
+      nameTranslations: {
+        'en': "Saint Barthélemy",
+      },
+      alpha2Code: "BL",
+      alpha3Code: "BLM",
+      numericCode: "652",
+      flagEmoji: "🇧🇱",
       flagImagePath: '',
-      capital: 'Bandar Seri Begawan',
-      largestCity: 'BND',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 433285,
-      area: 0, // Not available in CSV
-      callingCodes: ['673'],
-      topLevelDomains: ['.bn'],
-      currencies: [Currency(code: 'BND', name: 'BND', symbol: '')],
+      capital: "Gustavia",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 10562,
+      area: 21,
+      callingCodes: ["590"],
+      topLevelDomains: [".bl"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Malay', nativeName: 'Malay')
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["America/St_Barthelemy"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
     ),
-
-    // Bulgaria
     Country(
-      name: 'Bulgaria',
-      nameTranslations: {'en': 'Bulgaria'},
-      alpha2Code: 'BG',
-      alpha3Code: 'BGR',
-      numericCode: '100',
-      flagEmoji: '🇧🇬',
+      name: "Bermuda",
+      nameTranslations: {
+        'en': "Bermuda",
+      },
+      alpha2Code: "BM",
+      alpha3Code: "BMU",
+      numericCode: "060",
+      flagEmoji: "🇧🇲",
       flagImagePath: '',
-      capital: 'Sofia',
-      largestCity: 'Sofia',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 6975761,
-      area: 0, // Not available in CSV
-      callingCodes: ['359'],
-      topLevelDomains: ['.bg'],
-      currencies: [Currency(code: 'BGN', name: 'BGN', symbol: '')],
+      capital: "Hamilton",
+      region: "Americas",
+      subregion: "North America",
+      population: 64055,
+      area: 54,
+      callingCodes: ["1"],
+      topLevelDomains: [".bm"],
+      currencies: [
+        Currency(
+          code: "BMD",
+          name: "Bermudian dollar",
+          symbol: "\$",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Bulgarian',
-            nativeName: 'Bulgarian')
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Atlantic/Bermuda"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
     ),
-
-    // Burkina Faso
     Country(
-      name: 'Burkina Faso',
-      nameTranslations: {'en': 'Burkina Faso'},
-      alpha2Code: 'BF',
-      alpha3Code: 'BFA',
-      numericCode: '854',
-      flagEmoji: '🇧🇫',
+      name: "Brunei",
+      nameTranslations: {
+        'en': "Brunei",
+      },
+      alpha2Code: "BN",
+      alpha3Code: "BRN",
+      numericCode: "096",
+      flagEmoji: "🇧🇳",
       flagImagePath: '',
-      capital: 'Ouagadougou',
-      largestCity: 'Ouagadougou',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 20321378,
-      area: 0, // Not available in CSV
-      callingCodes: ['226'],
-      topLevelDomains: ['.bf'],
-      currencies: [Currency(code: 'XOF', name: 'XOF', symbol: '')],
+      capital: "Bandar Seri Begawan",
+      region: "Asia",
+      subregion: "South-Eastern Asia",
+      population: 455500,
+      area: 5765,
+      callingCodes: ["673"],
+      topLevelDomains: [".bn"],
+      currencies: [
+        Currency(
+          code: "BND",
+          name: "Brunei dollar",
+          symbol: "\$",
+        ),
+        Currency(
+          code: "SGD",
+          name: "Singapore dollar",
+          symbol: "\$",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
+          iso6391: "ms",
+          iso6392: "msa",
+          name: "Malay",
+          nativeName: "Malay",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Asia/Brunei"],
+      borders: ["MYS"],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Burundi
     Country(
-      name: 'Burundi',
-      nameTranslations: {'en': 'Burundi'},
-      alpha2Code: 'BI',
-      alpha3Code: 'BDI',
-      numericCode: '108',
-      flagEmoji: '🇧🇮',
+      name: "Bolivia",
+      nameTranslations: {
+        'en': "Bolivia",
+      },
+      alpha2Code: "BO",
+      alpha3Code: "BOL",
+      numericCode: "068",
+      flagEmoji: "🇧🇴",
       flagImagePath: '',
-      capital: 'Bujumbura',
-      largestCity: 'Bujumbura',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 11530580,
-      area: 0, // Not available in CSV
-      callingCodes: ['257'],
-      topLevelDomains: ['.bi'],
-      currencies: [Currency(code: 'BIF', name: 'BIF', symbol: '')],
+      capital: "Sucre",
+      region: "Americas",
+      subregion: "South America",
+      population: 11312620,
+      area: 1098581,
+      callingCodes: ["591"],
+      topLevelDomains: [".bo"],
+      currencies: [
+        Currency(
+          code: "BOB",
+          name: "Bolivian boliviano",
+          symbol: "Bs.",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Kirundi',
-            nativeName: 'Kirundi')
+          iso6391: "ay",
+          iso6392: "aym",
+          name: "Aymara",
+          nativeName: "Aymara",
+        ),
+        Language(
+          iso6391: "gn",
+          iso6392: "grn",
+          name: "Guaraní",
+          nativeName: "Guaraní",
+        ),
+        Language(
+          iso6391: "qu",
+          iso6392: "que",
+          name: "Quechua",
+          nativeName: "Quechua",
+        ),
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["America/La_Paz"],
+      borders: ["ARG", "BRA", "CHL", "PER", "PRY"],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Ivory Coast
     Country(
-      name: 'Ivory Coast',
-      nameTranslations: {'en': 'Ivory Coast'},
-      alpha2Code: 'CI',
-      alpha3Code: 'CIV',
-      numericCode: '384',
-      flagEmoji: '🇨🇮',
+      name: "Caribbean Netherlands",
+      nameTranslations: {
+        'en': "Caribbean Netherlands",
+      },
+      alpha2Code: "BQ",
+      alpha3Code: "BES",
+      numericCode: "535",
+      flagEmoji: "🇧🇶",
       flagImagePath: '',
-      capital: 'Yamoussoukro',
-      largestCity: 'Abidjan',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 25716544,
-      area: 0, // Not available in CSV
-      callingCodes: ['225'],
-      topLevelDomains: ['.ci'],
-      currencies: [Currency(code: 'XOF', name: 'XOF', symbol: '')],
+      capital: "Kralendijk, Oranjestad, The Bottom",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 26552,
+      area: 328,
+      callingCodes: ["599"],
+      topLevelDomains: [".bq", ".nl"],
+      currencies: [
+        Currency(
+          code: "USD",
+          name: "United States dollar",
+          symbol: "\$",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "nl",
+          iso6392: "nld",
+          name: "Dutch",
+          nativeName: "Dutch",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "pap",
+          name: "Papiamento",
+          nativeName: "Papiamento",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["America/Kralendijk"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
     ),
-
-    // Cape Verde
     Country(
-      name: 'Cape Verde',
-      nameTranslations: {'en': 'Cape Verde'},
-      alpha2Code: 'CV',
-      alpha3Code: 'CPV',
-      numericCode: '132',
-      flagEmoji: '🇨🇻',
+      name: "Brazil",
+      nameTranslations: {
+        'en': "Brazil",
+      },
+      alpha2Code: "BR",
+      alpha3Code: "BRA",
+      numericCode: "076",
+      flagEmoji: "🇧🇷",
       flagImagePath: '',
-      capital: 'Praia',
-      largestCity: 'Praia',
-      region: 'Americas',
-      subregion: 'Northern America',
-      population: 483628,
-      area: 0, // Not available in CSV
-      callingCodes: ['238'],
-      topLevelDomains: ['.cv'],
-      currencies: [Currency(code: 'CVE', name: 'CVE', symbol: '')],
+      capital: "Brasília",
+      region: "Americas",
+      subregion: "South America",
+      population: 213421037,
+      area: 8515767,
+      callingCodes: ["55"],
+      topLevelDomains: [".br"],
+      currencies: [
+        Currency(
+          code: "BRL",
+          name: "Brazilian real",
+          symbol: "R\$",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Portuguese',
-            nativeName: 'Portuguese')
+          iso6391: "pt",
+          iso6392: "por",
+          name: "Portuguese",
+          nativeName: "Portuguese",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: [
+        "America/Araguaina",
+        "America/Bahia",
+        "America/Belem",
+        "America/Boa_Vista",
+        "America/Campo_Grande",
+        "America/Cuiaba",
+        "America/Eirunepe",
+        "America/Fortaleza",
+        "America/Maceio",
+        "America/Manaus",
+        "America/Noronha",
+        "America/Porto_Velho",
+        "America/Recife",
+        "America/Rio_Branco",
+        "America/Santarem",
+        "America/Sao_Paulo"
+      ],
+      borders: [
+        "ARG",
+        "BOL",
+        "COL",
+        "GUF",
+        "GUY",
+        "PER",
+        "PRY",
+        "SUR",
+        "URY",
+        "VEN"
+      ],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Cambodia
     Country(
-      name: 'Cambodia',
-      nameTranslations: {'en': 'Cambodia'},
-      alpha2Code: 'KH',
-      alpha3Code: 'KHM',
-      numericCode: '116',
-      flagEmoji: '🇰🇭',
+      name: "Bahamas",
+      nameTranslations: {
+        'en': "Bahamas",
+      },
+      alpha2Code: "BS",
+      alpha3Code: "BHS",
+      numericCode: "044",
+      flagEmoji: "🇧🇸",
       flagImagePath: '',
-      capital: 'Phnom Penh',
-      largestCity: 'Phnom Penh',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 16486542,
-      area: 0, // Not available in CSV
-      callingCodes: ['855'],
-      topLevelDomains: ['.kh'],
-      currencies: [Currency(code: 'KHR', name: 'KHR', symbol: '')],
+      capital: "Nassau",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 398165,
+      area: 13943,
+      callingCodes: ["1"],
+      topLevelDomains: [".bs"],
+      currencies: [
+        Currency(
+          code: "BSD",
+          name: "Bahamian dollar",
+          symbol: "\$",
+        ),
+        Currency(
+          code: "USD",
+          name: "United States dollar",
+          symbol: "\$",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Khmer language',
-            nativeName: 'Khmer language')
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["America/Nassau"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Cameroon
     Country(
-      name: 'Cameroon',
-      nameTranslations: {'en': 'Cameroon'},
-      alpha2Code: 'CM',
-      alpha3Code: 'CMR',
-      numericCode: '120',
-      flagEmoji: '🇨🇲',
+      name: "Bhutan",
+      nameTranslations: {
+        'en': "Bhutan",
+      },
+      alpha2Code: "BT",
+      alpha3Code: "BTN",
+      numericCode: "064",
+      flagEmoji: "🇧🇹",
       flagImagePath: '',
-      capital: 'Yaound',
-      largestCity: 'Douala',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 25876380,
-      area: 0, // Not available in CSV
-      callingCodes: ['237'],
-      topLevelDomains: ['.cm'],
-      currencies: [Currency(code: 'XAF', name: 'XAF', symbol: '')],
+      capital: "Thimphu",
+      region: "Asia",
+      subregion: "Southern Asia",
+      population: 784043,
+      area: 38394,
+      callingCodes: ["975"],
+      topLevelDomains: [".bt"],
+      currencies: [
+        Currency(
+          code: "BTN",
+          name: "Bhutanese ngultrum",
+          symbol: "Nu.",
+        ),
+        Currency(
+          code: "INR",
+          name: "Indian rupee",
+          symbol: "₹",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
+          iso6391: "dz",
+          iso6392: "dzo",
+          name: "Dzongkha",
+          nativeName: "Dzongkha",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Asia/Thimphu"],
+      borders: ["CHN", "IND"],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Canada
     Country(
-      name: 'Canada',
-      nameTranslations: {'en': 'Canada'},
-      alpha2Code: 'CA',
-      alpha3Code: 'CAN',
-      numericCode: '124',
-      flagEmoji: '🇨🇦',
+      name: "Bouvet Island",
+      nameTranslations: {
+        'en': "Bouvet Island",
+      },
+      alpha2Code: "BV",
+      alpha3Code: "BVT",
+      numericCode: "074",
+      flagEmoji: "🇧🇻",
       flagImagePath: '',
-      capital: 'Ottawa',
-      largestCity: 'Toronto',
-      region: 'Asia',
-      subregion: 'Eastern Asia',
-      population: 36991981,
-      area: 0, // Not available in CSV
-      callingCodes: ['1'],
-      topLevelDomains: ['.ca'],
-      currencies: [Currency(code: 'CAD', name: 'CAD', symbol: '')],
+      capital: "",
+      region: "Antarctic",
+      subregion: "",
+      population: 0,
+      area: 49,
+      callingCodes: ["0055"],
+      topLevelDomains: [".bv"],
+      currencies: [],
       languages: [
         Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
+          iso6391: "no",
+          iso6392: "nor",
+          name: "Norwegian",
+          nativeName: "Norwegian",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Europe/Oslo"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
     ),
-
-    // Central African Republic
     Country(
-      name: 'Central African Republic',
-      nameTranslations: {'en': 'Central African Republic'},
-      alpha2Code: 'CF',
-      alpha3Code: 'CAF',
-      numericCode: '140',
-      flagEmoji: '🇨🇫',
+      name: "Botswana",
+      nameTranslations: {
+        'en': "Botswana",
+      },
+      alpha2Code: "BW",
+      alpha3Code: "BWA",
+      numericCode: "072",
+      flagEmoji: "🇧🇼",
       flagImagePath: '',
-      capital: 'Bangui',
-      largestCity: 'Bangui',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 4745185,
-      area: 0, // Not available in CSV
-      callingCodes: ['236'],
-      topLevelDomains: ['.cf'],
-      currencies: [Currency(code: 'XAF', name: 'XAF', symbol: '')],
+      capital: "Gaborone",
+      region: "Africa",
+      subregion: "Southern Africa",
+      population: 2359609,
+      area: 582000,
+      callingCodes: ["267"],
+      topLevelDomains: [".bw"],
+      currencies: [
+        Currency(
+          code: "BWP",
+          name: "Botswana pula",
+          symbol: "P",
+        ),
+      ],
       languages: [
         Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "tn",
+          iso6392: "tsn",
+          name: "Tswana",
+          nativeName: "Tswana",
+        ),
       ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      timezones: ["Africa/Gaborone"],
+      borders: ["NAM", "ZAF", "ZMB", "ZWE"],
+      isIndependent: true,
+      isUnMember: true,
     ),
-
-    // Chad
     Country(
-      name: 'Chad',
-      nameTranslations: {'en': 'Chad'},
-      alpha2Code: 'TD',
-      alpha3Code: 'TCD',
-      numericCode: '148',
-      flagEmoji: '🇹🇩',
+      name: "Belarus",
+      nameTranslations: {
+        'en': "Belarus",
+      },
+      alpha2Code: "BY",
+      alpha3Code: "BLR",
+      numericCode: "112",
+      flagEmoji: "🇧🇾",
+      flagImagePath: '',
+      capital: "Minsk",
+      region: "Europe",
+      subregion: "Eastern Europe",
+      population: 9109280,
+      area: 207600,
+      callingCodes: ["375"],
+      topLevelDomains: [".by"],
+      currencies: [
+        Currency(
+          code: "BYN",
+          name: "Belarusian ruble",
+          symbol: "Br",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "be",
+          iso6392: "bel",
+          name: "Belarusian",
+          nativeName: "Belarusian",
+        ),
+        Language(
+          iso6391: "ru",
+          iso6392: "rus",
+          name: "Russian",
+          nativeName: "Russian",
+        ),
+      ],
+      timezones: ["Europe/Minsk"],
+      borders: ["LTU", "LVA", "POL", "RUS", "UKR"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Belize",
+      nameTranslations: {
+        'en': "Belize",
+      },
+      alpha2Code: "BZ",
+      alpha3Code: "BLZ",
+      numericCode: "084",
+      flagEmoji: "🇧🇿",
+      flagImagePath: '',
+      capital: "Belmopan",
+      region: "Americas",
+      subregion: "Central America",
+      population: 417634,
+      area: 22966,
+      callingCodes: ["501"],
+      topLevelDomains: [".bz"],
+      currencies: [
+        Currency(
+          code: "BZD",
+          name: "Belize dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "",
+          iso6392: "bjz",
+          name: "Belizean Creole",
+          nativeName: "Belizean Creole",
+        ),
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: ["America/Belize"],
+      borders: ["GTM", "MEX"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Canada",
+      nameTranslations: {
+        'en': "Canada",
+      },
+      alpha2Code: "CA",
+      alpha3Code: "CAN",
+      numericCode: "124",
+      flagEmoji: "🇨🇦",
+      flagImagePath: '',
+      capital: "Ottawa",
+      region: "Americas",
+      subregion: "North America",
+      population: 41548787,
+      area: 9984670,
+      callingCodes: ["1"],
+      topLevelDomains: [".ca"],
+      currencies: [
+        Currency(
+          code: "CAD",
+          name: "Canadian dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: [
+        "America/Atikokan",
+        "America/Blanc-Sablon",
+        "America/Cambridge_Bay",
+        "America/Creston",
+        "America/Dawson",
+        "America/Dawson_Creek",
+        "America/Edmonton",
+        "America/Fort_Nelson",
+        "America/Glace_Bay",
+        "America/Goose_Bay",
+        "America/Halifax",
+        "America/Inuvik",
+        "America/Iqaluit",
+        "America/Moncton",
+        "America/Nipigon",
+        "America/Pangnirtung",
+        "America/Rainy_River",
+        "America/Rankin_Inlet",
+        "America/Regina",
+        "America/Resolute",
+        "America/St_Johns",
+        "America/Swift_Current",
+        "America/Thunder_Bay",
+        "America/Toronto",
+        "America/Vancouver",
+        "America/Whitehorse",
+        "America/Winnipeg",
+        "America/Yellowknife"
+      ],
+      borders: ["USA"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Cocos (Keeling) Islands",
+      nameTranslations: {
+        'en': "Cocos (Keeling) Islands",
+      },
+      alpha2Code: "CC",
+      alpha3Code: "CCK",
+      numericCode: "166",
+      flagEmoji: "🇨🇨",
+      flagImagePath: '',
+      capital: "West Island",
+      region: "Oceania",
+      subregion: "Australia and New Zealand",
+      population: 593,
+      area: 14,
+      callingCodes: ["61"],
+      topLevelDomains: [".cc"],
+      currencies: [
+        Currency(
+          code: "AUD",
+          name: "Australian dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Indian/Cocos"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "DR Congo",
+      nameTranslations: {
+        'en': "DR Congo",
+      },
+      alpha2Code: "CD",
+      alpha3Code: "COD",
+      numericCode: "180",
+      flagEmoji: "🇨🇩",
+      flagImagePath: '',
+      capital: "Kinshasa",
+      region: "Africa",
+      subregion: "Middle Africa",
+      population: 112832000,
+      area: 2344858,
+      callingCodes: ["243"],
+      topLevelDomains: [".cd"],
+      currencies: [
+        Currency(
+          code: "CDF",
+          name: "Congolese franc",
+          symbol: "FC",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+        Language(
+          iso6391: "kg",
+          iso6392: "kon",
+          name: "Kikongo",
+          nativeName: "Kikongo",
+        ),
+        Language(
+          iso6391: "ln",
+          iso6392: "lin",
+          name: "Lingala",
+          nativeName: "Lingala",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "lua",
+          name: "Tshiluba",
+          nativeName: "Tshiluba",
+        ),
+        Language(
+          iso6391: "sw",
+          iso6392: "swa",
+          name: "Swahili",
+          nativeName: "Swahili",
+        ),
+      ],
+      timezones: ["Africa/Kinshasa", "Africa/Lubumbashi"],
+      borders: ["AGO", "BDI", "CAF", "COG", "RWA", "SSD", "TZA", "UGA", "ZMB"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Central African Republic",
+      nameTranslations: {
+        'en': "Central African Republic",
+      },
+      alpha2Code: "CF",
+      alpha3Code: "CAF",
+      numericCode: "140",
+      flagEmoji: "🇨🇫",
+      flagImagePath: '',
+      capital: "Bangui",
+      region: "Africa",
+      subregion: "Middle Africa",
+      population: 6470307,
+      area: 622984,
+      callingCodes: ["236"],
+      topLevelDomains: [".cf"],
+      currencies: [
+        Currency(
+          code: "XAF",
+          name: "Central African CFA franc",
+          symbol: "Fr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+        Language(
+          iso6391: "sg",
+          iso6392: "sag",
+          name: "Sango",
+          nativeName: "Sango",
+        ),
+      ],
+      timezones: ["Africa/Bangui"],
+      borders: ["CMR", "COD", "COG", "SDN", "SSD", "TCD"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Congo",
+      nameTranslations: {
+        'en': "Congo",
+      },
+      alpha2Code: "CG",
+      alpha3Code: "COG",
+      numericCode: "178",
+      flagEmoji: "🇨🇬",
+      flagImagePath: '',
+      capital: "Brazzaville",
+      region: "Africa",
+      subregion: "Middle Africa",
+      population: 6142180,
+      area: 342000,
+      callingCodes: ["242"],
+      topLevelDomains: [".cg"],
+      currencies: [
+        Currency(
+          code: "XAF",
+          name: "Central African CFA franc",
+          symbol: "Fr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+        Language(
+          iso6391: "kg",
+          iso6392: "kon",
+          name: "Kikongo",
+          nativeName: "Kikongo",
+        ),
+        Language(
+          iso6391: "ln",
+          iso6392: "lin",
+          name: "Lingala",
+          nativeName: "Lingala",
+        ),
+      ],
+      timezones: ["Africa/Brazzaville"],
+      borders: ["AGO", "CAF", "CMR", "COD", "GAB"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Switzerland",
+      nameTranslations: {
+        'en': "Switzerland",
+      },
+      alpha2Code: "CH",
+      alpha3Code: "CHE",
+      numericCode: "756",
+      flagEmoji: "🇨🇭",
+      flagImagePath: '',
+      capital: "Bern",
+      region: "Europe",
+      subregion: "Western Europe",
+      population: 9082848,
+      area: 41284,
+      callingCodes: ["41"],
+      topLevelDomains: [".ch"],
+      currencies: [
+        Currency(
+          code: "CHF",
+          name: "Swiss franc",
+          symbol: "Fr.",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "gsw",
+          name: "Swiss German",
+          nativeName: "Swiss German",
+        ),
+        Language(
+          iso6391: "it",
+          iso6392: "ita",
+          name: "Italian",
+          nativeName: "Italian",
+        ),
+        Language(
+          iso6391: "rm",
+          iso6392: "roh",
+          name: "Romansh",
+          nativeName: "Romansh",
+        ),
+      ],
+      timezones: ["Europe/Zurich"],
+      borders: ["AUT", "DEU", "FRA", "ITA", "LIE"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Ivory Coast",
+      nameTranslations: {
+        'en': "Ivory Coast",
+      },
+      alpha2Code: "CI",
+      alpha3Code: "CIV",
+      numericCode: "384",
+      flagEmoji: "🇨🇮",
+      flagImagePath: '',
+      capital: "Yamoussoukro",
+      region: "Africa",
+      subregion: "Western Africa",
+      population: 29389150,
+      area: 322463,
+      callingCodes: ["225"],
+      topLevelDomains: [".ci"],
+      currencies: [
+        Currency(
+          code: "XOF",
+          name: "West African CFA franc",
+          symbol: "Fr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["Africa/Abidjan"],
+      borders: ["BFA", "GHA", "GIN", "LBR", "MLI"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Cook Islands",
+      nameTranslations: {
+        'en': "Cook Islands",
+      },
+      alpha2Code: "CK",
+      alpha3Code: "COK",
+      numericCode: "184",
+      flagEmoji: "🇨🇰",
+      flagImagePath: '',
+      capital: "Avarua",
+      region: "Oceania",
+      subregion: "Polynesia",
+      population: 15040,
+      area: 236,
+      callingCodes: ["682"],
+      topLevelDomains: [".ck"],
+      currencies: [
+        Currency(
+          code: "CKD",
+          name: "Cook Islands dollar",
+          symbol: "\$",
+        ),
+        Currency(
+          code: "NZD",
+          name: "New Zealand dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "rar",
+          name: "Cook Islands Māori",
+          nativeName: "Cook Islands Māori",
+        ),
+      ],
+      timezones: ["Pacific/Rarotonga"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Chile",
+      nameTranslations: {
+        'en': "Chile",
+      },
+      alpha2Code: "CL",
+      alpha3Code: "CHL",
+      numericCode: "152",
+      flagEmoji: "🇨🇱",
+      flagImagePath: '',
+      capital: "Santiago",
+      region: "Americas",
+      subregion: "South America",
+      population: 20206953,
+      area: 756102,
+      callingCodes: ["56"],
+      topLevelDomains: [".cl"],
+      currencies: [
+        Currency(
+          code: "CLP",
+          name: "Chilean peso",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: [
+        "America/Punta_Arenas",
+        "America/Santiago",
+        "Pacific/Easter",
+        "America/Coyhaique"
+      ],
+      borders: ["ARG", "BOL", "PER"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Cameroon",
+      nameTranslations: {
+        'en': "Cameroon",
+      },
+      alpha2Code: "CM",
+      alpha3Code: "CMR",
+      numericCode: "120",
+      flagEmoji: "🇨🇲",
+      flagImagePath: '',
+      capital: "Yaoundé",
+      region: "Africa",
+      subregion: "Middle Africa",
+      population: 29442327,
+      area: 475442,
+      callingCodes: ["237"],
+      topLevelDomains: [".cm"],
+      currencies: [
+        Currency(
+          code: "XAF",
+          name: "Central African CFA franc",
+          symbol: "Fr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["Africa/Douala"],
+      borders: ["CAF", "COG", "GAB", "GNQ", "NGA", "TCD"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "China",
+      nameTranslations: {
+        'en': "China",
+      },
+      alpha2Code: "CN",
+      alpha3Code: "CHN",
+      numericCode: "156",
+      flagEmoji: "🇨🇳",
+      flagImagePath: '',
+      capital: "Beijing",
+      region: "Asia",
+      subregion: "Eastern Asia",
+      population: 1408280000,
+      area: 9706961,
+      callingCodes: ["86"],
+      topLevelDomains: [".cn", ".中国", ".中國", ".公司", ".网络"],
+      currencies: [
+        Currency(
+          code: "CNY",
+          name: "Chinese yuan",
+          symbol: "¥",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "zh",
+          iso6392: "zho",
+          name: "Chinese",
+          nativeName: "Chinese",
+        ),
+      ],
+      timezones: ["Asia/Shanghai", "Asia/Urumqi"],
+      borders: [
+        "AFG",
+        "BTN",
+        "HKG",
+        "IND",
+        "KAZ",
+        "KGZ",
+        "LAO",
+        "MAC",
+        "MMR",
+        "MNG",
+        "NPL",
+        "PAK",
+        "PRK",
+        "RUS",
+        "TJK",
+        "VNM"
+      ],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Colombia",
+      nameTranslations: {
+        'en': "Colombia",
+      },
+      alpha2Code: "CO",
+      alpha3Code: "COL",
+      numericCode: "170",
+      flagEmoji: "🇨🇴",
+      flagImagePath: '',
+      capital: "Bogotá",
+      region: "Americas",
+      subregion: "South America",
+      population: 53057212,
+      area: 1141748,
+      callingCodes: ["57"],
+      topLevelDomains: [".co"],
+      currencies: [
+        Currency(
+          code: "COP",
+          name: "Colombian peso",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: ["America/Bogota"],
+      borders: ["BRA", "ECU", "PAN", "PER", "VEN"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Costa Rica",
+      nameTranslations: {
+        'en': "Costa Rica",
+      },
+      alpha2Code: "CR",
+      alpha3Code: "CRI",
+      numericCode: "188",
+      flagEmoji: "🇨🇷",
+      flagImagePath: '',
+      capital: "San José",
+      region: "Americas",
+      subregion: "Central America",
+      population: 5309625,
+      area: 51100,
+      callingCodes: ["506"],
+      topLevelDomains: [".cr"],
+      currencies: [
+        Currency(
+          code: "CRC",
+          name: "Costa Rican colón",
+          symbol: "₡",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: ["America/Costa_Rica"],
+      borders: ["NIC", "PAN"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Cuba",
+      nameTranslations: {
+        'en': "Cuba",
+      },
+      alpha2Code: "CU",
+      alpha3Code: "CUB",
+      numericCode: "192",
+      flagEmoji: "🇨🇺",
+      flagImagePath: '',
+      capital: "Havana",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 9748007,
+      area: 109884,
+      callingCodes: ["53"],
+      topLevelDomains: [".cu"],
+      currencies: [
+        Currency(
+          code: "CUC",
+          name: "Cuban convertible peso",
+          symbol: "\$",
+        ),
+        Currency(
+          code: "CUP",
+          name: "Cuban peso",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: ["America/Havana"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Cape Verde",
+      nameTranslations: {
+        'en': "Cape Verde",
+      },
+      alpha2Code: "CV",
+      alpha3Code: "CPV",
+      numericCode: "132",
+      flagEmoji: "🇨🇻",
+      flagImagePath: '',
+      capital: "Praia",
+      region: "Africa",
+      subregion: "Western Africa",
+      population: 491233,
+      area: 4033,
+      callingCodes: ["238"],
+      topLevelDomains: [".cv"],
+      currencies: [
+        Currency(
+          code: "CVE",
+          name: "Cape Verdean escudo",
+          symbol: "Esc",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "pt",
+          iso6392: "por",
+          name: "Portuguese",
+          nativeName: "Portuguese",
+        ),
+      ],
+      timezones: ["Atlantic/Cape_Verde"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Curaçao",
+      nameTranslations: {
+        'en': "Curaçao",
+      },
+      alpha2Code: "CW",
+      alpha3Code: "CUW",
+      numericCode: "531",
+      flagEmoji: "🇨🇼",
+      flagImagePath: '',
+      capital: "Willemstad",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 156115,
+      area: 444,
+      callingCodes: ["599"],
+      topLevelDomains: [".cw"],
+      currencies: [
+        Currency(
+          code: "ANG",
+          name: "Netherlands Antillean guilder",
+          symbol: "ƒ",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "nl",
+          iso6392: "nld",
+          name: "Dutch",
+          nativeName: "Dutch",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "pap",
+          name: "Papiamento",
+          nativeName: "Papiamento",
+        ),
+      ],
+      timezones: ["America/Curacao"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Christmas Island",
+      nameTranslations: {
+        'en': "Christmas Island",
+      },
+      alpha2Code: "CX",
+      alpha3Code: "CXR",
+      numericCode: "162",
+      flagEmoji: "🇨🇽",
+      flagImagePath: '',
+      capital: "Flying Fish Cove",
+      region: "Oceania",
+      subregion: "Australia and New Zealand",
+      population: 1692,
+      area: 135,
+      callingCodes: ["61"],
+      topLevelDomains: [".cx"],
+      currencies: [
+        Currency(
+          code: "AUD",
+          name: "Australian dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Indian/Christmas"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Cyprus",
+      nameTranslations: {
+        'en': "Cyprus",
+      },
+      alpha2Code: "CY",
+      alpha3Code: "CYP",
+      numericCode: "196",
+      flagEmoji: "🇨🇾",
+      flagImagePath: '',
+      capital: "Nicosia",
+      region: "Europe",
+      subregion: "Southern Europe",
+      population: 966400,
+      area: 9251,
+      callingCodes: ["357"],
+      topLevelDomains: [".cy"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "el",
+          iso6392: "ell",
+          name: "Greek",
+          nativeName: "Greek",
+        ),
+        Language(
+          iso6391: "tr",
+          iso6392: "tur",
+          name: "Turkish",
+          nativeName: "Turkish",
+        ),
+      ],
+      timezones: ["Asia/Famagusta", "Asia/Nicosia"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Czechia",
+      nameTranslations: {
+        'en': "Czechia",
+      },
+      alpha2Code: "CZ",
+      alpha3Code: "CZE",
+      numericCode: "203",
+      flagEmoji: "🇨🇿",
+      flagImagePath: '',
+      capital: "Prague",
+      region: "Europe",
+      subregion: "Central Europe",
+      population: 10876875,
+      area: 78865,
+      callingCodes: ["420"],
+      topLevelDomains: [".cz"],
+      currencies: [
+        Currency(
+          code: "CZK",
+          name: "Czech koruna",
+          symbol: "Kč",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "cs",
+          iso6392: "ces",
+          name: "Czech",
+          nativeName: "Czech",
+        ),
+        Language(
+          iso6391: "sk",
+          iso6392: "slk",
+          name: "Slovak",
+          nativeName: "Slovak",
+        ),
+      ],
+      timezones: ["Europe/Prague"],
+      borders: ["AUT", "DEU", "POL", "SVK"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Germany",
+      nameTranslations: {
+        'en': "Germany",
+      },
+      alpha2Code: "DE",
+      alpha3Code: "DEU",
+      numericCode: "276",
+      flagEmoji: "🇩🇪",
+      flagImagePath: '',
+      capital: "Berlin",
+      region: "Europe",
+      subregion: "Western Europe",
+      population: 83517030,
+      area: 357114,
+      callingCodes: ["49"],
+      topLevelDomains: [".de"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "de",
+          iso6392: "deu",
+          name: "German",
+          nativeName: "German",
+        ),
+      ],
+      timezones: ["Europe/Berlin", "Europe/Busingen"],
+      borders: ["AUT", "BEL", "CHE", "CZE", "DNK", "FRA", "LUX", "NLD", "POL"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Djibouti",
+      nameTranslations: {
+        'en': "Djibouti",
+      },
+      alpha2Code: "DJ",
+      alpha3Code: "DJI",
+      numericCode: "262",
+      flagEmoji: "🇩🇯",
+      flagImagePath: '',
+      capital: "Djibouti",
+      region: "Africa",
+      subregion: "Eastern Africa",
+      population: 1066809,
+      area: 23200,
+      callingCodes: ["253"],
+      topLevelDomains: [".dj"],
+      currencies: [
+        Currency(
+          code: "DJF",
+          name: "Djiboutian franc",
+          symbol: "Fr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["Africa/Djibouti"],
+      borders: ["ERI", "ETH", "SOM"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Denmark",
+      nameTranslations: {
+        'en': "Denmark",
+      },
+      alpha2Code: "DK",
+      alpha3Code: "DNK",
+      numericCode: "208",
+      flagEmoji: "🇩🇰",
+      flagImagePath: '',
+      capital: "Copenhagen",
+      region: "Europe",
+      subregion: "Northern Europe",
+      population: 6004342,
+      area: 43094,
+      callingCodes: ["45"],
+      topLevelDomains: [".dk"],
+      currencies: [
+        Currency(
+          code: "DKK",
+          name: "Danish krone",
+          symbol: "kr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "da",
+          iso6392: "dan",
+          name: "Danish",
+          nativeName: "Danish",
+        ),
+      ],
+      timezones: ["Europe/Copenhagen"],
+      borders: ["DEU"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Dominica",
+      nameTranslations: {
+        'en': "Dominica",
+      },
+      alpha2Code: "DM",
+      alpha3Code: "DMA",
+      numericCode: "212",
+      flagEmoji: "🇩🇲",
+      flagImagePath: '',
+      capital: "Roseau",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 67408,
+      area: 751,
+      callingCodes: ["1"],
+      topLevelDomains: [".dm"],
+      currencies: [
+        Currency(
+          code: "XCD",
+          name: "Eastern Caribbean dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["America/Dominica"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Dominican Republic",
+      nameTranslations: {
+        'en': "Dominican Republic",
+      },
+      alpha2Code: "DO",
+      alpha3Code: "DOM",
+      numericCode: "214",
+      flagEmoji: "🇩🇴",
+      flagImagePath: '',
+      capital: "Santo Domingo",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 10771504,
+      area: 48671,
+      callingCodes: ["1"],
+      topLevelDomains: [".do"],
+      currencies: [
+        Currency(
+          code: "DOP",
+          name: "Dominican peso",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: ["America/Santo_Domingo"],
+      borders: ["HTI"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Algeria",
+      nameTranslations: {
+        'en': "Algeria",
+      },
+      alpha2Code: "DZ",
+      alpha3Code: "DZA",
+      numericCode: "012",
+      flagEmoji: "🇩🇿",
+      flagImagePath: '',
+      capital: "Algiers",
+      region: "Africa",
+      subregion: "Northern Africa",
+      population: 47400000,
+      area: 2381741,
+      callingCodes: ["213"],
+      topLevelDomains: [".dz", "الجزائر."],
+      currencies: [
+        Currency(
+          code: "DZD",
+          name: "Algerian dinar",
+          symbol: "د.ج",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+      ],
+      timezones: ["Africa/Algiers"],
+      borders: ["ESH", "LBY", "MAR", "MLI", "MRT", "NER", "TUN"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Ecuador",
+      nameTranslations: {
+        'en': "Ecuador",
+      },
+      alpha2Code: "EC",
+      alpha3Code: "ECU",
+      numericCode: "218",
+      flagEmoji: "🇪🇨",
+      flagImagePath: '',
+      capital: "Quito",
+      region: "Americas",
+      subregion: "South America",
+      population: 18103660,
+      area: 276841,
+      callingCodes: ["593"],
+      topLevelDomains: [".ec"],
+      currencies: [
+        Currency(
+          code: "USD",
+          name: "United States dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: ["America/Guayaquil", "Pacific/Galapagos"],
+      borders: ["COL", "PER"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Estonia",
+      nameTranslations: {
+        'en': "Estonia",
+      },
+      alpha2Code: "EE",
+      alpha3Code: "EST",
+      numericCode: "233",
+      flagEmoji: "🇪🇪",
+      flagImagePath: '',
+      capital: "Tallinn",
+      region: "Europe",
+      subregion: "Northern Europe",
+      population: 1369995,
+      area: 45227,
+      callingCodes: ["372"],
+      topLevelDomains: [".ee"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "et",
+          iso6392: "est",
+          name: "Estonian",
+          nativeName: "Estonian",
+        ),
+      ],
+      timezones: ["Europe/Tallinn"],
+      borders: ["LVA", "RUS"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Egypt",
+      nameTranslations: {
+        'en': "Egypt",
+      },
+      alpha2Code: "EG",
+      alpha3Code: "EGY",
+      numericCode: "818",
+      flagEmoji: "🇪🇬",
+      flagImagePath: '',
+      capital: "Cairo",
+      region: "Africa",
+      subregion: "Northern Africa",
+      population: 107271260,
+      area: 1002450,
+      callingCodes: ["20"],
+      topLevelDomains: [".eg", ".مصر"],
+      currencies: [
+        Currency(
+          code: "EGP",
+          name: "Egyptian pound",
+          symbol: "£",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+      ],
+      timezones: ["Africa/Cairo"],
+      borders: ["ISR", "LBY", "PSE", "SDN"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Western Sahara",
+      nameTranslations: {
+        'en': "Western Sahara",
+      },
+      alpha2Code: "EH",
+      alpha3Code: "ESH",
+      numericCode: "732",
+      flagEmoji: "🇪🇭",
+      flagImagePath: '',
+      capital: "El Aaiún",
+      region: "Africa",
+      subregion: "Northern Africa",
+      population: 600904,
+      area: 266000,
+      callingCodes: ["212"],
+      topLevelDomains: [".eh"],
+      currencies: [
+        Currency(
+          code: "DZD",
+          name: "Algerian dinar",
+          symbol: "دج",
+        ),
+        Currency(
+          code: "MAD",
+          name: "Moroccan dirham",
+          symbol: "DH",
+        ),
+        Currency(
+          code: "MRU",
+          name: "Mauritanian ouguiya",
+          symbol: "UM",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "",
+          iso6392: "ber",
+          name: "Berber",
+          nativeName: "Berber",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "mey",
+          name: "Hassaniya",
+          nativeName: "Hassaniya",
+        ),
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: ["Africa/El_Aaiun"],
+      borders: ["DZA", "MAR", "MRT"],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Eritrea",
+      nameTranslations: {
+        'en': "Eritrea",
+      },
+      alpha2Code: "ER",
+      alpha3Code: "ERI",
+      numericCode: "232",
+      flagEmoji: "🇪🇷",
+      flagImagePath: '',
+      capital: "Asmara",
+      region: "Africa",
+      subregion: "Eastern Africa",
+      population: 3607000,
+      area: 117600,
+      callingCodes: ["291"],
+      topLevelDomains: [".er"],
+      currencies: [
+        Currency(
+          code: "ERN",
+          name: "Eritrean nakfa",
+          symbol: "Nfk",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "ti",
+          iso6392: "tir",
+          name: "Tigrinya",
+          nativeName: "Tigrinya",
+        ),
+      ],
+      timezones: ["Africa/Asmara"],
+      borders: ["DJI", "ETH", "SDN"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Spain",
+      nameTranslations: {
+        'en': "Spain",
+      },
+      alpha2Code: "ES",
+      alpha3Code: "ESP",
+      numericCode: "724",
+      flagEmoji: "🇪🇸",
+      flagImagePath: '',
+      capital: "Madrid",
+      region: "Europe",
+      subregion: "Southern Europe",
+      population: 49315949,
+      area: 505992,
+      callingCodes: ["34"],
+      topLevelDomains: [".es"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: ["Africa/Ceuta", "Atlantic/Canary", "Europe/Madrid"],
+      borders: ["AND", "FRA", "GIB", "MAR", "PRT"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Ethiopia",
+      nameTranslations: {
+        'en': "Ethiopia",
+      },
+      alpha2Code: "ET",
+      alpha3Code: "ETH",
+      numericCode: "231",
+      flagEmoji: "🇪🇹",
+      flagImagePath: '',
+      capital: "Addis Ababa",
+      region: "Africa",
+      subregion: "Eastern Africa",
+      population: 111652998,
+      area: 1104300,
+      callingCodes: ["251"],
+      topLevelDomains: [".et"],
+      currencies: [
+        Currency(
+          code: "ETB",
+          name: "Ethiopian birr",
+          symbol: "Br",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "am",
+          iso6392: "amh",
+          name: "Amharic",
+          nativeName: "Amharic",
+        ),
+      ],
+      timezones: ["Africa/Addis_Ababa"],
+      borders: ["DJI", "ERI", "KEN", "SDN", "SOM", "SSD"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Finland",
+      nameTranslations: {
+        'en': "Finland",
+      },
+      alpha2Code: "FI",
+      alpha3Code: "FIN",
+      numericCode: "246",
+      flagEmoji: "🇫🇮",
+      flagImagePath: '',
+      capital: "Helsinki",
+      region: "Europe",
+      subregion: "Northern Europe",
+      population: 5645651,
+      area: 338424,
+      callingCodes: ["358"],
+      topLevelDomains: [".fi"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fi",
+          iso6392: "fin",
+          name: "Finnish",
+          nativeName: "Finnish",
+        ),
+        Language(
+          iso6391: "sv",
+          iso6392: "swe",
+          name: "Swedish",
+          nativeName: "Swedish",
+        ),
+      ],
+      timezones: ["Europe/Helsinki"],
+      borders: ["NOR", "RUS", "SWE"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Fiji",
+      nameTranslations: {
+        'en': "Fiji",
+      },
+      alpha2Code: "FJ",
+      alpha3Code: "FJI",
+      numericCode: "242",
+      flagEmoji: "🇫🇯",
+      flagImagePath: '',
+      capital: "Suva",
+      region: "Oceania",
+      subregion: "Melanesia",
+      population: 900869,
+      area: 18272,
+      callingCodes: ["679"],
+      topLevelDomains: [".fj"],
+      currencies: [
+        Currency(
+          code: "FJD",
+          name: "Fijian dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "fj",
+          iso6392: "fij",
+          name: "Fijian",
+          nativeName: "Fijian",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "hif",
+          name: "Fiji Hindi",
+          nativeName: "Fiji Hindi",
+        ),
+      ],
+      timezones: ["Pacific/Fiji"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Falkland Islands",
+      nameTranslations: {
+        'en': "Falkland Islands",
+      },
+      alpha2Code: "FK",
+      alpha3Code: "FLK",
+      numericCode: "238",
+      flagEmoji: "🇫🇰",
+      flagImagePath: '',
+      capital: "Stanley",
+      region: "Americas",
+      subregion: "South America",
+      population: 3662,
+      area: 12173,
+      callingCodes: ["500"],
+      topLevelDomains: [".fk"],
+      currencies: [
+        Currency(
+          code: "FKP",
+          name: "Falkland Islands pound",
+          symbol: "£",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Atlantic/Stanley"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Micronesia",
+      nameTranslations: {
+        'en': "Micronesia",
+      },
+      alpha2Code: "FM",
+      alpha3Code: "FSM",
+      numericCode: "583",
+      flagEmoji: "🇫🇲",
+      flagImagePath: '',
+      capital: "Palikir",
+      region: "Oceania",
+      subregion: "Micronesia",
+      population: 105564,
+      area: 702,
+      callingCodes: ["691"],
+      topLevelDomains: [".fm"],
+      currencies: [],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Pacific/Chuuk", "Pacific/Kosrae", "Pacific/Pohnpei"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Faroe Islands",
+      nameTranslations: {
+        'en': "Faroe Islands",
+      },
+      alpha2Code: "FO",
+      alpha3Code: "FRO",
+      numericCode: "234",
+      flagEmoji: "🇫🇴",
+      flagImagePath: '',
+      capital: "Tórshavn",
+      region: "Europe",
+      subregion: "Northern Europe",
+      population: 55146,
+      area: 1393,
+      callingCodes: ["298"],
+      topLevelDomains: [".fo"],
+      currencies: [
+        Currency(
+          code: "DKK",
+          name: "Danish krone",
+          symbol: "kr",
+        ),
+        Currency(
+          code: "FOK",
+          name: "Faroese króna",
+          symbol: "kr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "da",
+          iso6392: "dan",
+          name: "Danish",
+          nativeName: "Danish",
+        ),
+        Language(
+          iso6391: "fo",
+          iso6392: "fao",
+          name: "Faroese",
+          nativeName: "Faroese",
+        ),
+      ],
+      timezones: ["Atlantic/Faroe"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "France",
+      nameTranslations: {
+        'en': "France",
+      },
+      alpha2Code: "FR",
+      alpha3Code: "FRA",
+      numericCode: "250",
+      flagEmoji: "🇫🇷",
+      flagImagePath: '',
+      capital: "Paris",
+      region: "Europe",
+      subregion: "Western Europe",
+      population: 68688000,
+      area: 551695,
+      callingCodes: ["33"],
+      topLevelDomains: [".fr"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["Europe/Paris"],
+      borders: ["AND", "BEL", "CHE", "DEU", "ESP", "ITA", "LUX", "MCO"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Gabon",
+      nameTranslations: {
+        'en': "Gabon",
+      },
+      alpha2Code: "GA",
+      alpha3Code: "GAB",
+      numericCode: "266",
+      flagEmoji: "🇬🇦",
+      flagImagePath: '',
+      capital: "Libreville",
+      region: "Africa",
+      subregion: "Middle Africa",
+      population: 2469296,
+      area: 267668,
+      callingCodes: ["241"],
+      topLevelDomains: [".ga"],
+      currencies: [
+        Currency(
+          code: "XAF",
+          name: "Central African CFA franc",
+          symbol: "Fr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["Africa/Libreville"],
+      borders: ["CMR", "COG", "GNQ"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "United Kingdom",
+      nameTranslations: {
+        'en': "United Kingdom",
+      },
+      alpha2Code: "GB",
+      alpha3Code: "GBR",
+      numericCode: "826",
+      flagEmoji: "🇬🇧",
+      flagImagePath: '',
+      capital: "London",
+      region: "Europe",
+      subregion: "Northern Europe",
+      population: 68265209,
+      area: 242900,
+      callingCodes: ["44"],
+      topLevelDomains: [".uk"],
+      currencies: [
+        Currency(
+          code: "GBP",
+          name: "British pound",
+          symbol: "£",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Europe/London"],
+      borders: ["IRL"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Grenada",
+      nameTranslations: {
+        'en': "Grenada",
+      },
+      alpha2Code: "GD",
+      alpha3Code: "GRD",
+      numericCode: "308",
+      flagEmoji: "🇬🇩",
+      flagImagePath: '',
+      capital: "St. George's",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 109021,
+      area: 344,
+      callingCodes: ["1"],
+      topLevelDomains: [".gd"],
+      currencies: [
+        Currency(
+          code: "XCD",
+          name: "Eastern Caribbean dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["America/Grenada"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Georgia",
+      nameTranslations: {
+        'en': "Georgia",
+      },
+      alpha2Code: "GE",
+      alpha3Code: "GEO",
+      numericCode: "268",
+      flagEmoji: "🇬🇪",
+      flagImagePath: '',
+      capital: "Tbilisi",
+      region: "Asia",
+      subregion: "Western Asia",
+      population: 3704500,
+      area: 69700,
+      callingCodes: ["995"],
+      topLevelDomains: [".ge"],
+      currencies: [
+        Currency(
+          code: "GEL",
+          name: "lari",
+          symbol: "₾",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ka",
+          iso6392: "kat",
+          name: "Georgian",
+          nativeName: "Georgian",
+        ),
+      ],
+      timezones: ["Asia/Tbilisi"],
+      borders: ["ARM", "AZE", "RUS", "TUR"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "French Guiana",
+      nameTranslations: {
+        'en': "French Guiana",
+      },
+      alpha2Code: "GF",
+      alpha3Code: "GUF",
+      numericCode: "254",
+      flagEmoji: "🇬🇫",
+      flagImagePath: '',
+      capital: "Cayenne",
+      region: "Americas",
+      subregion: "South America",
+      population: 292354,
+      area: 83534,
+      callingCodes: ["594"],
+      topLevelDomains: [".gf"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["America/Cayenne"],
+      borders: ["BRA", "SUR"],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Guernsey",
+      nameTranslations: {
+        'en': "Guernsey",
+      },
+      alpha2Code: "GG",
+      alpha3Code: "GGY",
+      numericCode: "831",
+      flagEmoji: "🇬🇬",
+      flagImagePath: '',
+      capital: "St. Peter Port",
+      region: "Europe",
+      subregion: "Northern Europe",
+      population: 64781,
+      area: 78,
+      callingCodes: ["44"],
+      topLevelDomains: [".gg"],
+      currencies: [
+        Currency(
+          code: "GBP",
+          name: "British pound",
+          symbol: "£",
+        ),
+        Currency(
+          code: "GGP",
+          name: "Guernsey pound",
+          symbol: "£",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "nfr",
+          name: "Guernésiais",
+          nativeName: "Guernésiais",
+        ),
+      ],
+      timezones: ["Europe/Guernsey"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Ghana",
+      nameTranslations: {
+        'en': "Ghana",
+      },
+      alpha2Code: "GH",
+      alpha3Code: "GHA",
+      numericCode: "288",
+      flagEmoji: "🇬🇭",
+      flagImagePath: '',
+      capital: "Accra",
+      region: "Africa",
+      subregion: "Western Africa",
+      population: 33742380,
+      area: 238533,
+      callingCodes: ["233"],
+      topLevelDomains: [".gh"],
+      currencies: [
+        Currency(
+          code: "GHS",
+          name: "Ghanaian cedi",
+          symbol: "₵",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Africa/Accra"],
+      borders: ["BFA", "CIV", "TGO"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Gibraltar",
+      nameTranslations: {
+        'en': "Gibraltar",
+      },
+      alpha2Code: "GI",
+      alpha3Code: "GIB",
+      numericCode: "292",
+      flagEmoji: "🇬🇮",
+      flagImagePath: '',
+      capital: "Gibraltar",
+      region: "Europe",
+      subregion: "Southern Europe",
+      population: 38000,
+      area: 6,
+      callingCodes: ["350"],
+      topLevelDomains: [".gi"],
+      currencies: [
+        Currency(
+          code: "GIP",
+          name: "Gibraltar pound",
+          symbol: "£",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Europe/Gibraltar"],
+      borders: ["ESP"],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Greenland",
+      nameTranslations: {
+        'en': "Greenland",
+      },
+      alpha2Code: "GL",
+      alpha3Code: "GRL",
+      numericCode: "304",
+      flagEmoji: "🇬🇱",
+      flagImagePath: '',
+      capital: "Nuuk",
+      region: "Americas",
+      subregion: "North America",
+      population: 56542,
+      area: 2166086,
+      callingCodes: ["299"],
+      topLevelDomains: [".gl"],
+      currencies: [
+        Currency(
+          code: "DKK",
+          name: "krone",
+          symbol: "kr.",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "kl",
+          iso6392: "kal",
+          name: "Greenlandic",
+          nativeName: "Greenlandic",
+        ),
+      ],
+      timezones: [
+        "America/Danmarkshavn",
+        "America/Nuuk",
+        "America/Scoresbysund",
+        "America/Thule"
+      ],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Gambia",
+      nameTranslations: {
+        'en': "Gambia",
+      },
+      alpha2Code: "GM",
+      alpha3Code: "GMB",
+      numericCode: "270",
+      flagEmoji: "🇬🇲",
+      flagImagePath: '',
+      capital: "Banjul",
+      region: "Africa",
+      subregion: "Western Africa",
+      population: 2422712,
+      area: 10689,
+      callingCodes: ["220"],
+      topLevelDomains: [".gm"],
+      currencies: [
+        Currency(
+          code: "GMD",
+          name: "dalasi",
+          symbol: "D",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Africa/Banjul"],
+      borders: ["SEN"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Guinea",
+      nameTranslations: {
+        'en': "Guinea",
+      },
+      alpha2Code: "GN",
+      alpha3Code: "GIN",
+      numericCode: "324",
+      flagEmoji: "🇬🇳",
+      flagImagePath: '',
+      capital: "Conakry",
+      region: "Africa",
+      subregion: "Western Africa",
+      population: 14363931,
+      area: 245857,
+      callingCodes: ["224"],
+      topLevelDomains: [".gn"],
+      currencies: [
+        Currency(
+          code: "GNF",
+          name: "Guinean franc",
+          symbol: "Fr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["Africa/Conakry"],
+      borders: ["CIV", "GNB", "LBR", "MLI", "SEN", "SLE"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Guadeloupe",
+      nameTranslations: {
+        'en': "Guadeloupe",
+      },
+      alpha2Code: "GP",
+      alpha3Code: "GLP",
+      numericCode: "312",
+      flagEmoji: "🇬🇵",
+      flagImagePath: '',
+      capital: "Basse-Terre",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 373791,
+      area: 1628,
+      callingCodes: ["590"],
+      topLevelDomains: [".gp"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["America/Guadeloupe"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Equatorial Guinea",
+      nameTranslations: {
+        'en': "Equatorial Guinea",
+      },
+      alpha2Code: "GQ",
+      alpha3Code: "GNQ",
+      numericCode: "226",
+      flagEmoji: "🇬🇶",
+      flagImagePath: '',
+      capital: "Malabo",
+      region: "Africa",
+      subregion: "Middle Africa",
+      population: 1668768,
+      area: 28051,
+      callingCodes: ["240"],
+      topLevelDomains: [".gq"],
+      currencies: [
+        Currency(
+          code: "XAF",
+          name: "Central African CFA franc",
+          symbol: "Fr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+        Language(
+          iso6391: "pt",
+          iso6392: "por",
+          name: "Portuguese",
+          nativeName: "Portuguese",
+        ),
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: ["Africa/Malabo"],
+      borders: ["CMR", "GAB"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Greece",
+      nameTranslations: {
+        'en': "Greece",
+      },
+      alpha2Code: "GR",
+      alpha3Code: "GRC",
+      numericCode: "300",
+      flagEmoji: "🇬🇷",
+      flagImagePath: '',
+      capital: "Athens",
+      region: "Europe",
+      subregion: "Southern Europe",
+      population: 10400720,
+      area: 131990,
+      callingCodes: ["30"],
+      topLevelDomains: [".gr"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "el",
+          iso6392: "ell",
+          name: "Greek",
+          nativeName: "Greek",
+        ),
+      ],
+      timezones: ["Europe/Athens"],
+      borders: ["ALB", "BGR", "MKD", "TUR"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "South Georgia",
+      nameTranslations: {
+        'en': "South Georgia",
+      },
+      alpha2Code: "GS",
+      alpha3Code: "SGS",
+      numericCode: "239",
+      flagEmoji: "🇬🇸",
+      flagImagePath: '',
+      capital: "King Edward Point",
+      region: "Antarctic",
+      subregion: "",
+      population: 0,
+      area: 3903,
+      callingCodes: ["500"],
+      topLevelDomains: [".gs"],
+      currencies: [
+        Currency(
+          code: "SHP",
+          name: "Saint Helena pound",
+          symbol: "£",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Atlantic/South_Georgia"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Guatemala",
+      nameTranslations: {
+        'en': "Guatemala",
+      },
+      alpha2Code: "GT",
+      alpha3Code: "GTM",
+      numericCode: "320",
+      flagEmoji: "🇬🇹",
+      flagImagePath: '',
+      capital: "Guatemala City",
+      region: "Americas",
+      subregion: "Central America",
+      population: 18079810,
+      area: 108889,
+      callingCodes: ["502"],
+      topLevelDomains: [".gt"],
+      currencies: [
+        Currency(
+          code: "GTQ",
+          name: "Guatemalan quetzal",
+          symbol: "Q",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: ["America/Guatemala"],
+      borders: ["BLZ", "HND", "MEX", "SLV"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Guam",
+      nameTranslations: {
+        'en': "Guam",
+      },
+      alpha2Code: "GU",
+      alpha3Code: "GUM",
+      numericCode: "316",
+      flagEmoji: "🇬🇺",
+      flagImagePath: '',
+      capital: "Hagåtña",
+      region: "Oceania",
+      subregion: "Micronesia",
+      population: 153836,
+      area: 549,
+      callingCodes: ["1"],
+      topLevelDomains: [".gu"],
+      currencies: [
+        Currency(
+          code: "USD",
+          name: "United States dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ch",
+          iso6392: "cha",
+          name: "Chamorro",
+          nativeName: "Chamorro",
+        ),
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: ["Pacific/Guam"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Guinea-Bissau",
+      nameTranslations: {
+        'en': "Guinea-Bissau",
+      },
+      alpha2Code: "GW",
+      alpha3Code: "GNB",
+      numericCode: "624",
+      flagEmoji: "🇬🇼",
+      flagImagePath: '',
+      capital: "Bissau",
+      region: "Africa",
+      subregion: "Western Africa",
+      population: 1781308,
+      area: 36125,
+      callingCodes: ["245"],
+      topLevelDomains: [".gw"],
+      currencies: [
+        Currency(
+          code: "XOF",
+          name: "West African CFA franc",
+          symbol: "Fr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "pt",
+          iso6392: "por",
+          name: "Portuguese",
+          nativeName: "Portuguese",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "pov",
+          name: "Upper Guinea Creole",
+          nativeName: "Upper Guinea Creole",
+        ),
+      ],
+      timezones: ["Africa/Bissau"],
+      borders: ["GIN", "SEN"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Guyana",
+      nameTranslations: {
+        'en': "Guyana",
+      },
+      alpha2Code: "GY",
+      alpha3Code: "GUY",
+      numericCode: "328",
+      flagEmoji: "🇬🇾",
+      flagImagePath: '',
+      capital: "Georgetown",
+      region: "Americas",
+      subregion: "South America",
+      population: 772975,
+      area: 214969,
+      callingCodes: ["592"],
+      topLevelDomains: [".gy"],
+      currencies: [
+        Currency(
+          code: "GYD",
+          name: "Guyanese dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["America/Guyana"],
+      borders: ["BRA", "SUR", "VEN"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Hong Kong",
+      nameTranslations: {
+        'en': "Hong Kong",
+      },
+      alpha2Code: "HK",
+      alpha3Code: "HKG",
+      numericCode: "344",
+      flagEmoji: "🇭🇰",
+      flagImagePath: '',
+      capital: "City of Victoria",
+      region: "Asia",
+      subregion: "Eastern Asia",
+      population: 7527500,
+      area: 1104,
+      callingCodes: ["852"],
+      topLevelDomains: [".hk", ".香港"],
+      currencies: [
+        Currency(
+          code: "HKD",
+          name: "Hong Kong dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "zh",
+          iso6392: "zho",
+          name: "Chinese",
+          nativeName: "Chinese",
+        ),
+      ],
+      timezones: ["Asia/Hong_Kong"],
+      borders: ["CHN"],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Heard Island and McDonald Islands",
+      nameTranslations: {
+        'en': "Heard Island and McDonald Islands",
+      },
+      alpha2Code: "HM",
+      alpha3Code: "HMD",
+      numericCode: "334",
+      flagEmoji: "🇭🇲",
+      flagImagePath: '',
+      capital: "",
+      region: "Antarctic",
+      subregion: "",
+      population: 0,
+      area: 412,
+      callingCodes: ["672"],
+      topLevelDomains: [".hm", ".aq"],
+      currencies: [],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Indian/Kerguelen"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Honduras",
+      nameTranslations: {
+        'en': "Honduras",
+      },
+      alpha2Code: "HN",
+      alpha3Code: "HND",
+      numericCode: "340",
+      flagEmoji: "🇭🇳",
+      flagImagePath: '',
+      capital: "Tegucigalpa",
+      region: "Americas",
+      subregion: "Central America",
+      population: 9892632,
+      area: 112492,
+      callingCodes: ["504"],
+      topLevelDomains: [".hn"],
+      currencies: [
+        Currency(
+          code: "HNL",
+          name: "Honduran lempira",
+          symbol: "L",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: ["America/Tegucigalpa"],
+      borders: ["GTM", "NIC", "SLV"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Croatia",
+      nameTranslations: {
+        'en': "Croatia",
+      },
+      alpha2Code: "HR",
+      alpha3Code: "HRV",
+      numericCode: "191",
+      flagEmoji: "🇭🇷",
+      flagImagePath: '',
+      capital: "Zagreb",
+      region: "Europe",
+      subregion: "Southeast Europe",
+      population: 3866233,
+      area: 56594,
+      callingCodes: ["385"],
+      topLevelDomains: [".hr"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "hr",
+          iso6392: "hrv",
+          name: "Croatian",
+          nativeName: "Croatian",
+        ),
+      ],
+      timezones: ["Europe/Zagreb"],
+      borders: ["BIH", "HUN", "MNE", "SRB", "SVN"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Haiti",
+      nameTranslations: {
+        'en': "Haiti",
+      },
+      alpha2Code: "HT",
+      alpha3Code: "HTI",
+      numericCode: "332",
+      flagEmoji: "🇭🇹",
+      flagImagePath: '',
+      capital: "Port-au-Prince",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 11867032,
+      area: 27750,
+      callingCodes: ["509"],
+      topLevelDomains: [".ht"],
+      currencies: [
+        Currency(
+          code: "HTG",
+          name: "Haitian gourde",
+          symbol: "G",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+        Language(
+          iso6391: "ht",
+          iso6392: "hat",
+          name: "Haitian Creole",
+          nativeName: "Haitian Creole",
+        ),
+      ],
+      timezones: ["America/Port-au-Prince"],
+      borders: ["DOM"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Hungary",
+      nameTranslations: {
+        'en': "Hungary",
+      },
+      alpha2Code: "HU",
+      alpha3Code: "HUN",
+      numericCode: "348",
+      flagEmoji: "🇭🇺",
+      flagImagePath: '',
+      capital: "Budapest",
+      region: "Europe",
+      subregion: "Central Europe",
+      population: 9539502,
+      area: 93028,
+      callingCodes: ["36"],
+      topLevelDomains: [".hu"],
+      currencies: [
+        Currency(
+          code: "HUF",
+          name: "Hungarian forint",
+          symbol: "Ft",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "hu",
+          iso6392: "hun",
+          name: "Hungarian",
+          nativeName: "Hungarian",
+        ),
+      ],
+      timezones: ["Europe/Budapest"],
+      borders: ["AUT", "HRV", "ROU", "SRB", "SVK", "SVN", "UKR"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Indonesia",
+      nameTranslations: {
+        'en': "Indonesia",
+      },
+      alpha2Code: "ID",
+      alpha3Code: "IDN",
+      numericCode: "360",
+      flagEmoji: "🇮🇩",
+      flagImagePath: '',
+      capital: "Jakarta",
+      region: "Asia",
+      subregion: "South-Eastern Asia",
+      population: 284438782,
+      area: 1904569,
+      callingCodes: ["62"],
+      topLevelDomains: [".id"],
+      currencies: [
+        Currency(
+          code: "IDR",
+          name: "Indonesian rupiah",
+          symbol: "Rp",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "id",
+          iso6392: "ind",
+          name: "Indonesian",
+          nativeName: "Indonesian",
+        ),
+      ],
+      timezones: [
+        "Asia/Jakarta",
+        "Asia/Jayapura",
+        "Asia/Makassar",
+        "Asia/Pontianak"
+      ],
+      borders: ["MYS", "PNG", "TLS"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Ireland",
+      nameTranslations: {
+        'en': "Ireland",
+      },
+      alpha2Code: "IE",
+      alpha3Code: "IRL",
+      numericCode: "372",
+      flagEmoji: "🇮🇪",
+      flagImagePath: '',
+      capital: "Dublin",
+      region: "Europe",
+      subregion: "Northern Europe",
+      population: 5458600,
+      area: 70273,
+      callingCodes: ["353"],
+      topLevelDomains: [".ie"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "ga",
+          iso6392: "gle",
+          name: "Irish",
+          nativeName: "Irish",
+        ),
+      ],
+      timezones: ["Europe/Dublin"],
+      borders: ["GBR"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Israel",
+      nameTranslations: {
+        'en': "Israel",
+      },
+      alpha2Code: "IL",
+      alpha3Code: "ISR",
+      numericCode: "376",
+      flagEmoji: "🇮🇱",
+      flagImagePath: '',
+      capital: "Jerusalem",
+      region: "Asia",
+      subregion: "Western Asia",
+      population: 10119400,
+      area: 20770,
+      callingCodes: ["972"],
+      topLevelDomains: [".il"],
+      currencies: [
+        Currency(
+          code: "ILS",
+          name: "Israeli new shekel",
+          symbol: "₪",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+        Language(
+          iso6391: "he",
+          iso6392: "heb",
+          name: "Hebrew",
+          nativeName: "Hebrew",
+        ),
+      ],
+      timezones: ["Asia/Jerusalem"],
+      borders: ["EGY", "JOR", "LBN", "PSE", "SYR"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Isle of Man",
+      nameTranslations: {
+        'en': "Isle of Man",
+      },
+      alpha2Code: "IM",
+      alpha3Code: "IMN",
+      numericCode: "833",
+      flagEmoji: "🇮🇲",
+      flagImagePath: '',
+      capital: "Douglas",
+      region: "Europe",
+      subregion: "Northern Europe",
+      population: 84530,
+      area: 572,
+      callingCodes: ["44"],
+      topLevelDomains: [".im"],
+      currencies: [
+        Currency(
+          code: "GBP",
+          name: "British pound",
+          symbol: "£",
+        ),
+        Currency(
+          code: "IMP",
+          name: "Manx pound",
+          symbol: "£",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "gv",
+          iso6392: "glv",
+          name: "Manx",
+          nativeName: "Manx",
+        ),
+      ],
+      timezones: ["Europe/Isle_of_Man"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "India",
+      nameTranslations: {
+        'en': "India",
+      },
+      alpha2Code: "IN",
+      alpha3Code: "IND",
+      numericCode: "356",
+      flagEmoji: "🇮🇳",
+      flagImagePath: '',
+      capital: "New Delhi",
+      region: "Asia",
+      subregion: "Southern Asia",
+      population: 1417492000,
+      area: 3287590,
+      callingCodes: ["91"],
+      topLevelDomains: [".in"],
+      currencies: [
+        Currency(
+          code: "INR",
+          name: "Indian rupee",
+          symbol: "₹",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "hi",
+          iso6392: "hin",
+          name: "Hindi",
+          nativeName: "Hindi",
+        ),
+        Language(
+          iso6391: "ta",
+          iso6392: "tam",
+          name: "Tamil",
+          nativeName: "Tamil",
+        ),
+      ],
+      timezones: ["Asia/Kolkata"],
+      borders: ["BGD", "BTN", "CHN", "MMR", "NPL", "PAK"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "British Indian Ocean Territory",
+      nameTranslations: {
+        'en': "British Indian Ocean Territory",
+      },
+      alpha2Code: "IO",
+      alpha3Code: "IOT",
+      numericCode: "086",
+      flagEmoji: "🇮🇴",
+      flagImagePath: '',
+      capital: "Diego Garcia",
+      region: "Africa",
+      subregion: "Eastern Africa",
+      population: 0,
+      area: 60,
+      callingCodes: ["246"],
+      topLevelDomains: [".io"],
+      currencies: [
+        Currency(
+          code: "USD",
+          name: "United States dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Indian/Chagos"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Iraq",
+      nameTranslations: {
+        'en': "Iraq",
+      },
+      alpha2Code: "IQ",
+      alpha3Code: "IRQ",
+      numericCode: "368",
+      flagEmoji: "🇮🇶",
+      flagImagePath: '',
+      capital: "Baghdad",
+      region: "Asia",
+      subregion: "Western Asia",
+      population: 46118793,
+      area: 438317,
+      callingCodes: ["964"],
+      topLevelDomains: [".iq"],
+      currencies: [
+        Currency(
+          code: "IQD",
+          name: "Iraqi dinar",
+          symbol: "ع.د",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "arc",
+          name: "Aramaic",
+          nativeName: "Aramaic",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "ckb",
+          name: "Sorani",
+          nativeName: "Sorani",
+        ),
+      ],
+      timezones: ["Asia/Baghdad"],
+      borders: ["IRN", "JOR", "KWT", "SAU", "SYR", "TUR"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Iran",
+      nameTranslations: {
+        'en': "Iran",
+      },
+      alpha2Code: "IR",
+      alpha3Code: "IRN",
+      numericCode: "364",
+      flagEmoji: "🇮🇷",
+      flagImagePath: '',
+      capital: "Tehran",
+      region: "Asia",
+      subregion: "Southern Asia",
+      population: 85961000,
+      area: 1648195,
+      callingCodes: ["98"],
+      topLevelDomains: [".ir", "ایران."],
+      currencies: [
+        Currency(
+          code: "IRR",
+          name: "Iranian rial",
+          symbol: "﷼",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fa",
+          iso6392: "fas",
+          name: "Persian (Farsi)",
+          nativeName: "Persian (Farsi)",
+        ),
+      ],
+      timezones: ["Asia/Tehran"],
+      borders: ["AFG", "ARM", "AZE", "IRQ", "PAK", "TKM", "TUR"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Iceland",
+      nameTranslations: {
+        'en': "Iceland",
+      },
+      alpha2Code: "IS",
+      alpha3Code: "ISL",
+      numericCode: "352",
+      flagEmoji: "🇮🇸",
+      flagImagePath: '',
+      capital: "Reykjavik",
+      region: "Europe",
+      subregion: "Northern Europe",
+      population: 391810,
+      area: 103000,
+      callingCodes: ["354"],
+      topLevelDomains: [".is"],
+      currencies: [
+        Currency(
+          code: "ISK",
+          name: "Icelandic króna",
+          symbol: "kr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "is",
+          iso6392: "isl",
+          name: "Icelandic",
+          nativeName: "Icelandic",
+        ),
+      ],
+      timezones: ["Atlantic/Reykjavik"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Italy",
+      nameTranslations: {
+        'en': "Italy",
+      },
+      alpha2Code: "IT",
+      alpha3Code: "ITA",
+      numericCode: "380",
+      flagEmoji: "🇮🇹",
+      flagImagePath: '',
+      capital: "Rome",
+      region: "Europe",
+      subregion: "Southern Europe",
+      population: 58919230,
+      area: 301336,
+      callingCodes: ["39"],
+      topLevelDomains: [".it"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "it",
+          iso6392: "ita",
+          name: "Italian",
+          nativeName: "Italian",
+        ),
+      ],
+      timezones: ["Europe/Rome"],
+      borders: ["AUT", "CHE", "FRA", "SMR", "SVN", "VAT"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Jersey",
+      nameTranslations: {
+        'en': "Jersey",
+      },
+      alpha2Code: "JE",
+      alpha3Code: "JEY",
+      numericCode: "832",
+      flagEmoji: "🇯🇪",
+      flagImagePath: '',
+      capital: "Saint Helier",
+      region: "Europe",
+      subregion: "Northern Europe",
+      population: 103267,
+      area: 116,
+      callingCodes: ["44"],
+      topLevelDomains: [".je"],
+      currencies: [
+        Currency(
+          code: "GBP",
+          name: "British pound",
+          symbol: "£",
+        ),
+        Currency(
+          code: "JEP",
+          name: "Jersey pound",
+          symbol: "£",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "nrf",
+          name: "Jèrriais",
+          nativeName: "Jèrriais",
+        ),
+      ],
+      timezones: ["Europe/Jersey"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Jamaica",
+      nameTranslations: {
+        'en': "Jamaica",
+      },
+      alpha2Code: "JM",
+      alpha3Code: "JAM",
+      numericCode: "388",
+      flagEmoji: "🇯🇲",
+      flagImagePath: '',
+      capital: "Kingston",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 2825544,
+      area: 10991,
+      callingCodes: ["1"],
+      topLevelDomains: [".jm"],
+      currencies: [
+        Currency(
+          code: "JMD",
+          name: "Jamaican dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "jam",
+          name: "Jamaican Patois",
+          nativeName: "Jamaican Patois",
+        ),
+      ],
+      timezones: ["America/Jamaica"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Jordan",
+      nameTranslations: {
+        'en': "Jordan",
+      },
+      alpha2Code: "JO",
+      alpha3Code: "JOR",
+      numericCode: "400",
+      flagEmoji: "🇯🇴",
+      flagImagePath: '',
+      capital: "Amman",
+      region: "Asia",
+      subregion: "Western Asia",
+      population: 11734000,
+      area: 89342,
+      callingCodes: ["962"],
+      topLevelDomains: [".jo", "الاردن."],
+      currencies: [
+        Currency(
+          code: "JOD",
+          name: "Jordanian dinar",
+          symbol: "د.ا",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+      ],
+      timezones: ["Asia/Amman"],
+      borders: ["IRQ", "ISR", "PSE", "SAU", "SYR"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Japan",
+      nameTranslations: {
+        'en': "Japan",
+      },
+      alpha2Code: "JP",
+      alpha3Code: "JPN",
+      numericCode: "392",
+      flagEmoji: "🇯🇵",
+      flagImagePath: '',
+      capital: "Tokyo",
+      region: "Asia",
+      subregion: "Eastern Asia",
+      population: 123300000,
+      area: 377930,
+      callingCodes: ["81"],
+      topLevelDomains: [".jp", ".みんな"],
+      currencies: [
+        Currency(
+          code: "JPY",
+          name: "Japanese yen",
+          symbol: "¥",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ja",
+          iso6392: "jpn",
+          name: "Japanese",
+          nativeName: "Japanese",
+        ),
+      ],
+      timezones: ["Asia/Tokyo"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Kenya",
+      nameTranslations: {
+        'en': "Kenya",
+      },
+      alpha2Code: "KE",
+      alpha3Code: "KEN",
+      numericCode: "404",
+      flagEmoji: "🇰🇪",
+      flagImagePath: '',
+      capital: "Nairobi",
+      region: "Africa",
+      subregion: "Eastern Africa",
+      population: 53330978,
+      area: 580367,
+      callingCodes: ["254"],
+      topLevelDomains: [".ke"],
+      currencies: [
+        Currency(
+          code: "KES",
+          name: "Kenyan shilling",
+          symbol: "Sh",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "sw",
+          iso6392: "swa",
+          name: "Swahili",
+          nativeName: "Swahili",
+        ),
+      ],
+      timezones: ["Africa/Nairobi"],
+      borders: ["ETH", "SOM", "SSD", "TZA", "UGA"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Kyrgyzstan",
+      nameTranslations: {
+        'en': "Kyrgyzstan",
+      },
+      alpha2Code: "KG",
+      alpha3Code: "KGZ",
+      numericCode: "417",
+      flagEmoji: "🇰🇬",
+      flagImagePath: '',
+      capital: "Bishkek",
+      region: "Asia",
+      subregion: "Central Asia",
+      population: 7281800,
+      area: 199951,
+      callingCodes: ["996"],
+      topLevelDomains: [".kg"],
+      currencies: [
+        Currency(
+          code: "KGS",
+          name: "Kyrgyzstani som",
+          symbol: "с",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ky",
+          iso6392: "kir",
+          name: "Kyrgyz",
+          nativeName: "Kyrgyz",
+        ),
+        Language(
+          iso6391: "ru",
+          iso6392: "rus",
+          name: "Russian",
+          nativeName: "Russian",
+        ),
+      ],
+      timezones: ["Asia/Bishkek"],
+      borders: ["CHN", "KAZ", "TJK", "UZB"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Cambodia",
+      nameTranslations: {
+        'en': "Cambodia",
+      },
+      alpha2Code: "KH",
+      alpha3Code: "KHM",
+      numericCode: "116",
+      flagEmoji: "🇰🇭",
+      flagImagePath: '',
+      capital: "Phnom Penh",
+      region: "Asia",
+      subregion: "South-Eastern Asia",
+      population: 17577760,
+      area: 181035,
+      callingCodes: ["855"],
+      topLevelDomains: [".kh"],
+      currencies: [
+        Currency(
+          code: "KHR",
+          name: "Cambodian riel",
+          symbol: "៛",
+        ),
+        Currency(
+          code: "USD",
+          name: "United States dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "km",
+          iso6392: "khm",
+          name: "Khmer",
+          nativeName: "Khmer",
+        ),
+      ],
+      timezones: ["Asia/Phnom_Penh"],
+      borders: ["LAO", "THA", "VNM"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Kiribati",
+      nameTranslations: {
+        'en': "Kiribati",
+      },
+      alpha2Code: "KI",
+      alpha3Code: "KIR",
+      numericCode: "296",
+      flagEmoji: "🇰🇮",
+      flagImagePath: '',
+      capital: "South Tarawa",
+      region: "Oceania",
+      subregion: "Micronesia",
+      population: 120740,
+      area: 811,
+      callingCodes: ["686"],
+      topLevelDomains: [".ki"],
+      currencies: [
+        Currency(
+          code: "AUD",
+          name: "Australian dollar",
+          symbol: "\$",
+        ),
+        Currency(
+          code: "KID",
+          name: "Kiribati dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "gil",
+          name: "Gilbertese",
+          nativeName: "Gilbertese",
+        ),
+      ],
+      timezones: ["Pacific/Enderbury", "Pacific/Kiritimati", "Pacific/Tarawa"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Comoros",
+      nameTranslations: {
+        'en': "Comoros",
+      },
+      alpha2Code: "KM",
+      alpha3Code: "COM",
+      numericCode: "174",
+      flagEmoji: "🇰🇲",
+      flagImagePath: '',
+      capital: "Moroni",
+      region: "Africa",
+      subregion: "Eastern Africa",
+      population: 870038,
+      area: 1862,
+      callingCodes: ["269"],
+      topLevelDomains: [".km"],
+      currencies: [
+        Currency(
+          code: "KMF",
+          name: "Comorian franc",
+          symbol: "Fr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "zdj",
+          name: "Comorian",
+          nativeName: "Comorian",
+        ),
+      ],
+      timezones: ["Indian/Comoro"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Saint Kitts and Nevis",
+      nameTranslations: {
+        'en': "Saint Kitts and Nevis",
+      },
+      alpha2Code: "KN",
+      alpha3Code: "KNA",
+      numericCode: "659",
+      flagEmoji: "🇰🇳",
+      flagImagePath: '',
+      capital: "Basseterre",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 51320,
+      area: 261,
+      callingCodes: ["1"],
+      topLevelDomains: [".kn"],
+      currencies: [
+        Currency(
+          code: "XCD",
+          name: "Eastern Caribbean dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["America/St_Kitts"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "North Korea",
+      nameTranslations: {
+        'en': "North Korea",
+      },
+      alpha2Code: "KP",
+      alpha3Code: "PRK",
+      numericCode: "408",
+      flagEmoji: "🇰🇵",
+      flagImagePath: '',
+      capital: "Pyongyang",
+      region: "Asia",
+      subregion: "Eastern Asia",
+      population: 25950000,
+      area: 120538,
+      callingCodes: ["850"],
+      topLevelDomains: [".kp"],
+      currencies: [
+        Currency(
+          code: "KPW",
+          name: "North Korean won",
+          symbol: "₩",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ko",
+          iso6392: "kor",
+          name: "Korean",
+          nativeName: "Korean",
+        ),
+      ],
+      timezones: ["Asia/Pyongyang"],
+      borders: ["CHN", "KOR", "RUS"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "South Korea",
+      nameTranslations: {
+        'en': "South Korea",
+      },
+      alpha2Code: "KR",
+      alpha3Code: "KOR",
+      numericCode: "410",
+      flagEmoji: "🇰🇷",
+      flagImagePath: '',
+      capital: "Seoul",
+      region: "Asia",
+      subregion: "Eastern Asia",
+      population: 51159889,
+      area: 100210,
+      callingCodes: ["82"],
+      topLevelDomains: [".kr", ".한국"],
+      currencies: [
+        Currency(
+          code: "KRW",
+          name: "South Korean won",
+          symbol: "₩",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ko",
+          iso6392: "kor",
+          name: "Korean",
+          nativeName: "Korean",
+        ),
+      ],
+      timezones: ["Asia/Seoul"],
+      borders: ["PRK"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Kuwait",
+      nameTranslations: {
+        'en': "Kuwait",
+      },
+      alpha2Code: "KW",
+      alpha3Code: "KWT",
+      numericCode: "414",
+      flagEmoji: "🇰🇼",
+      flagImagePath: '',
+      capital: "Kuwait City",
+      region: "Asia",
+      subregion: "Western Asia",
+      population: 4881254,
+      area: 17818,
+      callingCodes: ["965"],
+      topLevelDomains: [".kw"],
+      currencies: [
+        Currency(
+          code: "KWD",
+          name: "Kuwaiti dinar",
+          symbol: "د.ك",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+      ],
+      timezones: ["Asia/Kuwait"],
+      borders: ["IRQ", "SAU"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Cayman Islands",
+      nameTranslations: {
+        'en': "Cayman Islands",
+      },
+      alpha2Code: "KY",
+      alpha3Code: "CYM",
+      numericCode: "136",
+      flagEmoji: "🇰🇾",
+      flagImagePath: '',
+      capital: "George Town",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 84738,
+      area: 264,
+      callingCodes: ["1"],
+      topLevelDomains: [".ky"],
+      currencies: [
+        Currency(
+          code: "KYD",
+          name: "Cayman Islands dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["America/Cayman"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Kazakhstan",
+      nameTranslations: {
+        'en': "Kazakhstan",
+      },
+      alpha2Code: "KZ",
+      alpha3Code: "KAZ",
+      numericCode: "398",
+      flagEmoji: "🇰🇿",
+      flagImagePath: '',
+      capital: "Astana",
+      region: "Asia",
+      subregion: "Central Asia",
+      population: 20407844,
+      area: 2724900,
+      callingCodes: ["7"],
+      topLevelDomains: [".kz", ".қаз"],
+      currencies: [
+        Currency(
+          code: "KZT",
+          name: "Kazakhstani tenge",
+          symbol: "₸",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "kk",
+          iso6392: "kaz",
+          name: "Kazakh",
+          nativeName: "Kazakh",
+        ),
+        Language(
+          iso6391: "ru",
+          iso6392: "rus",
+          name: "Russian",
+          nativeName: "Russian",
+        ),
+      ],
+      timezones: [
+        "Asia/Almaty",
+        "Asia/Aqtau",
+        "Asia/Aqtobe",
+        "Asia/Atyrau",
+        "Asia/Oral",
+        "Asia/Qostanay",
+        "Asia/Qyzylorda"
+      ],
+      borders: ["CHN", "KGZ", "RUS", "TKM", "UZB"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Laos",
+      nameTranslations: {
+        'en': "Laos",
+      },
+      alpha2Code: "LA",
+      alpha3Code: "LAO",
+      numericCode: "418",
+      flagEmoji: "🇱🇦",
+      flagImagePath: '',
+      capital: "Vientiane",
+      region: "Asia",
+      subregion: "South-Eastern Asia",
+      population: 7647000,
+      area: 236800,
+      callingCodes: ["856"],
+      topLevelDomains: [".la"],
+      currencies: [
+        Currency(
+          code: "LAK",
+          name: "Lao kip",
+          symbol: "₭",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "lo",
+          iso6392: "lao",
+          name: "Lao",
+          nativeName: "Lao",
+        ),
+      ],
+      timezones: ["Asia/Vientiane"],
+      borders: ["CHN", "KHM", "MMR", "THA", "VNM"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Lebanon",
+      nameTranslations: {
+        'en': "Lebanon",
+      },
+      alpha2Code: "LB",
+      alpha3Code: "LBN",
+      numericCode: "422",
+      flagEmoji: "🇱🇧",
+      flagImagePath: '',
+      capital: "Beirut",
+      region: "Asia",
+      subregion: "Western Asia",
+      population: 5490000,
+      area: 10452,
+      callingCodes: ["961"],
+      topLevelDomains: [".lb"],
+      currencies: [
+        Currency(
+          code: "LBP",
+          name: "Lebanese pound",
+          symbol: "ل.ل",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["Asia/Beirut"],
+      borders: ["ISR", "SYR"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Saint Lucia",
+      nameTranslations: {
+        'en': "Saint Lucia",
+      },
+      alpha2Code: "LC",
+      alpha3Code: "LCA",
+      numericCode: "662",
+      flagEmoji: "🇱🇨",
+      flagImagePath: '',
+      capital: "Castries",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 184100,
+      area: 616,
+      callingCodes: ["1"],
+      topLevelDomains: [".lc"],
+      currencies: [
+        Currency(
+          code: "XCD",
+          name: "Eastern Caribbean dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["America/St_Lucia"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Liechtenstein",
+      nameTranslations: {
+        'en': "Liechtenstein",
+      },
+      alpha2Code: "LI",
+      alpha3Code: "LIE",
+      numericCode: "438",
+      flagEmoji: "🇱🇮",
+      flagImagePath: '',
+      capital: "Vaduz",
+      region: "Europe",
+      subregion: "Western Europe",
+      population: 40900,
+      area: 160,
+      callingCodes: ["423"],
+      topLevelDomains: [".li"],
+      currencies: [
+        Currency(
+          code: "CHF",
+          name: "Swiss franc",
+          symbol: "Fr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "de",
+          iso6392: "deu",
+          name: "German",
+          nativeName: "German",
+        ),
+      ],
+      timezones: ["Europe/Vaduz"],
+      borders: ["AUT", "CHE"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Sri Lanka",
+      nameTranslations: {
+        'en': "Sri Lanka",
+      },
+      alpha2Code: "LK",
+      alpha3Code: "LKA",
+      numericCode: "144",
+      flagEmoji: "🇱🇰",
+      flagImagePath: '',
+      capital: "Colombo",
+      region: "Asia",
+      subregion: "Southern Asia",
+      population: 21763170,
+      area: 65610,
+      callingCodes: ["94"],
+      topLevelDomains: [".lk", ".இலங்கை", ".ලංකා"],
+      currencies: [
+        Currency(
+          code: "LKR",
+          name: "Sri Lankan rupee",
+          symbol: "Rs රු",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "si",
+          iso6392: "sin",
+          name: "Sinhala",
+          nativeName: "Sinhala",
+        ),
+        Language(
+          iso6391: "ta",
+          iso6392: "tam",
+          name: "Tamil",
+          nativeName: "Tamil",
+        ),
+      ],
+      timezones: ["Asia/Colombo"],
+      borders: ["IND"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Liberia",
+      nameTranslations: {
+        'en': "Liberia",
+      },
+      alpha2Code: "LR",
+      alpha3Code: "LBR",
+      numericCode: "430",
+      flagEmoji: "🇱🇷",
+      flagImagePath: '',
+      capital: "Monrovia",
+      region: "Africa",
+      subregion: "Western Africa",
+      population: 5248621,
+      area: 111369,
+      callingCodes: ["231"],
+      topLevelDomains: [".lr"],
+      currencies: [
+        Currency(
+          code: "LRD",
+          name: "Liberian dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Africa/Monrovia"],
+      borders: ["CIV", "GIN", "SLE"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Lesotho",
+      nameTranslations: {
+        'en': "Lesotho",
+      },
+      alpha2Code: "LS",
+      alpha3Code: "LSO",
+      numericCode: "426",
+      flagEmoji: "🇱🇸",
+      flagImagePath: '',
+      capital: "Maseru",
+      region: "Africa",
+      subregion: "Southern Africa",
+      population: 2116427,
+      area: 30355,
+      callingCodes: ["266"],
+      topLevelDomains: [".ls"],
+      currencies: [
+        Currency(
+          code: "LSL",
+          name: "Lesotho loti",
+          symbol: "L",
+        ),
+        Currency(
+          code: "ZAR",
+          name: "South African rand",
+          symbol: "R",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "st",
+          iso6392: "sot",
+          name: "Sotho",
+          nativeName: "Sotho",
+        ),
+      ],
+      timezones: ["Africa/Maseru"],
+      borders: ["ZAF"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Lithuania",
+      nameTranslations: {
+        'en': "Lithuania",
+      },
+      alpha2Code: "LT",
+      alpha3Code: "LTU",
+      numericCode: "440",
+      flagEmoji: "🇱🇹",
+      flagImagePath: '',
+      capital: "Vilnius",
+      region: "Europe",
+      subregion: "Northern Europe",
+      population: 2894548,
+      area: 65300,
+      callingCodes: ["370"],
+      topLevelDomains: [".lt"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "lt",
+          iso6392: "lit",
+          name: "Lithuanian",
+          nativeName: "Lithuanian",
+        ),
+      ],
+      timezones: ["Europe/Vilnius"],
+      borders: ["BLR", "LVA", "POL", "RUS"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Luxembourg",
+      nameTranslations: {
+        'en': "Luxembourg",
+      },
+      alpha2Code: "LU",
+      alpha3Code: "LUX",
+      numericCode: "442",
+      flagEmoji: "🇱🇺",
+      flagImagePath: '',
+      capital: "Luxembourg",
+      region: "Europe",
+      subregion: "Western Europe",
+      population: 681973,
+      area: 2586,
+      callingCodes: ["352"],
+      topLevelDomains: [".lu"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "de",
+          iso6392: "deu",
+          name: "German",
+          nativeName: "German",
+        ),
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+        Language(
+          iso6391: "lb",
+          iso6392: "ltz",
+          name: "Luxembourgish",
+          nativeName: "Luxembourgish",
+        ),
+      ],
+      timezones: ["Europe/Luxembourg"],
+      borders: ["BEL", "DEU", "FRA"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Latvia",
+      nameTranslations: {
+        'en': "Latvia",
+      },
+      alpha2Code: "LV",
+      alpha3Code: "LVA",
+      numericCode: "428",
+      flagEmoji: "🇱🇻",
+      flagImagePath: '',
+      capital: "Riga",
+      region: "Europe",
+      subregion: "Northern Europe",
+      population: 1830400,
+      area: 64559,
+      callingCodes: ["371"],
+      topLevelDomains: [".lv"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "lv",
+          iso6392: "lav",
+          name: "Latvian",
+          nativeName: "Latvian",
+        ),
+      ],
+      timezones: ["Europe/Riga"],
+      borders: ["BLR", "EST", "LTU", "RUS"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Libya",
+      nameTranslations: {
+        'en': "Libya",
+      },
+      alpha2Code: "LY",
+      alpha3Code: "LBY",
+      numericCode: "434",
+      flagEmoji: "🇱🇾",
+      flagImagePath: '',
+      capital: "Tripoli",
+      region: "Africa",
+      subregion: "Northern Africa",
+      population: 7459000,
+      area: 1759540,
+      callingCodes: ["218"],
+      topLevelDomains: [".ly"],
+      currencies: [
+        Currency(
+          code: "LYD",
+          name: "Libyan dinar",
+          symbol: "ل.د",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+      ],
+      timezones: ["Africa/Tripoli"],
+      borders: ["DZA", "EGY", "NER", "SDN", "TCD", "TUN"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Morocco",
+      nameTranslations: {
+        'en': "Morocco",
+      },
+      alpha2Code: "MA",
+      alpha3Code: "MAR",
+      numericCode: "504",
+      flagEmoji: "🇲🇦",
+      flagImagePath: '',
+      capital: "Rabat",
+      region: "Africa",
+      subregion: "Northern Africa",
+      population: 36828330,
+      area: 446550,
+      callingCodes: ["212"],
+      topLevelDomains: [".ma", "المغرب."],
+      currencies: [
+        Currency(
+          code: "MAD",
+          name: "Moroccan dirham",
+          symbol: "د.م.",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "ber",
+          name: "Berber",
+          nativeName: "Berber",
+        ),
+      ],
+      timezones: ["Africa/Casablanca", "Africa/El_Aaiun"],
+      borders: ["DZA", "ESH", "ESP"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Monaco",
+      nameTranslations: {
+        'en': "Monaco",
+      },
+      alpha2Code: "MC",
+      alpha3Code: "MCO",
+      numericCode: "492",
+      flagEmoji: "🇲🇨",
+      flagImagePath: '',
+      capital: "Monaco",
+      region: "Europe",
+      subregion: "Western Europe",
+      population: 38423,
+      area: 2.02,
+      callingCodes: ["377"],
+      topLevelDomains: [".mc"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["Europe/Monaco"],
+      borders: ["FRA"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Moldova",
+      nameTranslations: {
+        'en': "Moldova",
+      },
+      alpha2Code: "MD",
+      alpha3Code: "MDA",
+      numericCode: "498",
+      flagEmoji: "🇲🇩",
+      flagImagePath: '',
+      capital: "Chișinău",
+      region: "Europe",
+      subregion: "Eastern Europe",
+      population: 2381300,
+      area: 33846,
+      callingCodes: ["373"],
+      topLevelDomains: [".md"],
+      currencies: [
+        Currency(
+          code: "MDL",
+          name: "Moldovan leu",
+          symbol: "L",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ro",
+          iso6392: "ron",
+          name: "Moldavian",
+          nativeName: "Moldavian",
+        ),
+      ],
+      timezones: ["Europe/Chisinau"],
+      borders: ["ROU", "UKR"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Montenegro",
+      nameTranslations: {
+        'en': "Montenegro",
+      },
+      alpha2Code: "ME",
+      alpha3Code: "MNE",
+      numericCode: "499",
+      flagEmoji: "🇲🇪",
+      flagImagePath: '',
+      capital: "Podgorica",
+      region: "Europe",
+      subregion: "Southeast Europe",
+      population: 623327,
+      area: 13812,
+      callingCodes: ["382"],
+      topLevelDomains: [".me"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "",
+          iso6392: "cnr",
+          name: "Montenegrin",
+          nativeName: "Montenegrin",
+        ),
+      ],
+      timezones: ["Europe/Podgorica"],
+      borders: ["ALB", "BIH", "HRV", "SRB", "UNK"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Saint Martin",
+      nameTranslations: {
+        'en': "Saint Martin",
+      },
+      alpha2Code: "MF",
+      alpha3Code: "MAF",
+      numericCode: "663",
+      flagEmoji: "🇲🇫",
+      flagImagePath: '',
+      capital: "Marigot",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 31496,
+      area: 53,
+      callingCodes: ["590"],
+      topLevelDomains: [".fr", ".gp"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["America/Marigot"],
+      borders: ["SXM"],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Madagascar",
+      nameTranslations: {
+        'en': "Madagascar",
+      },
+      alpha2Code: "MG",
+      alpha3Code: "MDG",
+      numericCode: "450",
+      flagEmoji: "🇲🇬",
+      flagImagePath: '',
+      capital: "Antananarivo",
+      region: "Africa",
+      subregion: "Eastern Africa",
+      population: 31727042,
+      area: 587041,
+      callingCodes: ["261"],
+      topLevelDomains: [".mg"],
+      currencies: [
+        Currency(
+          code: "MGA",
+          name: "Malagasy ariary",
+          symbol: "Ar",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+        Language(
+          iso6391: "mg",
+          iso6392: "mlg",
+          name: "Malagasy",
+          nativeName: "Malagasy",
+        ),
+      ],
+      timezones: ["Indian/Antananarivo"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Marshall Islands",
+      nameTranslations: {
+        'en': "Marshall Islands",
+      },
+      alpha2Code: "MH",
+      alpha3Code: "MHL",
+      numericCode: "584",
+      flagEmoji: "🇲🇭",
+      flagImagePath: '',
+      capital: "Majuro",
+      region: "Oceania",
+      subregion: "Micronesia",
+      population: 42418,
+      area: 181,
+      callingCodes: ["692"],
+      topLevelDomains: [".mh"],
+      currencies: [
+        Currency(
+          code: "USD",
+          name: "United States dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "mh",
+          iso6392: "mah",
+          name: "Marshallese",
+          nativeName: "Marshallese",
+        ),
+      ],
+      timezones: ["Pacific/Kwajalein", "Pacific/Majuro"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "North Macedonia",
+      nameTranslations: {
+        'en': "North Macedonia",
+      },
+      alpha2Code: "MK",
+      alpha3Code: "MKD",
+      numericCode: "807",
+      flagEmoji: "🇲🇰",
+      flagImagePath: '',
+      capital: "Skopje",
+      region: "Europe",
+      subregion: "Southeast Europe",
+      population: 1826247,
+      area: 25713,
+      callingCodes: ["389"],
+      topLevelDomains: [".mk"],
+      currencies: [
+        Currency(
+          code: "MKD",
+          name: "denar",
+          symbol: "den",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "mk",
+          iso6392: "mkd",
+          name: "Macedonian",
+          nativeName: "Macedonian",
+        ),
+      ],
+      timezones: ["Europe/Skopje"],
+      borders: ["ALB", "BGR", "GRC", "SRB", "UNK"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Mali",
+      nameTranslations: {
+        'en': "Mali",
+      },
+      alpha2Code: "ML",
+      alpha3Code: "MLI",
+      numericCode: "466",
+      flagEmoji: "🇲🇱",
+      flagImagePath: '',
+      capital: "Bamako",
+      region: "Africa",
+      subregion: "Western Africa",
+      population: 22395489,
+      area: 1240192,
+      callingCodes: ["223"],
+      topLevelDomains: [".ml"],
+      currencies: [
+        Currency(
+          code: "XOF",
+          name: "West African CFA franc",
+          symbol: "Fr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["Africa/Bamako"],
+      borders: ["BFA", "CIV", "DZA", "GIN", "MRT", "NER", "SEN"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Myanmar",
+      nameTranslations: {
+        'en': "Myanmar",
+      },
+      alpha2Code: "MM",
+      alpha3Code: "MMR",
+      numericCode: "104",
+      flagEmoji: "🇲🇲",
+      flagImagePath: '',
+      capital: "Naypyidaw",
+      region: "Asia",
+      subregion: "South-Eastern Asia",
+      population: 51316756,
+      area: 676578,
+      callingCodes: ["95"],
+      topLevelDomains: [".mm"],
+      currencies: [
+        Currency(
+          code: "MMK",
+          name: "Burmese kyat",
+          symbol: "Ks",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "my",
+          iso6392: "mya",
+          name: "Burmese",
+          nativeName: "Burmese",
+        ),
+      ],
+      timezones: ["Asia/Yangon"],
+      borders: ["BGD", "CHN", "IND", "LAO", "THA"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Mongolia",
+      nameTranslations: {
+        'en': "Mongolia",
+      },
+      alpha2Code: "MN",
+      alpha3Code: "MNG",
+      numericCode: "496",
+      flagEmoji: "🇲🇳",
+      flagImagePath: '',
+      capital: "Ulan Bator",
+      region: "Asia",
+      subregion: "Eastern Asia",
+      population: 3544835,
+      area: 1564110,
+      callingCodes: ["976"],
+      topLevelDomains: [".mn"],
+      currencies: [
+        Currency(
+          code: "MNT",
+          name: "Mongolian tögrög",
+          symbol: "₮",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "mn",
+          iso6392: "mon",
+          name: "Mongolian",
+          nativeName: "Mongolian",
+        ),
+      ],
+      timezones: ["Asia/Choibalsan", "Asia/Hovd", "Asia/Ulaanbaatar"],
+      borders: ["CHN", "RUS"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Macau",
+      nameTranslations: {
+        'en': "Macau",
+      },
+      alpha2Code: "MO",
+      alpha3Code: "MAC",
+      numericCode: "446",
+      flagEmoji: "🇲🇴",
+      flagImagePath: '',
+      capital: "",
+      region: "Asia",
+      subregion: "Eastern Asia",
+      population: 685900,
+      area: 30,
+      callingCodes: ["853"],
+      topLevelDomains: [".mo"],
+      currencies: [
+        Currency(
+          code: "MOP",
+          name: "Macanese pataca",
+          symbol: "P",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "pt",
+          iso6392: "por",
+          name: "Portuguese",
+          nativeName: "Portuguese",
+        ),
+        Language(
+          iso6391: "zh",
+          iso6392: "zho",
+          name: "Chinese",
+          nativeName: "Chinese",
+        ),
+      ],
+      timezones: ["Asia/Macau"],
+      borders: ["CHN"],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Northern Mariana Islands",
+      nameTranslations: {
+        'en': "Northern Mariana Islands",
+      },
+      alpha2Code: "MP",
+      alpha3Code: "MNP",
+      numericCode: "580",
+      flagEmoji: "🇲🇵",
+      flagImagePath: '',
+      capital: "Saipan",
+      region: "Oceania",
+      subregion: "Micronesia",
+      population: 47329,
+      area: 464,
+      callingCodes: ["1"],
+      topLevelDomains: [".mp"],
+      currencies: [
+        Currency(
+          code: "USD",
+          name: "United States dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "",
+          iso6392: "cal",
+          name: "Carolinian",
+          nativeName: "Carolinian",
+        ),
+        Language(
+          iso6391: "ch",
+          iso6392: "cha",
+          name: "Chamorro",
+          nativeName: "Chamorro",
+        ),
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Pacific/Saipan"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Martinique",
+      nameTranslations: {
+        'en': "Martinique",
+      },
+      alpha2Code: "MQ",
+      alpha3Code: "MTQ",
+      numericCode: "474",
+      flagEmoji: "🇲🇶",
+      flagImagePath: '',
+      capital: "Fort-de-France",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 339897,
+      area: 1128,
+      callingCodes: ["596"],
+      topLevelDomains: [".mq"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["America/Martinique"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Mauritania",
+      nameTranslations: {
+        'en': "Mauritania",
+      },
+      alpha2Code: "MR",
+      alpha3Code: "MRT",
+      numericCode: "478",
+      flagEmoji: "🇲🇷",
+      flagImagePath: '',
+      capital: "Nouakchott",
+      region: "Africa",
+      subregion: "Western Africa",
+      population: 4927532,
+      area: 1030700,
+      callingCodes: ["222"],
+      topLevelDomains: [".mr"],
+      currencies: [
+        Currency(
+          code: "MRU",
+          name: "Mauritanian ouguiya",
+          symbol: "UM",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+      ],
+      timezones: ["Africa/Nouakchott"],
+      borders: ["DZA", "ESH", "MLI", "SEN"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Montserrat",
+      nameTranslations: {
+        'en': "Montserrat",
+      },
+      alpha2Code: "MS",
+      alpha3Code: "MSR",
+      numericCode: "500",
+      flagEmoji: "🇲🇸",
+      flagImagePath: '',
+      capital: "Plymouth",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 4386,
+      area: 102,
+      callingCodes: ["1"],
+      topLevelDomains: [".ms"],
+      currencies: [
+        Currency(
+          code: "XCD",
+          name: "Eastern Caribbean dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["America/Montserrat"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Malta",
+      nameTranslations: {
+        'en': "Malta",
+      },
+      alpha2Code: "MT",
+      alpha3Code: "MLT",
+      numericCode: "470",
+      flagEmoji: "🇲🇹",
+      flagImagePath: '',
+      capital: "Valletta",
+      region: "Europe",
+      subregion: "Southern Europe",
+      population: 574250,
+      area: 316,
+      callingCodes: ["356"],
+      topLevelDomains: [".mt"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "mt",
+          iso6392: "mlt",
+          name: "Maltese",
+          nativeName: "Maltese",
+        ),
+      ],
+      timezones: ["Europe/Malta"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Mauritius",
+      nameTranslations: {
+        'en': "Mauritius",
+      },
+      alpha2Code: "MU",
+      alpha3Code: "MUS",
+      numericCode: "480",
+      flagEmoji: "🇲🇺",
+      flagImagePath: '',
+      capital: "Port Louis",
+      region: "Africa",
+      subregion: "Eastern Africa",
+      population: 1243741,
+      area: 2040,
+      callingCodes: ["230"],
+      topLevelDomains: [".mu"],
+      currencies: [
+        Currency(
+          code: "MUR",
+          name: "Mauritian rupee",
+          symbol: "₨",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "mfe",
+          name: "Mauritian Creole",
+          nativeName: "Mauritian Creole",
+        ),
+      ],
+      timezones: ["Indian/Mauritius"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Maldives",
+      nameTranslations: {
+        'en': "Maldives",
+      },
+      alpha2Code: "MV",
+      alpha3Code: "MDV",
+      numericCode: "462",
+      flagEmoji: "🇲🇻",
+      flagImagePath: '',
+      capital: "Malé",
+      region: "Asia",
+      subregion: "Southern Asia",
+      population: 515132,
+      area: 300,
+      callingCodes: ["960"],
+      topLevelDomains: [".mv"],
+      currencies: [
+        Currency(
+          code: "MVR",
+          name: "Maldivian rufiyaa",
+          symbol: ".ރ",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "dv",
+          iso6392: "div",
+          name: "Maldivian",
+          nativeName: "Maldivian",
+        ),
+      ],
+      timezones: ["Indian/Maldives"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Malawi",
+      nameTranslations: {
+        'en': "Malawi",
+      },
+      alpha2Code: "MW",
+      alpha3Code: "MWI",
+      numericCode: "454",
+      flagEmoji: "🇲🇼",
+      flagImagePath: '',
+      capital: "Lilongwe",
+      region: "Africa",
+      subregion: "Eastern Africa",
+      population: 20734262,
+      area: 118484,
+      callingCodes: ["265"],
+      topLevelDomains: [".mw"],
+      currencies: [
+        Currency(
+          code: "MWK",
+          name: "Malawian kwacha",
+          symbol: "MK",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "ny",
+          iso6392: "nya",
+          name: "Chewa",
+          nativeName: "Chewa",
+        ),
+      ],
+      timezones: ["Africa/Blantyre"],
+      borders: ["MOZ", "TZA", "ZMB"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Mexico",
+      nameTranslations: {
+        'en': "Mexico",
+      },
+      alpha2Code: "MX",
+      alpha3Code: "MEX",
+      numericCode: "484",
+      flagEmoji: "🇲🇽",
+      flagImagePath: '',
+      capital: "Mexico City",
+      region: "Americas",
+      subregion: "North America",
+      population: 130575786,
+      area: 1964375,
+      callingCodes: ["52"],
+      topLevelDomains: [".mx"],
+      currencies: [
+        Currency(
+          code: "MXN",
+          name: "Mexican peso",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: [
+        "America/Bahia_Banderas",
+        "America/Cancun",
+        "America/Chihuahua",
+        "America/Hermosillo",
+        "America/Matamoros",
+        "America/Mazatlan",
+        "America/Merida",
+        "America/Mexico_City",
+        "America/Monterrey",
+        "America/Ojinaga",
+        "America/Tijuana",
+        "America/Ciudad_Juarez"
+      ],
+      borders: ["BLZ", "GTM", "USA"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Malaysia",
+      nameTranslations: {
+        'en': "Malaysia",
+      },
+      alpha2Code: "MY",
+      alpha3Code: "MYS",
+      numericCode: "458",
+      flagEmoji: "🇲🇾",
+      flagImagePath: '',
+      capital: "Kuala Lumpur",
+      region: "Asia",
+      subregion: "South-Eastern Asia",
+      population: 34231700,
+      area: 330803,
+      callingCodes: ["60"],
+      topLevelDomains: [".my"],
+      currencies: [
+        Currency(
+          code: "MYR",
+          name: "Malaysian ringgit",
+          symbol: "RM",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "ms",
+          iso6392: "msa",
+          name: "Malay",
+          nativeName: "Malay",
+        ),
+      ],
+      timezones: ["Asia/Kuala_Lumpur", "Asia/Kuching"],
+      borders: ["BRN", "IDN", "THA"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Mozambique",
+      nameTranslations: {
+        'en': "Mozambique",
+      },
+      alpha2Code: "MZ",
+      alpha3Code: "MOZ",
+      numericCode: "508",
+      flagEmoji: "🇲🇿",
+      flagImagePath: '',
+      capital: "Maputo",
+      region: "Africa",
+      subregion: "Eastern Africa",
+      population: 34090466,
+      area: 801590,
+      callingCodes: ["258"],
+      topLevelDomains: [".mz"],
+      currencies: [
+        Currency(
+          code: "MZN",
+          name: "Mozambican metical",
+          symbol: "MT",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "pt",
+          iso6392: "por",
+          name: "Portuguese",
+          nativeName: "Portuguese",
+        ),
+      ],
+      timezones: ["Africa/Maputo"],
+      borders: ["MWI", "SWZ", "TZA", "ZAF", "ZMB", "ZWE"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Namibia",
+      nameTranslations: {
+        'en': "Namibia",
+      },
+      alpha2Code: "NA",
+      alpha3Code: "NAM",
+      numericCode: "516",
+      flagEmoji: "🇳🇦",
+      flagImagePath: '',
+      capital: "Windhoek",
+      region: "Africa",
+      subregion: "Southern Africa",
+      population: 3022401,
+      area: 825615,
+      callingCodes: ["264"],
+      topLevelDomains: [".na"],
+      currencies: [
+        Currency(
+          code: "NAD",
+          name: "Namibian dollar",
+          symbol: "\$",
+        ),
+        Currency(
+          code: "ZAR",
+          name: "South African rand",
+          symbol: "R",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "af",
+          iso6392: "afr",
+          name: "Afrikaans",
+          nativeName: "Afrikaans",
+        ),
+        Language(
+          iso6391: "de",
+          iso6392: "deu",
+          name: "German",
+          nativeName: "German",
+        ),
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "hz",
+          iso6392: "her",
+          name: "Herero",
+          nativeName: "Herero",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "hgm",
+          name: "Khoekhoe",
+          nativeName: "Khoekhoe",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "kwn",
+          name: "Kwangali",
+          nativeName: "Kwangali",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "loz",
+          name: "Lozi",
+          nativeName: "Lozi",
+        ),
+        Language(
+          iso6391: "ng",
+          iso6392: "ndo",
+          name: "Ndonga",
+          nativeName: "Ndonga",
+        ),
+        Language(
+          iso6391: "tn",
+          iso6392: "tsn",
+          name: "Tswana",
+          nativeName: "Tswana",
+        ),
+      ],
+      timezones: ["Africa/Windhoek"],
+      borders: ["AGO", "BWA", "ZAF", "ZMB"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "New Caledonia",
+      nameTranslations: {
+        'en': "New Caledonia",
+      },
+      alpha2Code: "NC",
+      alpha3Code: "NCL",
+      numericCode: "540",
+      flagEmoji: "🇳🇨",
+      flagImagePath: '',
+      capital: "Nouméa",
+      region: "Oceania",
+      subregion: "Melanesia",
+      population: 264596,
+      area: 18575,
+      callingCodes: ["687"],
+      topLevelDomains: [".nc"],
+      currencies: [
+        Currency(
+          code: "XPF",
+          name: "CFP franc",
+          symbol: "₣",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["Pacific/Noumea"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Niger",
+      nameTranslations: {
+        'en': "Niger",
+      },
+      alpha2Code: "NE",
+      alpha3Code: "NER",
+      numericCode: "562",
+      flagEmoji: "🇳🇪",
+      flagImagePath: '',
+      capital: "Niamey",
+      region: "Africa",
+      subregion: "Western Africa",
+      population: 26312034,
+      area: 1267000,
+      callingCodes: ["227"],
+      topLevelDomains: [".ne"],
+      currencies: [
+        Currency(
+          code: "XOF",
+          name: "West African CFA franc",
+          symbol: "Fr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["Africa/Niamey"],
+      borders: ["BEN", "BFA", "DZA", "LBY", "MLI", "NGA", "TCD"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Norfolk Island",
+      nameTranslations: {
+        'en': "Norfolk Island",
+      },
+      alpha2Code: "NF",
+      alpha3Code: "NFK",
+      numericCode: "574",
+      flagEmoji: "🇳🇫",
+      flagImagePath: '',
+      capital: "Kingston",
+      region: "Oceania",
+      subregion: "Australia and New Zealand",
+      population: 2188,
+      area: 36,
+      callingCodes: ["672"],
+      topLevelDomains: [".nf"],
+      currencies: [
+        Currency(
+          code: "AUD",
+          name: "Australian dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "pih",
+          name: "Norfuk",
+          nativeName: "Norfuk",
+        ),
+      ],
+      timezones: ["Pacific/Norfolk"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Nigeria",
+      nameTranslations: {
+        'en': "Nigeria",
+      },
+      alpha2Code: "NG",
+      alpha3Code: "NGA",
+      numericCode: "566",
+      flagEmoji: "🇳🇬",
+      flagImagePath: '',
+      capital: "Abuja",
+      region: "Africa",
+      subregion: "Western Africa",
+      population: 223800000,
+      area: 923768,
+      callingCodes: ["234"],
+      topLevelDomains: [".ng"],
+      currencies: [
+        Currency(
+          code: "NGN",
+          name: "Nigerian naira",
+          symbol: "₦",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Africa/Lagos"],
+      borders: ["BEN", "CMR", "NER", "TCD"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Nicaragua",
+      nameTranslations: {
+        'en': "Nicaragua",
+      },
+      alpha2Code: "NI",
+      alpha3Code: "NIC",
+      numericCode: "558",
+      flagEmoji: "🇳🇮",
+      flagImagePath: '',
+      capital: "Managua",
+      region: "Americas",
+      subregion: "Central America",
+      population: 6803886,
+      area: 130373,
+      callingCodes: ["505"],
+      topLevelDomains: [".ni"],
+      currencies: [
+        Currency(
+          code: "NIO",
+          name: "Nicaraguan córdoba",
+          symbol: "C\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: ["America/Managua"],
+      borders: ["CRI", "HND"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Netherlands",
+      nameTranslations: {
+        'en': "Netherlands",
+      },
+      alpha2Code: "NL",
+      alpha3Code: "NLD",
+      numericCode: "528",
+      flagEmoji: "🇳🇱",
+      flagImagePath: '',
+      capital: "Amsterdam",
+      region: "Europe",
+      subregion: "Western Europe",
+      population: 18080943,
+      area: 41850,
+      callingCodes: ["31"],
+      topLevelDomains: [".nl"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "nl",
+          iso6392: "nld",
+          name: "Dutch",
+          nativeName: "Dutch",
+        ),
+      ],
+      timezones: ["Europe/Amsterdam"],
+      borders: ["BEL", "DEU"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Norway",
+      nameTranslations: {
+        'en': "Norway",
+      },
+      alpha2Code: "NO",
+      alpha3Code: "NOR",
+      numericCode: "578",
+      flagEmoji: "🇳🇴",
+      flagImagePath: '',
+      capital: "Oslo",
+      region: "Europe",
+      subregion: "Northern Europe",
+      population: 5606944,
+      area: 323802,
+      callingCodes: ["47"],
+      topLevelDomains: [".no"],
+      currencies: [
+        Currency(
+          code: "NOK",
+          name: "Norwegian krone",
+          symbol: "kr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "nn",
+          iso6392: "nno",
+          name: "Norwegian Nynorsk",
+          nativeName: "Norwegian Nynorsk",
+        ),
+        Language(
+          iso6391: "nb",
+          iso6392: "nob",
+          name: "Norwegian Bokmål",
+          nativeName: "Norwegian Bokmål",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "smi",
+          name: "Sami",
+          nativeName: "Sami",
+        ),
+      ],
+      timezones: ["Europe/Oslo", "Arctic/Longyearbyen"],
+      borders: ["FIN", "RUS", "SWE"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Nepal",
+      nameTranslations: {
+        'en': "Nepal",
+      },
+      alpha2Code: "NP",
+      alpha3Code: "NPL",
+      numericCode: "524",
+      flagEmoji: "🇳🇵",
+      flagImagePath: '',
+      capital: "Kathmandu",
+      region: "Asia",
+      subregion: "Southern Asia",
+      population: 29911840,
+      area: 147181,
+      callingCodes: ["977"],
+      topLevelDomains: [".np"],
+      currencies: [
+        Currency(
+          code: "NPR",
+          name: "Nepalese rupee",
+          symbol: "₨",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ne",
+          iso6392: "nep",
+          name: "Nepali",
+          nativeName: "Nepali",
+        ),
+      ],
+      timezones: ["Asia/Kathmandu"],
+      borders: ["CHN", "IND"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Nauru",
+      nameTranslations: {
+        'en': "Nauru",
+      },
+      alpha2Code: "NR",
+      alpha3Code: "NRU",
+      numericCode: "520",
+      flagEmoji: "🇳🇷",
+      flagImagePath: '',
+      capital: "Yaren",
+      region: "Oceania",
+      subregion: "Micronesia",
+      population: 11680,
+      area: 21,
+      callingCodes: ["674"],
+      topLevelDomains: [".nr"],
+      currencies: [
+        Currency(
+          code: "AUD",
+          name: "Australian dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "na",
+          iso6392: "nau",
+          name: "Nauru",
+          nativeName: "Nauru",
+        ),
+      ],
+      timezones: ["Pacific/Nauru"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Niue",
+      nameTranslations: {
+        'en': "Niue",
+      },
+      alpha2Code: "NU",
+      alpha3Code: "NIU",
+      numericCode: "570",
+      flagEmoji: "🇳🇺",
+      flagImagePath: '',
+      capital: "Alofi",
+      region: "Oceania",
+      subregion: "Polynesia",
+      population: 1681,
+      area: 260,
+      callingCodes: ["683"],
+      topLevelDomains: [".nu"],
+      currencies: [
+        Currency(
+          code: "NZD",
+          name: "New Zealand dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "niu",
+          name: "Niuean",
+          nativeName: "Niuean",
+        ),
+      ],
+      timezones: ["Pacific/Niue"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "New Zealand",
+      nameTranslations: {
+        'en': "New Zealand",
+      },
+      alpha2Code: "NZ",
+      alpha3Code: "NZL",
+      numericCode: "554",
+      flagEmoji: "🇳🇿",
+      flagImagePath: '',
+      capital: "Wellington",
+      region: "Oceania",
+      subregion: "Australia and New Zealand",
+      population: 5324700,
+      area: 270467,
+      callingCodes: ["64"],
+      topLevelDomains: [".nz"],
+      currencies: [
+        Currency(
+          code: "NZD",
+          name: "New Zealand dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "mi",
+          iso6392: "mri",
+          name: "Māori",
+          nativeName: "Māori",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "nzs",
+          name: "New Zealand Sign Language",
+          nativeName: "New Zealand Sign Language",
+        ),
+      ],
+      timezones: ["Pacific/Auckland", "Pacific/Chatham"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Oman",
+      nameTranslations: {
+        'en': "Oman",
+      },
+      alpha2Code: "OM",
+      alpha3Code: "OMN",
+      numericCode: "512",
+      flagEmoji: "🇴🇲",
+      flagImagePath: '',
+      capital: "Muscat",
+      region: "Asia",
+      subregion: "Western Asia",
+      population: 5306976,
+      area: 309500,
+      callingCodes: ["968"],
+      topLevelDomains: [".om"],
+      currencies: [
+        Currency(
+          code: "OMR",
+          name: "Omani rial",
+          symbol: "ر.ع.",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+      ],
+      timezones: ["Asia/Muscat"],
+      borders: ["ARE", "SAU", "YEM"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Panama",
+      nameTranslations: {
+        'en': "Panama",
+      },
+      alpha2Code: "PA",
+      alpha3Code: "PAN",
+      numericCode: "591",
+      flagEmoji: "🇵🇦",
+      flagImagePath: '',
+      capital: "Panama City",
+      region: "Americas",
+      subregion: "Central America",
+      population: 4064780,
+      area: 75417,
+      callingCodes: ["507"],
+      topLevelDomains: [".pa"],
+      currencies: [
+        Currency(
+          code: "PAB",
+          name: "Panamanian balboa",
+          symbol: "B/.",
+        ),
+        Currency(
+          code: "USD",
+          name: "United States dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: ["America/Panama"],
+      borders: ["COL", "CRI"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Peru",
+      nameTranslations: {
+        'en': "Peru",
+      },
+      alpha2Code: "PE",
+      alpha3Code: "PER",
+      numericCode: "604",
+      flagEmoji: "🇵🇪",
+      flagImagePath: '',
+      capital: "Lima",
+      region: "Americas",
+      subregion: "South America",
+      population: 34350244,
+      area: 1285216,
+      callingCodes: ["51"],
+      topLevelDomains: [".pe"],
+      currencies: [
+        Currency(
+          code: "PEN",
+          name: "Peruvian sol",
+          symbol: "S/.",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ay",
+          iso6392: "aym",
+          name: "Aymara",
+          nativeName: "Aymara",
+        ),
+        Language(
+          iso6391: "qu",
+          iso6392: "que",
+          name: "Quechua",
+          nativeName: "Quechua",
+        ),
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: ["America/Lima"],
+      borders: ["BOL", "BRA", "CHL", "COL", "ECU"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "French Polynesia",
+      nameTranslations: {
+        'en': "French Polynesia",
+      },
+      alpha2Code: "PF",
+      alpha3Code: "PYF",
+      numericCode: "258",
+      flagEmoji: "🇵🇫",
+      flagImagePath: '',
+      capital: "Papeetē",
+      region: "Oceania",
+      subregion: "Polynesia",
+      population: 279500,
+      area: 4167,
+      callingCodes: ["689"],
+      topLevelDomains: [".pf"],
+      currencies: [
+        Currency(
+          code: "XPF",
+          name: "CFP franc",
+          symbol: "₣",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["Pacific/Gambier", "Pacific/Marquesas", "Pacific/Tahiti"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Papua New Guinea",
+      nameTranslations: {
+        'en': "Papua New Guinea",
+      },
+      alpha2Code: "PG",
+      alpha3Code: "PNG",
+      numericCode: "598",
+      flagEmoji: "🇵🇬",
+      flagImagePath: '',
+      capital: "Port Moresby",
+      region: "Oceania",
+      subregion: "Melanesia",
+      population: 11781559,
+      area: 462840,
+      callingCodes: ["675"],
+      topLevelDomains: [".pg"],
+      currencies: [
+        Currency(
+          code: "PGK",
+          name: "Papua New Guinean kina",
+          symbol: "K",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "ho",
+          iso6392: "hmo",
+          name: "Hiri Motu",
+          nativeName: "Hiri Motu",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "tpi",
+          name: "Tok Pisin",
+          nativeName: "Tok Pisin",
+        ),
+      ],
+      timezones: ["Pacific/Bougainville", "Pacific/Port_Moresby"],
+      borders: ["IDN"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Philippines",
+      nameTranslations: {
+        'en': "Philippines",
+      },
+      alpha2Code: "PH",
+      alpha3Code: "PHL",
+      numericCode: "608",
+      flagEmoji: "🇵🇭",
+      flagImagePath: '',
+      capital: "Manila",
+      region: "Asia",
+      subregion: "South-Eastern Asia",
+      population: 114123600,
+      area: 342353,
+      callingCodes: ["63"],
+      topLevelDomains: [".ph"],
+      currencies: [
+        Currency(
+          code: "PHP",
+          name: "Philippine peso",
+          symbol: "₱",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "fil",
+          name: "Filipino",
+          nativeName: "Filipino",
+        ),
+      ],
+      timezones: ["Asia/Manila"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Pakistan",
+      nameTranslations: {
+        'en': "Pakistan",
+      },
+      alpha2Code: "PK",
+      alpha3Code: "PAK",
+      numericCode: "586",
+      flagEmoji: "🇵🇰",
+      flagImagePath: '',
+      capital: "Islamabad",
+      region: "Asia",
+      subregion: "Southern Asia",
+      population: 241499431,
+      area: 881912,
+      callingCodes: ["92"],
+      topLevelDomains: [".pk"],
+      currencies: [
+        Currency(
+          code: "PKR",
+          name: "Pakistani rupee",
+          symbol: "₨",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "ur",
+          iso6392: "urd",
+          name: "Urdu",
+          nativeName: "Urdu",
+        ),
+      ],
+      timezones: ["Asia/Karachi"],
+      borders: ["AFG", "CHN", "IND", "IRN"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Poland",
+      nameTranslations: {
+        'en': "Poland",
+      },
+      alpha2Code: "PL",
+      alpha3Code: "POL",
+      numericCode: "616",
+      flagEmoji: "🇵🇱",
+      flagImagePath: '',
+      capital: "Warsaw",
+      region: "Europe",
+      subregion: "Central Europe",
+      population: 37401000,
+      area: 312679,
+      callingCodes: ["48"],
+      topLevelDomains: [".pl"],
+      currencies: [
+        Currency(
+          code: "PLN",
+          name: "Polish złoty",
+          symbol: "zł",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "pl",
+          iso6392: "pol",
+          name: "Polish",
+          nativeName: "Polish",
+        ),
+      ],
+      timezones: ["Europe/Warsaw"],
+      borders: ["BLR", "CZE", "DEU", "LTU", "RUS", "SVK", "UKR"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Saint Pierre and Miquelon",
+      nameTranslations: {
+        'en': "Saint Pierre and Miquelon",
+      },
+      alpha2Code: "PM",
+      alpha3Code: "SPM",
+      numericCode: "666",
+      flagEmoji: "🇵🇲",
+      flagImagePath: '',
+      capital: "Saint-Pierre",
+      region: "Americas",
+      subregion: "North America",
+      population: 5819,
+      area: 242,
+      callingCodes: ["508"],
+      topLevelDomains: [".pm"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["America/Miquelon"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Pitcairn Islands",
+      nameTranslations: {
+        'en': "Pitcairn Islands",
+      },
+      alpha2Code: "PN",
+      alpha3Code: "PCN",
+      numericCode: "612",
+      flagEmoji: "🇵🇳",
+      flagImagePath: '',
+      capital: "Adamstown",
+      region: "Oceania",
+      subregion: "Polynesia",
+      population: 35,
+      area: 47,
+      callingCodes: ["870"],
+      topLevelDomains: [".pn"],
+      currencies: [
+        Currency(
+          code: "NZD",
+          name: "New Zealand dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Pacific/Pitcairn"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Puerto Rico",
+      nameTranslations: {
+        'en': "Puerto Rico",
+      },
+      alpha2Code: "PR",
+      alpha3Code: "PRI",
+      numericCode: "630",
+      flagEmoji: "🇵🇷",
+      flagImagePath: '',
+      capital: "San Juan",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 3203295,
+      area: 8870,
+      callingCodes: ["1"],
+      topLevelDomains: [".pr"],
+      currencies: [
+        Currency(
+          code: "USD",
+          name: "United States dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: ["America/Puerto_Rico"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Palestine",
+      nameTranslations: {
+        'en': "Palestine",
+      },
+      alpha2Code: "PS",
+      alpha3Code: "PSE",
+      numericCode: "275",
+      flagEmoji: "🇵🇸",
+      flagImagePath: '',
+      capital: "Ramallah",
+      region: "Asia",
+      subregion: "Western Asia",
+      population: 5483450,
+      area: 6220,
+      callingCodes: ["970"],
+      topLevelDomains: [".ps", "فلسطين."],
+      currencies: [
+        Currency(
+          code: "EGP",
+          name: "Egyptian pound",
+          symbol: "E£",
+        ),
+        Currency(
+          code: "ILS",
+          name: "Israeli new shekel",
+          symbol: "₪",
+        ),
+        Currency(
+          code: "JOD",
+          name: "Jordanian dinar",
+          symbol: "JD",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+      ],
+      timezones: ["Asia/Gaza", "Asia/Hebron"],
+      borders: ["EGY", "ISR", "JOR"],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Portugal",
+      nameTranslations: {
+        'en': "Portugal",
+      },
+      alpha2Code: "PT",
+      alpha3Code: "PRT",
+      numericCode: "620",
+      flagEmoji: "🇵🇹",
+      flagImagePath: '',
+      capital: "Lisbon",
+      region: "Europe",
+      subregion: "Southern Europe",
+      population: 10749635,
+      area: 92090,
+      callingCodes: ["351"],
+      topLevelDomains: [".pt"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "pt",
+          iso6392: "por",
+          name: "Portuguese",
+          nativeName: "Portuguese",
+        ),
+      ],
+      timezones: ["Atlantic/Azores", "Atlantic/Madeira", "Europe/Lisbon"],
+      borders: ["ESP"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Palau",
+      nameTranslations: {
+        'en': "Palau",
+      },
+      alpha2Code: "PW",
+      alpha3Code: "PLW",
+      numericCode: "585",
+      flagEmoji: "🇵🇼",
+      flagImagePath: '',
+      capital: "Ngerulmud",
+      region: "Oceania",
+      subregion: "Micronesia",
+      population: 16733,
+      area: 459,
+      callingCodes: ["680"],
+      topLevelDomains: [".pw"],
+      currencies: [
+        Currency(
+          code: "USD",
+          name: "United States dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "pau",
+          name: "Palauan",
+          nativeName: "Palauan",
+        ),
+      ],
+      timezones: ["Pacific/Palau"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Paraguay",
+      nameTranslations: {
+        'en': "Paraguay",
+      },
+      alpha2Code: "PY",
+      alpha3Code: "PRY",
+      numericCode: "600",
+      flagEmoji: "🇵🇾",
+      flagImagePath: '',
+      capital: "Asunción",
+      region: "Americas",
+      subregion: "South America",
+      population: 6109644,
+      area: 406752,
+      callingCodes: ["595"],
+      topLevelDomains: [".py"],
+      currencies: [
+        Currency(
+          code: "PYG",
+          name: "Paraguayan guaraní",
+          symbol: "₲",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "gn",
+          iso6392: "grn",
+          name: "Guaraní",
+          nativeName: "Guaraní",
+        ),
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: ["America/Asuncion"],
+      borders: ["ARG", "BOL", "BRA"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Qatar",
+      nameTranslations: {
+        'en': "Qatar",
+      },
+      alpha2Code: "QA",
+      alpha3Code: "QAT",
+      numericCode: "634",
+      flagEmoji: "🇶🇦",
+      flagImagePath: '',
+      capital: "Doha",
+      region: "Asia",
+      subregion: "Western Asia",
+      population: 3173024,
+      area: 11586,
+      callingCodes: ["974"],
+      topLevelDomains: [".qa", "قطر."],
+      currencies: [
+        Currency(
+          code: "QAR",
+          name: "Qatari riyal",
+          symbol: "ر.ق",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+      ],
+      timezones: ["Asia/Qatar"],
+      borders: ["SAU"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Réunion",
+      nameTranslations: {
+        'en': "Réunion",
+      },
+      alpha2Code: "RE",
+      alpha3Code: "REU",
+      numericCode: "638",
+      flagEmoji: "🇷🇪",
+      flagImagePath: '',
+      capital: "Saint-Denis",
+      region: "Africa",
+      subregion: "Eastern Africa",
+      population: 896175,
+      area: 2511,
+      callingCodes: ["262"],
+      topLevelDomains: [".re"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["Indian/Reunion"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Romania",
+      nameTranslations: {
+        'en': "Romania",
+      },
+      alpha2Code: "RO",
+      alpha3Code: "ROU",
+      numericCode: "642",
+      flagEmoji: "🇷🇴",
+      flagImagePath: '',
+      capital: "Bucharest",
+      region: "Europe",
+      subregion: "Southeast Europe",
+      population: 19036031,
+      area: 238391,
+      callingCodes: ["40"],
+      topLevelDomains: [".ro"],
+      currencies: [
+        Currency(
+          code: "RON",
+          name: "Romanian leu",
+          symbol: "lei",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ro",
+          iso6392: "ron",
+          name: "Romanian",
+          nativeName: "Romanian",
+        ),
+      ],
+      timezones: ["Europe/Bucharest"],
+      borders: ["BGR", "HUN", "MDA", "SRB", "UKR"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Serbia",
+      nameTranslations: {
+        'en': "Serbia",
+      },
+      alpha2Code: "RS",
+      alpha3Code: "SRB",
+      numericCode: "688",
+      flagEmoji: "🇷🇸",
+      flagImagePath: '',
+      capital: "Belgrade",
+      region: "Europe",
+      subregion: "Southeast Europe",
+      population: 6567783,
+      area: 88361,
+      callingCodes: ["381"],
+      topLevelDomains: [".rs", ".срб"],
+      currencies: [
+        Currency(
+          code: "RSD",
+          name: "Serbian dinar",
+          symbol: "дин.",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "sr",
+          iso6392: "srp",
+          name: "Serbian",
+          nativeName: "Serbian",
+        ),
+      ],
+      timezones: ["Europe/Belgrade"],
+      borders: ["BGR", "BIH", "HRV", "HUN", "MKD", "MNE", "ROU", "UNK"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Russia",
+      nameTranslations: {
+        'en': "Russia",
+      },
+      alpha2Code: "RU",
+      alpha3Code: "RUS",
+      numericCode: "643",
+      flagEmoji: "🇷🇺",
+      flagImagePath: '',
+      capital: "Moscow",
+      region: "Europe",
+      subregion: "Eastern Europe",
+      population: 146028325,
+      area: 17098242,
+      callingCodes: ["7"],
+      topLevelDomains: [".ru", ".su", ".рф"],
+      currencies: [
+        Currency(
+          code: "RUB",
+          name: "Russian ruble",
+          symbol: "₽",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ru",
+          iso6392: "rus",
+          name: "Russian",
+          nativeName: "Russian",
+        ),
+      ],
+      timezones: [
+        "Asia/Anadyr",
+        "Asia/Barnaul",
+        "Asia/Chita",
+        "Asia/Irkutsk",
+        "Asia/Kamchatka",
+        "Asia/Khandyga",
+        "Asia/Krasnoyarsk",
+        "Asia/Magadan",
+        "Asia/Novokuznetsk",
+        "Asia/Novosibirsk",
+        "Asia/Omsk",
+        "Asia/Sakhalin",
+        "Asia/Srednekolymsk",
+        "Asia/Tomsk",
+        "Asia/Ust-Nera",
+        "Asia/Vladivostok",
+        "Asia/Yakutsk",
+        "Asia/Yekaterinburg",
+        "Europe/Astrakhan",
+        "Europe/Kaliningrad",
+        "Europe/Kirov",
+        "Europe/Moscow",
+        "Europe/Samara",
+        "Europe/Saratov",
+        "Europe/Ulyanovsk",
+        "Europe/Volgograd"
+      ],
+      borders: [
+        "AZE",
+        "BLR",
+        "CHN",
+        "EST",
+        "FIN",
+        "GEO",
+        "KAZ",
+        "LTU",
+        "LVA",
+        "MNG",
+        "NOR",
+        "POL",
+        "PRK",
+        "UKR"
+      ],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Rwanda",
+      nameTranslations: {
+        'en': "Rwanda",
+      },
+      alpha2Code: "RW",
+      alpha3Code: "RWA",
+      numericCode: "646",
+      flagEmoji: "🇷🇼",
+      flagImagePath: '',
+      capital: "Kigali",
+      region: "Africa",
+      subregion: "Eastern Africa",
+      population: 14104969,
+      area: 26338,
+      callingCodes: ["250"],
+      topLevelDomains: [".rw"],
+      currencies: [
+        Currency(
+          code: "RWF",
+          name: "Rwandan franc",
+          symbol: "Fr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+        Language(
+          iso6391: "rw",
+          iso6392: "kin",
+          name: "Kinyarwanda",
+          nativeName: "Kinyarwanda",
+        ),
+      ],
+      timezones: ["Africa/Kigali"],
+      borders: ["BDI", "COD", "TZA", "UGA"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Saudi Arabia",
+      nameTranslations: {
+        'en': "Saudi Arabia",
+      },
+      alpha2Code: "SA",
+      alpha3Code: "SAU",
+      numericCode: "682",
+      flagEmoji: "🇸🇦",
+      flagImagePath: '',
+      capital: "Riyadh",
+      region: "Asia",
+      subregion: "Western Asia",
+      population: 35300280,
+      area: 2149690,
+      callingCodes: ["966"],
+      topLevelDomains: [".sa", ".السعودية"],
+      currencies: [
+        Currency(
+          code: "SAR",
+          name: "Saudi riyal",
+          symbol: "ر.س",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+      ],
+      timezones: ["Asia/Riyadh"],
+      borders: ["ARE", "IRQ", "JOR", "KWT", "OMN", "QAT", "YEM"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Solomon Islands",
+      nameTranslations: {
+        'en': "Solomon Islands",
+      },
+      alpha2Code: "SB",
+      alpha3Code: "SLB",
+      numericCode: "090",
+      flagEmoji: "🇸🇧",
+      flagImagePath: '',
+      capital: "Honiara",
+      region: "Oceania",
+      subregion: "Melanesia",
+      population: 750325,
+      area: 28896,
+      callingCodes: ["677"],
+      topLevelDomains: [".sb"],
+      currencies: [
+        Currency(
+          code: "SBD",
+          name: "Solomon Islands dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Pacific/Guadalcanal"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Seychelles",
+      nameTranslations: {
+        'en': "Seychelles",
+      },
+      alpha2Code: "SC",
+      alpha3Code: "SYC",
+      numericCode: "690",
+      flagEmoji: "🇸🇨",
+      flagImagePath: '',
+      capital: "Victoria",
+      region: "Africa",
+      subregion: "Eastern Africa",
+      population: 122729,
+      area: 452,
+      callingCodes: ["248"],
+      topLevelDomains: [".sc"],
+      currencies: [
+        Currency(
+          code: "SCR",
+          name: "Seychellois rupee",
+          symbol: "₨",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "",
+          iso6392: "crs",
+          name: "Seychellois Creole",
+          nativeName: "Seychellois Creole",
+        ),
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["Indian/Mahe"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Sudan",
+      nameTranslations: {
+        'en': "Sudan",
+      },
+      alpha2Code: "SD",
+      alpha3Code: "SDN",
+      numericCode: "729",
+      flagEmoji: "🇸🇩",
+      flagImagePath: '',
+      capital: "Khartoum",
+      region: "Africa",
+      subregion: "Northern Africa",
+      population: 51662000,
+      area: 1886068,
+      callingCodes: ["249"],
+      topLevelDomains: [".sd"],
+      currencies: [
+        Currency(
+          code: "SDG",
+          name: "Sudanese pound",
+          symbol: "PT",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Africa/Khartoum"],
+      borders: ["CAF", "EGY", "ERI", "ETH", "LBY", "SSD", "TCD"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Sweden",
+      nameTranslations: {
+        'en': "Sweden",
+      },
+      alpha2Code: "SE",
+      alpha3Code: "SWE",
+      numericCode: "752",
+      flagEmoji: "🇸🇪",
+      flagImagePath: '',
+      capital: "Stockholm",
+      region: "Europe",
+      subregion: "Northern Europe",
+      population: 10596652,
+      area: 450295,
+      callingCodes: ["46"],
+      topLevelDomains: [".se"],
+      currencies: [
+        Currency(
+          code: "SEK",
+          name: "Swedish krona",
+          symbol: "kr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "sv",
+          iso6392: "swe",
+          name: "Swedish",
+          nativeName: "Swedish",
+        ),
+      ],
+      timezones: ["Europe/Stockholm"],
+      borders: ["FIN", "NOR"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Singapore",
+      nameTranslations: {
+        'en': "Singapore",
+      },
+      alpha2Code: "SG",
+      alpha3Code: "SGP",
+      numericCode: "702",
+      flagEmoji: "🇸🇬",
+      flagImagePath: '',
+      capital: "Singapore",
+      region: "Asia",
+      subregion: "South-Eastern Asia",
+      population: 6036900,
+      area: 710,
+      callingCodes: ["65"],
+      topLevelDomains: [".sg", ".新加坡", ".சிங்கப்பூர்"],
+      currencies: [
+        Currency(
+          code: "SGD",
+          name: "Singapore dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "ms",
+          iso6392: "msa",
+          name: "Malay",
+          nativeName: "Malay",
+        ),
+        Language(
+          iso6391: "ta",
+          iso6392: "tam",
+          name: "Tamil",
+          nativeName: "Tamil",
+        ),
+        Language(
+          iso6391: "zh",
+          iso6392: "zho",
+          name: "Chinese",
+          nativeName: "Chinese",
+        ),
+      ],
+      timezones: ["Asia/Singapore"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Saint Helena, Ascension and Tristan da Cunha",
+      nameTranslations: {
+        'en': "Saint Helena, Ascension and Tristan da Cunha",
+      },
+      alpha2Code: "SH",
+      alpha3Code: "SHN",
+      numericCode: "654",
+      flagEmoji: "🇸🇭",
+      flagImagePath: '',
+      capital: "Jamestown",
+      region: "Africa",
+      subregion: "Western Africa",
+      population: 5651,
+      area: 394,
+      callingCodes: ["290"],
+      topLevelDomains: [".sh", ".ac"],
+      currencies: [
+        Currency(
+          code: "GBP",
+          name: "Pound sterling",
+          symbol: "£",
+        ),
+        Currency(
+          code: "SHP",
+          name: "Saint Helena pound",
+          symbol: "£",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Atlantic/St_Helena"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Slovenia",
+      nameTranslations: {
+        'en': "Slovenia",
+      },
+      alpha2Code: "SI",
+      alpha3Code: "SVN",
+      numericCode: "705",
+      flagEmoji: "🇸🇮",
+      flagImagePath: '',
+      capital: "Ljubljana",
+      region: "Europe",
+      subregion: "Central Europe",
+      population: 2130638,
+      area: 20273,
+      callingCodes: ["386"],
+      topLevelDomains: [".si"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "sl",
+          iso6392: "slv",
+          name: "Slovene",
+          nativeName: "Slovene",
+        ),
+      ],
+      timezones: ["Europe/Ljubljana"],
+      borders: ["AUT", "HRV", "HUN", "ITA"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Svalbard and Jan Mayen",
+      nameTranslations: {
+        'en': "Svalbard and Jan Mayen",
+      },
+      alpha2Code: "SJ",
+      alpha3Code: "SJM",
+      numericCode: "744",
+      flagEmoji: "🇸🇯",
+      flagImagePath: '',
+      capital: "Longyearbyen",
+      region: "Europe",
+      subregion: "Northern Europe",
+      population: 0,
+      area: -1,
+      callingCodes: ["47"],
+      topLevelDomains: [".sj"],
+      currencies: [
+        Currency(
+          code: "NOK",
+          name: "krone",
+          symbol: "kr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "no",
+          iso6392: "nor",
+          name: "Norwegian",
+          nativeName: "Norwegian",
+        ),
+      ],
+      timezones: ["Arctic/Longyearbyen"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Slovakia",
+      nameTranslations: {
+        'en': "Slovakia",
+      },
+      alpha2Code: "SK",
+      alpha3Code: "SVK",
+      numericCode: "703",
+      flagEmoji: "🇸🇰",
+      flagImagePath: '',
+      capital: "Bratislava",
+      region: "Europe",
+      subregion: "Central Europe",
+      population: 5413813,
+      area: 49037,
+      callingCodes: ["421"],
+      topLevelDomains: [".sk"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "sk",
+          iso6392: "slk",
+          name: "Slovak",
+          nativeName: "Slovak",
+        ),
+      ],
+      timezones: ["Europe/Bratislava"],
+      borders: ["AUT", "CZE", "HUN", "POL", "UKR"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Sierra Leone",
+      nameTranslations: {
+        'en': "Sierra Leone",
+      },
+      alpha2Code: "SL",
+      alpha3Code: "SLE",
+      numericCode: "694",
+      flagEmoji: "🇸🇱",
+      flagImagePath: '',
+      capital: "Freetown",
+      region: "Africa",
+      subregion: "Western Africa",
+      population: 9077691,
+      area: 71740,
+      callingCodes: ["232"],
+      topLevelDomains: [".sl"],
+      currencies: [
+        Currency(
+          code: "SLE",
+          name: "Sierra Leonean leone",
+          symbol: "Le",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Africa/Freetown"],
+      borders: ["GIN", "LBR"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "San Marino",
+      nameTranslations: {
+        'en': "San Marino",
+      },
+      alpha2Code: "SM",
+      alpha3Code: "SMR",
+      numericCode: "674",
+      flagEmoji: "🇸🇲",
+      flagImagePath: '',
+      capital: "City of San Marino",
+      region: "Europe",
+      subregion: "Southern Europe",
+      population: 34132,
+      area: 61,
+      callingCodes: ["378"],
+      topLevelDomains: [".sm"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "it",
+          iso6392: "ita",
+          name: "Italian",
+          nativeName: "Italian",
+        ),
+      ],
+      timezones: ["Europe/San_Marino"],
+      borders: ["ITA"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Senegal",
+      nameTranslations: {
+        'en': "Senegal",
+      },
+      alpha2Code: "SN",
+      alpha3Code: "SEN",
+      numericCode: "686",
+      flagEmoji: "🇸🇳",
+      flagImagePath: '',
+      capital: "Dakar",
+      region: "Africa",
+      subregion: "Western Africa",
+      population: 18593258,
+      area: 196722,
+      callingCodes: ["221"],
+      topLevelDomains: [".sn"],
+      currencies: [
+        Currency(
+          code: "XOF",
+          name: "West African CFA franc",
+          symbol: "Fr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["Africa/Dakar"],
+      borders: ["GIN", "GMB", "GNB", "MLI", "MRT"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Somalia",
+      nameTranslations: {
+        'en': "Somalia",
+      },
+      alpha2Code: "SO",
+      alpha3Code: "SOM",
+      numericCode: "706",
+      flagEmoji: "🇸🇴",
+      flagImagePath: '',
+      capital: "Mogadishu",
+      region: "Africa",
+      subregion: "Eastern Africa",
+      population: 19655000,
+      area: 637657,
+      callingCodes: ["252"],
+      topLevelDomains: [".so"],
+      currencies: [
+        Currency(
+          code: "SOS",
+          name: "Somali shilling",
+          symbol: "Sh",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+        Language(
+          iso6391: "so",
+          iso6392: "som",
+          name: "Somali",
+          nativeName: "Somali",
+        ),
+      ],
+      timezones: ["Africa/Mogadishu"],
+      borders: ["DJI", "ETH", "KEN"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Suriname",
+      nameTranslations: {
+        'en': "Suriname",
+      },
+      alpha2Code: "SR",
+      alpha3Code: "SUR",
+      numericCode: "740",
+      flagEmoji: "🇸🇷",
+      flagImagePath: '',
+      capital: "Paramaribo",
+      region: "Americas",
+      subregion: "South America",
+      population: 616500,
+      area: 163820,
+      callingCodes: ["597"],
+      topLevelDomains: [".sr"],
+      currencies: [
+        Currency(
+          code: "SRD",
+          name: "Surinamese dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "nl",
+          iso6392: "nld",
+          name: "Dutch",
+          nativeName: "Dutch",
+        ),
+      ],
+      timezones: ["America/Paramaribo"],
+      borders: ["BRA", "GUF", "GUY"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "South Sudan",
+      nameTranslations: {
+        'en': "South Sudan",
+      },
+      alpha2Code: "SS",
+      alpha3Code: "SSD",
+      numericCode: "728",
+      flagEmoji: "🇸🇸",
+      flagImagePath: '',
+      capital: "Juba",
+      region: "Africa",
+      subregion: "Middle Africa",
+      population: 15786898,
+      area: 619745,
+      callingCodes: ["211"],
+      topLevelDomains: [".ss"],
+      currencies: [
+        Currency(
+          code: "SSP",
+          name: "South Sudanese pound",
+          symbol: "£",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Africa/Juba"],
+      borders: ["CAF", "COD", "ETH", "KEN", "SDN", "UGA"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "São Tomé and Príncipe",
+      nameTranslations: {
+        'en': "São Tomé and Príncipe",
+      },
+      alpha2Code: "ST",
+      alpha3Code: "STP",
+      numericCode: "678",
+      flagEmoji: "🇸🇹",
+      flagImagePath: '',
+      capital: "São Tomé",
+      region: "Africa",
+      subregion: "Middle Africa",
+      population: 209607,
+      area: 964,
+      callingCodes: ["239"],
+      topLevelDomains: [".st"],
+      currencies: [
+        Currency(
+          code: "STN",
+          name: "São Tomé and Príncipe dobra",
+          symbol: "Db",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "pt",
+          iso6392: "por",
+          name: "Portuguese",
+          nativeName: "Portuguese",
+        ),
+      ],
+      timezones: ["Africa/Sao_Tome"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "El Salvador",
+      nameTranslations: {
+        'en': "El Salvador",
+      },
+      alpha2Code: "SV",
+      alpha3Code: "SLV",
+      numericCode: "222",
+      flagEmoji: "🇸🇻",
+      flagImagePath: '',
+      capital: "San Salvador",
+      region: "Americas",
+      subregion: "Central America",
+      population: 6029976,
+      area: 21041,
+      callingCodes: ["503"],
+      topLevelDomains: [".sv"],
+      currencies: [
+        Currency(
+          code: "USD",
+          name: "United States dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: ["America/El_Salvador"],
+      borders: ["GTM", "HND"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Sint Maarten",
+      nameTranslations: {
+        'en': "Sint Maarten",
+      },
+      alpha2Code: "SX",
+      alpha3Code: "SXM",
+      numericCode: "534",
+      flagEmoji: "🇸🇽",
+      flagImagePath: '',
+      capital: "Philipsburg",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 41349,
+      area: 34,
+      callingCodes: ["1721"],
+      topLevelDomains: [".sx"],
+      currencies: [
+        Currency(
+          code: "ANG",
+          name: "Netherlands Antillean guilder",
+          symbol: "ƒ",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+        Language(
+          iso6391: "nl",
+          iso6392: "nld",
+          name: "Dutch",
+          nativeName: "Dutch",
+        ),
+      ],
+      timezones: ["America/Anguilla"],
+      borders: ["MAF"],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Syria",
+      nameTranslations: {
+        'en': "Syria",
+      },
+      alpha2Code: "SY",
+      alpha3Code: "SYR",
+      numericCode: "760",
+      flagEmoji: "🇸🇾",
+      flagImagePath: '',
+      capital: "Damascus",
+      region: "Asia",
+      subregion: "Western Asia",
+      population: 25620000,
+      area: 185180,
+      callingCodes: ["963"],
+      topLevelDomains: [".sy", "سوريا."],
+      currencies: [
+        Currency(
+          code: "SYP",
+          name: "Syrian pound",
+          symbol: "£",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+      ],
+      timezones: ["Asia/Damascus"],
+      borders: ["IRQ", "ISR", "JOR", "LBN", "TUR"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Eswatini",
+      nameTranslations: {
+        'en': "Eswatini",
+      },
+      alpha2Code: "SZ",
+      alpha3Code: "SWZ",
+      numericCode: "748",
+      flagEmoji: "🇸🇿",
+      flagImagePath: '',
+      capital: "Lobamba",
+      region: "Africa",
+      subregion: "Southern Africa",
+      population: 1235549,
+      area: 17364,
+      callingCodes: ["268"],
+      topLevelDomains: [".sz"],
+      currencies: [
+        Currency(
+          code: "SZL",
+          name: "Swazi lilangeni",
+          symbol: "L",
+        ),
+        Currency(
+          code: "ZAR",
+          name: "South African rand",
+          symbol: "R",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "ss",
+          iso6392: "ssw",
+          name: "Swazi",
+          nativeName: "Swazi",
+        ),
+      ],
+      timezones: ["Africa/Mbabane"],
+      borders: ["MOZ", "ZAF"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Turks and Caicos Islands",
+      nameTranslations: {
+        'en': "Turks and Caicos Islands",
+      },
+      alpha2Code: "TC",
+      alpha3Code: "TCA",
+      numericCode: "796",
+      flagEmoji: "🇹🇨",
+      flagImagePath: '',
+      capital: "Cockburn Town",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 50894,
+      area: 948,
+      callingCodes: ["1"],
+      topLevelDomains: [".tc"],
+      currencies: [
+        Currency(
+          code: "USD",
+          name: "United States dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["America/Grand_Turk"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Chad",
+      nameTranslations: {
+        'en': "Chad",
+      },
+      alpha2Code: "TD",
+      alpha3Code: "TCD",
+      numericCode: "148",
+      flagEmoji: "🇹🇩",
       flagImagePath: '',
       capital: "N'Djamena",
-      largestCity: "N'Djamena",
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 15946876,
-      area: 0, // Not available in CSV
-      callingCodes: ['235'],
-      topLevelDomains: ['.td'],
-      currencies: [Currency(code: 'XAF', name: 'XAF', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Chile
-    Country(
-      name: 'Chile',
-      nameTranslations: {'en': 'Chile'},
-      alpha2Code: 'CL',
-      alpha3Code: 'CHL',
-      numericCode: '152',
-      flagEmoji: '🇨🇱',
-      flagImagePath: '',
-      capital: 'Santiago',
-      largestCity: 'Santiago',
-      region: 'Americas',
-      subregion: 'South America',
-      population: 18952038,
-      area: 0, // Not available in CSV
-      callingCodes: ['56'],
-      topLevelDomains: ['.cl'],
-      currencies: [Currency(code: 'CLP', name: 'CLP', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Spanish',
-            nativeName: 'Spanish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // China
-    Country(
-      name: 'China',
-      nameTranslations: {'en': 'China'},
-      alpha2Code: 'CN',
-      alpha3Code: 'CHN',
-      numericCode: '156',
-      flagEmoji: '🇨🇳',
-      flagImagePath: '',
-      capital: 'Beijing',
-      largestCity: 'Shanghai',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 1397715000,
-      area: 0, // Not available in CSV
-      callingCodes: ['86'],
-      topLevelDomains: ['.cn'],
-      currencies: [Currency(code: 'CNY', name: 'CNY', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Chinese',
-            nativeName: 'Chinese')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Colombia
-    Country(
-      name: 'Colombia',
-      nameTranslations: {'en': 'Colombia'},
-      alpha2Code: 'CO',
-      alpha3Code: 'COL',
-      numericCode: '170',
-      flagEmoji: '🇨🇴',
-      flagImagePath: '',
-      capital: 'Bogot',
-      largestCity: 'Bogot',
-      region: 'Americas',
-      subregion: 'Central America',
-      population: 50339443,
-      area: 0, // Not available in CSV
-      callingCodes: ['57'],
-      topLevelDomains: ['.co'],
-      currencies: [Currency(code: 'COP', name: 'COP', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Spanish',
-            nativeName: 'Spanish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Comoros
-    Country(
-      name: 'Comoros',
-      nameTranslations: {'en': 'Comoros'},
-      alpha2Code: 'KM',
-      alpha3Code: 'COM',
-      numericCode: '174',
-      flagEmoji: '🇰🇲',
-      flagImagePath: '',
-      capital: 'Moroni, Comoros',
-      largestCity: 'Moroni, Comoros',
-      region: 'Africa',
-      subregion: 'Southern Africa',
-      population: 850886,
-      area: 0, // Not available in CSV
-      callingCodes: ['269'],
-      topLevelDomains: ['.km'],
-      currencies: [Currency(code: 'KMF', name: 'KMF', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Republic of the Congo
-    Country(
-      name: 'Republic of the Congo',
-      nameTranslations: {'en': 'Republic of the Congo'},
-      alpha2Code: 'CG',
-      alpha3Code: 'COG',
-      numericCode: '178',
-      flagEmoji: '🇨🇬',
-      flagImagePath: '',
-      capital: 'Brazzaville',
-      largestCity: 'Brazzaville',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 5380508,
-      area: 0, // Not available in CSV
-      callingCodes: ['242'],
-      topLevelDomains: ['.cg'],
-      currencies: [Currency(code: 'XAF', name: 'XAF', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Costa Rica
-    Country(
-      name: 'Costa Rica',
-      nameTranslations: {'en': 'Costa Rica'},
-      alpha2Code: 'CR',
-      alpha3Code: 'CRI',
-      numericCode: '188',
-      flagEmoji: '🇨🇷',
-      flagImagePath: '',
-      capital: 'San Jos',
-      largestCity: 'San Jos',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 5047561,
-      area: 0, // Not available in CSV
-      callingCodes: ['506'],
-      topLevelDomains: ['.cr'],
-      currencies: [Currency(code: 'CRC', name: 'CRC', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Spanish',
-            nativeName: 'Spanish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Croatia
-    Country(
-      name: 'Croatia',
-      nameTranslations: {'en': 'Croatia'},
-      alpha2Code: 'HR',
-      alpha3Code: 'HRV',
-      numericCode: '191',
-      flagEmoji: '🇭🇷',
-      flagImagePath: '',
-      capital: 'Zagreb',
-      largestCity: 'Zagreb',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 4067500,
-      area: 0, // Not available in CSV
-      callingCodes: ['385'],
-      topLevelDomains: ['.hr'],
-      currencies: [Currency(code: 'HRK', name: 'HRK', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Croatian',
-            nativeName: 'Croatian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Cuba
-    Country(
-      name: 'Cuba',
-      nameTranslations: {'en': 'Cuba'},
-      alpha2Code: 'CU',
-      alpha3Code: 'CUB',
-      numericCode: '192',
-      flagEmoji: '🇨🇺',
-      flagImagePath: '',
-      capital: 'Havana',
-      largestCity: 'Havana',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 11333483,
-      area: 0, // Not available in CSV
-      callingCodes: ['53'],
-      topLevelDomains: ['.cu'],
-      currencies: [Currency(code: 'CUP', name: 'CUP', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Spanish',
-            nativeName: 'Spanish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Cyprus
-    Country(
-      name: 'Cyprus',
-      nameTranslations: {'en': 'Cyprus'},
-      alpha2Code: 'CY',
-      alpha3Code: 'CYP',
-      numericCode: '196',
-      flagEmoji: '🇨🇾',
-      flagImagePath: '',
-      capital: 'Nicosia',
-      largestCity: 'Statos',
-      region: 'Europe',
-      subregion: 'Southern Europe',
-      population: 1198575,
-      area: 0, // Not available in CSV
-      callingCodes: ['357'],
-      topLevelDomains: ['.cy'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Greek', nativeName: 'Greek')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Czech Republic
-    Country(
-      name: 'Czech Republic',
-      nameTranslations: {'en': 'Czech Republic'},
-      alpha2Code: 'CZ',
-      alpha3Code: 'CZE',
-      numericCode: '203',
-      flagEmoji: '🇨🇿',
-      flagImagePath: '',
-      capital: 'Prague',
-      largestCity: 'Prague',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 10669709,
-      area: 0, // Not available in CSV
-      callingCodes: ['420'],
-      topLevelDomains: ['.cz'],
-      currencies: [Currency(code: 'CZK', name: 'CZK', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Czech', nativeName: 'Czech')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Democratic Republic of the Congo
-    Country(
-      name: 'Democratic Republic of the Congo',
-      nameTranslations: {'en': 'Democratic Republic of the Congo'},
-      alpha2Code: 'CD',
-      alpha3Code: 'COD',
-      numericCode: '180',
-      flagEmoji: '🇨🇩',
-      flagImagePath: '',
-      capital: 'Kinshasa',
-      largestCity: 'Kinshasa',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 86790567,
-      area: 0, // Not available in CSV
-      callingCodes: ['243'],
-      topLevelDomains: ['.cd'],
-      currencies: [Currency(code: 'CDF', name: 'CDF', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Denmark
-    Country(
-      name: 'Denmark',
-      nameTranslations: {'en': 'Denmark'},
-      alpha2Code: 'DK',
-      alpha3Code: 'DNK',
-      numericCode: '208',
-      flagEmoji: '🇩🇰',
-      flagImagePath: '',
-      capital: 'Copenhagen',
-      largestCity: 'Copenhagen',
-      region: 'Europe',
-      subregion: 'Northern Europe',
-      population: 5818553,
-      area: 0, // Not available in CSV
-      callingCodes: ['45'],
-      topLevelDomains: ['.dk'],
-      currencies: [Currency(code: 'DKK', name: 'DKK', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Danish', nativeName: 'Danish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Djibouti
-    Country(
-      name: 'Djibouti',
-      nameTranslations: {'en': 'Djibouti'},
-      alpha2Code: 'DJ',
-      alpha3Code: 'DJI',
-      numericCode: '262',
-      flagEmoji: '🇩🇯',
-      flagImagePath: '',
-      capital: 'Djibouti City',
-      largestCity: 'Djibouti City',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 973560,
-      area: 0, // Not available in CSV
-      callingCodes: ['253'],
-      topLevelDomains: ['.dj'],
-      currencies: [Currency(code: 'DJF', name: 'DJF', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Dominica
-    Country(
-      name: 'Dominica',
-      nameTranslations: {'en': 'Dominica'},
-      alpha2Code: 'DM',
-      alpha3Code: 'DMA',
-      numericCode: '212',
-      flagEmoji: '🇩🇲',
-      flagImagePath: '',
-      capital: 'Roseau',
-      largestCity: 'Roseau',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 71808,
-      area: 0, // Not available in CSV
-      callingCodes: ['1'],
-      topLevelDomains: ['.dm'],
-      currencies: [Currency(code: 'XCD', name: 'XCD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Dominican Republic
-    Country(
-      name: 'Dominican Republic',
-      nameTranslations: {'en': 'Dominican Republic'},
-      alpha2Code: 'DO',
-      alpha3Code: 'DOM',
-      numericCode: '214',
-      flagEmoji: '🇩🇴',
-      flagImagePath: '',
-      capital: 'Santo Domingo',
-      largestCity: 'Santo Domingo',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 10738958,
-      area: 0, // Not available in CSV
-      callingCodes: ['1'],
-      topLevelDomains: ['.do'],
-      currencies: [Currency(code: 'DOP', name: 'DOP', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Spanish',
-            nativeName: 'Spanish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Ecuador
-    Country(
-      name: 'Ecuador',
-      nameTranslations: {'en': 'Ecuador'},
-      alpha2Code: 'EC',
-      alpha3Code: 'ECU',
-      numericCode: '218',
-      flagEmoji: '🇪🇨',
-      flagImagePath: '',
-      capital: 'Quito',
-      largestCity: 'Quito',
-      region: 'Americas',
-      subregion: 'Central America',
-      population: 17373662,
-      area: 0, // Not available in CSV
-      callingCodes: ['593'],
-      topLevelDomains: ['.ec'],
-      currencies: [Currency(code: 'USD', name: 'USD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Spanish',
-            nativeName: 'Spanish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Egypt
-    Country(
-      name: 'Egypt',
-      nameTranslations: {'en': 'Egypt'},
-      alpha2Code: 'EG',
-      alpha3Code: 'EGY',
-      numericCode: '818',
-      flagEmoji: '🇪🇬',
-      flagImagePath: '',
-      capital: 'Cairo',
-      largestCity: 'Cairo',
-      region: 'Africa',
-      subregion: 'Northern Africa',
-      population: 100388073,
-      area: 0, // Not available in CSV
-      callingCodes: ['20'],
-      topLevelDomains: ['.eg'],
-      currencies: [Currency(code: 'EGP', name: 'EGP', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Arabic', nativeName: 'Arabic')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // El Salvador
-    Country(
-      name: 'El Salvador',
-      nameTranslations: {'en': 'El Salvador'},
-      alpha2Code: 'SV',
-      alpha3Code: 'SLV',
-      numericCode: '222',
-      flagEmoji: '🇸🇻',
-      flagImagePath: '',
-      capital: 'San Salvador',
-      largestCity: 'San Salvador',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 6453553,
-      area: 0, // Not available in CSV
-      callingCodes: ['503'],
-      topLevelDomains: ['.sv'],
-      currencies: [Currency(code: 'SVC', name: 'SVC', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Spanish',
-            nativeName: 'Spanish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Equatorial Guinea
-    Country(
-      name: 'Equatorial Guinea',
-      nameTranslations: {'en': 'Equatorial Guinea'},
-      alpha2Code: 'GQ',
-      alpha3Code: 'GNQ',
-      numericCode: '226',
-      flagEmoji: '🇬🇶',
-      flagImagePath: '',
-      capital: 'Malabo',
-      largestCity: 'Malabo',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 1355986,
-      area: 0, // Not available in CSV
-      callingCodes: ['240'],
-      topLevelDomains: ['.gq'],
-      currencies: [Currency(code: 'XAF', name: 'XAF', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Spanish',
-            nativeName: 'Spanish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Eritrea
-    Country(
-      name: 'Eritrea',
-      nameTranslations: {'en': 'Eritrea'},
-      alpha2Code: 'ER',
-      alpha3Code: 'ERI',
-      numericCode: '232',
-      flagEmoji: '🇪🇷',
-      flagImagePath: '',
-      capital: 'Asmara',
-      largestCity: 'Asmara',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 6333135,
-      area: 0, // Not available in CSV
-      callingCodes: ['291'],
-      topLevelDomains: ['.er'],
-      currencies: [Currency(code: 'ERN', name: 'ERN', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Tigrinya',
-            nativeName: 'Tigrinya')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Estonia
-    Country(
-      name: 'Estonia',
-      nameTranslations: {'en': 'Estonia'},
-      alpha2Code: 'EE',
-      alpha3Code: 'EST',
-      numericCode: '233',
-      flagEmoji: '🇪🇪',
-      flagImagePath: '',
-      capital: 'Tallinn',
-      largestCity: 'Tallinn',
-      region: 'Europe',
-      subregion: 'Northern Europe',
-      population: 1331824,
-      area: 0, // Not available in CSV
-      callingCodes: ['372'],
-      topLevelDomains: ['.ee'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Estonian',
-            nativeName: 'Estonian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Eswatini
-    Country(
-      name: 'Eswatini',
-      nameTranslations: {'en': 'Eswatini'},
-      alpha2Code: 'SZ',
-      alpha3Code: 'SWZ',
-      numericCode: '748',
-      flagEmoji: '🇸🇿',
-      flagImagePath: '',
-      capital: 'Mbabane',
-      largestCity: 'Mbabane',
-      region: 'Africa',
-      subregion: 'Southern Africa',
-      population: 1093238,
-      area: 0, // Not available in CSV
-      callingCodes: ['268'],
-      topLevelDomains: ['.sz'],
-      currencies: [Currency(code: 'SZL', name: 'SZL', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Ethiopia
-    Country(
-      name: 'Ethiopia',
-      nameTranslations: {'en': 'Ethiopia'},
-      alpha2Code: 'ET',
-      alpha3Code: 'ETH',
-      numericCode: '231',
-      flagEmoji: '🇪🇹',
-      flagImagePath: '',
-      capital: 'Addis Ababa',
-      largestCity: 'Addis Ababa',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 112078730,
-      area: 0, // Not available in CSV
-      callingCodes: ['251'],
-      topLevelDomains: ['.et'],
-      currencies: [Currency(code: 'ETB', name: 'ETB', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Amharic',
-            nativeName: 'Amharic')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Fiji
-    Country(
-      name: 'Fiji',
-      nameTranslations: {'en': 'Fiji'},
-      alpha2Code: 'FJ',
-      alpha3Code: 'FJI',
-      numericCode: '242',
-      flagEmoji: '🇫🇯',
-      flagImagePath: '',
-      capital: 'Suva',
-      largestCity: 'Suva',
-      region: 'Oceania',
-      subregion: 'Polynesia',
-      population: 889953,
-      area: 0, // Not available in CSV
-      callingCodes: ['679'],
-      topLevelDomains: ['.fj'],
-      currencies: [Currency(code: 'FJD', name: 'FJD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Fiji Hindi',
-            nativeName: 'Fiji Hindi')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Finland
-    Country(
-      name: 'Finland',
-      nameTranslations: {'en': 'Finland'},
-      alpha2Code: 'FI',
-      alpha3Code: 'FIN',
-      numericCode: '246',
-      flagEmoji: '🇫🇮',
-      flagImagePath: '',
-      capital: 'Helsinki',
-      largestCity: 'Helsinki',
-      region: 'Europe',
-      subregion: 'Northern Europe',
-      population: 5520314,
-      area: 0, // Not available in CSV
-      callingCodes: ['358'],
-      topLevelDomains: ['.fi'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Swedish',
-            nativeName: 'Swedish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // France
-    Country(
-      name: 'France',
-      nameTranslations: {'en': 'France'},
-      alpha2Code: 'FR',
-      alpha3Code: 'FRA',
-      numericCode: '250',
-      flagEmoji: '🇫🇷',
-      flagImagePath: '',
-      capital: 'Paris',
-      largestCity: 'Paris',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 67059887,
-      area: 0, // Not available in CSV
-      callingCodes: ['33'],
-      topLevelDomains: ['.fr'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Gabon
-    Country(
-      name: 'Gabon',
-      nameTranslations: {'en': 'Gabon'},
-      alpha2Code: 'GA',
-      alpha3Code: 'GAB',
-      numericCode: '266',
-      flagEmoji: '🇬🇦',
-      flagImagePath: '',
-      capital: 'Libreville',
-      largestCity: 'Libreville',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 2172579,
-      area: 0, // Not available in CSV
-      callingCodes: ['241'],
-      topLevelDomains: ['.ga'],
-      currencies: [Currency(code: 'XAF', name: 'XAF', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // The Gambia
-    Country(
-      name: 'The Gambia',
-      nameTranslations: {'en': 'The Gambia'},
-      alpha2Code: 'GM',
-      alpha3Code: 'GMB',
-      numericCode: '270',
-      flagEmoji: '🇬🇲',
-      flagImagePath: '',
-      capital: 'Banjul',
-      largestCity: 'Serekunda',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 2347706,
-      area: 0, // Not available in CSV
-      callingCodes: ['220'],
-      topLevelDomains: ['.gm'],
-      currencies: [Currency(code: 'GMD', name: 'GMD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Georgia
-    Country(
-      name: 'Georgia',
-      nameTranslations: {'en': 'Georgia'},
-      alpha2Code: 'GE',
-      alpha3Code: 'GEO',
-      numericCode: '268',
-      flagEmoji: '🇬🇪',
-      flagImagePath: '',
-      capital: 'Tbilisi',
-      largestCity: 'Tbilisi',
-      region: 'Asia',
-      subregion: 'Eastern Asia',
-      population: 3720382,
-      area: 0, // Not available in CSV
-      callingCodes: ['995'],
-      topLevelDomains: ['.ge'],
-      currencies: [Currency(code: 'GEL', name: 'GEL', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Georgian',
-            nativeName: 'Georgian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Germany
-    Country(
-      name: 'Germany',
-      nameTranslations: {'en': 'Germany'},
-      alpha2Code: 'DE',
-      alpha3Code: 'DEU',
-      numericCode: '276',
-      flagEmoji: '🇩🇪',
-      flagImagePath: '',
-      capital: 'Berlin',
-      largestCity: 'Berlin',
-      region: 'Europe',
-      subregion: 'Northern Europe',
-      population: 83132799,
-      area: 0, // Not available in CSV
-      callingCodes: ['49'],
-      topLevelDomains: ['.de'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'German', nativeName: 'German')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Ghana
-    Country(
-      name: 'Ghana',
-      nameTranslations: {'en': 'Ghana'},
-      alpha2Code: 'GH',
-      alpha3Code: 'GHA',
-      numericCode: '288',
-      flagEmoji: '🇬🇭',
-      flagImagePath: '',
-      capital: 'Accra',
-      largestCity: 'Accra',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 30792608,
-      area: 0, // Not available in CSV
-      callingCodes: ['233'],
-      topLevelDomains: ['.gh'],
-      currencies: [Currency(code: 'GHS', name: 'GHS', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Greece
-    Country(
-      name: 'Greece',
-      nameTranslations: {'en': 'Greece'},
-      alpha2Code: 'GR',
-      alpha3Code: 'GRC',
-      numericCode: '300',
-      flagEmoji: '🇬🇷',
-      flagImagePath: '',
-      capital: 'Athens',
-      largestCity: 'Macedonia',
-      region: 'Europe',
-      subregion: 'Southern Europe',
-      population: 10716322,
-      area: 0, // Not available in CSV
-      callingCodes: ['30'],
-      topLevelDomains: ['.gr'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Greek', nativeName: 'Greek')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Grenada
-    Country(
-      name: 'Grenada',
-      nameTranslations: {'en': 'Grenada'},
-      alpha2Code: 'GD',
-      alpha3Code: 'GRD',
-      numericCode: '308',
-      flagEmoji: '🇬🇩',
-      flagImagePath: '',
-      capital: "St. George's, Grenada",
-      largestCity: "St. George's, Grenada",
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 112003,
-      area: 0, // Not available in CSV
-      callingCodes: ['1'],
-      topLevelDomains: ['.gd'],
-      currencies: [Currency(code: 'XCD', name: 'XCD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Guatemala
-    Country(
-      name: 'Guatemala',
-      nameTranslations: {'en': 'Guatemala'},
-      alpha2Code: 'GT',
-      alpha3Code: 'GTM',
-      numericCode: '320',
-      flagEmoji: '🇬🇹',
-      flagImagePath: '',
-      capital: 'Guatemala City',
-      largestCity: 'Guatemala City',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 16604026,
-      area: 0, // Not available in CSV
-      callingCodes: ['502'],
-      topLevelDomains: ['.gt'],
-      currencies: [Currency(code: 'GTQ', name: 'GTQ', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Spanish',
-            nativeName: 'Spanish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Guinea
-    Country(
-      name: 'Guinea',
-      nameTranslations: {'en': 'Guinea'},
-      alpha2Code: 'GN',
-      alpha3Code: 'GIN',
-      numericCode: '324',
-      flagEmoji: '🇬🇳',
-      flagImagePath: '',
-      capital: 'Conakry',
-      largestCity: 'Kankan',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 12771246,
-      area: 0, // Not available in CSV
-      callingCodes: ['224'],
-      topLevelDomains: ['.gn'],
-      currencies: [Currency(code: 'GNF', name: 'GNF', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Guinea-Bissau
-    Country(
-      name: 'Guinea-Bissau',
-      nameTranslations: {'en': 'Guinea-Bissau'},
-      alpha2Code: 'GW',
-      alpha3Code: 'GNB',
-      numericCode: '624',
-      flagEmoji: '🇬🇼',
-      flagImagePath: '',
-      capital: 'Bissau',
-      largestCity: 'Bissau',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 1920922,
-      area: 0, // Not available in CSV
-      callingCodes: ['245'],
-      topLevelDomains: ['.gw'],
-      currencies: [Currency(code: 'XOF', name: 'XOF', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Portuguese',
-            nativeName: 'Portuguese')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Guyana
-    Country(
-      name: 'Guyana',
-      nameTranslations: {'en': 'Guyana'},
-      alpha2Code: 'GY',
-      alpha3Code: 'GUY',
-      numericCode: '328',
-      flagEmoji: '🇬🇾',
-      flagImagePath: '',
-      capital: 'Georgetown, Guyana',
-      largestCity: 'Georgetown, Guyana',
-      region: 'Americas',
-      subregion: 'Central America',
-      population: 782766,
-      area: 0, // Not available in CSV
-      callingCodes: ['592'],
-      topLevelDomains: ['.gy'],
-      currencies: [Currency(code: 'GYD', name: 'GYD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Haiti
-    Country(
-      name: 'Haiti',
-      nameTranslations: {'en': 'Haiti'},
-      alpha2Code: 'HT',
-      alpha3Code: 'HTI',
-      numericCode: '332',
-      flagEmoji: '🇭🇹',
-      flagImagePath: '',
-      capital: 'Port-au-Prince',
-      largestCity: 'Port-au-Prince',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 11263077,
-      area: 0, // Not available in CSV
-      callingCodes: ['509'],
-      topLevelDomains: ['.ht'],
-      currencies: [Currency(code: 'HTG', name: 'HTG', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Vatican City
-    Country(
-      name: 'Vatican City',
-      nameTranslations: {'en': 'Vatican City'},
-      alpha2Code: 'VA',
-      alpha3Code: 'VAT',
-      numericCode: '336',
-      flagEmoji: '🇻🇦',
-      flagImagePath: '',
-      capital: 'Vatican City',
-      largestCity: 'Vatican City',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 836,
-      area: 0, // Not available in CSV
-      callingCodes: ['379'],
-      topLevelDomains: ['.va'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Italian',
-            nativeName: 'Italian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Honduras
-    Country(
-      name: 'Honduras',
-      nameTranslations: {'en': 'Honduras'},
-      alpha2Code: 'HN',
-      alpha3Code: 'HND',
-      numericCode: '340',
-      flagEmoji: '🇭🇳',
-      flagImagePath: '',
-      capital: 'Tegucigalpa',
-      largestCity: 'Tegucigalpa',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 9746117,
-      area: 0, // Not available in CSV
-      callingCodes: ['504'],
-      topLevelDomains: ['.hn'],
-      currencies: [Currency(code: 'HNL', name: 'HNL', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Spanish',
-            nativeName: 'Spanish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Hungary
-    Country(
-      name: 'Hungary',
-      nameTranslations: {'en': 'Hungary'},
-      alpha2Code: 'HU',
-      alpha3Code: 'HUN',
-      numericCode: '348',
-      flagEmoji: '🇭🇺',
-      flagImagePath: '',
-      capital: 'Budapest',
-      largestCity: 'Budapest',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 9769949,
-      area: 0, // Not available in CSV
-      callingCodes: ['36'],
-      topLevelDomains: ['.hu'],
-      currencies: [Currency(code: 'HUF', name: 'HUF', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Hungarian',
-            nativeName: 'Hungarian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Iceland
-    Country(
-      name: 'Iceland',
-      nameTranslations: {'en': 'Iceland'},
-      alpha2Code: 'IS',
-      alpha3Code: 'ISL',
-      numericCode: '352',
-      flagEmoji: '🇮🇸',
-      flagImagePath: '',
-      capital: 'Reykjav',
-      largestCity: 'Reykjav',
-      region: 'Europe',
-      subregion: 'Northern Europe',
-      population: 361313,
-      area: 0, // Not available in CSV
-      callingCodes: ['354'],
-      topLevelDomains: ['.is'],
-      currencies: [Currency(code: 'ISK', name: 'ISK', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Icelandic',
-            nativeName: 'Icelandic')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // India
-    Country(
-      name: 'India',
-      nameTranslations: {'en': 'India'},
-      alpha2Code: 'IN',
-      alpha3Code: 'IND',
-      numericCode: '356',
-      flagEmoji: '🇮🇳',
-      flagImagePath: '',
-      capital: 'New Delhi',
-      largestCity: 'Kurebhar',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 1366417754,
-      area: 0, // Not available in CSV
-      callingCodes: ['91'],
-      topLevelDomains: ['.in'],
-      currencies: [Currency(code: 'INR', name: 'INR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Hindi', nativeName: 'Hindi')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Indonesia
-    Country(
-      name: 'Indonesia',
-      nameTranslations: {'en': 'Indonesia'},
-      alpha2Code: 'ID',
-      alpha3Code: 'IDN',
-      numericCode: '360',
-      flagEmoji: '🇮🇩',
-      flagImagePath: '',
-      capital: 'Jakarta',
-      largestCity: 'Kalimantan',
-      region: 'Oceania',
-      subregion: 'Polynesia',
-      population: 270203917,
-      area: 0, // Not available in CSV
-      callingCodes: ['62'],
-      topLevelDomains: ['.id'],
-      currencies: [Currency(code: 'IDR', name: 'IDR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Indonesian',
-            nativeName: 'Indonesian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Iran
-    Country(
-      name: 'Iran',
-      nameTranslations: {'en': 'Iran'},
-      alpha2Code: 'IR',
-      alpha3Code: 'IRN',
-      numericCode: '364',
-      flagEmoji: '🇮🇷',
-      flagImagePath: '',
-      capital: 'Tehran',
-      largestCity: 'Tehran',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 82913906,
-      area: 0, // Not available in CSV
-      callingCodes: ['98'],
-      topLevelDomains: ['.ir'],
-      currencies: [Currency(code: 'IRR', name: 'IRR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Persian',
-            nativeName: 'Persian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Iraq
-    Country(
-      name: 'Iraq',
-      nameTranslations: {'en': 'Iraq'},
-      alpha2Code: 'IQ',
-      alpha3Code: 'IRQ',
-      numericCode: '368',
-      flagEmoji: '🇮🇶',
-      flagImagePath: '',
-      capital: 'Baghdad',
-      largestCity: 'Baghdad',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 39309783,
-      area: 0, // Not available in CSV
-      callingCodes: ['964'],
-      topLevelDomains: ['.iq'],
-      currencies: [Currency(code: 'IQD', name: 'IQD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Arabic', nativeName: 'Arabic')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Republic of Ireland
-    Country(
-      name: 'Ireland',
-      nameTranslations: {'en': 'Ireland'},
-      alpha2Code: 'IE',
-      alpha3Code: 'IRL',
-      numericCode: '372',
-      flagEmoji: '🇮🇪',
-      flagImagePath: '',
-      capital: 'Dublin',
-      largestCity: 'Connacht',
-      region: 'Europe',
-      subregion: 'Northern Europe',
-      population: 5007069,
-      area: 0, // Not available in CSV
-      callingCodes: ['353'],
-      topLevelDomains: ['.roi'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Irish', nativeName: 'Irish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Israel
-    Country(
-      name: 'Israel',
-      nameTranslations: {'en': 'Israel'},
-      alpha2Code: 'IL',
-      alpha3Code: 'ISR',
-      numericCode: '376',
-      flagEmoji: '🇮🇱',
-      flagImagePath: '',
-      capital: 'Jerusalem',
-      largestCity: 'Jerusalem',
-      region: 'Africa',
-      subregion: 'Northern Africa',
-      population: 9053300,
-      area: 0, // Not available in CSV
-      callingCodes: ['972'],
-      topLevelDomains: ['.il'],
-      currencies: [Currency(code: 'ILS', name: 'ILS', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Hebrew', nativeName: 'Hebrew')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Italy
-    Country(
-      name: 'Italy',
-      nameTranslations: {'en': 'Italy'},
-      alpha2Code: 'IT',
-      alpha3Code: 'ITA',
-      numericCode: '380',
-      flagEmoji: '🇮🇹',
-      flagImagePath: '',
-      capital: 'Rome',
-      largestCity: 'Rome',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 60297396,
-      area: 0, // Not available in CSV
-      callingCodes: ['39'],
-      topLevelDomains: ['.it'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Italian',
-            nativeName: 'Italian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Jamaica
-    Country(
-      name: 'Jamaica',
-      nameTranslations: {'en': 'Jamaica'},
-      alpha2Code: 'JM',
-      alpha3Code: 'JAM',
-      numericCode: '388',
-      flagEmoji: '🇯🇲',
-      flagImagePath: '',
-      capital: 'Kingston, Jamaica',
-      largestCity: 'Kingston, Jamaica',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 2948279,
-      area: 0, // Not available in CSV
-      callingCodes: ['1876'],
-      topLevelDomains: ['.jm'],
-      currencies: [Currency(code: 'JMD', name: 'JMD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Japan
-    Country(
-      name: 'Japan',
-      nameTranslations: {'en': 'Japan'},
-      alpha2Code: 'JP',
-      alpha3Code: 'JPN',
-      numericCode: '392',
-      flagEmoji: '🇯🇵',
-      flagImagePath: '',
-      capital: 'Tokyo',
-      largestCity: 'Tokyo',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 126226568,
-      area: 0, // Not available in CSV
-      callingCodes: ['81'],
-      topLevelDomains: ['.jp'],
-      currencies: [Currency(code: 'JPY', name: 'JPY', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Japanese',
-            nativeName: 'Japanese')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Jordan
-    Country(
-      name: 'Jordan',
-      nameTranslations: {'en': 'Jordan'},
-      alpha2Code: 'JO',
-      alpha3Code: 'JOR',
-      numericCode: '400',
-      flagEmoji: '🇯🇴',
-      flagImagePath: '',
-      capital: 'Amman',
-      largestCity: 'Amman',
-      region: 'Africa',
-      subregion: 'Northern Africa',
-      population: 10101694,
-      area: 0, // Not available in CSV
-      callingCodes: ['962'],
-      topLevelDomains: ['.jo'],
-      currencies: [Currency(code: 'JOD', name: 'JOD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Arabic', nativeName: 'Arabic')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Kazakhstan
-    Country(
-      name: 'Kazakhstan',
-      nameTranslations: {'en': 'Kazakhstan'},
-      alpha2Code: 'KZ',
-      alpha3Code: 'KAZ',
-      numericCode: '398',
-      flagEmoji: '🇰🇿',
-      flagImagePath: '',
-      capital: 'Astana',
-      largestCity: 'Almaty',
-      region: 'Asia',
-      subregion: 'Eastern Asia',
-      population: 18513930,
-      area: 0, // Not available in CSV
-      callingCodes: ['7'],
-      topLevelDomains: ['.kz'],
-      currencies: [Currency(code: 'KZT', name: 'KZT', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Russian',
-            nativeName: 'Russian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Kenya
-    Country(
-      name: 'Kenya',
-      nameTranslations: {'en': 'Kenya'},
-      alpha2Code: 'KE',
-      alpha3Code: 'KEN',
-      numericCode: '404',
-      flagEmoji: '🇰🇪',
-      flagImagePath: '',
-      capital: 'Nairobi',
-      largestCity: 'Nairobi',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 52573973,
-      area: 0, // Not available in CSV
-      callingCodes: ['254'],
-      topLevelDomains: ['.ke'],
-      currencies: [Currency(code: 'KES', name: 'KES', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Swahili',
-            nativeName: 'Swahili')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Kiribati
-    Country(
-      name: 'Kiribati',
-      nameTranslations: {'en': 'Kiribati'},
-      alpha2Code: 'KI',
-      alpha3Code: 'KIR',
-      numericCode: '296',
-      flagEmoji: '🇰🇮',
-      flagImagePath: '',
-      capital: 'South Tarawa',
-      largestCity: 'South Tarawa',
-      region: 'Americas',
-      subregion: 'Central America',
-      population: 117606,
-      area: 0, // Not available in CSV
-      callingCodes: ['686'],
-      topLevelDomains: ['.ki'],
-      currencies: [Currency(code: 'AUD', name: 'AUD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Kuwait
-    Country(
-      name: 'Kuwait',
-      nameTranslations: {'en': 'Kuwait'},
-      alpha2Code: 'KW',
-      alpha3Code: 'KWT',
-      numericCode: '414',
-      flagEmoji: '🇰🇼',
-      flagImagePath: '',
-      capital: 'Kuwait City',
-      largestCity: 'Kuwait City',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 4207083,
-      area: 0, // Not available in CSV
-      callingCodes: ['965'],
-      topLevelDomains: ['.kw'],
-      currencies: [Currency(code: 'KWD', name: 'KWD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Arabic', nativeName: 'Arabic')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Kyrgyzstan
-    Country(
-      name: 'Kyrgyzstan',
-      nameTranslations: {'en': 'Kyrgyzstan'},
-      alpha2Code: 'KG',
-      alpha3Code: 'KGZ',
-      numericCode: '417',
-      flagEmoji: '🇰🇬',
-      flagImagePath: '',
-      capital: 'Bishkek',
-      largestCity: 'Bishkek',
-      region: 'Asia',
-      subregion: 'Eastern Asia',
-      population: 6456900,
-      area: 0, // Not available in CSV
-      callingCodes: ['996'],
-      topLevelDomains: ['.kg'],
-      currencies: [Currency(code: 'KGS', name: 'KGS', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Russian',
-            nativeName: 'Russian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Laos
-    Country(
-      name: 'Laos',
-      nameTranslations: {'en': 'Laos'},
-      alpha2Code: 'LA',
-      alpha3Code: 'LAO',
-      numericCode: '418',
-      flagEmoji: '🇱🇦',
-      flagImagePath: '',
-      capital: 'Vientiane',
-      largestCity: 'Vientiane',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 7169455,
-      area: 0, // Not available in CSV
-      callingCodes: ['856'],
-      topLevelDomains: ['.la'],
-      currencies: [Currency(code: 'LAK', name: 'LAK', symbol: '')],
-      languages: [
-        Language(iso6391: 'en', iso6392: 'eng', name: 'Lao', nativeName: 'Lao')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Latvia
-    Country(
-      name: 'Latvia',
-      nameTranslations: {'en': 'Latvia'},
-      alpha2Code: 'LV',
-      alpha3Code: 'LVA',
-      numericCode: '428',
-      flagEmoji: '🇱🇻',
-      flagImagePath: '',
-      capital: 'Riga',
-      largestCity: 'Riga',
-      region: 'Europe',
-      subregion: 'Northern Europe',
-      population: 1912789,
-      area: 0, // Not available in CSV
-      callingCodes: ['371'],
-      topLevelDomains: ['.lv'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Latvian',
-            nativeName: 'Latvian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Lebanon
-    Country(
-      name: 'Lebanon',
-      nameTranslations: {'en': 'Lebanon'},
-      alpha2Code: 'LB',
-      alpha3Code: 'LBN',
-      numericCode: '422',
-      flagEmoji: '🇱🇧',
-      flagImagePath: '',
-      capital: 'Beirut',
-      largestCity: 'Tripoli, Lebanon',
-      region: 'Africa',
-      subregion: 'Northern Africa',
-      population: 6855713,
-      area: 0, // Not available in CSV
-      callingCodes: ['961'],
-      topLevelDomains: ['.lb'],
-      currencies: [Currency(code: 'LBP', name: 'LBP', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Arabic', nativeName: 'Arabic')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Lesotho
-    Country(
-      name: 'Lesotho',
-      nameTranslations: {'en': 'Lesotho'},
-      alpha2Code: 'LS',
-      alpha3Code: 'LSO',
-      numericCode: '426',
-      flagEmoji: '🇱🇸',
-      flagImagePath: '',
-      capital: 'Maseru',
-      largestCity: 'Maseru',
-      region: 'Africa',
-      subregion: 'Southern Africa',
-      population: 2125268,
-      area: 0, // Not available in CSV
-      callingCodes: ['266'],
-      topLevelDomains: ['.ls'],
-      currencies: [Currency(code: 'LSL', name: 'LSL', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Liberia
-    Country(
-      name: 'Liberia',
-      nameTranslations: {'en': 'Liberia'},
-      alpha2Code: 'LR',
-      alpha3Code: 'LBR',
-      numericCode: '430',
-      flagEmoji: '🇱🇷',
-      flagImagePath: '',
-      capital: 'Monrovia',
-      largestCity: 'Monrovia',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 4937374,
-      area: 0, // Not available in CSV
-      callingCodes: ['231'],
-      topLevelDomains: ['.lr'],
-      currencies: [Currency(code: 'LRD', name: 'LRD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Libya
-    Country(
-      name: 'Libya',
-      nameTranslations: {'en': 'Libya'},
-      alpha2Code: 'LY',
-      alpha3Code: 'LBY',
-      numericCode: '434',
-      flagEmoji: '🇱🇾',
-      flagImagePath: '',
-      capital: 'Tripoli',
-      largestCity: 'Tripoli',
-      region: 'Africa',
-      subregion: 'Northern Africa',
-      population: 6777452,
-      area: 0, // Not available in CSV
-      callingCodes: ['218'],
-      topLevelDomains: ['.ly'],
-      currencies: [Currency(code: 'LYD', name: 'LYD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Arabic', nativeName: 'Arabic')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Liechtenstein
-    Country(
-      name: 'Liechtenstein',
-      nameTranslations: {'en': 'Liechtenstein'},
-      alpha2Code: 'LI',
-      alpha3Code: 'LIE',
-      numericCode: '438',
-      flagEmoji: '🇱🇮',
-      flagImagePath: '',
-      capital: 'Vaduz',
-      largestCity: 'Schaan',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 38019,
-      area: 0, // Not available in CSV
-      callingCodes: ['423'],
-      topLevelDomains: ['.li'],
-      currencies: [Currency(code: 'CHF', name: 'CHF', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'German', nativeName: 'German')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Lithuania
-    Country(
-      name: 'Lithuania',
-      nameTranslations: {'en': 'Lithuania'},
-      alpha2Code: 'LT',
-      alpha3Code: 'LTU',
-      numericCode: '440',
-      flagEmoji: '🇱🇹',
-      flagImagePath: '',
-      capital: 'Vilnius',
-      largestCity: 'Vilnius',
-      region: 'Europe',
-      subregion: 'Northern Europe',
-      population: 2786844,
-      area: 0, // Not available in CSV
-      callingCodes: ['370'],
-      topLevelDomains: ['.lt'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Lithuanian',
-            nativeName: 'Lithuanian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Luxembourg
-    Country(
-      name: 'Luxembourg',
-      nameTranslations: {'en': 'Luxembourg'},
-      alpha2Code: 'LU',
-      alpha3Code: 'LUX',
-      numericCode: '442',
-      flagEmoji: '🇱🇺',
-      flagImagePath: '',
-      capital: 'Luxembourg City',
-      largestCity: 'Luxembourg City',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 645397,
-      area: 0, // Not available in CSV
-      callingCodes: ['352'],
-      topLevelDomains: ['.lu'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Luxembourgish',
-            nativeName: 'Luxembourgish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Madagascar
-    Country(
-      name: 'Madagascar',
-      nameTranslations: {'en': 'Madagascar'},
-      alpha2Code: 'MG',
-      alpha3Code: 'MDG',
-      numericCode: '450',
-      flagEmoji: '🇲🇬',
-      flagImagePath: '',
-      capital: 'Antananarivo',
-      largestCity: 'Antananarivo',
-      region: 'Africa',
-      subregion: 'Southern Africa',
-      population: 26969307,
-      area: 0, // Not available in CSV
-      callingCodes: ['261'],
-      topLevelDomains: ['.mg'],
-      currencies: [Currency(code: 'MGA', name: 'MGA', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Malawi
-    Country(
-      name: 'Malawi',
-      nameTranslations: {'en': 'Malawi'},
-      alpha2Code: 'MW',
-      alpha3Code: 'MWI',
-      numericCode: '454',
-      flagEmoji: '🇲🇼',
-      flagImagePath: '',
-      capital: 'Lilongwe',
-      largestCity: 'Lilongwe',
-      region: 'Africa',
-      subregion: 'Southern Africa',
-      population: 18628747,
-      area: 0, // Not available in CSV
-      callingCodes: ['265'],
-      topLevelDomains: ['.mw'],
-      currencies: [Currency(code: 'MWK', name: 'MWK', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Malaysia
-    Country(
-      name: 'Malaysia',
-      nameTranslations: {'en': 'Malaysia'},
-      alpha2Code: 'MY',
-      alpha3Code: 'MYS',
-      numericCode: '458',
-      flagEmoji: '🇲🇾',
-      flagImagePath: '',
-      capital: 'Kuala Lumpur',
-      largestCity: 'Johor Bahru',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 32447385,
-      area: 0, // Not available in CSV
-      callingCodes: ['60'],
-      topLevelDomains: ['.my'],
-      currencies: [Currency(code: 'MYR', name: 'MYR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Malay', nativeName: 'Malay')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Maldives
-    Country(
-      name: 'Maldives',
-      nameTranslations: {'en': 'Maldives'},
-      alpha2Code: 'MV',
-      alpha3Code: 'MDV',
-      numericCode: '462',
-      flagEmoji: '🇲🇻',
-      flagImagePath: '',
-      capital: 'Mal',
-      largestCity: 'Mal',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 530953,
-      area: 0, // Not available in CSV
-      callingCodes: ['960'],
-      topLevelDomains: ['.mv'],
-      currencies: [Currency(code: 'MVR', name: 'MVR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Divehi', nativeName: 'Divehi')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Mali
-    Country(
-      name: 'Mali',
-      nameTranslations: {'en': 'Mali'},
-      alpha2Code: 'ML',
-      alpha3Code: 'MLI',
-      numericCode: '466',
-      flagEmoji: '🇲🇱',
-      flagImagePath: '',
-      capital: 'Bamako',
-      largestCity: 'Bamako',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 19658031,
-      area: 0, // Not available in CSV
-      callingCodes: ['223'],
-      topLevelDomains: ['.ml'],
-      currencies: [Currency(code: 'XOF', name: 'XOF', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Malta
-    Country(
-      name: 'Malta',
-      nameTranslations: {'en': 'Malta'},
-      alpha2Code: 'MT',
-      alpha3Code: 'MLT',
-      numericCode: '470',
-      flagEmoji: '🇲🇹',
-      flagImagePath: '',
-      capital: 'Valletta',
-      largestCity: 'Birkirkara',
-      region: 'Europe',
-      subregion: 'Southern Europe',
-      population: 502653,
-      area: 0, // Not available in CSV
-      callingCodes: ['356'],
-      topLevelDomains: ['.mt'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Maltese',
-            nativeName: 'Maltese')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Marshall Islands
-    Country(
-      name: 'Marshall Islands',
-      nameTranslations: {'en': 'Marshall Islands'},
-      alpha2Code: 'MH',
-      alpha3Code: 'MHL',
-      numericCode: '584',
-      flagEmoji: '🇲🇭',
-      flagImagePath: '',
-      capital: 'Majuro',
-      largestCity: 'Majuro',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 58791,
-      area: 0, // Not available in CSV
-      callingCodes: ['692'],
-      topLevelDomains: ['.mh'],
-      currencies: [Currency(code: 'USD', name: 'USD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Marshallese',
-            nativeName: 'Marshallese')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Mauritania
-    Country(
-      name: 'Mauritania',
-      nameTranslations: {'en': 'Mauritania'},
-      alpha2Code: 'MR',
-      alpha3Code: 'MRT',
-      numericCode: '478',
-      flagEmoji: '🇲🇷',
-      flagImagePath: '',
-      capital: 'Nouakchott',
-      largestCity: 'Nouakchott',
-      region: 'Africa',
-      subregion: 'Northern Africa',
-      population: 4525696,
-      area: 0, // Not available in CSV
-      callingCodes: ['222'],
-      topLevelDomains: ['.mr'],
-      currencies: [Currency(code: 'MRU', name: 'MRU', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Arabic', nativeName: 'Arabic')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Mauritius
-    Country(
-      name: 'Mauritius',
-      nameTranslations: {'en': 'Mauritius'},
-      alpha2Code: 'MU',
-      alpha3Code: 'MUS',
-      numericCode: '480',
-      flagEmoji: '🇲🇺',
-      flagImagePath: '',
-      capital: 'Port Louis',
-      largestCity: 'Port Louis',
-      region: 'Africa',
-      subregion: 'Southern Africa',
-      population: 1265711,
-      area: 0, // Not available in CSV
-      callingCodes: ['230'],
-      topLevelDomains: ['.mu'],
-      currencies: [Currency(code: 'MUR', name: 'MUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Mexico
-    Country(
-      name: 'Mexico',
-      nameTranslations: {'en': 'Mexico'},
-      alpha2Code: 'MX',
-      alpha3Code: 'MEX',
-      numericCode: '484',
-      flagEmoji: '🇲🇽',
-      flagImagePath: '',
-      capital: 'Mexico City',
-      largestCity: 'Mexico City',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 126014024,
-      area: 0, // Not available in CSV
-      callingCodes: ['52'],
-      topLevelDomains: ['.mx'],
-      currencies: [Currency(code: 'MXN', name: 'MXN', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Spanish',
-            nativeName: 'Spanish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Federated States of Micronesia
-    Country(
-      name: 'Federated States of Micronesia',
-      nameTranslations: {'en': 'Federated States of Micronesia'},
-      alpha2Code: 'FM',
-      alpha3Code: 'FSM',
-      numericCode: '583',
-      flagEmoji: '🇫🇲',
-      flagImagePath: '',
-      capital: 'Palikir',
-      largestCity: 'Palikir',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 113815,
-      area: 0, // Not available in CSV
-      callingCodes: ['691'],
-      topLevelDomains: ['.fm'],
-      currencies: [Currency(code: 'USD', name: 'USD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Moldova
-    Country(
-      name: 'Moldova',
-      nameTranslations: {'en': 'Moldova'},
-      alpha2Code: 'MD',
-      alpha3Code: 'MDA',
-      numericCode: '498',
-      flagEmoji: '🇲🇩',
-      flagImagePath: '',
-      capital: 'Chi',
-      largestCity: 'Chi',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 2657637,
-      area: 0, // Not available in CSV
-      callingCodes: ['373'],
-      topLevelDomains: ['.md'],
-      currencies: [Currency(code: 'MDL', name: 'MDL', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Romanian',
-            nativeName: 'Romanian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Monaco
-    Country(
-      name: 'Monaco',
-      nameTranslations: {'en': 'Monaco'},
-      alpha2Code: 'MC',
-      alpha3Code: 'MCO',
-      numericCode: '492',
-      flagEmoji: '🇲🇨',
-      flagImagePath: '',
-      capital: 'Monaco City',
-      largestCity: 'Monaco City',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 38964,
-      area: 0, // Not available in CSV
-      callingCodes: ['377'],
-      topLevelDomains: ['.mc'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Mongolia
-    Country(
-      name: 'Mongolia',
-      nameTranslations: {'en': 'Mongolia'},
-      alpha2Code: 'MN',
-      alpha3Code: 'MNG',
-      numericCode: '496',
-      flagEmoji: '🇲🇳',
-      flagImagePath: '',
-      capital: 'Ulaanbaatar',
-      largestCity: 'Ulaanbaatar',
-      region: 'Asia',
-      subregion: 'Eastern Asia',
-      population: 3225167,
-      area: 0, // Not available in CSV
-      callingCodes: ['976'],
-      topLevelDomains: ['.mn'],
-      currencies: [Currency(code: 'MNT', name: 'MNT', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Mongolian',
-            nativeName: 'Mongolian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Montenegro
-    Country(
-      name: 'Montenegro',
-      nameTranslations: {'en': 'Montenegro'},
-      alpha2Code: 'ME',
-      alpha3Code: 'MNE',
-      numericCode: '499',
-      flagEmoji: '🇲🇪',
-      flagImagePath: '',
-      capital: 'Podgorica',
-      largestCity: 'Podgorica',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 622137,
-      area: 0, // Not available in CSV
-      callingCodes: ['382'],
-      topLevelDomains: ['.me'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Montenegrin language',
-            nativeName: 'Montenegrin language')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Morocco
-    Country(
-      name: 'Morocco',
-      nameTranslations: {'en': 'Morocco'},
-      alpha2Code: 'MA',
-      alpha3Code: 'MAR',
-      numericCode: '504',
-      flagEmoji: '🇲🇦',
-      flagImagePath: '',
-      capital: 'Rabat',
-      largestCity: 'Casablanca',
-      region: 'Africa',
-      subregion: 'Northern Africa',
-      population: 36910560,
-      area: 0, // Not available in CSV
-      callingCodes: ['212'],
-      topLevelDomains: ['.ma'],
-      currencies: [Currency(code: 'MAD', name: 'MAD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Arabic', nativeName: 'Arabic')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Mozambique
-    Country(
-      name: 'Mozambique',
-      nameTranslations: {'en': 'Mozambique'},
-      alpha2Code: 'MZ',
-      alpha3Code: 'MOZ',
-      numericCode: '508',
-      flagEmoji: '🇲🇿',
-      flagImagePath: '',
-      capital: 'Maputo',
-      largestCity: 'Maputo',
-      region: 'Africa',
-      subregion: 'Southern Africa',
-      population: 30366036,
-      area: 0, // Not available in CSV
-      callingCodes: ['258'],
-      topLevelDomains: ['.mz'],
-      currencies: [Currency(code: 'MZN', name: 'MZN', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Portuguese',
-            nativeName: 'Portuguese')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Myanmar
-    Country(
-      name: 'Myanmar',
-      nameTranslations: {'en': 'Myanmar'},
-      alpha2Code: 'MM',
-      alpha3Code: 'MMR',
-      numericCode: '104',
-      flagEmoji: '🇲🇲',
-      flagImagePath: '',
-      capital: 'Naypyidaw',
-      largestCity: 'Yangon',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 54045420,
-      area: 0, // Not available in CSV
-      callingCodes: ['95'],
-      topLevelDomains: ['.mm'],
-      currencies: [Currency(code: 'MMK', name: 'MMK', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Burmese',
-            nativeName: 'Burmese')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Namibia
-    Country(
-      name: 'Namibia',
-      nameTranslations: {'en': 'Namibia'},
-      alpha2Code: 'NA',
-      alpha3Code: 'NAM',
-      numericCode: '516',
-      flagEmoji: '🇳🇦',
-      flagImagePath: '',
-      capital: 'Windhoek',
-      largestCity: 'Windhoek',
-      region: 'Africa',
-      subregion: 'Southern Africa',
-      population: 2494530,
-      area: 0, // Not available in CSV
-      callingCodes: ['264'],
-      topLevelDomains: ['.na'],
-      currencies: [Currency(code: 'NAD', name: 'NAD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Nauru
-    Country(
-      name: 'Nauru',
-      nameTranslations: {'en': 'Nauru'},
-      alpha2Code: 'NR',
-      alpha3Code: 'NRU',
-      numericCode: '520',
-      flagEmoji: '🇳🇷',
-      flagImagePath: '',
-      capital: 'Yaren District',
-      largestCity: 'Denigomodu',
-      region: 'Oceania',
-      subregion: 'Polynesia',
-      population: 10084,
-      area: 0, // Not available in CSV
-      callingCodes: ['674'],
-      topLevelDomains: ['.nr'],
-      currencies: [Currency(code: 'AUD', name: 'AUD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Nepal
-    Country(
-      name: 'Nepal',
-      nameTranslations: {'en': 'Nepal'},
-      alpha2Code: 'NP',
-      alpha3Code: 'NPL',
-      numericCode: '524',
-      flagEmoji: '🇳🇵',
-      flagImagePath: '',
-      capital: 'Kathmandu',
-      largestCity: 'Kathmandu',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 28608710,
-      area: 0, // Not available in CSV
-      callingCodes: ['977'],
-      topLevelDomains: ['.np'],
-      currencies: [Currency(code: 'NPR', name: 'NPR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Nepali', nativeName: 'Nepali')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Netherlands
-    Country(
-      name: 'Netherlands',
-      nameTranslations: {'en': 'Netherlands'},
-      alpha2Code: 'NL',
-      alpha3Code: 'NLD',
-      numericCode: '528',
-      flagEmoji: '🇳🇱',
-      flagImagePath: '',
-      capital: 'Amsterdam',
-      largestCity: 'Amsterdam',
-      region: 'Europe',
-      subregion: 'Northern Europe',
-      population: 17332850,
-      area: 0, // Not available in CSV
-      callingCodes: ['31'],
-      topLevelDomains: ['.nl'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Dutch', nativeName: 'Dutch')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // New Zealand
-    Country(
-      name: 'New Zealand',
-      nameTranslations: {'en': 'New Zealand'},
-      alpha2Code: 'NZ',
-      alpha3Code: 'NZL',
-      numericCode: '554',
-      flagEmoji: '🇳🇿',
-      flagImagePath: '',
-      capital: 'Wellington',
-      largestCity: 'Auckland',
-      region: 'Oceania',
-      subregion: 'Polynesia',
-      population: 4841000,
-      area: 0, // Not available in CSV
-      callingCodes: ['64'],
-      topLevelDomains: ['.nz'],
-      currencies: [Currency(code: 'NZD', name: 'NZD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Nicaragua
-    Country(
-      name: 'Nicaragua',
-      nameTranslations: {'en': 'Nicaragua'},
-      alpha2Code: 'NI',
-      alpha3Code: 'NIC',
-      numericCode: '558',
-      flagEmoji: '🇳🇮',
-      flagImagePath: '',
-      capital: 'Managua',
-      largestCity: 'Managua',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 6545502,
-      area: 0, // Not available in CSV
-      callingCodes: ['505'],
-      topLevelDomains: ['.ni'],
-      currencies: [Currency(code: 'NIO', name: 'NIO', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Spanish',
-            nativeName: 'Spanish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Niger
-    Country(
-      name: 'Niger',
-      nameTranslations: {'en': 'Niger'},
-      alpha2Code: 'NE',
-      alpha3Code: 'NER',
-      numericCode: '562',
-      flagEmoji: '🇳🇪',
-      flagImagePath: '',
-      capital: 'Niamey',
-      largestCity: 'Niamey',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 23310715,
-      area: 0, // Not available in CSV
-      callingCodes: ['227'],
-      topLevelDomains: ['.ne'],
-      currencies: [Currency(code: 'XOF', name: 'XOF', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Nigeria
-    Country(
-      name: 'Nigeria',
-      nameTranslations: {'en': 'Nigeria'},
-      alpha2Code: 'NG',
-      alpha3Code: 'NGA',
-      numericCode: '566',
-      flagEmoji: '🇳🇬',
-      flagImagePath: '',
-      capital: 'Abuja',
-      largestCity: 'Lagos',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 200963599,
-      area: 0, // Not available in CSV
-      callingCodes: ['234'],
-      topLevelDomains: ['.ng'],
-      currencies: [Currency(code: 'NGN', name: 'NGN', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // North Korea
-    Country(
-      name: 'North Korea',
-      nameTranslations: {'en': 'North Korea'},
-      alpha2Code: 'KP',
-      alpha3Code: 'PRK',
-      numericCode: '408',
-      flagEmoji: '🇰🇵',
-      flagImagePath: '',
-      capital: 'Pyongyang',
-      largestCity: 'Pyongyang',
-      region: 'Asia',
-      subregion: 'Eastern Asia',
-      population: 25666161,
-      area: 0, // Not available in CSV
-      callingCodes: ['850'],
-      topLevelDomains: ['.kp'],
-      currencies: [Currency(code: 'KPW', name: 'KPW', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Korean', nativeName: 'Korean')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // North Macedonia
-    Country(
-      name: 'North Macedonia',
-      nameTranslations: {'en': 'North Macedonia'},
-      alpha2Code: 'MK',
-      alpha3Code: 'MKD',
-      numericCode: '807',
-      flagEmoji: '🇲🇰',
-      flagImagePath: '',
-      capital: 'Skopje',
-      largestCity: 'Skopje',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 1836713,
-      area: 0, // Not available in CSV
-      callingCodes: ['389'],
-      topLevelDomains: ['.mkd'],
-      currencies: [Currency(code: 'MKD', name: 'MKD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Macedonian',
-            nativeName: 'Macedonian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Norway
-    Country(
-      name: 'Norway',
-      nameTranslations: {'en': 'Norway'},
-      alpha2Code: 'NO',
-      alpha3Code: 'NOR',
-      numericCode: '578',
-      flagEmoji: '🇳🇴',
-      flagImagePath: '',
-      capital: 'Oslo',
-      largestCity: 'Oslo',
-      region: 'Europe',
-      subregion: 'Northern Europe',
-      population: 5347896,
-      area: 0, // Not available in CSV
-      callingCodes: ['47'],
-      topLevelDomains: ['.no'],
-      currencies: [Currency(code: 'NOK', name: 'NOK', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Norwegian',
-            nativeName: 'Norwegian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Oman
-    Country(
-      name: 'Oman',
-      nameTranslations: {'en': 'Oman'},
-      alpha2Code: 'OM',
-      alpha3Code: 'OMN',
-      numericCode: '512',
-      flagEmoji: '🇴🇲',
-      flagImagePath: '',
-      capital: 'Muscat',
-      largestCity: 'Seeb',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 5266535,
-      area: 0, // Not available in CSV
-      callingCodes: ['968'],
-      topLevelDomains: ['.om'],
-      currencies: [Currency(code: 'OMR', name: 'OMR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Arabic', nativeName: 'Arabic')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Pakistan
-    Country(
-      name: 'Pakistan',
-      nameTranslations: {'en': 'Pakistan'},
-      alpha2Code: 'PK',
-      alpha3Code: 'PAK',
-      numericCode: '586',
-      flagEmoji: '🇵🇰',
-      flagImagePath: '',
-      capital: 'Islamabad',
-      largestCity: 'Karachi',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 216565318,
-      area: 0, // Not available in CSV
-      callingCodes: ['92'],
-      topLevelDomains: ['.pk'],
-      currencies: [Currency(code: 'PKR', name: 'PKR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Urdu', nativeName: 'Urdu')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Palau
-    Country(
-      name: 'Palau',
-      nameTranslations: {'en': 'Palau'},
-      alpha2Code: 'PW',
-      alpha3Code: 'PLW',
-      numericCode: '585',
-      flagEmoji: '🇵🇼',
-      flagImagePath: '',
-      capital: 'Ngerulmud',
-      largestCity: 'Koror',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 18233,
-      area: 0, // Not available in CSV
-      callingCodes: ['680'],
-      topLevelDomains: ['.pw'],
-      currencies: [Currency(code: 'USD', name: 'USD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Palestinian National Authority
-    Country(
-      name: 'Palestine',
-      nameTranslations: {'en': 'Palestine'},
-      alpha2Code: 'PS',
-      alpha3Code: 'PSE',
-      numericCode: '275',
-      flagEmoji: '🇵🇸',
-      flagImagePath: '',
-      capital: 'Ramallah',
-      largestCity: 'Gaza City',
-      region: 'Asia',
-      subregion: 'Western Asia',
-      population: 5300000,
-      area: 0, // Not available in CSV
-      callingCodes: ['970'],
-      topLevelDomains: ['.pna'],
-      currencies: [Currency(code: 'JOD', name: 'JOD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Arabic', nativeName: 'Arabic')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Panama
-    Country(
-      name: 'Panama',
-      nameTranslations: {'en': 'Panama'},
-      alpha2Code: 'PA',
-      alpha3Code: 'PAN',
-      numericCode: '591',
-      flagEmoji: '🇵🇦',
-      flagImagePath: '',
-      capital: 'Panama City',
-      largestCity: 'Panama City',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 4246439,
-      area: 0, // Not available in CSV
-      callingCodes: ['507'],
-      topLevelDomains: ['.pa'],
-      currencies: [Currency(code: 'PAB', name: 'PAB', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Spanish',
-            nativeName: 'Spanish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Papua New Guinea
-    Country(
-      name: 'Papua New Guinea',
-      nameTranslations: {'en': 'Papua New Guinea'},
-      alpha2Code: 'PG',
-      alpha3Code: 'PNG',
-      numericCode: '598',
-      flagEmoji: '🇵🇬',
-      flagImagePath: '',
-      capital: 'Port Moresby',
-      largestCity: 'Port Moresby',
-      region: 'Oceania',
-      subregion: 'Polynesia',
-      population: 8776109,
-      area: 0, // Not available in CSV
-      callingCodes: ['675'],
-      topLevelDomains: ['.pg'],
-      currencies: [Currency(code: 'PGK', name: 'PGK', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Tok Pisin',
-            nativeName: 'Tok Pisin')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Paraguay
-    Country(
-      name: 'Paraguay',
-      nameTranslations: {'en': 'Paraguay'},
-      alpha2Code: 'PY',
-      alpha3Code: 'PRY',
-      numericCode: '600',
-      flagEmoji: '🇵🇾',
-      flagImagePath: '',
-      capital: 'Asunci',
-      largestCity: 'Ciudad del Este',
-      region: 'Americas',
-      subregion: 'South America',
-      population: 7044636,
-      area: 0, // Not available in CSV
-      callingCodes: ['595'],
-      topLevelDomains: ['.py'],
-      currencies: [Currency(code: 'PYG', name: 'PYG', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Spanish',
-            nativeName: 'Spanish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Peru
-    Country(
-      name: 'Peru',
-      nameTranslations: {'en': 'Peru'},
-      alpha2Code: 'PE',
-      alpha3Code: 'PER',
-      numericCode: '604',
-      flagEmoji: '🇵🇪',
-      flagImagePath: '',
-      capital: 'Lima',
-      largestCity: 'Lima',
-      region: 'Americas',
-      subregion: 'Central America',
-      population: 32510453,
-      area: 0, // Not available in CSV
-      callingCodes: ['51'],
-      topLevelDomains: ['.pe'],
-      currencies: [Currency(code: 'PEN', name: 'PEN', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Spanish',
-            nativeName: 'Spanish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Philippines
-    Country(
-      name: 'Philippines',
-      nameTranslations: {'en': 'Philippines'},
-      alpha2Code: 'PH',
-      alpha3Code: 'PHL',
-      numericCode: '608',
-      flagEmoji: '🇵🇭',
-      flagImagePath: '',
-      capital: 'Manila',
-      largestCity: 'Manila',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 108116615,
-      area: 0, // Not available in CSV
-      callingCodes: ['63'],
-      topLevelDomains: ['.ph'],
-      currencies: [Currency(code: 'PHP', name: 'PHP', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Poland
-    Country(
-      name: 'Poland',
-      nameTranslations: {'en': 'Poland'},
-      alpha2Code: 'PL',
-      alpha3Code: 'POL',
-      numericCode: '616',
-      flagEmoji: '🇵🇱',
-      flagImagePath: '',
-      capital: 'Warsaw',
-      largestCity: 'Warsaw',
-      region: 'Europe',
-      subregion: 'Northern Europe',
-      population: 37970874,
-      area: 0, // Not available in CSV
-      callingCodes: ['48'],
-      topLevelDomains: ['.pl'],
-      currencies: [Currency(code: 'PLN', name: 'PLN', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Polish', nativeName: 'Polish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Portugal
-    Country(
-      name: 'Portugal',
-      nameTranslations: {'en': 'Portugal'},
-      alpha2Code: 'PT',
-      alpha3Code: 'PRT',
-      numericCode: '620',
-      flagEmoji: '🇵🇹',
-      flagImagePath: '',
-      capital: 'Lisbon',
-      largestCity: 'Lisbon',
-      region: 'Europe',
-      subregion: 'Southern Europe',
-      population: 10269417,
-      area: 0, // Not available in CSV
-      callingCodes: ['351'],
-      topLevelDomains: ['.pt'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Portuguese',
-            nativeName: 'Portuguese')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Qatar
-    Country(
-      name: 'Qatar',
-      nameTranslations: {'en': 'Qatar'},
-      alpha2Code: 'QA',
-      alpha3Code: 'QAT',
-      numericCode: '634',
-      flagEmoji: '🇶🇦',
-      flagImagePath: '',
-      capital: 'Doha',
-      largestCity: 'Doha',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 2832067,
-      area: 0, // Not available in CSV
-      callingCodes: ['974'],
-      topLevelDomains: ['.qa'],
-      currencies: [Currency(code: 'QAR', name: 'QAR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Arabic', nativeName: 'Arabic')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Romania
-    Country(
-      name: 'Romania',
-      nameTranslations: {'en': 'Romania'},
-      alpha2Code: 'RO',
-      alpha3Code: 'ROU',
-      numericCode: '642',
-      flagEmoji: '🇷🇴',
-      flagImagePath: '',
-      capital: 'Bucharest',
-      largestCity: 'Bucharest',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 19356544,
-      area: 0, // Not available in CSV
-      callingCodes: ['40'],
-      topLevelDomains: ['.ro'],
-      currencies: [Currency(code: 'RON', name: 'RON', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Romanian',
-            nativeName: 'Romanian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Russia
-    Country(
-      name: 'Russia',
-      nameTranslations: {'en': 'Russia'},
-      alpha2Code: 'RU',
-      alpha3Code: 'RUS',
-      numericCode: '643',
-      flagEmoji: '🇷🇺',
-      flagImagePath: '',
-      capital: 'Moscow',
-      largestCity: 'Moscow',
-      region: 'Asia',
-      subregion: 'Eastern Asia',
-      population: 144373535,
-      area: 0, // Not available in CSV
-      callingCodes: ['7'],
-      topLevelDomains: ['.ru'],
-      currencies: [Currency(code: 'RUB', name: 'RUB', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Russian',
-            nativeName: 'Russian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Rwanda
-    Country(
-      name: 'Rwanda',
-      nameTranslations: {'en': 'Rwanda'},
-      alpha2Code: 'RW',
-      alpha3Code: 'RWA',
-      numericCode: '646',
-      flagEmoji: '🇷🇼',
-      flagImagePath: '',
-      capital: 'Kigali',
-      largestCity: 'Kigali',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 12626950,
-      area: 0, // Not available in CSV
-      callingCodes: ['250'],
-      topLevelDomains: ['.rw'],
-      currencies: [Currency(code: 'RWF', name: 'RWF', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Swahili',
-            nativeName: 'Swahili')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Saint Kitts and Nevis
-    Country(
-      name: 'Saint Kitts and Nevis',
-      nameTranslations: {'en': 'Saint Kitts and Nevis'},
-      alpha2Code: 'KN',
-      alpha3Code: 'KNA',
-      numericCode: '659',
-      flagEmoji: '🇰🇳',
-      flagImagePath: '',
-      capital: 'Basseterre',
-      largestCity: 'Basseterre',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 52823,
-      area: 0, // Not available in CSV
-      callingCodes: ['1'],
-      topLevelDomains: ['.kn'],
-      currencies: [Currency(code: 'XCD', name: 'XCD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Saint Lucia
-    Country(
-      name: 'Saint Lucia',
-      nameTranslations: {'en': 'Saint Lucia'},
-      alpha2Code: 'LC',
-      alpha3Code: 'LCA',
-      numericCode: '662',
-      flagEmoji: '🇱🇨',
-      flagImagePath: '',
-      capital: 'Castries',
-      largestCity: 'Castries',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 182790,
-      area: 0, // Not available in CSV
-      callingCodes: ['1'],
-      topLevelDomains: ['.lc'],
-      currencies: [Currency(code: 'XCD', name: 'XCD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Saint Vincent and the Grenadines
-    Country(
-      name: 'Saint Vincent and the Grenadines',
-      nameTranslations: {'en': 'Saint Vincent and the Grenadines'},
-      alpha2Code: 'VC',
-      alpha3Code: 'VCT',
-      numericCode: '670',
-      flagEmoji: '🇻🇨',
-      flagImagePath: '',
-      capital: 'Kingstown',
-      largestCity: 'Calliaqua',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 100455,
-      area: 0, // Not available in CSV
-      callingCodes: ['1'],
-      topLevelDomains: ['.vc'],
-      currencies: [Currency(code: 'XCD', name: 'XCD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Samoa
-    Country(
-      name: 'Samoa',
-      nameTranslations: {'en': 'Samoa'},
-      alpha2Code: 'WS',
-      alpha3Code: 'WSM',
-      numericCode: '882',
-      flagEmoji: '🇼🇸',
-      flagImagePath: '',
-      capital: 'Apia',
-      largestCity: 'Apia',
-      region: 'Americas',
-      subregion: 'Central America',
-      population: 202506,
-      area: 0, // Not available in CSV
-      callingCodes: ['685'],
-      topLevelDomains: ['.ws'],
-      currencies: [Currency(code: 'WST', name: 'WST', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Samoan', nativeName: 'Samoan')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // San Marino
-    Country(
-      name: 'San Marino',
-      nameTranslations: {'en': 'San Marino'},
-      alpha2Code: 'SM',
-      alpha3Code: 'SMR',
-      numericCode: '674',
-      flagEmoji: '🇸🇲',
-      flagImagePath: '',
-      capital: 'City of San Marino',
-      largestCity: 'City of San Marino',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 33860,
-      area: 0, // Not available in CSV
-      callingCodes: ['378'],
-      topLevelDomains: ['.sm'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Italian',
-            nativeName: 'Italian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // S
-    Country(
-      name: 'S',
-      nameTranslations: {'en': 'S'},
-      alpha2Code: 'ST',
-      alpha3Code: 'STP',
-      numericCode: '678',
-      flagEmoji: '🇸🇹',
-      flagImagePath: '',
-      capital: 'S',
-      largestCity: 'S',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 215056,
-      area: 0, // Not available in CSV
-      callingCodes: ['239'],
-      topLevelDomains: ['.st'],
-      currencies: [Currency(code: 'STN', name: 'STN', symbol: '')],
-      languages: [
-        Language(iso6391: 'en', iso6392: 'eng', name: '', nativeName: '')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Saudi Arabia
-    Country(
-      name: 'Saudi Arabia',
-      nameTranslations: {'en': 'Saudi Arabia'},
-      alpha2Code: 'SA',
-      alpha3Code: 'SAU',
-      numericCode: '682',
-      flagEmoji: '🇸🇦',
-      flagImagePath: '',
-      capital: 'Riyadh',
-      largestCity: 'Riyadh',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 34268528,
-      area: 0, // Not available in CSV
-      callingCodes: ['966'],
-      topLevelDomains: ['.sa'],
-      currencies: [Currency(code: 'SAR', name: 'SAR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Arabic', nativeName: 'Arabic')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Senegal
-    Country(
-      name: 'Senegal',
-      nameTranslations: {'en': 'Senegal'},
-      alpha2Code: 'SN',
-      alpha3Code: 'SEN',
-      numericCode: '686',
-      flagEmoji: '🇸🇳',
-      flagImagePath: '',
-      capital: 'Dakar',
-      largestCity: 'Pikine',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 16296364,
-      area: 0, // Not available in CSV
-      callingCodes: ['221'],
-      topLevelDomains: ['.sn'],
-      currencies: [Currency(code: 'XOF', name: 'XOF', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Serbia
-    Country(
-      name: 'Serbia',
-      nameTranslations: {'en': 'Serbia'},
-      alpha2Code: 'RS',
-      alpha3Code: 'SRB',
-      numericCode: '688',
-      flagEmoji: '🇷🇸',
-      flagImagePath: '',
-      capital: 'Belgrade',
-      largestCity: 'Belgrade',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 6944975,
-      area: 0, // Not available in CSV
-      callingCodes: ['381'],
-      topLevelDomains: ['.rs'],
-      currencies: [Currency(code: 'RSD', name: 'RSD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Serbian',
-            nativeName: 'Serbian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Seychelles
-    Country(
-      name: 'Seychelles',
-      nameTranslations: {'en': 'Seychelles'},
-      alpha2Code: 'SC',
-      alpha3Code: 'SYC',
-      numericCode: '690',
-      flagEmoji: '🇸🇨',
-      flagImagePath: '',
-      capital: 'Victoria, Seychelles',
-      largestCity: 'Victoria, Seychelles',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 97625,
-      area: 0, // Not available in CSV
-      callingCodes: ['248'],
-      topLevelDomains: ['.sc'],
-      currencies: [Currency(code: 'SCR', name: 'SCR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Sierra Leone
-    Country(
-      name: 'Sierra Leone',
-      nameTranslations: {'en': 'Sierra Leone'},
-      alpha2Code: 'SL',
-      alpha3Code: 'SLE',
-      numericCode: '694',
-      flagEmoji: '🇸🇱',
-      flagImagePath: '',
-      capital: 'Freetown',
-      largestCity: 'Freetown',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 7813215,
-      area: 0, // Not available in CSV
-      callingCodes: ['232'],
-      topLevelDomains: ['.sl'],
-      currencies: [Currency(code: 'SLL', name: 'SLL', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Singapore
-    Country(
-      name: 'Singapore',
-      nameTranslations: {'en': 'Singapore'},
-      alpha2Code: 'SG',
-      alpha3Code: 'SGP',
-      numericCode: '702',
-      flagEmoji: '🇸🇬',
-      flagImagePath: '',
-      capital: 'Singapore',
-      largestCity: 'Singapore',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 5703569,
-      area: 0, // Not available in CSV
-      callingCodes: ['65'],
-      topLevelDomains: ['.sg'],
-      currencies: [Currency(code: 'SGD', name: 'SGD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Malay', nativeName: 'Malay')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Slovakia
-    Country(
-      name: 'Slovakia',
-      nameTranslations: {'en': 'Slovakia'},
-      alpha2Code: 'SK',
-      alpha3Code: 'SVK',
-      numericCode: '703',
-      flagEmoji: '🇸🇰',
-      flagImagePath: '',
-      capital: 'Bratislava',
-      largestCity: 'Bratislava',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 5454073,
-      area: 0, // Not available in CSV
-      callingCodes: ['421'],
-      topLevelDomains: ['.sk'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Slovak', nativeName: 'Slovak')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Slovenia
-    Country(
-      name: 'Slovenia',
-      nameTranslations: {'en': 'Slovenia'},
-      alpha2Code: 'SI',
-      alpha3Code: 'SVN',
-      numericCode: '705',
-      flagEmoji: '🇸🇮',
-      flagImagePath: '',
-      capital: 'Ljubljana',
-      largestCity: 'Ljubljana',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 2087946,
-      area: 0, // Not available in CSV
-      callingCodes: ['386'],
-      topLevelDomains: ['.si'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Slovene language',
-            nativeName: 'Slovene language')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Solomon Islands
-    Country(
-      name: 'Solomon Islands',
-      nameTranslations: {'en': 'Solomon Islands'},
-      alpha2Code: 'SB',
-      alpha3Code: 'SLB',
-      numericCode: '090',
-      flagEmoji: '🇸🇧',
-      flagImagePath: '',
-      capital: 'Honiara',
-      largestCity: 'Honiara',
-      region: 'Oceania',
-      subregion: 'Polynesia',
-      population: 669823,
-      area: 0, // Not available in CSV
-      callingCodes: ['677'],
-      topLevelDomains: ['.sb'],
-      currencies: [Currency(code: 'SBD', name: 'SBD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Somalia
-    Country(
-      name: 'Somalia',
-      nameTranslations: {'en': 'Somalia'},
-      alpha2Code: 'SO',
-      alpha3Code: 'SOM',
-      numericCode: '706',
-      flagEmoji: '🇸🇴',
-      flagImagePath: '',
-      capital: 'Mogadishu',
-      largestCity: 'Bosaso',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 15442905,
-      area: 0, // Not available in CSV
-      callingCodes: ['252'],
-      topLevelDomains: ['.so'],
-      currencies: [Currency(code: 'SOS', name: 'SOS', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Arabic', nativeName: 'Arabic')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // South Africa
-    Country(
-      name: 'South Africa',
-      nameTranslations: {'en': 'South Africa'},
-      alpha2Code: 'ZA',
-      alpha3Code: 'ZAF',
-      numericCode: '710',
-      flagEmoji: '🇿🇦',
-      flagImagePath: '',
-      capital: 'Pretoria',
-      largestCity: 'Johannesburg',
-      region: 'Africa',
-      subregion: 'Southern Africa',
-      population: 58558270,
-      area: 0, // Not available in CSV
-      callingCodes: ['27'],
-      topLevelDomains: ['.za'],
-      currencies: [Currency(code: 'ZAR', name: 'ZAR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Afrikaans',
-            nativeName: 'Afrikaans')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // South Korea
-    Country(
-      name: 'South Korea',
-      nameTranslations: {'en': 'South Korea'},
-      alpha2Code: 'KR',
-      alpha3Code: 'KOR',
-      numericCode: '410',
-      flagEmoji: '🇰🇷',
-      flagImagePath: '',
-      capital: 'Seoul',
-      largestCity: 'Seoul',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 51709098,
-      area: 0, // Not available in CSV
-      callingCodes: ['82'],
-      topLevelDomains: ['.kr'],
-      currencies: [Currency(code: 'KRW', name: 'KRW', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Korean', nativeName: 'Korean')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // South Sudan
-    Country(
-      name: 'South Sudan',
-      nameTranslations: {'en': 'South Sudan'},
-      alpha2Code: 'SS',
-      alpha3Code: 'SSD',
-      numericCode: '728',
-      flagEmoji: '🇸🇸',
-      flagImagePath: '',
-      capital: 'Juba',
-      largestCity: 'Juba',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 11062113,
-      area: 0, // Not available in CSV
-      callingCodes: ['211'],
-      topLevelDomains: ['.ss'],
-      currencies: [Currency(code: 'SSP', name: 'SSP', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Spain
-    Country(
-      name: 'Spain',
-      nameTranslations: {'en': 'Spain'},
-      alpha2Code: 'ES',
-      alpha3Code: 'ESP',
-      numericCode: '724',
-      flagEmoji: '🇪🇸',
-      flagImagePath: '',
-      capital: 'Madrid',
-      largestCity: 'Madrid',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 47076781,
-      area: 0, // Not available in CSV
-      callingCodes: ['34'],
-      topLevelDomains: ['.es'],
-      currencies: [Currency(code: 'EUR', name: 'EUR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Spanish',
-            nativeName: 'Spanish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Sri Lanka
-    Country(
-      name: 'Sri Lanka',
-      nameTranslations: {'en': 'Sri Lanka'},
-      alpha2Code: 'LK',
-      alpha3Code: 'LKA',
-      numericCode: '144',
-      flagEmoji: '🇱🇰',
-      flagImagePath: '',
-      capital: 'Colombo',
-      largestCity: 'Colombo',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 21803000,
-      area: 0, // Not available in CSV
-      callingCodes: ['94'],
-      topLevelDomains: ['.lk'],
-      currencies: [Currency(code: 'LKR', name: 'LKR', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Tamil', nativeName: 'Tamil')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Sudan
-    Country(
-      name: 'Sudan',
-      nameTranslations: {'en': 'Sudan'},
-      alpha2Code: 'SD',
-      alpha3Code: 'SDN',
-      numericCode: '729',
-      flagEmoji: '🇸🇩',
-      flagImagePath: '',
-      capital: 'Khartoum',
-      largestCity: 'Omdurman',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 42813238,
-      area: 0, // Not available in CSV
-      callingCodes: ['249'],
-      topLevelDomains: ['.sd'],
-      currencies: [Currency(code: 'SDG', name: 'SDG', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Arabic', nativeName: 'Arabic')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Suriname
-    Country(
-      name: 'Suriname',
-      nameTranslations: {'en': 'Suriname'},
-      alpha2Code: 'SR',
-      alpha3Code: 'SUR',
-      numericCode: '740',
-      flagEmoji: '🇸🇷',
-      flagImagePath: '',
-      capital: 'Paramaribo',
-      largestCity: 'Paramaribo',
-      region: 'Americas',
-      subregion: 'Central America',
-      population: 581372,
-      area: 0, // Not available in CSV
-      callingCodes: ['597'],
-      topLevelDomains: ['.sr'],
-      currencies: [Currency(code: 'SRD', name: 'SRD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Dutch', nativeName: 'Dutch')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Sweden
-    Country(
-      name: 'Sweden',
-      nameTranslations: {'en': 'Sweden'},
-      alpha2Code: 'SE',
-      alpha3Code: 'SWE',
-      numericCode: '752',
-      flagEmoji: '🇸🇪',
-      flagImagePath: '',
-      capital: 'Stockholm',
-      largestCity: 'Stockholm',
-      region: 'Europe',
-      subregion: 'Northern Europe',
-      population: 10285453,
-      area: 0, // Not available in CSV
-      callingCodes: ['46'],
-      topLevelDomains: ['.se'],
-      currencies: [Currency(code: 'SEK', name: 'SEK', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Swedish',
-            nativeName: 'Swedish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Switzerland
-    Country(
-      name: 'Switzerland',
-      nameTranslations: {'en': 'Switzerland'},
-      alpha2Code: 'CH',
-      alpha3Code: 'CHE',
-      numericCode: '756',
-      flagEmoji: '🇨🇭',
-      flagImagePath: '',
-      capital: 'Bern',
-      largestCity: 'Zurich',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 8574832,
-      area: 0, // Not available in CSV
-      callingCodes: ['41'],
-      topLevelDomains: ['.ch'],
-      currencies: [Currency(code: 'CHF', name: 'CHF', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'German', nativeName: 'German')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Syria
-    Country(
-      name: 'Syria',
-      nameTranslations: {'en': 'Syria'},
-      alpha2Code: 'SY',
-      alpha3Code: 'SYR',
-      numericCode: '760',
-      flagEmoji: '🇸🇾',
-      flagImagePath: '',
-      capital: 'Damascus',
-      largestCity: 'Damascus',
-      region: 'Africa',
-      subregion: 'Northern Africa',
-      population: 17070135,
-      area: 0, // Not available in CSV
-      callingCodes: ['963'],
-      topLevelDomains: ['.sy'],
-      currencies: [Currency(code: 'SYP', name: 'SYP', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Arabic', nativeName: 'Arabic')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Tajikistan
-    Country(
-      name: 'Tajikistan',
-      nameTranslations: {'en': 'Tajikistan'},
-      alpha2Code: 'TJ',
-      alpha3Code: 'TJK',
-      numericCode: '762',
-      flagEmoji: '🇹🇯',
-      flagImagePath: '',
-      capital: 'Dushanbe',
-      largestCity: 'Dushanbe',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 9321018,
-      area: 0, // Not available in CSV
-      callingCodes: ['992'],
-      topLevelDomains: ['.tj'],
-      currencies: [Currency(code: 'TJS', name: 'TJS', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Persian',
-            nativeName: 'Persian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Tanzania
-    Country(
-      name: 'Tanzania',
-      nameTranslations: {'en': 'Tanzania'},
-      alpha2Code: 'TZ',
-      alpha3Code: 'TZA',
-      numericCode: '834',
-      flagEmoji: '🇹🇿',
-      flagImagePath: '',
-      capital: 'Dodoma',
-      largestCity: 'Dar es Salaam',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 58005463,
-      area: 0, // Not available in CSV
-      callingCodes: ['255'],
-      topLevelDomains: ['.tz'],
-      currencies: [Currency(code: 'TZS', name: 'TZS', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Swahili',
-            nativeName: 'Swahili')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Thailand
-    Country(
-      name: 'Thailand',
-      nameTranslations: {'en': 'Thailand'},
-      alpha2Code: 'TH',
-      alpha3Code: 'THA',
-      numericCode: '764',
-      flagEmoji: '🇹🇭',
-      flagImagePath: '',
-      capital: 'Bangkok',
-      largestCity: 'Bangkok',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 69625582,
-      area: 0, // Not available in CSV
-      callingCodes: ['66'],
-      topLevelDomains: ['.th'],
-      currencies: [Currency(code: 'THB', name: 'THB', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Thai', nativeName: 'Thai')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // East Timor
-    Country(
-      name: 'East Timor',
-      nameTranslations: {'en': 'East Timor'},
-      alpha2Code: 'TL',
-      alpha3Code: 'TLS',
-      numericCode: '626',
-      flagEmoji: '🇹🇱',
-      flagImagePath: '',
-      capital: 'Dili',
-      largestCity: 'Dili',
-      region: 'Oceania',
-      subregion: 'Polynesia',
-      population: 3500000,
-      area: 0, // Not available in CSV
-      callingCodes: ['670'],
-      topLevelDomains: ['.tl'],
-      currencies: [Currency(code: 'USD', name: 'USD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Portuguese',
-            nativeName: 'Portuguese')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Togo
-    Country(
-      name: 'Togo',
-      nameTranslations: {'en': 'Togo'},
-      alpha2Code: 'TG',
-      alpha3Code: 'TGO',
-      numericCode: '768',
-      flagEmoji: '🇹🇬',
-      flagImagePath: '',
-      capital: 'Lom',
-      largestCity: 'Lom',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 8082366,
-      area: 0, // Not available in CSV
-      callingCodes: ['228'],
-      topLevelDomains: ['.tg'],
-      currencies: [Currency(code: 'XOF', name: 'XOF', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Tonga
-    Country(
-      name: 'Tonga',
-      nameTranslations: {'en': 'Tonga'},
-      alpha2Code: 'TO',
-      alpha3Code: 'TON',
-      numericCode: '776',
-      flagEmoji: '🇹🇴',
-      flagImagePath: '',
-      capital: 'Nuku',
-      largestCity: 'Nuku',
-      region: 'Americas',
-      subregion: 'South America',
-      population: 100209,
-      area: 0, // Not available in CSV
-      callingCodes: ['676'],
-      topLevelDomains: ['.to'],
-      currencies: [Currency(code: 'TOP', name: 'TOP', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Tongan', nativeName: 'Tongan')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Trinidad and Tobago
-    Country(
-      name: 'Trinidad and Tobago',
-      nameTranslations: {'en': 'Trinidad and Tobago'},
-      alpha2Code: 'TT',
-      alpha3Code: 'TTO',
-      numericCode: '780',
-      flagEmoji: '🇹🇹',
-      flagImagePath: '',
-      capital: 'Port of Spain',
-      largestCity: 'Chaguanas',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 1394973,
-      area: 0, // Not available in CSV
-      callingCodes: ['1'],
-      topLevelDomains: ['.tt'],
-      currencies: [Currency(code: 'TTD', name: 'TTD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Tunisia
-    Country(
-      name: 'Tunisia',
-      nameTranslations: {'en': 'Tunisia'},
-      alpha2Code: 'TN',
-      alpha3Code: 'TUN',
-      numericCode: '788',
-      flagEmoji: '🇹🇳',
-      flagImagePath: '',
-      capital: 'Tunis',
-      largestCity: 'Tunis',
-      region: 'Africa',
-      subregion: 'Northern Africa',
-      population: 11694719,
-      area: 0, // Not available in CSV
-      callingCodes: ['216'],
-      topLevelDomains: ['.tn'],
-      currencies: [Currency(code: 'TND', name: 'TND', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Arabic', nativeName: 'Arabic')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Turkey
-    Country(
-      name: 'Turkey',
-      nameTranslations: {'en': 'Turkey'},
-      alpha2Code: 'TR',
-      alpha3Code: 'TUR',
-      numericCode: '792',
-      flagEmoji: '🇹🇷',
-      flagImagePath: '',
-      capital: 'Ankara',
-      largestCity: 'Istanbul',
-      region: 'Europe',
-      subregion: 'Southern Europe',
-      population: 83429615,
-      area: 0, // Not available in CSV
-      callingCodes: ['90'],
-      topLevelDomains: ['.tr'],
-      currencies: [Currency(code: 'TRY', name: 'TRY', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Turkish',
-            nativeName: 'Turkish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Turkmenistan
-    Country(
-      name: 'Turkmenistan',
-      nameTranslations: {'en': 'Turkmenistan'},
-      alpha2Code: 'TM',
-      alpha3Code: 'TKM',
-      numericCode: '795',
-      flagEmoji: '🇹🇲',
-      flagImagePath: '',
-      capital: 'Ashgabat',
-      largestCity: 'Ashgabat',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 5942089,
-      area: 0, // Not available in CSV
-      callingCodes: ['993'],
-      topLevelDomains: ['.tm'],
-      currencies: [Currency(code: 'TMT', name: 'TMT', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Turkmen',
-            nativeName: 'Turkmen')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Tuvalu
-    Country(
-      name: 'Tuvalu',
-      nameTranslations: {'en': 'Tuvalu'},
-      alpha2Code: 'TV',
-      alpha3Code: 'TUV',
-      numericCode: '798',
-      flagEmoji: '🇹🇻',
-      flagImagePath: '',
-      capital: 'Funafuti',
-      largestCity: 'Singapore',
-      region: 'Oceania',
-      subregion: 'Polynesia',
-      population: 11646,
-      area: 0, // Not available in CSV
-      callingCodes: ['688'],
-      topLevelDomains: ['.tv'],
-      currencies: [Currency(code: 'AUD', name: 'AUD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Tuvaluan',
-            nativeName: 'Tuvaluan')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Uganda
-    Country(
-      name: 'Uganda',
-      nameTranslations: {'en': 'Uganda'},
-      alpha2Code: 'UG',
-      alpha3Code: 'UGA',
-      numericCode: '800',
-      flagEmoji: '🇺🇬',
-      flagImagePath: '',
-      capital: 'Kampala',
-      largestCity: 'Buganda',
-      region: 'Africa',
-      subregion: 'Western Africa',
-      population: 44269594,
-      area: 0, // Not available in CSV
-      callingCodes: ['256'],
-      topLevelDomains: ['.ug'],
-      currencies: [Currency(code: 'UGX', name: 'UGX', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Swahili',
-            nativeName: 'Swahili')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Ukraine
-    Country(
-      name: 'Ukraine',
-      nameTranslations: {'en': 'Ukraine'},
-      alpha2Code: 'UA',
-      alpha3Code: 'UKR',
-      numericCode: '804',
-      flagEmoji: '🇺🇦',
-      flagImagePath: '',
-      capital: 'Kyiv',
-      largestCity: 'Kyiv',
-      region: 'Europe',
-      subregion: 'Western Europe',
-      population: 44385155,
-      area: 0, // Not available in CSV
-      callingCodes: ['380'],
-      topLevelDomains: ['.ua'],
-      currencies: [Currency(code: 'UAH', name: 'UAH', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Ukrainian',
-            nativeName: 'Ukrainian')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // United Arab Emirates
-    Country(
-      name: 'United Arab Emirates',
-      nameTranslations: {'en': 'United Arab Emirates'},
-      alpha2Code: 'AE',
-      alpha3Code: 'ARE',
-      numericCode: '784',
-      flagEmoji: '🇦🇪',
-      flagImagePath: '',
-      capital: 'Abu Dhabi',
-      largestCity: 'Dubai',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 9770529,
-      area: 0, // Not available in CSV
-      callingCodes: ['971'],
-      topLevelDomains: ['.ae'],
-      currencies: [Currency(code: 'AED', name: 'AED', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Arabic', nativeName: 'Arabic')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // United Kingdom
-    Country(
-      name: 'United Kingdom',
-      nameTranslations: {'en': 'United Kingdom'},
-      alpha2Code: 'GB',
-      alpha3Code: 'GBR',
-      numericCode: '826',
-      flagEmoji: '🇬🇧',
-      flagImagePath: '',
-      capital: 'London',
-      largestCity: 'London',
-      region: 'Europe',
-      subregion: 'Northern Europe',
-      population: 66834405,
-      area: 0, // Not available in CSV
-      callingCodes: ['44'],
-      topLevelDomains: ['.gb'],
-      currencies: [Currency(code: 'GBP', name: 'GBP', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // United States
-    Country(
-      name: 'United States',
-      nameTranslations: {'en': 'United States'},
-      alpha2Code: 'US',
-      alpha3Code: 'USA',
-      numericCode: '840',
-      flagEmoji: '🇺🇸',
-      flagImagePath: '',
-      capital: 'Washington, D.C.',
-      largestCity: 'New York City',
-      region: 'Asia',
-      subregion: 'Southern Asia',
-      population: 328239523,
-      area: 0, // Not available in CSV
-      callingCodes: ['1'],
-      topLevelDomains: ['.us'],
-      currencies: [Currency(code: 'USD', name: 'USD', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Uruguay
-    Country(
-      name: 'Uruguay',
-      nameTranslations: {'en': 'Uruguay'},
-      alpha2Code: 'UY',
-      alpha3Code: 'URY',
-      numericCode: '858',
-      flagEmoji: '🇺🇾',
-      flagImagePath: '',
-      capital: 'Montevideo',
-      largestCity: 'Montevideo',
-      region: 'Americas',
-      subregion: 'South America',
-      population: 3461734,
-      area: 0, // Not available in CSV
-      callingCodes: ['598'],
-      topLevelDomains: ['.uy'],
-      currencies: [Currency(code: 'UYU', name: 'UYU', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Spanish',
-            nativeName: 'Spanish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Uzbekistan
-    Country(
-      name: 'Uzbekistan',
-      nameTranslations: {'en': 'Uzbekistan'},
-      alpha2Code: 'UZ',
-      alpha3Code: 'UZB',
-      numericCode: '860',
-      flagEmoji: '🇺🇿',
-      flagImagePath: '',
-      capital: 'Tashkent',
-      largestCity: 'Tashkent',
-      region: 'Asia',
-      subregion: 'Eastern Asia',
-      population: 33580650,
-      area: 0, // Not available in CSV
-      callingCodes: ['998'],
-      topLevelDomains: ['.uz'],
-      currencies: [Currency(code: 'UZS', name: 'UZS', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Uzbek', nativeName: 'Uzbek')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Vanuatu
-    Country(
-      name: 'Vanuatu',
-      nameTranslations: {'en': 'Vanuatu'},
-      alpha2Code: 'VU',
-      alpha3Code: 'VUT',
-      numericCode: '548',
-      flagEmoji: '🇻🇺',
-      flagImagePath: '',
-      capital: 'Port Vila',
-      largestCity: 'Port Vila',
-      region: 'Oceania',
-      subregion: 'Polynesia',
-      population: 299882,
-      area: 0, // Not available in CSV
-      callingCodes: ['678'],
-      topLevelDomains: ['.vu'],
-      currencies: [Currency(code: 'VUV', name: 'VUV', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'French', nativeName: 'French')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Venezuela
-    Country(
-      name: 'Venezuela',
-      nameTranslations: {'en': 'Venezuela'},
-      alpha2Code: 'VE',
-      alpha3Code: 'VEN',
-      numericCode: '862',
-      flagEmoji: '🇻🇪',
-      flagImagePath: '',
-      capital: 'Caracas',
-      largestCity: 'Caracas',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 28515829,
-      area: 0, // Not available in CSV
-      callingCodes: ['58'],
-      topLevelDomains: ['.ve'],
-      currencies: [Currency(code: 'VED', name: 'VED', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Spanish',
-            nativeName: 'Spanish')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Vietnam
-    Country(
-      name: 'Vietnam',
-      nameTranslations: {'en': 'Vietnam'},
-      alpha2Code: 'VN',
-      alpha3Code: 'VNM',
-      numericCode: '704',
-      flagEmoji: '🇻🇳',
-      flagImagePath: '',
-      capital: 'Hanoi',
-      largestCity: 'Ho Chi Minh City',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 96462106,
-      area: 0, // Not available in CSV
-      callingCodes: ['84'],
-      topLevelDomains: ['.vn'],
-      currencies: [Currency(code: 'VND', name: 'VND', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'Vietnamese',
-            nativeName: 'Vietnamese')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Yemen
-    Country(
-      name: 'Yemen',
-      nameTranslations: {'en': 'Yemen'},
-      alpha2Code: 'YE',
-      alpha3Code: 'YEM',
-      numericCode: '887',
-      flagEmoji: '🇾🇪',
-      flagImagePath: '',
-      capital: 'Sanaa',
-      largestCity: 'Sanaa',
-      region: 'Asia',
-      subregion: 'South-Eastern Asia',
-      population: 29161922,
-      area: 0, // Not available in CSV
-      callingCodes: ['967'],
-      topLevelDomains: ['.ye'],
-      currencies: [Currency(code: 'YER', name: 'YER', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Arabic', nativeName: 'Arabic')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Zambia
-    Country(
-      name: 'Zambia',
-      nameTranslations: {'en': 'Zambia'},
-      alpha2Code: 'ZM',
-      alpha3Code: 'ZMB',
-      numericCode: '894',
-      flagEmoji: '🇿🇲',
-      flagImagePath: '',
-      capital: 'Lusaka',
-      largestCity: 'Lusaka',
-      region: 'Africa',
-      subregion: 'Southern Africa',
-      population: 17861030,
-      area: 0, // Not available in CSV
-      callingCodes: ['260'],
-      topLevelDomains: ['.zm'],
-      currencies: [Currency(code: 'ZMW', name: 'ZMW', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en',
-            iso6392: 'eng',
-            name: 'English',
-            nativeName: 'English')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
-    ),
-
-    // Zimbabwe
-    Country(
-      name: 'Zimbabwe',
-      nameTranslations: {'en': 'Zimbabwe'},
-      alpha2Code: 'ZW',
-      alpha3Code: 'ZWE',
-      numericCode: '716',
-      flagEmoji: '🇿🇼',
-      flagImagePath: '',
-      capital: 'Harare',
-      largestCity: 'Harare',
-      region: 'Africa',
-      subregion: 'Southern Africa',
-      population: 14645468,
-      area: 0, // Not available in CSV
-      callingCodes: ['263'],
-      topLevelDomains: ['.zw'],
-      currencies: [Currency(code: 'ZWL', name: 'ZWL', symbol: '')],
-      languages: [
-        Language(
-            iso6391: 'en', iso6392: 'eng', name: 'Shona', nativeName: 'Shona')
-      ],
-      timezones: ['UTC+00:00'], // Default timezone
-      borders: [], // Not available in CSV
-      isIndependent: true, // Default to true
-      isUnMember: true, // Default to true
+      region: "Africa",
+      subregion: "Middle Africa",
+      population: 19340757,
+      area: 1284000,
+      callingCodes: ["235"],
+      topLevelDomains: [".td"],
+      currencies: [
+        Currency(
+          code: "XAF",
+          name: "Central African CFA franc",
+          symbol: "Fr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["Africa/Ndjamena"],
+      borders: ["CAF", "CMR", "LBY", "NER", "NGA", "SDN"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "French Southern and Antarctic Lands",
+      nameTranslations: {
+        'en': "French Southern and Antarctic Lands",
+      },
+      alpha2Code: "TF",
+      alpha3Code: "ATF",
+      numericCode: "260",
+      flagEmoji: "🇹🇫",
+      flagImagePath: '',
+      capital: "Port-aux-Français",
+      region: "Antarctic",
+      subregion: "",
+      population: 0,
+      area: 7747,
+      callingCodes: ["262"],
+      topLevelDomains: [".tf"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["Indian/Kerguelen"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Togo",
+      nameTranslations: {
+        'en': "Togo",
+      },
+      alpha2Code: "TG",
+      alpha3Code: "TGO",
+      numericCode: "768",
+      flagEmoji: "🇹🇬",
+      flagImagePath: '',
+      capital: "Lomé",
+      region: "Africa",
+      subregion: "Western Africa",
+      population: 8095498,
+      area: 56785,
+      callingCodes: ["228"],
+      topLevelDomains: [".tg"],
+      currencies: [
+        Currency(
+          code: "XOF",
+          name: "West African CFA franc",
+          symbol: "Fr",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["Africa/Lome"],
+      borders: ["BEN", "BFA", "GHA"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Thailand",
+      nameTranslations: {
+        'en': "Thailand",
+      },
+      alpha2Code: "TH",
+      alpha3Code: "THA",
+      numericCode: "764",
+      flagEmoji: "🇹🇭",
+      flagImagePath: '',
+      capital: "Bangkok",
+      region: "Asia",
+      subregion: "South-Eastern Asia",
+      population: 65859640,
+      area: 513120,
+      callingCodes: ["66"],
+      topLevelDomains: [".th", ".ไทย"],
+      currencies: [
+        Currency(
+          code: "THB",
+          name: "Thai baht",
+          symbol: "฿",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "th",
+          iso6392: "tha",
+          name: "Thai",
+          nativeName: "Thai",
+        ),
+      ],
+      timezones: ["Asia/Bangkok"],
+      borders: ["KHM", "LAO", "MMR", "MYS"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Tajikistan",
+      nameTranslations: {
+        'en': "Tajikistan",
+      },
+      alpha2Code: "TJ",
+      alpha3Code: "TJK",
+      numericCode: "762",
+      flagEmoji: "🇹🇯",
+      flagImagePath: '',
+      capital: "Dushanbe",
+      region: "Asia",
+      subregion: "Central Asia",
+      population: 10499000,
+      area: 143100,
+      callingCodes: ["992"],
+      topLevelDomains: [".tj"],
+      currencies: [
+        Currency(
+          code: "TJS",
+          name: "Tajikistani somoni",
+          symbol: "ЅМ",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ru",
+          iso6392: "rus",
+          name: "Russian",
+          nativeName: "Russian",
+        ),
+        Language(
+          iso6391: "tg",
+          iso6392: "tgk",
+          name: "Tajik",
+          nativeName: "Tajik",
+        ),
+      ],
+      timezones: ["Asia/Dushanbe"],
+      borders: ["AFG", "CHN", "KGZ", "UZB"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Tokelau",
+      nameTranslations: {
+        'en': "Tokelau",
+      },
+      alpha2Code: "TK",
+      alpha3Code: "TKL",
+      numericCode: "772",
+      flagEmoji: "🇹🇰",
+      flagImagePath: '',
+      capital: "Fakaofo",
+      region: "Oceania",
+      subregion: "Polynesia",
+      population: 1647,
+      area: 12,
+      callingCodes: ["690"],
+      topLevelDomains: [".tk"],
+      currencies: [
+        Currency(
+          code: "NZD",
+          name: "New Zealand dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "sm",
+          iso6392: "smo",
+          name: "Samoan",
+          nativeName: "Samoan",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "tkl",
+          name: "Tokelauan",
+          nativeName: "Tokelauan",
+        ),
+      ],
+      timezones: ["Pacific/Fakaofo"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Timor-Leste",
+      nameTranslations: {
+        'en': "Timor-Leste",
+      },
+      alpha2Code: "TL",
+      alpha3Code: "TLS",
+      numericCode: "626",
+      flagEmoji: "🇹🇱",
+      flagImagePath: '',
+      capital: "Dili",
+      region: "Asia",
+      subregion: "South-Eastern Asia",
+      population: 1391221,
+      area: 14874,
+      callingCodes: ["670"],
+      topLevelDomains: [".tl"],
+      currencies: [
+        Currency(
+          code: "USD",
+          name: "United States dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "pt",
+          iso6392: "por",
+          name: "Portuguese",
+          nativeName: "Portuguese",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "tet",
+          name: "Tetum",
+          nativeName: "Tetum",
+        ),
+      ],
+      timezones: ["Asia/Dili"],
+      borders: ["IDN"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Turkmenistan",
+      nameTranslations: {
+        'en': "Turkmenistan",
+      },
+      alpha2Code: "TM",
+      alpha3Code: "TKM",
+      numericCode: "795",
+      flagEmoji: "🇹🇲",
+      flagImagePath: '',
+      capital: "Ashgabat",
+      region: "Asia",
+      subregion: "Central Asia",
+      population: 7057841,
+      area: 488100,
+      callingCodes: ["993"],
+      topLevelDomains: [".tm"],
+      currencies: [
+        Currency(
+          code: "TMT",
+          name: "Turkmenistan manat",
+          symbol: "m",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ru",
+          iso6392: "rus",
+          name: "Russian",
+          nativeName: "Russian",
+        ),
+        Language(
+          iso6391: "tk",
+          iso6392: "tuk",
+          name: "Turkmen",
+          nativeName: "Turkmen",
+        ),
+      ],
+      timezones: ["Asia/Ashgabat"],
+      borders: ["AFG", "IRN", "KAZ", "UZB"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Tunisia",
+      nameTranslations: {
+        'en': "Tunisia",
+      },
+      alpha2Code: "TN",
+      alpha3Code: "TUN",
+      numericCode: "788",
+      flagEmoji: "🇹🇳",
+      flagImagePath: '',
+      capital: "Tunis",
+      region: "Africa",
+      subregion: "Northern Africa",
+      population: 11972169,
+      area: 163610,
+      callingCodes: ["216"],
+      topLevelDomains: [".tn"],
+      currencies: [
+        Currency(
+          code: "TND",
+          name: "Tunisian dinar",
+          symbol: "د.ت",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+      ],
+      timezones: ["Africa/Tunis"],
+      borders: ["DZA", "LBY"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Tonga",
+      nameTranslations: {
+        'en': "Tonga",
+      },
+      alpha2Code: "TO",
+      alpha3Code: "TON",
+      numericCode: "776",
+      flagEmoji: "🇹🇴",
+      flagImagePath: '',
+      capital: "Nuku'alofa",
+      region: "Oceania",
+      subregion: "Polynesia",
+      population: 100179,
+      area: 747,
+      callingCodes: ["676"],
+      topLevelDomains: [".to"],
+      currencies: [
+        Currency(
+          code: "TOP",
+          name: "Tongan paʻanga",
+          symbol: "T\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "to",
+          iso6392: "ton",
+          name: "Tongan",
+          nativeName: "Tongan",
+        ),
+      ],
+      timezones: ["Pacific/Tongatapu"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Türkiye",
+      nameTranslations: {
+        'en': "Türkiye",
+      },
+      alpha2Code: "TR",
+      alpha3Code: "TUR",
+      numericCode: "792",
+      flagEmoji: "🇹🇷",
+      flagImagePath: '',
+      capital: "Ankara",
+      region: "Asia",
+      subregion: "Western Asia",
+      population: 85664944,
+      area: 783562,
+      callingCodes: ["90"],
+      topLevelDomains: [".tr"],
+      currencies: [
+        Currency(
+          code: "TRY",
+          name: "Turkish lira",
+          symbol: "₺",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "tr",
+          iso6392: "tur",
+          name: "Turkish",
+          nativeName: "Turkish",
+        ),
+      ],
+      timezones: ["Europe/Istanbul"],
+      borders: ["ARM", "AZE", "BGR", "GEO", "GRC", "IRN", "IRQ", "SYR"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Trinidad and Tobago",
+      nameTranslations: {
+        'en': "Trinidad and Tobago",
+      },
+      alpha2Code: "TT",
+      alpha3Code: "TTO",
+      numericCode: "780",
+      flagEmoji: "🇹🇹",
+      flagImagePath: '',
+      capital: "Port of Spain",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 1368333,
+      area: 5130,
+      callingCodes: ["1"],
+      topLevelDomains: [".tt"],
+      currencies: [
+        Currency(
+          code: "TTD",
+          name: "Trinidad and Tobago dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["America/Port_of_Spain"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Tuvalu",
+      nameTranslations: {
+        'en': "Tuvalu",
+      },
+      alpha2Code: "TV",
+      alpha3Code: "TUV",
+      numericCode: "798",
+      flagEmoji: "🇹🇻",
+      flagImagePath: '',
+      capital: "Funafuti",
+      region: "Oceania",
+      subregion: "Polynesia",
+      population: 10643,
+      area: 26,
+      callingCodes: ["688"],
+      topLevelDomains: [".tv"],
+      currencies: [
+        Currency(
+          code: "AUD",
+          name: "Australian dollar",
+          symbol: "\$",
+        ),
+        Currency(
+          code: "TVD",
+          name: "Tuvaluan dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "tvl",
+          name: "Tuvaluan",
+          nativeName: "Tuvaluan",
+        ),
+      ],
+      timezones: ["Pacific/Funafuti"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Taiwan",
+      nameTranslations: {
+        'en': "Taiwan",
+      },
+      alpha2Code: "TW",
+      alpha3Code: "TWN",
+      numericCode: "158",
+      flagEmoji: "🇹🇼",
+      flagImagePath: '',
+      capital: "Taipei",
+      region: "Asia",
+      subregion: "Eastern Asia",
+      population: 23337936,
+      area: 36193,
+      callingCodes: ["886"],
+      topLevelDomains: [".tw", ".台灣", ".台湾"],
+      currencies: [
+        Currency(
+          code: "TWD",
+          name: "New Taiwan dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "zh",
+          iso6392: "zho",
+          name: "Chinese",
+          nativeName: "Chinese",
+        ),
+      ],
+      timezones: ["Asia/Taipei"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Tanzania",
+      nameTranslations: {
+        'en': "Tanzania",
+      },
+      alpha2Code: "TZ",
+      alpha3Code: "TZA",
+      numericCode: "834",
+      flagEmoji: "🇹🇿",
+      flagImagePath: '',
+      capital: "Dodoma",
+      region: "Africa",
+      subregion: "Eastern Africa",
+      population: 68153004,
+      area: 945087,
+      callingCodes: ["255"],
+      topLevelDomains: [".tz"],
+      currencies: [
+        Currency(
+          code: "TZS",
+          name: "Tanzanian shilling",
+          symbol: "Sh",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "sw",
+          iso6392: "swa",
+          name: "Swahili",
+          nativeName: "Swahili",
+        ),
+      ],
+      timezones: ["Africa/Dar_es_Salaam"],
+      borders: ["BDI", "COD", "KEN", "MOZ", "MWI", "RWA", "UGA", "ZMB"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Ukraine",
+      nameTranslations: {
+        'en': "Ukraine",
+      },
+      alpha2Code: "UA",
+      alpha3Code: "UKR",
+      numericCode: "804",
+      flagEmoji: "🇺🇦",
+      flagImagePath: '',
+      capital: "Kyiv",
+      region: "Europe",
+      subregion: "Eastern Europe",
+      population: 32862000,
+      area: 603500,
+      callingCodes: ["380"],
+      topLevelDomains: [".ua", ".укр"],
+      currencies: [
+        Currency(
+          code: "UAH",
+          name: "Ukrainian hryvnia",
+          symbol: "₴",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "uk",
+          iso6392: "ukr",
+          name: "Ukrainian",
+          nativeName: "Ukrainian",
+        ),
+      ],
+      timezones: [
+        "Europe/Kyiv",
+        "Europe/Simferopol",
+        "Europe/Uzhgorod",
+        "Europe/Zaporozhye"
+      ],
+      borders: ["BLR", "HUN", "MDA", "POL", "ROU", "RUS", "SVK"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Uganda",
+      nameTranslations: {
+        'en': "Uganda",
+      },
+      alpha2Code: "UG",
+      alpha3Code: "UGA",
+      numericCode: "800",
+      flagEmoji: "🇺🇬",
+      flagImagePath: '',
+      capital: "Kampala",
+      region: "Africa",
+      subregion: "Eastern Africa",
+      population: 45905417,
+      area: 241550,
+      callingCodes: ["256"],
+      topLevelDomains: [".ug"],
+      currencies: [
+        Currency(
+          code: "UGX",
+          name: "Ugandan shilling",
+          symbol: "Sh",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "sw",
+          iso6392: "swa",
+          name: "Swahili",
+          nativeName: "Swahili",
+        ),
+      ],
+      timezones: ["Africa/Kampala"],
+      borders: ["COD", "KEN", "RWA", "SSD", "TZA"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "United States Minor Outlying Islands",
+      nameTranslations: {
+        'en': "United States Minor Outlying Islands",
+      },
+      alpha2Code: "UM",
+      alpha3Code: "UMI",
+      numericCode: "581",
+      flagEmoji: "🇺🇲",
+      flagImagePath: '',
+      capital: "",
+      region: "Americas",
+      subregion: "North America",
+      population: 0,
+      area: 34.2,
+      callingCodes: ["1"],
+      topLevelDomains: [".us"],
+      currencies: [
+        Currency(
+          code: "USD",
+          name: "United States dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Pacific/Midway", "Pacific/Wake"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "United States",
+      nameTranslations: {
+        'en': "United States",
+      },
+      alpha2Code: "US",
+      alpha3Code: "USA",
+      numericCode: "840",
+      flagEmoji: "🇺🇸",
+      flagImagePath: '',
+      capital: "Washington D.C.",
+      region: "Americas",
+      subregion: "North America",
+      population: 340110988,
+      area: 9372610,
+      callingCodes: ["1"],
+      topLevelDomains: [".us"],
+      currencies: [
+        Currency(
+          code: "USD",
+          name: "United States dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: [
+        "America/Adak",
+        "America/Anchorage",
+        "America/Boise",
+        "America/Chicago",
+        "America/Denver",
+        "America/Detroit",
+        "America/Indiana/Indianapolis",
+        "America/Indiana/Knox",
+        "America/Indiana/Marengo",
+        "America/Indiana/Petersburg",
+        "America/Indiana/Tell_City",
+        "America/Indiana/Vevay",
+        "America/Indiana/Vincennes",
+        "America/Indiana/Winamac",
+        "America/Juneau",
+        "America/Kentucky/Louisville",
+        "America/Kentucky/Monticello",
+        "America/Los_Angeles",
+        "America/Menominee",
+        "America/Metlakatla",
+        "America/New_York",
+        "America/Nome",
+        "America/North_Dakota/Beulah",
+        "America/North_Dakota/Center",
+        "America/North_Dakota/New_Salem",
+        "America/Phoenix",
+        "America/Sitka",
+        "America/Yakutat",
+        "Pacific/Honolulu"
+      ],
+      borders: ["CAN", "MEX"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Uruguay",
+      nameTranslations: {
+        'en': "Uruguay",
+      },
+      alpha2Code: "UY",
+      alpha3Code: "URY",
+      numericCode: "858",
+      flagEmoji: "🇺🇾",
+      flagImagePath: '',
+      capital: "Montevideo",
+      region: "Americas",
+      subregion: "South America",
+      population: 3499451,
+      area: 181034,
+      callingCodes: ["598"],
+      topLevelDomains: [".uy"],
+      currencies: [
+        Currency(
+          code: "UYU",
+          name: "Uruguayan peso",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: ["America/Montevideo"],
+      borders: ["ARG", "BRA"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Uzbekistan",
+      nameTranslations: {
+        'en': "Uzbekistan",
+      },
+      alpha2Code: "UZ",
+      alpha3Code: "UZB",
+      numericCode: "860",
+      flagEmoji: "🇺🇿",
+      flagImagePath: '',
+      capital: "Tashkent",
+      region: "Asia",
+      subregion: "Central Asia",
+      population: 37859698,
+      area: 447400,
+      callingCodes: ["998"],
+      topLevelDomains: [".uz"],
+      currencies: [
+        Currency(
+          code: "UZS",
+          name: "Uzbekistani soʻm",
+          symbol: "so'm",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ru",
+          iso6392: "rus",
+          name: "Russian",
+          nativeName: "Russian",
+        ),
+        Language(
+          iso6391: "uz",
+          iso6392: "uzb",
+          name: "Uzbek",
+          nativeName: "Uzbek",
+        ),
+      ],
+      timezones: ["Asia/Samarkand", "Asia/Tashkent"],
+      borders: ["AFG", "KAZ", "KGZ", "TJK", "TKM"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Vatican City",
+      nameTranslations: {
+        'en': "Vatican City",
+      },
+      alpha2Code: "VA",
+      alpha3Code: "VAT",
+      numericCode: "336",
+      flagEmoji: "🇻🇦",
+      flagImagePath: '',
+      capital: "Vatican City",
+      region: "Europe",
+      subregion: "Southern Europe",
+      population: 882,
+      area: 0.44,
+      callingCodes: ["379"],
+      topLevelDomains: [".va"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "it",
+          iso6392: "ita",
+          name: "Italian",
+          nativeName: "Italian",
+        ),
+        Language(
+          iso6391: "la",
+          iso6392: "lat",
+          name: "Latin",
+          nativeName: "Latin",
+        ),
+      ],
+      timezones: ["Europe/Vatican"],
+      borders: ["ITA"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Saint Vincent and the Grenadines",
+      nameTranslations: {
+        'en': "Saint Vincent and the Grenadines",
+      },
+      alpha2Code: "VC",
+      alpha3Code: "VCT",
+      numericCode: "670",
+      flagEmoji: "🇻🇨",
+      flagImagePath: '',
+      capital: "Kingstown",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 110872,
+      area: 389,
+      callingCodes: ["1"],
+      topLevelDomains: [".vc"],
+      currencies: [
+        Currency(
+          code: "XCD",
+          name: "Eastern Caribbean dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["America/St_Vincent"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Venezuela",
+      nameTranslations: {
+        'en': "Venezuela",
+      },
+      alpha2Code: "VE",
+      alpha3Code: "VEN",
+      numericCode: "862",
+      flagEmoji: "🇻🇪",
+      flagImagePath: '',
+      capital: "Caracas",
+      region: "Americas",
+      subregion: "South America",
+      population: 28517000,
+      area: 916445,
+      callingCodes: ["58"],
+      topLevelDomains: [".ve"],
+      currencies: [
+        Currency(
+          code: "VES",
+          name: "Venezuelan bolívar soberano",
+          symbol: "Bs.S.",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "es",
+          iso6392: "spa",
+          name: "Spanish",
+          nativeName: "Spanish",
+        ),
+      ],
+      timezones: ["America/Caracas"],
+      borders: ["BRA", "COL", "GUY"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "British Virgin Islands",
+      nameTranslations: {
+        'en': "British Virgin Islands",
+      },
+      alpha2Code: "VG",
+      alpha3Code: "VGB",
+      numericCode: "092",
+      flagEmoji: "🇻🇬",
+      flagImagePath: '',
+      capital: "Road Town",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 39471,
+      area: 151,
+      callingCodes: ["1"],
+      topLevelDomains: [".vg"],
+      currencies: [
+        Currency(
+          code: "USD",
+          name: "United States dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["America/Tortola"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "United States Virgin Islands",
+      nameTranslations: {
+        'en': "United States Virgin Islands",
+      },
+      alpha2Code: "VI",
+      alpha3Code: "VIR",
+      numericCode: "850",
+      flagEmoji: "🇻🇮",
+      flagImagePath: '',
+      capital: "Charlotte Amalie",
+      region: "Americas",
+      subregion: "Caribbean",
+      population: 87146,
+      area: 347,
+      callingCodes: ["1"],
+      topLevelDomains: [".vi"],
+      currencies: [
+        Currency(
+          code: "USD",
+          name: "United States dollar",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["America/St_Thomas"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Vietnam",
+      nameTranslations: {
+        'en': "Vietnam",
+      },
+      alpha2Code: "VN",
+      alpha3Code: "VNM",
+      numericCode: "704",
+      flagEmoji: "🇻🇳",
+      flagImagePath: '',
+      capital: "Hanoi",
+      region: "Asia",
+      subregion: "South-Eastern Asia",
+      population: 101343800,
+      area: 331212,
+      callingCodes: ["84"],
+      topLevelDomains: [".vn"],
+      currencies: [
+        Currency(
+          code: "VND",
+          name: "Vietnamese đồng",
+          symbol: "₫",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "vi",
+          iso6392: "vie",
+          name: "Vietnamese",
+          nativeName: "Vietnamese",
+        ),
+      ],
+      timezones: ["Asia/Ho_Chi_Minh"],
+      borders: ["CHN", "KHM", "LAO"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Vanuatu",
+      nameTranslations: {
+        'en': "Vanuatu",
+      },
+      alpha2Code: "VU",
+      alpha3Code: "VUT",
+      numericCode: "548",
+      flagEmoji: "🇻🇺",
+      flagImagePath: '',
+      capital: "Port Vila",
+      region: "Oceania",
+      subregion: "Melanesia",
+      population: 321409,
+      area: 12189,
+      callingCodes: ["678"],
+      topLevelDomains: [".vu"],
+      currencies: [
+        Currency(
+          code: "VUV",
+          name: "Vanuatu vatu",
+          symbol: "Vt",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "bi",
+          iso6392: "bis",
+          name: "Bislama",
+          nativeName: "Bislama",
+        ),
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["Pacific/Efate"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Wallis and Futuna",
+      nameTranslations: {
+        'en': "Wallis and Futuna",
+      },
+      alpha2Code: "WF",
+      alpha3Code: "WLF",
+      numericCode: "876",
+      flagEmoji: "🇼🇫",
+      flagImagePath: '',
+      capital: "Mata-Utu",
+      region: "Oceania",
+      subregion: "Polynesia",
+      population: 11620,
+      area: 142,
+      callingCodes: ["681"],
+      topLevelDomains: [".wf"],
+      currencies: [
+        Currency(
+          code: "XPF",
+          name: "CFP franc",
+          symbol: "₣",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["Pacific/Wallis"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Samoa",
+      nameTranslations: {
+        'en': "Samoa",
+      },
+      alpha2Code: "WS",
+      alpha3Code: "WSM",
+      numericCode: "882",
+      flagEmoji: "🇼🇸",
+      flagImagePath: '',
+      capital: "Apia",
+      region: "Oceania",
+      subregion: "Polynesia",
+      population: 205557,
+      area: 2842,
+      callingCodes: ["685"],
+      topLevelDomains: [".ws"],
+      currencies: [
+        Currency(
+          code: "WST",
+          name: "Samoan tālā",
+          symbol: "T",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "sm",
+          iso6392: "smo",
+          name: "Samoan",
+          nativeName: "Samoan",
+        ),
+      ],
+      timezones: ["Pacific/Apia"],
+      borders: [],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Kosovo",
+      nameTranslations: {
+        'en': "Kosovo",
+      },
+      alpha2Code: "XK",
+      alpha3Code: "UNK",
+      numericCode: "",
+      flagEmoji: "🇽🇰",
+      flagImagePath: '',
+      capital: "Pristina",
+      region: "Europe",
+      subregion: "Southeast Europe",
+      population: 1585566,
+      area: 10908,
+      callingCodes: ["383"],
+      topLevelDomains: [".xk"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "sq",
+          iso6392: "sqi",
+          name: "Albanian",
+          nativeName: "Albanian",
+        ),
+        Language(
+          iso6391: "sr",
+          iso6392: "srp",
+          name: "Serbian",
+          nativeName: "Serbian",
+        ),
+      ],
+      timezones: ["Europe/Belgrade"],
+      borders: ["ALB", "MKD", "MNE", "SRB"],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "Yemen",
+      nameTranslations: {
+        'en': "Yemen",
+      },
+      alpha2Code: "YE",
+      alpha3Code: "YEM",
+      numericCode: "887",
+      flagEmoji: "🇾🇪",
+      flagImagePath: '',
+      capital: "Sana'a",
+      region: "Asia",
+      subregion: "Western Asia",
+      population: 32684503,
+      area: 527968,
+      callingCodes: ["967"],
+      topLevelDomains: [".ye"],
+      currencies: [
+        Currency(
+          code: "YER",
+          name: "Yemeni rial",
+          symbol: "﷼",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "ar",
+          iso6392: "ara",
+          name: "Arabic",
+          nativeName: "Arabic",
+        ),
+      ],
+      timezones: ["Asia/Aden"],
+      borders: ["OMN", "SAU"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Mayotte",
+      nameTranslations: {
+        'en': "Mayotte",
+      },
+      alpha2Code: "YT",
+      alpha3Code: "MYT",
+      numericCode: "175",
+      flagEmoji: "🇾🇹",
+      flagImagePath: '',
+      capital: "Mamoudzou",
+      region: "Africa",
+      subregion: "Eastern Africa",
+      population: 337011,
+      area: 374,
+      callingCodes: ["262"],
+      topLevelDomains: [".yt"],
+      currencies: [
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "fr",
+          iso6392: "fra",
+          name: "French",
+          nativeName: "French",
+        ),
+      ],
+      timezones: ["Indian/Mayotte"],
+      borders: [],
+      isIndependent: false,
+      isUnMember: false,
+    ),
+    Country(
+      name: "South Africa",
+      nameTranslations: {
+        'en': "South Africa",
+      },
+      alpha2Code: "ZA",
+      alpha3Code: "ZAF",
+      numericCode: "710",
+      flagEmoji: "🇿🇦",
+      flagImagePath: '',
+      capital: "Pretoria, Bloemfontein, Cape Town",
+      region: "Africa",
+      subregion: "Southern Africa",
+      population: 63100945,
+      area: 1221037,
+      callingCodes: ["27"],
+      topLevelDomains: [".za"],
+      currencies: [
+        Currency(
+          code: "ZAR",
+          name: "South African rand",
+          symbol: "R",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "af",
+          iso6392: "afr",
+          name: "Afrikaans",
+          nativeName: "Afrikaans",
+        ),
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "nr",
+          iso6392: "nbl",
+          name: "Southern Ndebele",
+          nativeName: "Southern Ndebele",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "nso",
+          name: "Northern Sotho",
+          nativeName: "Northern Sotho",
+        ),
+        Language(
+          iso6391: "st",
+          iso6392: "sot",
+          name: "Southern Sotho",
+          nativeName: "Southern Sotho",
+        ),
+        Language(
+          iso6391: "ss",
+          iso6392: "ssw",
+          name: "Swazi",
+          nativeName: "Swazi",
+        ),
+        Language(
+          iso6391: "tn",
+          iso6392: "tsn",
+          name: "Tswana",
+          nativeName: "Tswana",
+        ),
+        Language(
+          iso6391: "ts",
+          iso6392: "tso",
+          name: "Tsonga",
+          nativeName: "Tsonga",
+        ),
+        Language(
+          iso6391: "ve",
+          iso6392: "ven",
+          name: "Venda",
+          nativeName: "Venda",
+        ),
+        Language(
+          iso6391: "xh",
+          iso6392: "xho",
+          name: "Xhosa",
+          nativeName: "Xhosa",
+        ),
+        Language(
+          iso6391: "zu",
+          iso6392: "zul",
+          name: "Zulu",
+          nativeName: "Zulu",
+        ),
+      ],
+      timezones: ["Africa/Johannesburg"],
+      borders: ["BWA", "LSO", "MOZ", "NAM", "SWZ", "ZWE"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Zambia",
+      nameTranslations: {
+        'en': "Zambia",
+      },
+      alpha2Code: "ZM",
+      alpha3Code: "ZMB",
+      numericCode: "894",
+      flagEmoji: "🇿🇲",
+      flagImagePath: '',
+      capital: "Lusaka",
+      region: "Africa",
+      subregion: "Eastern Africa",
+      population: 19693423,
+      area: 752612,
+      callingCodes: ["260"],
+      topLevelDomains: [".zm"],
+      currencies: [
+        Currency(
+          code: "ZMW",
+          name: "Zambian kwacha",
+          symbol: "ZK",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+      ],
+      timezones: ["Africa/Lusaka"],
+      borders: ["AGO", "BWA", "COD", "MOZ", "MWI", "NAM", "TZA", "ZWE"],
+      isIndependent: true,
+      isUnMember: true,
+    ),
+    Country(
+      name: "Zimbabwe",
+      nameTranslations: {
+        'en': "Zimbabwe",
+      },
+      alpha2Code: "ZW",
+      alpha3Code: "ZWE",
+      numericCode: "716",
+      flagEmoji: "🇿🇼",
+      flagImagePath: '',
+      capital: "Harare",
+      region: "Africa",
+      subregion: "Eastern Africa",
+      population: 17073087,
+      area: 390757,
+      callingCodes: ["263"],
+      topLevelDomains: [".zw"],
+      currencies: [
+        Currency(
+          code: "BWP",
+          name: "Botswana pula",
+          symbol: "P",
+        ),
+        Currency(
+          code: "CNY",
+          name: "Chinese yuan",
+          symbol: "¥",
+        ),
+        Currency(
+          code: "EUR",
+          name: "Euro",
+          symbol: "€",
+        ),
+        Currency(
+          code: "GBP",
+          name: "British pound",
+          symbol: "£",
+        ),
+        Currency(
+          code: "INR",
+          name: "Indian rupee",
+          symbol: "₹",
+        ),
+        Currency(
+          code: "JPY",
+          name: "Japanese yen",
+          symbol: "¥",
+        ),
+        Currency(
+          code: "USD",
+          name: "United States dollar",
+          symbol: "\$",
+        ),
+        Currency(
+          code: "ZAR",
+          name: "South African rand",
+          symbol: "Rs",
+        ),
+        Currency(
+          code: "ZWB",
+          name: "Zimbabwean bonds",
+          symbol: "\$",
+        ),
+      ],
+      languages: [
+        Language(
+          iso6391: "",
+          iso6392: "bwg",
+          name: "Chibarwe",
+          nativeName: "Chibarwe",
+        ),
+        Language(
+          iso6391: "en",
+          iso6392: "eng",
+          name: "English",
+          nativeName: "English",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "kck",
+          name: "Kalanga",
+          nativeName: "Kalanga",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "khi",
+          name: "Khoisan",
+          nativeName: "Khoisan",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "ndc",
+          name: "Ndau",
+          nativeName: "Ndau",
+        ),
+        Language(
+          iso6391: "nd",
+          iso6392: "nde",
+          name: "Northern Ndebele",
+          nativeName: "Northern Ndebele",
+        ),
+        Language(
+          iso6391: "ny",
+          iso6392: "nya",
+          name: "Chewa",
+          nativeName: "Chewa",
+        ),
+        Language(
+          iso6391: "sn",
+          iso6392: "sna",
+          name: "Shona",
+          nativeName: "Shona",
+        ),
+        Language(
+          iso6391: "st",
+          iso6392: "sot",
+          name: "Sotho",
+          nativeName: "Sotho",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "toi",
+          name: "Tonga",
+          nativeName: "Tonga",
+        ),
+        Language(
+          iso6391: "tn",
+          iso6392: "tsn",
+          name: "Tswana",
+          nativeName: "Tswana",
+        ),
+        Language(
+          iso6391: "ts",
+          iso6392: "tso",
+          name: "Tsonga",
+          nativeName: "Tsonga",
+        ),
+        Language(
+          iso6391: "ve",
+          iso6392: "ven",
+          name: "Venda",
+          nativeName: "Venda",
+        ),
+        Language(
+          iso6391: "xh",
+          iso6392: "xho",
+          name: "Xhosa",
+          nativeName: "Xhosa",
+        ),
+        Language(
+          iso6391: "",
+          iso6392: "zib",
+          name: "Zimbabwean Sign Language",
+          nativeName: "Zimbabwean Sign Language",
+        ),
+      ],
+      timezones: ["Africa/Harare"],
+      borders: ["BWA", "MOZ", "ZAF", "ZMB"],
+      isIndependent: true,
+      isUnMember: true,
     ),
   ];
 
-  /// Get all countries
-  static List<Country> get all => List.unmodifiable(_allCountries);
+  static final Map<String, Country> _byAlpha2Code = {
+    for (final country in _allCountries) country.alpha2Code: country,
+  };
+  static final Map<String, Country> _byAlpha3Code = {
+    for (final country in _allCountries) country.alpha3Code: country,
+  };
+  static final Map<String, Country> _byNumericCode = {
+    for (final country in _allCountries)
+      if (country.numericCode.isNotEmpty) country.numericCode: country,
+  };
 
-  /// Get countries by region
+  /// All catalogue entries in alpha-2 code order.
+  static List<Country> get all => _allCountries;
+
+  /// Returns countries in [region].
   static List<Country> getByRegion(String region) {
     return _allCountries.where((country) => country.region == region).toList();
   }
 
-  /// Get countries by subregion
+  /// Returns countries in [subregion].
   static List<Country> getBySubregion(String subregion) {
     return _allCountries
         .where((country) => country.subregion == subregion)
         .toList();
   }
 
-  /// Get country by alpha-2 code
+  /// Returns the country with [alpha2Code], ignoring case and whitespace.
   static Country? getByAlpha2Code(String alpha2Code) {
-    try {
-      return _allCountries.firstWhere(
-          (country) => country.alpha2Code == alpha2Code.toUpperCase());
-    } catch (e) {
-      return null;
-    }
+    return _byAlpha2Code[alpha2Code.trim().toUpperCase()];
   }
 
-  /// Get country by alpha-3 code
+  /// Returns the country with [alpha3Code], ignoring case and whitespace.
   static Country? getByAlpha3Code(String alpha3Code) {
-    try {
-      return _allCountries.firstWhere(
-          (country) => country.alpha3Code == alpha3Code.toUpperCase());
-    } catch (e) {
-      return null;
-    }
+    return _byAlpha3Code[alpha3Code.trim().toUpperCase()];
   }
 
-  /// Get country by numeric code
+  /// Returns the country with [numericCode].
   static Country? getByNumericCode(String numericCode) {
-    try {
-      return _allCountries
-          .firstWhere((country) => country.numericCode == numericCode);
-    } catch (e) {
-      return null;
-    }
+    return _byNumericCode[numericCode.trim()];
   }
 
-  /// Search countries by name
+  /// Searches English country names and generated translations.
   static List<Country> searchByName(String query) {
     final lowercaseQuery = query.toLowerCase();
     return _allCountries.where((country) {
       return country.name.toLowerCase().contains(lowercaseQuery) ||
-          country.nameTranslations.values.any((translation) =>
-              translation.toLowerCase().contains(lowercaseQuery));
+          country.nameTranslations.values.any(
+            (translation) => translation.toLowerCase().contains(lowercaseQuery),
+          );
     }).toList();
   }
 
-  /// Get independent countries only
-  static List<Country> get independent =>
-      _allCountries.where((country) => country.isIndependent).toList();
+  /// Independent countries only.
+  static List<Country> get independent {
+    return _allCountries.where((country) => country.isIndependent).toList();
+  }
 
-  /// Get UN member countries only
-  static List<Country> get unMembers =>
-      _allCountries.where((country) => country.isUnMember).toList();
+  /// United Nations member countries only.
+  static List<Country> get unMembers {
+    return _allCountries.where((country) => country.isUnMember).toList();
+  }
 }

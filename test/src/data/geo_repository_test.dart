@@ -1,25 +1,24 @@
 import 'dart:convert';
 
-import 'package:countrify/src/data/geo_repository.dart';
+import 'package:countrify_light/src/data/geo_repository.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 /// Minimal in-memory [AssetBundle] used so repository tests don't depend on
-/// the real 28 MB vendored asset directory.
+/// the real vendored asset directory.
 class _InMemoryBundle extends CachingAssetBundle {
-  _InMemoryBundle(this.assets, {this.onLoad});
+  _InMemoryBundle(this.assets);
 
   final Map<String, String> assets;
-  final ValueChanged<String>? onLoad;
   int loadCount = 0;
 
   @override
   Future<ByteData> load(String key) async {
-    onLoad?.call(key);
     loadCount++;
     final raw = assets[key];
     if (raw == null) {
-      throw Exception('Unable to load asset: $key');
+      throw FlutterError('Unable to load asset: $key');
     }
     final bytes = utf8.encode(raw);
     return ByteData.sublistView(Uint8List.fromList(bytes));
@@ -33,7 +32,7 @@ void main() {
 
     setUp(() {
       bundle = _InMemoryBundle({
-        'packages/countrify/assets/geo/states/PK.json': jsonEncode([
+        'packages/countrify_light/assets/geo/states/PK.json': jsonEncode([
           {
             'id': 3172,
             'name': 'Sindh',
@@ -51,7 +50,7 @@ void main() {
             'lng': 72.0,
           },
         ]),
-        'packages/countrify/assets/geo/cities/3172.json': jsonEncode([
+        'packages/countrify_light/assets/geo/cities/3172.json': jsonEncode([
           {'id': 1, 'name': 'Karachi', 'lat': 24.86, 'lng': 67.00},
           {'id': 2, 'name': 'Hyderabad', 'lat': 25.39, 'lng': 68.37},
         ]),
@@ -84,7 +83,7 @@ void main() {
       final futures = [
         repo.statesOf('PK'),
         repo.statesOf('PK'),
-        repo.statesOf('PK')
+        repo.statesOf('PK'),
       ];
       await Future.wait(futures);
       expect(bundle.loadCount, 1);
@@ -113,13 +112,27 @@ void main() {
       expect(await repo.citiesOf(999999), isEmpty);
     });
 
+    test('statesOf surfaces malformed JSON instead of caching empty data',
+        () async {
+      bundle.assets['packages/countrify_light/assets/geo/states/XX.json'] = '{';
+
+      await expectLater(repo.statesOf('XX'), throwsFormatException);
+    });
+
+    test('citiesOf surfaces malformed JSON instead of caching empty data',
+        () async {
+      bundle.assets['packages/countrify_light/assets/geo/cities/42.json'] = '{';
+
+      await expectLater(repo.citiesOf(42), throwsFormatException);
+    });
+
     test('clearCache drops prior results', () async {
       // First load caches 2 states.
       final first = await repo.statesOf('PK');
       expect(first, hasLength(2));
       // Mutate the underlying asset so a re-fetch returns different data,
       // then verify clearCache actually re-reads from the bundle.
-      bundle.assets['packages/countrify/assets/geo/states/PK.json'] =
+      bundle.assets['packages/countrify_light/assets/geo/states/PK.json'] =
           jsonEncode([
         {'id': 1, 'name': 'New State', 'iso2': 'NS', 'type': 'region'},
       ]);

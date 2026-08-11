@@ -1,4 +1,4 @@
-import 'package:countrify/src/models/state.dart';
+import 'package:countrify_light/src/models/state.dart';
 import 'package:flutter/foundation.dart';
 
 /// {@template city}
@@ -27,7 +27,10 @@ class City {
     );
   }
 
-  /// Numeric identifier from the upstream dataset. Stable across releases.
+  /// Numeric identifier from the pinned upstream dataset revision.
+  ///
+  /// Persist [name] alongside this value because identifiers may change when
+  /// the package intentionally refreshes its vendored dataset.
   final int id;
 
   /// Display name in English (e.g. `Karachi`, `San Francisco`).
@@ -36,10 +39,16 @@ class City {
   /// Identifier of the parent [CountryState].
   final int stateId;
 
-  /// Latitude in decimal degrees.
+  /// Latitude in decimal degrees when supplied by a custom data source.
+  ///
+  /// The lightweight bundled dataset omits coordinates, so this is null for
+  /// cities loaded from the package's default repository.
   final double? latitude;
 
-  /// Longitude in decimal degrees.
+  /// Longitude in decimal degrees when supplied by a custom data source.
+  ///
+  /// The lightweight bundled dataset omits coordinates, so this is null for
+  /// cities loaded from the package's default repository.
   final double? longitude;
 
   @override

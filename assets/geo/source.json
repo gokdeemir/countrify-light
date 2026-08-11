@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "name": "dr5hn/countries-states-cities-database",
+    "repository": "https://github.com/dr5hn/countries-states-cities-database",
+    "revision": "624a208c3928937d1262ab1646d0b8fc9cacceee",
+    "rawUrl": "https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/624a208c3928937d1262ab1646d0b8fc9cacceee/json/countries+states+cities.json",
+    "license": "ODbL-1.0"
+  },
+  "counts": {
+    "countries": 250,
+    "states": 5308,
+    "cities": 152970
+  },
+  "projection": {
+    "state": [
+      "id",
+      "name",
+      "iso2",
+      "type"
+    ],
+    "city": [
+      "id",
+      "name"
+    ]
+  }
+}

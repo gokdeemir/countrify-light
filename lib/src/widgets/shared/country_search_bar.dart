@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:countrify/src/icons/countrify_icons.dart';
-import 'package:countrify/src/widgets/country_picker_theme.dart';
-import 'package:countrify/src/widgets/shared/countrify_check_icon.dart';
+import 'package:countrify_light/src/icons/countrify_icons.dart';
+import 'package:countrify_light/src/widgets/country_picker_theme.dart';
+import 'package:countrify_light/src/widgets/shared/countrify_check_icon.dart';
 import 'package:flutter/material.dart';
 
 /// {@template country_search_bar}
@@ -90,8 +90,7 @@ class _CountrySearchBarState extends State<CountrySearchBar> {
     final borderRadius =
         theme?.searchBarBorderRadius ?? BorderRadius.circular(12);
     final borderColor = theme?.searchBarBorderColor ?? const Color(0xFFE0E0E0);
-    final focusedBorderColor =
-        theme?.searchFocusedBorderColor ?? borderColor;
+    final focusedBorderColor = theme?.searchFocusedBorderColor ?? borderColor;
 
     return InputDecoration(
       hintText: widget.hintText,
@@ -105,7 +104,9 @@ class _CountrySearchBarState extends State<CountrySearchBar> {
           : Padding(
               padding: const EdgeInsets.only(left: 12, right: 8),
               child: CountrifySearchIcon(
-                  size: 18, color: theme?.searchIconColor),
+                size: 18,
+                color: theme?.searchIconColor,
+              ),
             ),
       prefixIconConstraints: const BoxConstraints(),
       suffixIcon: _controller.text.isNotEmpty

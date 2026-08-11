@@ -1,7 +1,7 @@
-import 'package:countrify/src/data/all_countries.dart';
-import 'package:countrify/src/l10n/country_name_l10n.dart';
-import 'package:countrify/src/models/country.dart';
-import 'package:countrify/src/models/country_code.dart';
+import 'package:countrify_light/src/data/all_countries.dart';
+import 'package:countrify_light/src/l10n/country_name_l10n.dart';
+import 'package:countrify_light/src/models/country.dart';
+import 'package:countrify_light/src/models/country_code.dart';
 
 /// {@template country_utils}
 /// Utility functions for working with country data
@@ -96,17 +96,26 @@ class CountryUtils {
   /// Get countries by currency code
   static List<Country> getCountriesByCurrencyCode(String currencyCode) {
     return AllCountries.all
-        .where((country) =>
-            country.currencies.any((currency) => currency.code == currencyCode))
+        .where(
+          (country) => country.currencies.any(
+            (currency) => currency.code == currencyCode,
+          ),
+        )
         .toList();
   }
 
   /// Get countries by language code
   static List<Country> getCountriesByLanguageCode(String languageCode) {
+    final normalizedCode = languageCode.trim().toLowerCase();
+    if (normalizedCode.isEmpty) return const [];
     return AllCountries.all
-        .where((country) => country.languages.any((language) =>
-            language.iso6391 == languageCode ||
-            language.iso6392 == languageCode))
+        .where(
+          (country) => country.languages.any(
+            (language) =>
+                language.iso6391 == normalizedCode ||
+                language.iso6392 == normalizedCode,
+          ),
+        )
         .toList();
   }
 
@@ -247,8 +256,10 @@ class CountryUtils {
 
     for (final country in AllCountries.all) {
       for (final language in country.languages) {
-        if (!languageCodes.contains(language.iso6391)) {
-          languageCodes.add(language.iso6391);
+        final identityCode =
+            language.iso6392.isNotEmpty ? language.iso6392 : language.iso6391;
+        if (!languageCodes.contains(identityCode)) {
+          languageCodes.add(identityCode);
           languages.add(language);
         }
       }
@@ -353,7 +364,7 @@ class CountryUtils {
 
   /// Get the legacy country flag image path.
   ///
-  /// Returns an empty string in the lightweight fork. Use
+  /// Returns an empty string in Countrify Light. Use
   /// [getCountryFlagEmoji] or `CountryFlag` instead.
   static String getCountryFlagImagePath(String alpha2Code) {
     final country = getCountryByAlpha2Code(alpha2Code);

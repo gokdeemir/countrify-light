@@ -2,11 +2,11 @@
 
 import 'dart:async';
 
-import 'package:countrify/src/utils/search_normalizer.dart';
-import 'package:countrify/src/widgets/country_picker_mode.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_picker_config.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_picker_theme.dart';
-import 'package:countrify/src/widgets/shared/countrify_check_icon.dart';
+import 'package:countrify_light/src/utils/search_normalizer.dart';
+import 'package:countrify_light/src/widgets/country_picker_mode.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_picker_config.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_picker_theme.dart';
+import 'package:countrify_light/src/widgets/shared/countrify_check_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -183,7 +183,9 @@ class _GeoItemPickerState<T> extends State<GeoItemPicker<T>> {
       if (!mounted) return;
       final initial = _query.isEmpty
           ? data
-          : data.where((e) => widget.matcher(e, _query)).toList(growable: false);
+          : data
+              .where((e) => widget.matcher(e, _query))
+              .toList(growable: false);
       setState(() {
         _items = data;
         _filtered = initial;
@@ -237,7 +239,8 @@ class _GeoItemPickerState<T> extends State<GeoItemPicker<T>> {
 
   Widget _buildSheetShell() {
     final bg = _theme.backgroundColor ?? Theme.of(context).colorScheme.surface;
-    final radius = _theme.borderRadius ?? const BorderRadius.vertical(top: Radius.circular(20));
+    final radius = _theme.borderRadius ??
+        const BorderRadius.vertical(top: Radius.circular(20));
     final shape = RoundedRectangleBorder(borderRadius: radius);
     final mediaQuery = MediaQuery.of(context);
     final screenHeight = mediaQuery.size.height;
@@ -263,9 +266,8 @@ class _GeoItemPickerState<T> extends State<GeoItemPicker<T>> {
           child: ConstrainedBox(
             constraints: BoxConstraints(
               minHeight: _config.minHeight,
-              maxHeight: maxHeight < _config.minHeight
-                  ? _config.minHeight
-                  : maxHeight,
+              maxHeight:
+                  maxHeight < _config.minHeight ? _config.minHeight : maxHeight,
             ),
             child: SafeArea(
               top: false,
@@ -286,7 +288,8 @@ class _GeoItemPickerState<T> extends State<GeoItemPicker<T>> {
   }
 
   Widget _buildFullScreen(BuildContext context) {
-    final bg = _theme.backgroundColor ?? Theme.of(context).scaffoldBackgroundColor;
+    final bg =
+        _theme.backgroundColor ?? Theme.of(context).scaffoldBackgroundColor;
     return Scaffold(
       backgroundColor: bg,
       appBar: AppBar(
@@ -362,7 +365,10 @@ class _GeoItemPickerState<T> extends State<GeoItemPicker<T>> {
 
   Widget _buildHeader() {
     if (widget.headerBuilder != null) {
-      return widget.headerBuilder!(context, () => Navigator.of(context).maybePop());
+      return widget.headerBuilder!(
+        context,
+        () => Navigator.of(context).maybePop(),
+      );
     }
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 14, 8, 6),
@@ -408,7 +414,8 @@ class _GeoItemPickerState<T> extends State<GeoItemPicker<T>> {
       );
     }
     final radius = _theme.searchBarBorderRadius ?? BorderRadius.circular(12);
-    final borderColor = _theme.searchBarBorderColor ?? Theme.of(context).dividerColor;
+    final borderColor =
+        _theme.searchBarBorderColor ?? Theme.of(context).dividerColor;
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
       child: TextField(
@@ -428,7 +435,9 @@ class _GeoItemPickerState<T> extends State<GeoItemPicker<T>> {
               : Padding(
                   padding: const EdgeInsets.only(left: 12, right: 8),
                   child: CountrifySearchIcon(
-                      size: 18, color: _theme.searchIconColor),
+                    size: 18,
+                    color: _theme.searchIconColor,
+                  ),
                 ),
           prefixIconConstraints: const BoxConstraints(),
           // ValueListenableBuilder keeps the clear button in sync with every
@@ -438,18 +447,29 @@ class _GeoItemPickerState<T> extends State<GeoItemPicker<T>> {
             builder: (_, value, __) {
               if (value.text.isEmpty) return const SizedBox.shrink();
               return IconButton(
-                icon: Icon(_theme.resolvedClearIcon, size: 16, color: _theme.searchIconColor),
+                icon: Icon(
+                  _theme.resolvedClearIcon,
+                  size: 16,
+                  color: _theme.searchIconColor,
+                ),
                 tooltip: 'Clear',
                 onPressed: _searchController.clear,
               );
             },
           ),
-          border: OutlineInputBorder(borderRadius: radius, borderSide: BorderSide(color: borderColor)),
-          enabledBorder: OutlineInputBorder(borderRadius: radius, borderSide: BorderSide(color: borderColor)),
+          border: OutlineInputBorder(
+            borderRadius: radius,
+            borderSide: BorderSide(color: borderColor),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: radius,
+            borderSide: BorderSide(color: borderColor),
+          ),
           focusedBorder: OutlineInputBorder(
             borderRadius: radius,
             borderSide: BorderSide(
-              color: _theme.searchFocusedBorderColor ?? Theme.of(context).colorScheme.primary,
+              color: _theme.searchFocusedBorderColor ??
+                  Theme.of(context).colorScheme.primary,
               width: 1.4,
             ),
           ),
@@ -470,7 +490,8 @@ class _GeoItemPickerState<T> extends State<GeoItemPicker<T>> {
     }
     final list = ListView.builder(
       controller: _scrollController,
-      padding: _config.contentPadding ?? const EdgeInsets.symmetric(horizontal: 8),
+      padding:
+          _config.contentPadding ?? const EdgeInsets.symmetric(horizontal: 8),
       itemCount: _filtered.length,
       itemExtent: _config.itemExtent,
       itemBuilder: (_, i) => _buildRow(_filtered[i]),
@@ -512,7 +533,13 @@ class _GeoItemPickerState<T> extends State<GeoItemPicker<T>> {
                   const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
               child: Row(
                 children: [
-                  Expanded(child: widget.itemBuilder(context, item, isSelected)),
+                  Expanded(
+                    child: widget.itemBuilder(
+                      context,
+                      item,
+                      isSelected,
+                    ),
+                  ),
                   if (isSelected && _config.showSelectedIcon)
                     if (_theme.selectedIcon != null)
                       Icon(
@@ -554,7 +581,8 @@ class _GeoItemPickerState<T> extends State<GeoItemPicker<T>> {
             const SizedBox(height: 12),
             Text(
               message ?? widget.emptyStateText,
-              style: _theme.emptyStateTextStyle ?? Theme.of(context).textTheme.bodyMedium,
+              style: _theme.emptyStateTextStyle ??
+                  Theme.of(context).textTheme.bodyMedium,
               textAlign: TextAlign.center,
             ),
             if (_config.emptyStateSubtitle != null) ...[

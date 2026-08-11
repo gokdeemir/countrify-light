@@ -1,21 +1,34 @@
-import 'package:countrify/src/data/all_countries.dart';
-import 'package:countrify/src/models/country.dart';
+// GENERATED CODE - DO NOT MODIFY BY HAND.
+// Run: dart run tool/sync_country_data.dart
+// ISO enum names are self-describing; per-value docs add no context.
+// ignore_for_file: public_member_api_docs
 
+import 'package:countrify_light/src/data/all_countries.dart';
+import 'package:countrify_light/src/models/country.dart';
+
+// Kept as a typedef for backwards-compatible public API.
 // ignore: camel_case_types
 typedef CountryCode = CountryCodeEnum;
 
-/// ISO 3166-1 alpha-2 country codes used by countrify.
+/// The 249 ISO 3166-1 alpha-2 assignments plus user-assigned XK.
+///
+/// A trailing underscore is added when a code is a Dart reserved word.
 enum CountryCodeEnum {
   ad,
   ae,
   af,
   ag,
+  ai,
   al,
   am,
   ao,
+  aq,
   ar,
+  as_,
   at,
   au,
+  aw,
+  ax,
   az,
   ba,
   bb,
@@ -26,20 +39,26 @@ enum CountryCodeEnum {
   bh,
   bi,
   bj,
+  bl,
+  bm,
   bn,
   bo,
+  bq,
   br,
   bs,
   bt,
+  bv,
   bw,
   by,
   bz,
   ca,
+  cc,
   cd,
   cf,
   cg,
   ch,
   ci,
+  ck,
   cl,
   cm,
   cn,
@@ -47,6 +66,8 @@ enum CountryCodeEnum {
   cr,
   cu,
   cv,
+  cw,
+  cx,
   cy,
   cz,
   de,
@@ -58,25 +79,37 @@ enum CountryCodeEnum {
   ec,
   ee,
   eg,
+  eh,
   er,
   es,
   et,
   fi,
   fj,
+  fk,
   fm,
+  fo,
   fr,
   ga,
   gb,
   gd,
   ge,
+  gf,
+  gg,
   gh,
+  gi,
+  gl,
   gm,
   gn,
+  gp,
   gq,
   gr,
+  gs,
   gt,
+  gu,
   gw,
   gy,
+  hk,
+  hm,
   hn,
   hr,
   ht,
@@ -84,11 +117,14 @@ enum CountryCodeEnum {
   id,
   ie,
   il,
+  im,
   in_,
+  io,
   iq,
   ir,
   is_,
   it,
+  je,
   jm,
   jo,
   jp,
@@ -101,6 +137,7 @@ enum CountryCodeEnum {
   kp,
   kr,
   kw,
+  ky,
   kz,
   la,
   lb,
@@ -117,13 +154,18 @@ enum CountryCodeEnum {
   mc,
   md,
   me,
+  mf,
   mg,
   mh,
   mk,
   ml,
   mm,
   mn,
+  mo,
+  mp,
+  mq,
   mr,
+  ms,
   mt,
   mu,
   mv,
@@ -132,26 +174,34 @@ enum CountryCodeEnum {
   my,
   mz,
   na,
+  nc,
   ne,
+  nf,
   ng,
   ni,
   nl,
   no,
   np,
   nr,
+  nu,
   nz,
   om,
   pa,
   pe,
+  pf,
   pg,
   ph,
   pk,
   pl,
+  pm,
+  pn,
+  pr,
   ps,
   pt,
   pw,
   py,
   qa,
+  re,
   ro,
   rs,
   ru,
@@ -162,7 +212,9 @@ enum CountryCodeEnum {
   sd,
   se,
   sg,
+  sh,
   si,
+  sj,
   sk,
   sl,
   sm,
@@ -172,12 +224,16 @@ enum CountryCodeEnum {
   ss,
   st,
   sv,
+  sx,
   sy,
   sz,
+  tc,
   td,
+  tf,
   tg,
   th,
   tj,
+  tk,
   tl,
   tm,
   tn,
@@ -185,52 +241,50 @@ enum CountryCodeEnum {
   tr,
   tt,
   tv,
+  tw,
   tz,
   ua,
   ug,
+  um,
   us,
   uy,
   uz,
   va,
   vc,
   ve,
+  vg,
+  vi,
   vn,
   vu,
+  wf,
   ws,
+  xk,
   ye,
+  yt,
   za,
   zm,
   zw,
 }
 
 extension CountryCodeExtension on CountryCodeEnum {
-  /// Parses an ISO 3166-1 alpha-2 code and returns a [CountryCodeEnum].
+  static final Map<String, CountryCodeEnum> _byAlpha2Code = {
+    for (final code in CountryCodeEnum.values) code.alpha2Code: code,
+  };
+
+  /// Parses an ISO 3166-1 alpha-2 code.
   ///
   /// Returns null when no matching enum value exists.
   static CountryCodeEnum? fromAlpha2Code(String alpha2Code) {
-    final normalized = alpha2Code.trim().toLowerCase();
-    if (normalized.isEmpty) return null;
-
-    final enumName = switch (normalized) {
-      'do' => 'do_',
-      'in' => 'in_',
-      'is' => 'is_',
-      _ => normalized,
-    };
-
-    for (final value in CountryCode.values) {
-      if (value.name == enumName) return value;
-    }
-    return null;
+    return _byAlpha2Code[alpha2Code.trim().toUpperCase()];
   }
 
-  /// Returns the ISO 3166-1 alpha-2 code.
+  /// The ISO 3166-1 alpha-2 code.
   String get alpha2Code {
     final normalized =
         name.endsWith('_') ? name.substring(0, name.length - 1) : name;
     return normalized.toUpperCase();
   }
 
-  /// Resolves this code to the matching [Country], if present in the dataset.
+  /// The matching country in the generated catalogue.
   Country? get country => AllCountries.getByAlpha2Code(alpha2Code);
 }

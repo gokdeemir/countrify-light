@@ -111,7 +111,7 @@ Welcome to the Countrify Flutter package. This directory contains comprehensive 
 
 ```dart
 // 1. Import the package
-import 'package:countrify/countrify.dart';
+import 'package:countrify_light/countrify_light.dart';
 
 // 2. Show the picker
 final country = await ModalCountryPicker.showBottomSheet(
@@ -193,9 +193,9 @@ final european = CountryUtils.getCountriesByRegion('Europe');
 
 Countrify is a comprehensive Flutter package for country selection that provides:
 
-- **Rich Country Data**: 245+ countries with ISO codes, capitals, populations, currencies, languages, etc.
+- **Rich Country Data**: 249 ISO-assigned records plus XK/Kosovo, with source-backed metadata
 - **Beautiful UI**: Customizable picker widgets with multiple display modes
-- **Flag Assets**: High-quality PNG flags for all countries
+- **Emoji Flags**: Platform flag emoji without bundled raster assets
 - **Utility Functions**: 40+ helper methods for country operations
 - **Type Safe**: Full null-safety and type-safe API
 - **Zero Dependencies**: No external runtime dependencies
@@ -234,9 +234,9 @@ Countrify is a comprehensive Flutter package for country selection that provides
 ### Package Structure
 
 ```
-countrify/
+countrify-light/
 ├── lib/
-│   ├── countrify.dart              # Main export (PUBLIC API)
+│   ├── countrify_light.dart        # Main export (PUBLIC API)
 │   ├── src/
 │   │   ├── data/                   # Country data
 │   │   │   ├── all_countries.dart
@@ -257,7 +257,7 @@ countrify/
 │       └── assets.dart             # Generated asset paths
 ├── assets/
 │   └── images/
-│       └── flags/                  # 245+ flag PNGs
+│       └── countrify_icons.ttf     # Minimal UI icon font
 ├── example/                        # Example application
 ├── test/                          # Unit tests
 └── .cursor/                       # THIS DIRECTORY
@@ -293,7 +293,7 @@ countrify/
 ```bash
 # Clone and setup
 git clone <repository>
-cd countrify
+cd countrify-light
 flutter pub get
 
 # Run tests
@@ -324,8 +324,8 @@ dart format .
 
 ### Package Metrics
 
-- **Countries**: 245+
-- **Flag Assets**: 245 PNG images (~2 MB)
+- **Country/territory records**: 250 (249 ISO-assigned + XK/Kosovo)
+- **Flag Assets**: None (platform emoji)
 - **Utility Methods**: 40+ helper functions
 - **Widget Components**: 7 main widgets
 - **Code Coverage**: 80%+ target
@@ -334,7 +334,7 @@ dart format .
 ### Data Coverage
 
 - ✅ ISO 3166-1 codes (alpha-2, alpha-3, numeric)
-- ✅ Flag images (PNG format)
+- ✅ Platform emoji flags
 - ✅ Calling codes (phone codes)
 - ✅ Capitals and largest cities
 - ✅ Geographic regions and subregions
@@ -434,7 +434,7 @@ See: [Examples Cookbook - Form Integration](./examples-cookbook.md#form-integrat
 ### Common Issues
 
 **Issue**: Flag images not loading
-- **Solution**: Ensure `package: 'countrify'` parameter is set in `Image.asset()`
+- **Solution**: Ensure `package: 'countrify_light'` parameter is set in `Image.asset()`
 
 **Issue**: Picker not showing
 - **Solution**: Check that context is valid and mounted
@@ -495,4 +495,3 @@ This package provides comprehensive country data and a beautiful UI for Flutter 
 **Documentation Version**: 1.0.0
 
 ---
-

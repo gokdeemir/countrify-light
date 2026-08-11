@@ -1,11 +1,12 @@
 import 'dart:convert';
 
-import 'package:countrify/src/data/geo_repository.dart';
+import 'package:countrify_light/src/data/geo_repository.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 /// Test-only [AssetBundle] that serves pre-seeded strings instead of reading
 /// real asset files. Combined with a fresh [GeoRepository] (not the global
-/// singleton), this lets widget tests run without the 28 MB bundled dataset.
+/// singleton), this lets widget tests run without the bundled dataset.
 class InMemoryBundle extends AssetBundle {
   InMemoryBundle(this.assets);
 
@@ -14,14 +15,14 @@ class InMemoryBundle extends AssetBundle {
   @override
   Future<ByteData> load(String key) async {
     final raw = assets[key];
-    if (raw == null) throw Exception('asset not found: $key');
+    if (raw == null) throw FlutterError('asset not found: $key');
     return ByteData.sublistView(Uint8List.fromList(utf8.encode(raw)));
   }
 
   @override
   Future<String> loadString(String key, {bool cache = true}) async {
     final raw = assets[key];
-    if (raw == null) throw Exception('asset not found: $key');
+    if (raw == null) throw FlutterError('asset not found: $key');
     return raw;
   }
 }
@@ -32,7 +33,7 @@ class InMemoryBundle extends AssetBundle {
 GeoRepository buildFixtureRepository() {
   return GeoRepository(
     bundle: InMemoryBundle({
-      'packages/countrify/assets/geo/states/PK.json': jsonEncode([
+      'packages/countrify_light/assets/geo/states/PK.json': jsonEncode([
         {
           'id': 3172,
           'name': 'Sindh',
@@ -56,23 +57,23 @@ GeoRepository buildFixtureRepository() {
           'type': 'province',
         },
       ]),
-      'packages/countrify/assets/geo/states/US.json': jsonEncode([
+      'packages/countrify_light/assets/geo/states/US.json': jsonEncode([
         {'id': 1, 'name': 'California', 'iso2': 'CA', 'type': 'state'},
         {'id': 2, 'name': 'Nevada', 'iso2': 'NV', 'type': 'state'},
       ]),
-      'packages/countrify/assets/geo/cities/3172.json': jsonEncode([
+      'packages/countrify_light/assets/geo/cities/3172.json': jsonEncode([
         {'id': 100, 'name': 'Karachi', 'lat': 24.86, 'lng': 67.00},
         {'id': 101, 'name': 'Hyderabad', 'lat': 25.39, 'lng': 68.37},
       ]),
-      'packages/countrify/assets/geo/cities/3173.json': jsonEncode([
+      'packages/countrify_light/assets/geo/cities/3173.json': jsonEncode([
         {'id': 200, 'name': 'Lahore'},
         {'id': 201, 'name': 'Faisalabad'},
       ]),
-      'packages/countrify/assets/geo/cities/1.json': jsonEncode([
+      'packages/countrify_light/assets/geo/cities/1.json': jsonEncode([
         {'id': 300, 'name': 'San Francisco'},
         {'id': 301, 'name': 'Los Angeles'},
       ]),
-      'packages/countrify/assets/geo/cities/2.json': jsonEncode([
+      'packages/countrify_light/assets/geo/cities/2.json': jsonEncode([
         {'id': 400, 'name': 'Las Vegas'},
         {'id': 401, 'name': 'Reno'},
       ]),

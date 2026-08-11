@@ -1,3 +1,47 @@
+## 1.0.0
+
+First independently maintained Countrify Light release line.
+
+### Changed
+
+- Established the independent `countrify_light` package identity and
+  `package:countrify_light/countrify_light.dart` library entrypoint.
+- Replaced bundled raster flag assets with platform emoji flags.
+- Regenerated the country catalogue from pinned upstream snapshots and restored
+  the complete 249 ISO 3166-1 entries plus XK/Kosovo.
+- Removed unused coordinates from the bundled state and city payloads.
+- Refreshed the bundled geo snapshot from the pinned upstream revision
+  (250 country/territory records: 249 ISO 3166-1 entries plus XK/Kosovo,
+  5,308 states/provinces, and 152,970 cities).
+- Raised the declared minimum versions to Dart 3.6 and Flutter 3.27 to match
+  the APIs used by the package.
+- Removed unused root development dependencies and aligned the remaining lint
+  dependency with the declared Dart SDK floor.
+- Included the pinned data regeneration tools in the published source archive.
+- Centralized flag rendering across country and phone-code widgets, including
+  shape, border, shadow, emoji style, alignment, and accessibility semantics.
+- Added custom picker-builder forwarding and a functional anchored dropdown to
+  `CountryDropdownField`.
+
+### Fixed
+
+- Prevented stale asynchronous state and city requests from overwriting a newer
+  parent selection.
+- Preserved focus listeners when callers replace an external `FocusNode`.
+- Made global city search rank the full result set instead of stopping after an
+  early batch, and reject malformed bundled data instead of silently hiding it.
+- Added city-name fallback hydration for IDs changed by a refreshed geo
+  snapshot.
+- Corrected language identity handling when a language has no ISO 639-1 code.
+
+### Licensing
+
+- Documented the pinned country, state, city, and translation data sources in
+  `THIRD_PARTY_NOTICES.md`.
+- Added the exact upstream ODbL database licenses, the MIT notice for bundled
+  country-name translations, and the Lucide/Feather icon notices under
+  `LICENSES/`.
+
 ## 2.5.0
 
 Name-based pre-fill for edit flows, overlay theming, and city name
@@ -295,7 +339,7 @@ widget, model, utility, or export was modified or removed.
 
 ### Added
 
-- Added new public `CountrifyFieldStyle` export in `countrify.dart`.
+- Added new public `CountrifyFieldStyle` export in the package entrypoint.
 - Added `CountrifyFieldStyle` to centralize:
   - `InputDecoration` properties
   - phone and dial-code text styling

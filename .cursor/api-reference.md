@@ -387,9 +387,9 @@ class Language {
   });
 
   final String iso6391;      // ISO 639-1 (2 letters, e.g., "en")
-  final String iso6392;      // ISO 639-2 (3 letters, e.g., "eng")
+  final String iso6392;      // Legacy field; generated data uses ISO 639-3
   final String name;         // English name (e.g., "English")
-  final String nativeName;   // Native name (e.g., "English")
+  final String nativeName;   // Native name when available, else English name
 
   @override bool operator ==(Object other);
   @override int get hashCode;
@@ -651,7 +651,7 @@ Static utility class with helper methods for country operations.
 ```dart
 static List<Country> getAllCountries()
 ```
-Returns all countries (245+).
+Returns 250 records: 249 ISO-assigned entries plus XK/Kosovo.
 
 ##### `getCountryByAlpha2Code()`
 ```dart
@@ -1039,7 +1039,7 @@ enum CountryGroupBy {
 ## Complete Usage Example
 
 ```dart
-import 'package:countrify/countrify.dart';
+import 'package:countrify_light/countrify_light.dart';
 import 'package:flutter/material.dart';
 
 Future<void> selectCountry(BuildContext context) async {
@@ -1122,4 +1122,3 @@ All classes and methods are fully type-safe with:
 - Proper equality implementations
 
 ---
-

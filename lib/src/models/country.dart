@@ -1,8 +1,10 @@
-import 'package:countrify/src/models/phone_metadata.dart';
+import 'package:countrify_light/src/models/phone_metadata.dart';
+import 'package:flutter/foundation.dart';
 
 /// {@template country}
 /// A model representing a country with all its relevant information
 /// {@endtemplate}
+@immutable
 class Country {
   /// {@macro country}
   const Country({
@@ -33,7 +35,10 @@ class Country {
   /// The common name of the country
   final String name;
 
-  /// Translations of the country name in different languages
+  /// Per-country translation overrides.
+  ///
+  /// Generated records contain the canonical English name only. Bundled
+  /// localized display names are provided by `CountryNameL10n`.
   final Map<String, String> nameTranslations;
 
   /// ISO 3166-1 alpha-2 country code (2 letters)
@@ -42,7 +47,10 @@ class Country {
   /// ISO 3166-1 alpha-3 country code (3 letters)
   final String alpha3Code;
 
-  /// ISO 3166-1 numeric country code (3 digits)
+  /// ISO 3166-1 numeric country code (3 digits).
+  ///
+  /// Empty for the user-assigned `XK` entry, which has no official numeric
+  /// ISO 3166-1 code.
   final String numericCode;
 
   /// Unicode flag emoji for the country
@@ -50,25 +58,27 @@ class Country {
 
   /// Legacy flag asset path.
   ///
-  /// Empty in the lightweight fork, which renders [flagEmoji] instead.
+  /// Empty in Countrify Light, which renders [flagEmoji] instead.
   final String flagImagePath;
 
-  /// Capital city of the country
+  /// Capital city, or an empty string when the source has no value.
   final String capital;
 
-  /// Largest city of the country
+  /// Largest city when supplied by a custom source.
+  ///
+  /// The bundled catalogue leaves this null rather than guessing.
   final String? largestCity;
 
   /// Geographic region of the country
   final String region;
 
-  /// Geographic subregion of the country
+  /// Geographic subregion, or an empty string when unavailable.
   final String subregion;
 
-  /// Population of the country
+  /// Population, or zero when the pinned source has no value.
   final int population;
 
-  /// Area of the country in square kilometers
+  /// Area in square kilometers, or zero when unavailable.
   final double area;
 
   /// International calling codes for the country
@@ -83,19 +93,24 @@ class Country {
   /// Languages spoken in the country
   final List<Language> languages;
 
-  /// Time zones in the country
+  /// IANA time zone identifiers used in the country.
   final List<String> timezones;
 
   /// Border countries (alpha-3 codes)
   final List<String> borders;
 
-  /// Whether the country is independent
+  /// Whether the source explicitly identifies the country as independent.
+  /// Unknown source values are represented as `false` for API compatibility.
   final bool isIndependent;
 
   /// Whether the country is a UN member
   final bool isUnMember;
 
-  /// Phone number metadata for lightweight validation
+  /// Optional phone-number metadata for lightweight validation.
+  ///
+  /// The bundled catalogue does not currently provide this metadata, so
+  /// generated countries leave it null. Supply an explicit [PhoneMetadata]
+  /// only when using a separately maintained source.
   final PhoneMetadata? phoneMetadata;
 
   /// Creates a copy of this country with the given fields replaced
@@ -167,6 +182,7 @@ class Country {
 /// {@template currency}
 /// A model representing a currency
 /// {@endtemplate}
+@immutable
 class Currency {
   /// {@macro currency}
   const Currency({
@@ -202,6 +218,7 @@ class Currency {
 /// {@template language}
 /// A model representing a language
 /// {@endtemplate}
+@immutable
 class Language {
   /// {@macro language}
   const Language({
@@ -211,29 +228,37 @@ class Language {
     required this.nativeName,
   });
 
-  /// ISO 639-1 language code (2 letters)
+  /// ISO 639-1 language code (2 letters), or an empty string when the
+  /// language has no ISO 639-1 mapping.
   final String iso6391;
 
-  /// ISO 639-2 language code (3 letters)
+  /// Legacy three-letter language-code field.
+  ///
+  /// The generated catalogue stores ISO 639-3 identifiers here. Many values
+  /// overlap with ISO 639-2 terminology codes, but consumers must not assume
+  /// every value is an ISO 639-2 code.
   final String iso6392;
 
   /// The name of the language in English
   final String name;
 
-  /// The name of the language in its native script
+  /// The native language name when available, otherwise the English name.
   final String nativeName;
+
+  String get _identityCode => iso6392.isNotEmpty ? iso6392 : iso6391;
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-    return other is Language && other.iso6391 == iso6391;
+    return other is Language && other._identityCode == _identityCode;
   }
 
   @override
-  int get hashCode => iso6391.hashCode;
+  int get hashCode => _identityCode.hashCode;
 
   @override
   String toString() {
-    return 'Language(iso6391: $iso6391, name: $name, nativeName: $nativeName)';
+    return 'Language(iso6391: $iso6391, iso6392: $iso6392, name: $name, '
+        'nativeName: $nativeName)';
   }
 }

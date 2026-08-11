@@ -1,15 +1,15 @@
 import 'dart:async';
 
-import 'package:countrify/src/icons/countrify_icons.dart';
-import 'package:countrify/src/models/country.dart';
-import 'package:countrify/src/models/country_code.dart';
-import 'package:countrify/src/utils/country_utils.dart';
-import 'package:countrify/src/widgets/country_picker_config.dart'
+import 'package:countrify_light/src/icons/countrify_icons.dart';
+import 'package:countrify_light/src/models/country.dart';
+import 'package:countrify_light/src/models/country_code.dart';
+import 'package:countrify_light/src/utils/country_utils.dart';
+import 'package:countrify_light/src/widgets/country_picker_config.dart'
     as picker_config;
-import 'package:countrify/src/widgets/country_picker_mode.dart';
-import 'package:countrify/src/widgets/country_picker_theme.dart';
-import 'package:countrify/src/widgets/shared/countrify_check_icon.dart';
-import 'package:countrify/src/widgets/shared/country_list_tile.dart';
+import 'package:countrify_light/src/widgets/country_picker_mode.dart';
+import 'package:countrify_light/src/widgets/country_picker_theme.dart';
+import 'package:countrify_light/src/widgets/shared/countrify_check_icon.dart';
+import 'package:countrify_light/src/widgets/shared/country_list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -19,7 +19,7 @@ import 'package:flutter/services.dart';
 /// Example:
 /// ```dart
 /// PhoneCodePicker(
-///   initialCountryCode: CountryCode.US,
+///   initialCountryCode: CountryCode.us,
 ///   onChanged: (country) => print(country.callingCodes.first),
 ///   pickerMode: CountryPickerMode.bottomSheet,
 /// )
@@ -41,7 +41,7 @@ class PhoneCodePicker extends StatefulWidget {
     this.flagShape = picker_config.FlagShape.rectangular,
     this.flagBorderRadius = const BorderRadius.all(Radius.circular(4)),
     this.flagBorderColor,
-    this.flagBorderWidth = 1.0,
+    this.flagBorderWidth = 0,
     this.flagShadowColor,
     this.flagShadowBlur = 2.0,
     this.flagShadowOffset = const Offset(0, 1),
@@ -300,7 +300,9 @@ class _PhoneCodePickerState extends State<PhoneCodePicker>
   }
 
   Widget _buildPickerContent(
-      CountryPickerTheme theme, picker_config.CountryPickerConfig config) {
+    CountryPickerTheme theme,
+    picker_config.CountryPickerConfig config,
+  ) {
     switch (widget.pickerMode) {
       case CountryPickerMode.bottomSheet:
         return _buildBottomSheetPicker(theme, config);
@@ -316,7 +318,9 @@ class _PhoneCodePickerState extends State<PhoneCodePicker>
   }
 
   Widget _buildBottomSheetPicker(
-      CountryPickerTheme theme, picker_config.CountryPickerConfig config) {
+    CountryPickerTheme theme,
+    picker_config.CountryPickerConfig config,
+  ) {
     final mediaQuery = MediaQuery.of(context);
     final screenHeight = mediaQuery.size.height;
     final keyboardInset = mediaQuery.viewInsets.bottom;
@@ -353,7 +357,9 @@ class _PhoneCodePickerState extends State<PhoneCodePicker>
   }
 
   Widget _buildDialogPicker(
-      CountryPickerTheme theme, picker_config.CountryPickerConfig config) {
+    CountryPickerTheme theme,
+    picker_config.CountryPickerConfig config,
+  ) {
     return Dialog(
       backgroundColor: theme.backgroundColor,
       shape: RoundedRectangleBorder(
@@ -375,7 +381,9 @@ class _PhoneCodePickerState extends State<PhoneCodePicker>
   }
 
   Widget _buildFullScreenPicker(
-      CountryPickerTheme theme, picker_config.CountryPickerConfig config) {
+    CountryPickerTheme theme,
+    picker_config.CountryPickerConfig config,
+  ) {
     return Scaffold(
       backgroundColor: theme.backgroundColor,
       appBar: AppBar(
@@ -386,8 +394,10 @@ class _PhoneCodePickerState extends State<PhoneCodePicker>
         ),
         leading: IconButton(
           tooltip: 'Close',
-          icon: Icon(theme.closeIcon ?? CountrifyIcons.x,
-              color: theme.headerIconColor),
+          icon: Icon(
+            theme.closeIcon ?? CountrifyIcons.x,
+            color: theme.headerIconColor,
+          ),
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
@@ -401,7 +411,9 @@ class _PhoneCodePickerState extends State<PhoneCodePicker>
   }
 
   Widget _buildDropdownPicker(
-      CountryPickerTheme theme, picker_config.CountryPickerConfig config) {
+    CountryPickerTheme theme,
+    picker_config.CountryPickerConfig config,
+  ) {
     return Container(
       decoration: BoxDecoration(
         color: theme.backgroundColor,
@@ -432,7 +444,9 @@ class _PhoneCodePickerState extends State<PhoneCodePicker>
   }
 
   Widget _buildHeader(
-      CountryPickerTheme theme, picker_config.CountryPickerConfig config) {
+    CountryPickerTheme theme,
+    picker_config.CountryPickerConfig config,
+  ) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 14, 8, 6),
       child: Text(
@@ -448,7 +462,9 @@ class _PhoneCodePickerState extends State<PhoneCodePicker>
   }
 
   Widget _buildSearchBar(
-      CountryPickerTheme theme, picker_config.CountryPickerConfig config) {
+    CountryPickerTheme theme,
+    picker_config.CountryPickerConfig config,
+  ) {
     final effectiveBorderRadius = theme.searchBarBorderRadius ??
         const BorderRadius.all(Radius.circular(12));
     final effectiveDecoration = theme.searchInputDecoration ??
@@ -460,14 +476,18 @@ class _PhoneCodePickerState extends State<PhoneCodePicker>
               : Padding(
                   padding: const EdgeInsets.only(left: 12, right: 8),
                   child: CountrifySearchIcon(
-                      size: 18, color: theme.searchIconColor),
+                    size: 18,
+                    color: theme.searchIconColor,
+                  ),
                 ),
           prefixIconConstraints: const BoxConstraints(),
           suffixIcon: _searchQuery.isNotEmpty
               ? IconButton(
                   tooltip: 'Clear search',
-                  icon: Icon(theme.clearIcon ?? CountrifyIcons.circleX,
-                      color: theme.searchIconColor),
+                  icon: Icon(
+                    theme.clearIcon ?? CountrifyIcons.circleX,
+                    color: theme.searchIconColor,
+                  ),
                   onPressed: () {
                     _searchController.clear();
                     _onSearchChanged('');
@@ -480,19 +500,22 @@ class _PhoneCodePickerState extends State<PhoneCodePicker>
           border: OutlineInputBorder(
             borderRadius: effectiveBorderRadius,
             borderSide: BorderSide(
-                color: theme.searchBarBorderColor ?? Colors.grey.shade300),
+              color: theme.searchBarBorderColor ?? Colors.grey.shade300,
+            ),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: effectiveBorderRadius,
             borderSide: BorderSide(
-                color: theme.searchBarBorderColor ?? Colors.grey.shade300),
+              color: theme.searchBarBorderColor ?? Colors.grey.shade300,
+            ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: effectiveBorderRadius,
             borderSide: BorderSide(
-                color: theme.searchFocusedBorderColor ??
-                    theme.searchBarBorderColor ??
-                    Colors.blue),
+              color: theme.searchFocusedBorderColor ??
+                  theme.searchBarBorderColor ??
+                  Colors.blue,
+            ),
           ),
         );
 
@@ -512,14 +535,19 @@ class _PhoneCodePickerState extends State<PhoneCodePicker>
   }
 
   Widget _buildCountryList(
-      CountryPickerTheme theme, picker_config.CountryPickerConfig config) {
+    CountryPickerTheme theme,
+    picker_config.CountryPickerConfig config,
+  ) {
     if (_filteredCountries.isEmpty) {
       return Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(theme.emptyStateIcon ?? CountrifyIcons.searchX,
-                size: 40, color: Colors.grey),
+            Icon(
+              theme.emptyStateIcon ?? CountrifyIcons.searchX,
+              size: 40,
+              color: Colors.grey,
+            ),
             const SizedBox(height: 8),
             Text(
               config.emptyStateText,
@@ -540,8 +568,11 @@ class _PhoneCodePickerState extends State<PhoneCodePicker>
     );
   }
 
-  Widget _buildCountryItem(Country country, CountryPickerTheme theme,
-      picker_config.CountryPickerConfig config) {
+  Widget _buildCountryItem(
+    Country country,
+    CountryPickerTheme theme,
+    picker_config.CountryPickerConfig config,
+  ) {
     final isSelected = _selectedCountry?.alpha2Code == country.alpha2Code;
 
     return CountryListTile(
@@ -554,10 +585,18 @@ class _PhoneCodePickerState extends State<PhoneCodePicker>
       showCountryName: widget.showCountryName,
       showDialCode: widget.showDialCode,
       flagSize: widget.flagSize,
+      flagShape: widget.flagShape,
       flagBorderRadius: widget.flagBorderRadius,
+      flagBorderColor: widget.flagBorderColor,
+      flagBorderWidth: widget.flagBorderWidth,
+      flagShadowColor: widget.flagShadowColor,
+      flagShadowBlur: widget.flagShadowBlur,
+      flagShadowOffset: widget.flagShadowOffset,
+      flagEmojiTextStyle: theme.flagEmojiTextStyle,
       countryNameStyle: theme.countryNameTextStyle,
       dialCodeStyle: theme.countrySubtitleTextStyle,
       selectedColor: theme.countryItemSelectedColor,
+      selectedBorderColor: theme.countryItemSelectedBorderColor,
       selectedIconColor: theme.countryItemSelectedIconColor,
       selectedIcon: theme.selectedIcon,
       displayName: _displayName(country),
@@ -565,7 +604,9 @@ class _PhoneCodePickerState extends State<PhoneCodePicker>
   }
 
   Widget _buildReadOnlyPicker(
-      CountryPickerTheme theme, picker_config.CountryPickerConfig config) {
+    CountryPickerTheme theme,
+    picker_config.CountryPickerConfig config,
+  ) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
       decoration: BoxDecoration(

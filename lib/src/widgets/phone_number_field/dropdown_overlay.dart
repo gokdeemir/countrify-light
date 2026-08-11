@@ -1,13 +1,13 @@
 import 'dart:async';
 
-import 'package:countrify/src/icons/countrify_icons.dart';
-import 'package:countrify/src/models/country.dart';
-import 'package:countrify/src/utils/country_utils.dart';
-import 'package:countrify/src/widgets/country_picker_config.dart';
-import 'package:countrify/src/widgets/country_picker_theme.dart';
-import 'package:countrify/src/widgets/shared/countrify_check_icon.dart';
-import 'package:countrify/src/widgets/shared/country_flag.dart';
-import 'package:countrify/src/widgets/shared/empty_state.dart';
+import 'package:countrify_light/src/icons/countrify_icons.dart';
+import 'package:countrify_light/src/models/country.dart';
+import 'package:countrify_light/src/utils/country_utils.dart';
+import 'package:countrify_light/src/widgets/country_picker_config.dart';
+import 'package:countrify_light/src/widgets/country_picker_theme.dart';
+import 'package:countrify_light/src/widgets/shared/countrify_check_icon.dart';
+import 'package:countrify_light/src/widgets/shared/country_flag.dart';
+import 'package:countrify_light/src/widgets/shared/empty_state.dart';
 import 'package:flutter/material.dart';
 
 /// Internal dropdown overlay anchored below (or above) the phone number
@@ -19,6 +19,7 @@ import 'package:flutter/material.dart';
 ///
 /// This widget is not publicly exported.
 class PhoneDropdownOverlay extends StatefulWidget {
+  /// Creates a country dropdown anchored to a phone number field.
   const PhoneDropdownOverlay({
     required this.link,
     required this.fieldKey,
@@ -37,23 +38,48 @@ class PhoneDropdownOverlay extends StatefulWidget {
     this.flagBorderRadius = const BorderRadius.all(Radius.circular(4)),
   });
 
+  /// Link shared with the composited anchor for overlay positioning.
   final LayerLink link;
 
   /// Key attached to the anchor field. Used to read the field's live global
   /// position on every rebuild so the overlay can decide whether to drop
   /// below or flip above.
   final GlobalKey fieldKey;
+
+  /// Width of the overlay, matching the anchor field.
   final double fieldWidth;
+
+  /// Maximum height of the overlay in logical pixels.
   final double maxHeight;
+
+  /// Visual configuration for the picker.
   final CountryPickerTheme theme;
+
+  /// Whether the search field is displayed.
   final bool searchEnabled;
+
+  /// Optional country filtering and text configuration.
   final CountryPickerConfig? config;
+
+  /// Country currently selected in the phone number field.
   final Country? selectedCountry;
+
+  /// Whether country flags are displayed.
   final bool showFlag;
+
+  /// Whether country names are displayed.
   final bool showCountryName;
+
+  /// Size allocated to each country flag.
   final Size flagSize;
+
+  /// Border radius applied to each country flag.
   final BorderRadius flagBorderRadius;
+
+  /// Called when the user selects a country.
   final ValueChanged<Country> onSelected;
+
+  /// Called after the overlay's exit animation completes.
   final VoidCallback onDismiss;
 
   @override
@@ -351,8 +377,10 @@ class _PhoneDropdownOverlayState extends State<PhoneDropdownOverlay>
           suffixIcon: _searchQuery.isNotEmpty
               ? IconButton(
                   tooltip: 'Clear search',
-                  icon: Icon(theme.clearIcon ?? CountrifyIcons.circleX,
-                      color: theme.searchIconColor),
+                  icon: Icon(
+                    theme.clearIcon ?? CountrifyIcons.circleX,
+                    color: theme.searchIconColor,
+                  ),
                   onPressed: () {
                     _searchController.clear();
                     _applyFilter('');
@@ -365,19 +393,22 @@ class _PhoneDropdownOverlayState extends State<PhoneDropdownOverlay>
           border: OutlineInputBorder(
             borderRadius: effectiveBorderRadius,
             borderSide: BorderSide(
-                color: theme.searchBarBorderColor ?? Colors.grey.shade300),
+              color: theme.searchBarBorderColor ?? Colors.grey.shade300,
+            ),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: effectiveBorderRadius,
             borderSide: BorderSide(
-                color: theme.searchBarBorderColor ?? Colors.grey.shade300),
+              color: theme.searchBarBorderColor ?? Colors.grey.shade300,
+            ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: effectiveBorderRadius,
             borderSide: BorderSide(
-                color: theme.searchFocusedBorderColor ??
-                    theme.searchBarBorderColor ??
-                    Colors.blue),
+              color: theme.searchFocusedBorderColor ??
+                  theme.searchBarBorderColor ??
+                  Colors.blue,
+            ),
           ),
         );
 

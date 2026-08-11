@@ -1,6 +1,7 @@
-import 'package:countrify/src/models/country.dart';
-import 'package:countrify/src/widgets/shared/countrify_check_icon.dart';
-import 'package:countrify/src/widgets/shared/country_flag.dart';
+import 'package:countrify_light/src/models/country.dart';
+import 'package:countrify_light/src/widgets/country_picker_config.dart';
+import 'package:countrify_light/src/widgets/shared/countrify_check_icon.dart';
+import 'package:countrify_light/src/widgets/shared/country_flag.dart';
 import 'package:flutter/material.dart';
 
 /// A reusable country row widget that displays a flag, country name,
@@ -25,7 +26,15 @@ class CountryListTile extends StatelessWidget {
     this.showCountryName = true,
     this.showDialCode = true,
     this.flagSize = const Size(24, 18),
+    this.flagShape = FlagShape.rectangular,
     this.flagBorderRadius = const BorderRadius.all(Radius.circular(4)),
+    this.flagBorderColor,
+    this.flagBorderWidth = 0,
+    this.flagShadowColor,
+    this.flagShadowBlur = 2,
+    this.flagShadowOffset = const Offset(0, 1),
+    this.flagEmojiTextStyle,
+    this.flagOpticalOffset = CountryFlag.defaultOpticalOffset,
     this.countryNameStyle,
     this.dialCodeStyle,
     this.selectedColor,
@@ -61,8 +70,32 @@ class CountryListTile extends StatelessWidget {
   /// Size allocated to the flag emoji.
   final Size flagSize;
 
+  /// Shape of the flag container.
+  final FlagShape flagShape;
+
   /// Border radius of the flag container.
   final BorderRadius flagBorderRadius;
+
+  /// Border color of the flag container.
+  final Color? flagBorderColor;
+
+  /// Border width of the flag container. Defaults to zero.
+  final double flagBorderWidth;
+
+  /// Shadow color of the flag container. A null value disables the shadow.
+  final Color? flagShadowColor;
+
+  /// Blur radius of the optional flag shadow.
+  final double flagShadowBlur;
+
+  /// Offset of the optional flag shadow.
+  final Offset flagShadowOffset;
+
+  /// Text style applied to the flag emoji.
+  final TextStyle? flagEmojiTextStyle;
+
+  /// Optical correction applied to the flag emoji.
+  final Offset flagOpticalOffset;
 
   /// Text style for the country name.
   final TextStyle? countryNameStyle;
@@ -105,6 +138,14 @@ class CountryListTile extends StatelessWidget {
   String get _dialCode =>
       country.callingCodes.isNotEmpty ? '+${country.callingCodes.first}' : '';
 
+  String? get _semanticLabel {
+    final parts = <String>[
+      if (showCountryName) _effectiveName,
+      if (showDialCode && _dialCode.isNotEmpty) 'dial code $_dialCode',
+    ];
+    return parts.isEmpty ? null : parts.join(', ');
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -114,9 +155,16 @@ class CountryListTile extends StatelessWidget {
         selectedColor ?? primary.withValues(alpha: 0.08);
     final effectiveBorderColor =
         selectedBorderColor ?? primary.withValues(alpha: 0.2);
+    final effectiveFlagBorderRadius = flagShape == FlagShape.circular
+        ? BorderRadius.circular(flagSize.width / 2)
+        : flagBorderRadius;
 
     return Semantics(
-      label: '$_effectiveName, dial code $_dialCode',
+      label: _semanticLabel,
+      button: true,
+      selected: isSelected,
+      excludeSemantics: true,
+      onTap: () => onTap(country),
       child: Material(
         color: isSelected ? effectiveSelectedColor : Colors.transparent,
         borderRadius: borderRadius,
@@ -141,7 +189,14 @@ class CountryListTile extends StatelessWidget {
                   CountryFlag(
                     country: country,
                     size: flagSize,
-                    borderRadius: flagBorderRadius,
+                    borderRadius: effectiveFlagBorderRadius,
+                    borderColor: flagBorderColor,
+                    borderWidth: flagBorderWidth,
+                    shadowColor: flagShadowColor,
+                    shadowBlur: flagShadowBlur,
+                    shadowOffset: flagShadowOffset,
+                    emojiTextStyle: flagEmojiTextStyle,
+                    opticalOffset: flagOpticalOffset,
                   ),
                   const SizedBox(width: 12),
                 ],
@@ -179,7 +234,11 @@ class CountryListTile extends StatelessWidget {
                   const Spacer(),
                 if (isSelected)
                   if (selectedIcon != null)
-                    Icon(selectedIcon, color: selectedIconColor ?? primary, size: 18)
+                    Icon(
+                      selectedIcon,
+                      color: selectedIconColor ?? primary,
+                      size: 18,
+                    )
                   else
                     CountrifyCheckIcon(
                       size: 18,

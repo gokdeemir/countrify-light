@@ -25,7 +25,7 @@
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:countrify/countrify.dart';
+import 'package:countrify_light/countrify_light.dart';
 
 class SimpleCountrySelector extends StatefulWidget {
   const SimpleCountrySelector({super.key});
@@ -61,7 +61,7 @@ class _SimpleCountrySelectorState extends State<SimpleCountrySelector> {
             if (_selectedCountry != null) ...[
               Image.asset(
                 _selectedCountry!.flagImagePath,
-                package: 'countrify',
+                package: 'countrify_light',
                 width: 64,
                 height: 48,
               ),
@@ -247,7 +247,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
                     if (_selectedCountry != null) ...[
                       Image.asset(
                         _selectedCountry!.flagImagePath,
-                        package: 'countrify',
+                        package: 'countrify_light',
                         width: 32,
                         height: 24,
                       ),
@@ -390,7 +390,7 @@ class _PhoneNumberInputState extends State<PhoneNumberInput> {
                           ClipOval(
                             child: Image.asset(
                               _selectedCountry!.flagImagePath,
-                              package: 'countrify',
+                              package: 'countrify_light',
                               width: 28,
                               height: 28,
                               fit: BoxFit.cover,
@@ -537,7 +537,7 @@ class _LocalizedCountryPickerState extends State<LocalizedCountryPicker> {
                 children: [
                   Image.asset(
                     _selectedCountry!.flagImagePath,
-                    package: 'countrify',
+                    package: 'countrify_light',
                     width: 48,
                     height: 36,
                   ),
@@ -580,7 +580,7 @@ class _LocalizedCountryPickerState extends State<LocalizedCountryPicker> {
                   return ListTile(
                     leading: Image.asset(
                       country.flagImagePath,
-                      package: 'countrify',
+                      package: 'countrify_light',
                       width: 32,
                       height: 24,
                     ),
@@ -690,7 +690,7 @@ class _GridCountryPickerState extends State<GridCountryPicker> {
                       children: [
                         Image.asset(
                           country.flagImagePath,
-                          package: 'countrify',
+                          package: 'countrify_light',
                           width: 48,
                           height: 36,
                         ),
@@ -768,7 +768,7 @@ class _CompactCountrySelectorState extends State<CompactCountrySelector> {
                 borderRadius: BorderRadius.circular(4),
                 child: Image.asset(
                   _selectedCountry!.flagImagePath,
-                  package: 'countrify',
+                  package: 'countrify_light',
                   width: 24,
                   height: 18,
                 ),
@@ -876,7 +876,7 @@ class _RegionalCountrySelectorState extends State<RegionalCountrySelector> {
                 child: ListTile(
                   leading: Image.asset(
                     _selectedCountry!.flagImagePath,
-                    package: 'countrify',
+                    package: 'countrify_light',
                     width: 48,
                     height: 36,
                   ),
@@ -953,7 +953,7 @@ class _RegionalCountrySelectorState extends State<RegionalCountrySelector> {
 ```dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:countrify/countrify.dart';
+import 'package:countrify_light/countrify_light.dart';
 
 // Provider class
 class CountrySelectionProvider extends ChangeNotifier {
@@ -1021,7 +1021,7 @@ class CountryProviderScreen extends StatelessWidget {
                   child: ListTile(
                     leading: Image.asset(
                       provider.selectedCountry!.flagImagePath,
-                      package: 'countrify',
+                      package: 'countrify_light',
                       width: 48,
                       height: 36,
                     ),
@@ -1070,7 +1070,7 @@ class CountryProviderScreen extends StatelessWidget {
                             children: [
                               Image.asset(
                                 country.flagImagePath,
-                                package: 'countrify',
+                                package: 'countrify_light',
                                 width: 48,
                                 height: 36,
                               ),
@@ -1152,7 +1152,7 @@ class _ShippingCountrySelectorState extends State<ShippingCountrySelector> {
           return ListTile(
             leading: Image.asset(
               country.flagImagePath,
-              package: 'countrify',
+              package: 'countrify_light',
               width: 48,
               height: 36,
             ),
@@ -1224,7 +1224,7 @@ class _ShippingCountrySelectorState extends State<ShippingCountrySelector> {
                     if (_shippingCountry != null) ...[
                       Image.asset(
                         _shippingCountry!.flagImagePath,
-                        package: 'countrify',
+                        package: 'countrify_light',
                         width: 48,
                         height: 36,
                       ),

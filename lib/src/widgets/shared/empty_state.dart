@@ -1,4 +1,4 @@
-import 'package:countrify/src/icons/countrify_icons.dart';
+import 'package:countrify_light/src/icons/countrify_icons.dart';
 import 'package:flutter/material.dart';
 
 /// Displayed when a country search or filter yields no results.

@@ -1,6 +1,6 @@
-name: countrify
-description: "A lightweight Countrify fork with offline country, state, and city search, emoji flags, and compact geo assets."
-version: 2.5.0+light.1
+name: countrify_light
+description: "Offline Flutter country, state, and city pickers with emoji flags, localized names, and compact bundled geo data."
+version: 1.0.0
 homepage: https://github.com/gokdeemir/countrify-light
 repository: https://github.com/gokdeemir/countrify-light
 issue_tracker: https://github.com/gokdeemir/countrify-light/issues
@@ -13,20 +13,17 @@ topics:
   - widgets
 
 environment:
-  sdk: ^3.0.0
-  flutter: ">=3.0.0"
+  sdk: ^3.6.0
+  flutter: ">=3.27.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
 dev_dependencies:
-  csv: ^6.0.0
-  flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
-  mocktail: ^1.0.4
-  very_good_analysis: ^9.0.0
+  very_good_analysis: ^7.0.0
 
 flutter:
   assets:

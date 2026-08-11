@@ -1,4 +1,4 @@
-import 'package:countrify/countrify.dart';
+import 'package:countrify_light/countrify_light.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

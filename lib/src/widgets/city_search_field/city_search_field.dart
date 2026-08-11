@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:countrify/src/data/geo_repository.dart';
-import 'package:countrify/src/models/city.dart';
-import 'package:countrify/src/models/state.dart';
-import 'package:countrify/src/widgets/countrify_field_style.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_picker_config.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_picker_theme.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_search_overlay.dart';
+import 'package:countrify_light/src/data/geo_repository.dart';
+import 'package:countrify_light/src/models/city.dart';
+import 'package:countrify_light/src/models/state.dart';
+import 'package:countrify_light/src/widgets/countrify_field_style.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_picker_config.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_picker_theme.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_search_overlay.dart';
 import 'package:flutter/material.dart';
 
 /// Result record returned by [CitySearchField.onChanged].
@@ -108,6 +108,7 @@ class _CitySearchFieldState extends State<CitySearchField> {
   Timer? _debounce;
   bool _selecting = false;
   bool _isFocused = false;
+  int _requestGeneration = 0;
 
   @override
   void initState() {
@@ -127,9 +128,22 @@ class _CitySearchFieldState extends State<CitySearchField> {
   @override
   void didUpdateWidget(CitySearchField oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (widget.countryIso2 != oldWidget.countryIso2) {
+    if (widget.focusNode != oldWidget.focusNode) {
+      (oldWidget.focusNode ?? _internalFocusNode)
+          ?.removeListener(_onFocusChanged);
+      _focusNode.addListener(_onFocusChanged);
+      _isFocused = _focusNode.hasFocus;
+    }
+
+    if (widget.countryIso2 != oldWidget.countryIso2 ||
+        widget.repository != oldWidget.repository) {
       _clear(notify: true);
       _repo.preloadCities(widget.countryIso2);
+    }
+
+    if (widget.initialCityId != oldWidget.initialCityId ||
+        widget.initialCityName != oldWidget.initialCityName) {
+      _requestGeneration++;
     }
 
     // React to external initialCityName changes (when no ID is set).
@@ -144,6 +158,7 @@ class _CitySearchFieldState extends State<CitySearchField> {
 
   @override
   void dispose() {
+    _requestGeneration++;
     _debounce?.cancel();
     _removeOverlay();
     _searchController.dispose();
@@ -168,6 +183,7 @@ class _CitySearchFieldState extends State<CitySearchField> {
   // ── Search ─────────────────────────────────────────────────────────────
 
   void _onSearchTextChanged(String query) {
+    _requestGeneration++;
     // If the user clears the field, clear the selection immediately.
     if (query.isEmpty && _selected != null) {
       _clear(notify: true);
@@ -182,19 +198,30 @@ class _CitySearchFieldState extends State<CitySearchField> {
 
   Future<void> _search(String query) async {
     if (!mounted) return;
+    final generation = ++_requestGeneration;
+    final repository = _repo;
+    final countryIso2 = widget.countryIso2;
     final q = query.trim();
     if (q.isEmpty) {
-      setState(() => _results = const []);
+      setState(() {
+        _results = const [];
+        _loading = false;
+      });
       _showOverlay();
       return;
     }
 
     setState(() => _loading = true);
-    final results = await _repo.searchCities(
-      countryIso2: widget.countryIso2,
+    final results = await repository.searchCities(
+      countryIso2: countryIso2,
       query: q,
     );
-    if (!mounted) return;
+    if (!mounted ||
+        generation != _requestGeneration ||
+        widget.countryIso2 != countryIso2 ||
+        !identical(_repo, repository)) {
+      return;
+    }
     setState(() {
       _results = results;
       _loading = false;
@@ -239,20 +266,28 @@ class _CitySearchFieldState extends State<CitySearchField> {
   // ── Selection ──────────────────────────────────────────────────────────
 
   void _onItemSelected(CitySearchResult result) {
+    _requestGeneration++;
+    _debounce?.cancel();
     _selecting = true;
     _removeOverlay();
     _searchController.text = result.city.name;
-    setState(() => _selected = result);
+    setState(() {
+      _selected = result;
+      _loading = false;
+    });
     widget.onChanged?.call(result);
     _selecting = false;
   }
 
   void _clear({required bool notify}) {
+    _requestGeneration++;
+    _debounce?.cancel();
     _removeOverlay();
     _searchController.clear();
     setState(() {
       _selected = null;
       _results = const [];
+      _loading = false;
     });
     if (notify) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -265,11 +300,20 @@ class _CitySearchFieldState extends State<CitySearchField> {
   // ── Initial hydration ──────────────────────────────────────────────────
 
   Future<void> _hydrateByName(String cityName) async {
-    final results = await _repo.searchCities(
-      countryIso2: widget.countryIso2,
+    final generation = ++_requestGeneration;
+    final repository = _repo;
+    final countryIso2 = widget.countryIso2;
+    final results = await repository.searchCities(
+      countryIso2: countryIso2,
       query: cityName,
     );
-    if (!mounted || results.isEmpty) return;
+    if (!mounted ||
+        generation != _requestGeneration ||
+        widget.countryIso2 != countryIso2 ||
+        !identical(_repo, repository) ||
+        results.isEmpty) {
+      return;
+    }
 
     // Find exact match (case-insensitive).
     final match = results.cast<CitySearchResult?>().firstWhere(
@@ -284,19 +328,50 @@ class _CitySearchFieldState extends State<CitySearchField> {
   }
 
   Future<void> _hydrateInitial() async {
-    final states = await _repo.statesOf(widget.countryIso2);
+    final generation = ++_requestGeneration;
+    final repository = _repo;
+    final countryIso2 = widget.countryIso2;
+    final initialCityId = widget.initialCityId;
+    final initialCityName = widget.initialCityName?.trim();
+    CitySearchResult? nameFallback;
+    final states = await repository.statesOf(countryIso2);
+    if (!mounted ||
+        generation != _requestGeneration ||
+        widget.countryIso2 != countryIso2 ||
+        !identical(_repo, repository)) {
+      return;
+    }
     for (final state in states) {
-      final cities = await _repo.citiesOf(state.id);
+      final cities = await repository.citiesOf(state.id);
+      if (!mounted ||
+          generation != _requestGeneration ||
+          widget.countryIso2 != countryIso2 ||
+          !identical(_repo, repository)) {
+        return;
+      }
       for (final city in cities) {
-        if (city.id == widget.initialCityId) {
-          if (!mounted) return;
+        if (city.id == initialCityId) {
           final result = (city: city, state: state);
           _searchController.text = city.name;
           setState(() => _selected = result);
           widget.onChanged?.call(result);
           return;
         }
+        if (nameFallback == null &&
+            initialCityName != null &&
+            initialCityName.isNotEmpty &&
+            city.name.toLowerCase() == initialCityName.toLowerCase()) {
+          nameFallback = (city: city, state: state);
+        }
       }
+    }
+
+    if (nameFallback != null) {
+      _searchController.text = nameFallback.city.name;
+      setState(() => _selected = nameFallback);
+      // Keep the existing ID hydration callback behavior for callers that use
+      // onChanged to synchronize restored form state.
+      widget.onChanged?.call(nameFallback);
     }
   }
 

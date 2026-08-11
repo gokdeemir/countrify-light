@@ -1,4 +1,6 @@
+// This command-line generator intentionally reports progress via stdout.
 // ignore_for_file: avoid_print
+
 import 'dart:io';
 
 void main() {
@@ -30,9 +32,8 @@ void main() {
     // Build regex to match the static const block
     final escapedLocale = RegExp.escape(locale);
     final pattern = RegExp(
-      'static const _' +
-          escapedLocale +
-          r'\s*=\s*<String,\s*String>\{([\s\S]*?)\};',
+      'static const _$escapedLocale'
+      r'\s*=\s*<String,\s*String>\{([\s\S]*?)\};',
     );
     final match = pattern.firstMatch(content);
     if (match == null) {
@@ -50,7 +51,8 @@ void main() {
       ..writeln('// Generated — do not edit by hand.')
       ..writeln('/// Country name translations for $locale.')
       ..writeln(
-          'const Map<String, String> $varName = <String, String>{$mapEntries};');
+        'const Map<String, String> $varName = <String, String>{$mapEntries};',
+      );
 
     File('${localeDir.path}/$fileName')
         .writeAsStringSync(fileContent.toString());
@@ -66,16 +68,19 @@ void main() {
   // Imports
   for (final locale in locales) {
     registry.writeln(
-        "import 'package:countrify/src/l10n/locales/l10n_$locale.dart';");
+      "import 'package:countrify_light/src/l10n/locales/l10n_$locale.dart';",
+    );
   }
   registry
     ..writeln()
     ..writeln('/// Provides country name translations keyed by')
     ..writeln(
-        '/// ISO 639-1 language code and ISO 3166-1 alpha-2 country code.')
+      '/// ISO 639-1 language code and ISO 3166-1 alpha-2 country code.',
+    )
     ..writeln('///')
     ..writeln(
-        '/// All data is compile-time constant and has zero runtime dependencies.')
+      '/// All data is compile-time constant and has zero runtime dependencies.',
+    )
     ..writeln('class CountryNameL10n {')
     ..writeln('  CountryNameL10n._();')
     ..writeln()
@@ -97,7 +102,8 @@ void main() {
     // getTranslations
     ..writeln('  /// Returns the full translation map for a given locale code.')
     ..writeln(
-        '  /// Falls back to English for unknown locales. Results are cached.')
+      '  /// Falls back to English for unknown locales. Results are cached.',
+    )
     ..writeln('  static Map<String, String> getTranslations(String locale) {')
     ..writeln('    return _cache[locale] ??= _loadLocale(locale);')
     ..writeln('  }')
@@ -105,9 +111,11 @@ void main() {
 
     // getLocalizedName (preserve existing API)
     ..writeln(
-        '  /// Returns the localized country name, or `null` if unavailable.')
+      '  /// Returns the localized country name, or `null` if unavailable.',
+    )
     ..writeln(
-        '  static String? getLocalizedName(String alpha2Code, String languageCode) {')
+      '  static String? getLocalizedName(String alpha2Code, String languageCode) {',
+    )
     ..writeln('    if (!supportedLocales.contains(languageCode)) return null;')
     ..writeln('    return getTranslations(languageCode)[alpha2Code];')
     ..writeln('  }')
@@ -115,10 +123,12 @@ void main() {
 
     // getTranslationsForLocale (preserve existing API)
     ..writeln(
-        '  /// Returns the full translation map for a given language code,')
+      '  /// Returns the full translation map for a given language code,',
+    )
     ..writeln('  /// or `null` if the locale is not supported.')
     ..writeln(
-        '  static Map<String, String>? getTranslationsForLocale(String languageCode) {')
+      '  static Map<String, String>? getTranslationsForLocale(String languageCode) {',
+    )
     ..writeln('    if (!supportedLocales.contains(languageCode)) return null;')
     ..writeln('    return getTranslations(languageCode);')
     ..writeln('  }')

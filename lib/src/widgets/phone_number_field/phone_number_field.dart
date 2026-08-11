@@ -1,16 +1,16 @@
 import 'dart:async';
 
-import 'package:countrify/src/icons/countrify_icons.dart';
-import 'package:countrify/src/models/country.dart';
-import 'package:countrify/src/models/country_code.dart';
-import 'package:countrify/src/utils/country_utils.dart';
-import 'package:countrify/src/widgets/countrify_field_style.dart';
-import 'package:countrify/src/widgets/country_picker_config.dart';
-import 'package:countrify/src/widgets/country_picker_mode.dart';
-import 'package:countrify/src/widgets/country_picker_theme.dart';
-import 'package:countrify/src/widgets/phone_number_field/dropdown_overlay.dart';
-import 'package:countrify/src/widgets/phone_number_field/modal_country_list.dart';
-import 'package:countrify/src/widgets/phone_number_field/phone_prefix.dart';
+import 'package:countrify_light/src/icons/countrify_icons.dart';
+import 'package:countrify_light/src/models/country.dart';
+import 'package:countrify_light/src/models/country_code.dart';
+import 'package:countrify_light/src/utils/country_utils.dart';
+import 'package:countrify_light/src/widgets/countrify_field_style.dart';
+import 'package:countrify_light/src/widgets/country_picker_config.dart';
+import 'package:countrify_light/src/widgets/country_picker_mode.dart';
+import 'package:countrify_light/src/widgets/country_picker_theme.dart';
+import 'package:countrify_light/src/widgets/phone_number_field/dropdown_overlay.dart';
+import 'package:countrify_light/src/widgets/phone_number_field/modal_country_list.dart';
+import 'package:countrify_light/src/widgets/phone_number_field/phone_prefix.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -430,12 +430,15 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
           appBar: AppBar(
             backgroundColor: pickerTheme.headerColor,
             title: Text(
-                (widget.config ?? const CountryPickerConfig()).titleText,
-                style: pickerTheme.appBarTitleTextStyle ??
-                    pickerTheme.headerTextStyle),
+              (widget.config ?? const CountryPickerConfig()).titleText,
+              style: pickerTheme.appBarTitleTextStyle ??
+                  pickerTheme.headerTextStyle,
+            ),
             leading: IconButton(
-              icon: Icon(pickerTheme.closeIcon ?? CountrifyIcons.x,
-                  color: pickerTheme.headerIconColor),
+              icon: Icon(
+                pickerTheme.closeIcon ?? CountrifyIcons.x,
+                color: pickerTheme.headerIconColor,
+              ),
               onPressed: () => Navigator.pop(ctx),
             ),
           ),
@@ -472,8 +475,7 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
   @override
   Widget build(BuildContext context) {
     final pickerTheme = widget.theme ?? CountryPickerTheme.defaultTheme();
-    final effectiveStyle =
-        widget.style ?? CountrifyFieldStyle.defaultStyle();
+    final effectiveStyle = widget.style ?? CountrifyFieldStyle.defaultStyle();
 
     // Auto hint text from phone metadata example number.
     var resolvedStyle = effectiveStyle;

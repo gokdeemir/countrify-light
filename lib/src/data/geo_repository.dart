@@ -1,9 +1,8 @@
-import 'dart:async';
 import 'dart:convert';
 
-import 'package:countrify/src/models/city.dart';
-import 'package:countrify/src/models/state.dart';
-import 'package:countrify/src/utils/search_normalizer.dart';
+import 'package:countrify_light/src/models/city.dart';
+import 'package:countrify_light/src/models/state.dart';
+import 'package:countrify_light/src/utils/search_normalizer.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -36,6 +35,9 @@ class GeoRepository {
   final Map<String, Future<List<CountryState>>> _statesInflight = {};
   final Map<int, Future<List<City>>> _citiesInflight = {};
 
+  static const _assetRoot = 'packages/countrify_light/assets/geo';
+  static const _loadBatchSize = 10;
+
   /// Returns all states / provinces for the country identified by [iso2].
   ///
   /// [iso2] is case-insensitive. Returns an empty list if no states are
@@ -46,22 +48,24 @@ class GeoRepository {
     if (cached != null) return Future.value(cached);
     return _statesInflight.putIfAbsent(key, () async {
       try {
-        final raw = await _bundle.loadString('packages/countrify/assets/geo/states/$key.json');
+        final raw = await _bundle.loadString('$_assetRoot/states/$key.json');
         final list = (jsonDecode(raw) as List)
             .cast<Map<String, dynamic>>()
             .map((m) => CountryState.fromJson(m, countryIso2: key))
             .toList(growable: false);
         _statesCache[key] = list;
         return list;
-      } on Exception {
-        _statesCache[key] = const [];
-        return const [];
-        // ignore: avoid_catching_errors, asset-missing is an expected FlutterError and safe to degrade to an empty list
+        // AssetBundle reports a missing asset as a FlutterError. Malformed JSON
+        // and schema errors intentionally propagate instead of masquerading as
+        // a country without subdivisions.
+        // ignore: avoid_catching_errors
       } on FlutterError {
         _statesCache[key] = const [];
         return const [];
       } finally {
-        unawaited(_statesInflight.remove(key) ?? Future<void>.value());
+        // Removing the already-running future does not create asynchronous work.
+        // ignore: unawaited_futures
+        _statesInflight.remove(key);
       }
     });
   }
@@ -74,22 +78,23 @@ class GeoRepository {
     if (cached != null) return Future.value(cached);
     return _citiesInflight.putIfAbsent(stateId, () async {
       try {
-        final raw = await _bundle.loadString('packages/countrify/assets/geo/cities/$stateId.json');
+        final raw =
+            await _bundle.loadString('$_assetRoot/cities/$stateId.json');
         final list = (jsonDecode(raw) as List)
             .cast<Map<String, dynamic>>()
             .map((m) => City.fromJson(m, stateId: stateId))
             .toList(growable: false);
         _citiesCache[stateId] = list;
         return list;
-      } on Exception {
-        _citiesCache[stateId] = const [];
-        return const [];
-        // ignore: avoid_catching_errors, asset-missing is an expected FlutterError and safe to degrade to an empty list
+        // See statesOf: only a genuinely missing asset is an empty dataset.
+        // ignore: avoid_catching_errors
       } on FlutterError {
         _citiesCache[stateId] = const [];
         return const [];
       } finally {
-        unawaited(_citiesInflight.remove(stateId) ?? Future<void>.value());
+        // Removing the already-running future does not create asynchronous work.
+        // ignore: unawaited_futures
+        _citiesInflight.remove(stateId);
       }
     });
   }
@@ -114,6 +119,8 @@ class GeoRepository {
     required String query,
     int limit = 20,
   }) async {
+    if (limit <= 0) return const [];
+
     final q = SearchNormalizer.foldAccents(query);
     if (q.isEmpty) return const [];
 
@@ -124,11 +131,10 @@ class GeoRepository {
 
     // Load cities in batches of 10 states to avoid loading all files at once
     // on the first search. Cached states resolve instantly on subsequent calls.
-    const batchSize = 10;
-    for (var i = 0; i < states.length; i += batchSize) {
+    for (var i = 0; i < states.length; i += _loadBatchSize) {
       final batch = states.sublist(
         i,
-        (i + batchSize).clamp(0, states.length),
+        (i + _loadBatchSize).clamp(0, states.length),
       );
       final cityLists = await Future.wait(
         batch.map((s) => citiesOf(s.id)),
@@ -141,8 +147,6 @@ class GeoRepository {
           }
         }
       }
-      // Stop early if we already have more than enough results.
-      if (results.length >= limit * 2) break;
     }
 
     // Sort: prefix matches first, then contains, each group alphabetical.
@@ -152,7 +156,7 @@ class GeoRepository {
       final aPrefix = aNorm.startsWith(q);
       final bPrefix = bNorm.startsWith(q);
       if (aPrefix != bPrefix) return aPrefix ? -1 : 1;
-      return a.city.name.compareTo(b.city.name);
+      return aNorm.compareTo(bNorm);
     });
 
     return results.length > limit ? results.sublist(0, limit) : results;
@@ -164,12 +168,20 @@ class GeoRepository {
   /// instant. Safe to call multiple times — already-cached states are skipped.
   Future<void> preloadCities(String countryIso2) async {
     final states = await statesOf(countryIso2);
-    // Fire all loads concurrently; citiesOf deduplicates in-flight requests.
-    await Future.wait(states.map((s) => citiesOf(s.id)));
+    // Bound concurrency so countries with hundreds of subdivisions do not
+    // issue hundreds of asset reads at once. citiesOf still deduplicates any
+    // overlapping search or preload request.
+    for (var i = 0; i < states.length; i += _loadBatchSize) {
+      final batch = states.sublist(
+        i,
+        (i + _loadBatchSize).clamp(0, states.length),
+      );
+      await Future.wait(batch.map((state) => citiesOf(state.id)));
+    }
   }
 
   /// Drops every cached states / cities entry. Useful in long-running tests
-  /// or when memory pressure makes the ~10 MB worst-case footprint a concern.
+  /// or when memory pressure makes retaining the decoded dataset undesirable.
   void clearCache() {
     _statesCache.clear();
     _citiesCache.clear();

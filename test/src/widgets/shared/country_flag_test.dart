@@ -1,4 +1,4 @@
-import 'package:countrify/countrify.dart';
+import 'package:countrify_light/countrify_light.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -97,6 +97,52 @@ void main() {
         ),
       );
       expect(translation.translation, const Offset(0, -0.08));
+    });
+
+    testWidgets('allows the optical correction to be overridden',
+        (tester) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: CountryFlag(
+              country: testCountry,
+              opticalOffset: Offset.zero,
+            ),
+          ),
+        ),
+      );
+
+      final translation = tester.widget<FractionalTranslation>(
+        find.descendant(
+          of: find.byType(CountryFlag),
+          matching: find.byType(FractionalTranslation),
+        ),
+      );
+      expect(translation.translation, Offset.zero);
+    });
+
+    testWidgets('renders a requested shadow without adding a hairline border',
+        (tester) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: CountryFlag(
+              country: testCountry,
+              shadowColor: Colors.black,
+              shadowBlur: 6,
+              shadowOffset: const Offset(1, 2),
+            ),
+          ),
+        ),
+      );
+
+      final decoration = tester
+          .widget<DecoratedBox>(find.byType(DecoratedBox))
+          .decoration as BoxDecoration;
+      expect(decoration.border, isNull);
+      expect(decoration.boxShadow, hasLength(1));
+      expect(decoration.boxShadow!.single.blurRadius, 6);
+      expect(decoration.boxShadow!.single.offset, const Offset(1, 2));
     });
   });
 }

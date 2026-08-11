@@ -36,7 +36,7 @@ Dart SDK: >=3.0.0
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd countrify
+cd countrify-light
 
 # Get dependencies
 flutter pub get
@@ -72,11 +72,10 @@ dev_dependencies:
 
 ```
 lib/
-├── countrify.dart              # Main export file (PUBLIC API)
+├── countrify_light.dart        # Main export file (PUBLIC API)
 ├── generated/
 │   └── assets.dart             # Auto-generated asset paths
 └── src/                        # Internal implementation
-    ├── countrify.dart          # Core class
     ├── data/                   # Country data
     │   ├── all_countries.dart  # Data access layer
     │   ├── countries_data.dart # Generated data
@@ -390,7 +389,7 @@ class RegionPicker extends StatelessWidget {
 2. **Export from main library file**
 
 ```dart
-// lib/countrify.dart
+// lib/countrify_light.dart
 
 export 'src/widgets/region_picker.dart';
 ```
@@ -403,24 +402,21 @@ export 'src/widgets/region_picker.dart';
 
 If you need to add new country data or update existing data:
 
-1. **Update CSV file**
+1. **Update the pinned source revision intentionally**
 
-```csv
-# assets/country_data.csv
-name,alpha2,alpha3,numeric,capital,region,...
-```
+Review the upstream data license and schema before changing a revision in the
+sync tools.
 
-2. **Run data parser**
+2. **Run the country generator**
 
 ```bash
-dart tool/parse_csv.dart
+dart run tool/sync_country_data.dart
 ```
 
 3. **Verify generated code**
 
-```dart
-// lib/src/data/countries_data.dart
-// Should be regenerated with new data
+```bash
+dart run tool/sync_country_data.dart --check
 ```
 
 4. **Update tests to include new data**
@@ -449,7 +445,7 @@ test/
 
 ```dart
 import 'package:flutter_test/flutter_test.dart';
-import 'package:countrify/countrify.dart';
+import 'package:countrify_light/countrify_light.dart';
 
 void main() {
   group('CountryUtils', () {
@@ -509,7 +505,7 @@ void main() {
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:countrify/countrify.dart';
+import 'package:countrify_light/countrify_light.dart';
 
 void main() {
   group('CountryPicker', () {
@@ -744,7 +740,7 @@ Flag images are bundled, so they load instantly:
 // Efficient - loads from bundled assets
 Image.asset(
   country.flagImagePath,
-  package: 'countrify',
+  package: 'countrify_light',
   width: 32,
   height: 24,
 );
@@ -756,18 +752,17 @@ Image.asset(
 
 ### Updating Country Data
 
-1. Edit `assets/country_data.csv`
-2. Run `dart tool/parse_csv.dart`
-3. Verify generated files
+1. Update the pinned revision in `tool/sync_country_data.dart`
+2. Run `dart run tool/sync_country_data.dart`
+3. Run `dart run tool/sync_country_data.dart --check`
 4. Run tests
 5. Update CHANGELOG.md
 6. Commit changes
 
-### Adding New Flag
+### Updating Flags
 
-1. Add PNG file to `assets/images/flags/{ALPHA2_CODE}.png`
-2. Ensure size is consistent (32x24 recommended)
-3. Update country data if needed
+Flags are derived from ISO-2 codes and rendered as platform emoji. No raster
+flag asset is bundled.
 4. Test flag displays correctly
 5. Commit with descriptive message
 
@@ -841,7 +836,7 @@ git push origin v1.1.0
 #### Issue: Asset not found
 
 ```
-Error: Unable to load asset: packages/countrify/assets/images/flags/XX.png
+Error: Unable to load asset: packages/countrify_light/assets/images/flags/XX.png
 ```
 
 **Solution**: 
@@ -1005,4 +1000,3 @@ Brief description of changes
 ```
 
 ---
-

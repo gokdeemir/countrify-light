@@ -1,13 +1,13 @@
 // ignore_for_file: avoid_positional_boolean_parameters, the `selected` flag matches Flutter's own builder-callback conventions.
 
-import 'package:countrify/src/data/geo_repository.dart';
-import 'package:countrify/src/models/city.dart';
-import 'package:countrify/src/utils/search_normalizer.dart';
-import 'package:countrify/src/widgets/country_picker_mode.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_item_picker.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_picker_config.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_picker_theme.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_sort_by.dart';
+import 'package:countrify_light/src/data/geo_repository.dart';
+import 'package:countrify_light/src/models/city.dart';
+import 'package:countrify_light/src/utils/search_normalizer.dart';
+import 'package:countrify_light/src/widgets/country_picker_mode.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_item_picker.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_picker_config.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_picker_theme.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_sort_by.dart';
 import 'package:flutter/material.dart';
 
 /// Signature for a custom city item row. [selected] reflects whether the
@@ -84,8 +84,11 @@ class CityPicker extends StatelessWidget {
   /// Sort order.
   final CitySortBy sortBy;
 
-  /// Whether to display lat/lng as a subtitle when the default row builder
-  /// is used.
+  /// Whether to display lat/lng as a subtitle when a custom repository
+  /// provides coordinates.
+  ///
+  /// The lightweight bundled dataset omits coordinates, so enabling this has
+  /// no visible effect with [GeoRepository.instance].
   final bool showCoordinates;
 
   /// Header title override. Defaults to `"Select city"`.
@@ -134,7 +137,8 @@ class CityPicker extends StatelessWidget {
       },
       matcher: customMatcher ?? _defaultMatcher(cfg.accentInsensitiveSearch),
       itemBuilder: _buildRow,
-      selected: initialCityId == null ? null : _selectedStub(initialCityId!, stateId),
+      selected:
+          initialCityId == null ? null : _selectedStub(initialCityId!, stateId),
       onSelected: onCitySelected,
       onSearchChanged: onSearchChanged,
       onResultsChanged: onResultsChanged,
@@ -153,15 +157,20 @@ class CityPicker extends StatelessWidget {
 
   /// Default matcher used when [customMatcher] is null.
   static CityMatcher _defaultMatcher(bool accentFold) {
-    String prep(String s) =>
-        accentFold ? SearchNormalizer.foldAccents(s) : SearchNormalizer.basic(s);
+    String prep(String s) => accentFold
+        ? SearchNormalizer.foldAccents(s)
+        : SearchNormalizer.basic(s);
     return (city, q) => prep(city.name).contains(q);
   }
 
   Widget _buildRow(BuildContext context, City city, bool selected) {
-    if (customCityBuilder != null) return customCityBuilder!(context, city, selected);
+    if (customCityBuilder != null) {
+      return customCityBuilder!(context, city, selected);
+    }
     final t = theme;
-    final subtitle = showCoordinates && city.latitude != null && city.longitude != null
+    final subtitle = showCoordinates &&
+            city.latitude != null &&
+            city.longitude != null
         ? '${city.latitude!.toStringAsFixed(3)}, ${city.longitude!.toStringAsFixed(3)}'
         : null;
     return Row(
@@ -205,7 +214,8 @@ class CityPicker extends StatelessWidget {
     );
   }
 
-  static City _selectedStub(int id, int stateId) => City(id: id, name: '', stateId: stateId);
+  static City _selectedStub(int id, int stateId) =>
+      City(id: id, name: '', stateId: stateId);
 
   static List<City> _sort(List<City> src, CitySortBy sort) {
     if (sort == CitySortBy.id || src.isEmpty) return src;

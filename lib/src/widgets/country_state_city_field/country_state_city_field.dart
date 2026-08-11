@@ -1,19 +1,19 @@
-import 'package:countrify/src/data/geo_repository.dart';
-import 'package:countrify/src/models/city.dart';
-import 'package:countrify/src/models/country.dart';
-import 'package:countrify/src/models/country_code.dart';
-import 'package:countrify/src/models/state.dart';
-import 'package:countrify/src/utils/country_utils.dart';
-import 'package:countrify/src/widgets/city_dropdown_field/city_dropdown_field.dart';
-import 'package:countrify/src/widgets/countrify_field_style.dart';
-import 'package:countrify/src/widgets/country_dropdown_field/country_dropdown_field.dart';
-import 'package:countrify/src/widgets/country_picker_config.dart';
-import 'package:countrify/src/widgets/country_picker_mode.dart';
-import 'package:countrify/src/widgets/country_picker_theme.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_picker_config.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_picker_theme.dart';
-import 'package:countrify/src/widgets/geo_picker/geo_sort_by.dart';
-import 'package:countrify/src/widgets/state_dropdown_field/state_dropdown_field.dart';
+import 'package:countrify_light/src/data/geo_repository.dart';
+import 'package:countrify_light/src/models/city.dart';
+import 'package:countrify_light/src/models/country.dart';
+import 'package:countrify_light/src/models/country_code.dart';
+import 'package:countrify_light/src/models/state.dart';
+import 'package:countrify_light/src/utils/country_utils.dart';
+import 'package:countrify_light/src/widgets/city_dropdown_field/city_dropdown_field.dart';
+import 'package:countrify_light/src/widgets/countrify_field_style.dart';
+import 'package:countrify_light/src/widgets/country_dropdown_field/country_dropdown_field.dart';
+import 'package:countrify_light/src/widgets/country_picker_config.dart';
+import 'package:countrify_light/src/widgets/country_picker_mode.dart';
+import 'package:countrify_light/src/widgets/country_picker_theme.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_picker_config.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_picker_theme.dart';
+import 'package:countrify_light/src/widgets/geo_picker/geo_sort_by.dart';
+import 'package:countrify_light/src/widgets/state_dropdown_field/state_dropdown_field.dart';
 import 'package:flutter/widgets.dart';
 
 /// Immutable snapshot of the current country / state / city selection.
