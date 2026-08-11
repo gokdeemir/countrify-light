@@ -23,9 +23,7 @@ void main() {
     testWidgets('has correct semantics label', (tester) async {
       await tester.pumpWidget(
         MaterialApp(
-          home: Scaffold(
-            body: CountryFlag(country: testCountry),
-          ),
+          home: Scaffold(body: CountryFlag(country: testCountry)),
         ),
       );
 
@@ -44,6 +42,19 @@ void main() {
 
       final clipRRect = tester.widget<ClipRRect>(find.byType(ClipRRect));
       expect(clipRRect.borderRadius, radius);
+    });
+
+    testWidgets('renders the country emoji without an image asset', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(body: CountryFlag(country: testCountry)),
+        ),
+      );
+
+      expect(find.text(testCountry.flagEmoji), findsOneWidget);
+      expect(find.byType(Image), findsNothing);
     });
   });
 }

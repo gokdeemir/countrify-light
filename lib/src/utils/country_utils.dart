@@ -351,7 +351,10 @@ class CountryUtils {
     return country?.flagEmoji ?? '🏳️';
   }
 
-  /// Get country flag image path
+  /// Get the legacy country flag image path.
+  ///
+  /// Returns an empty string in the lightweight fork. Use
+  /// [getCountryFlagEmoji] or `CountryFlag` instead.
   static String getCountryFlagImagePath(String alpha2Code) {
     final country = getCountryByAlpha2Code(alpha2Code);
     return country?.flagImagePath ?? '';

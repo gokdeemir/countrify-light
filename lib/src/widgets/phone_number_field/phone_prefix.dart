@@ -48,7 +48,7 @@ class PhonePrefix extends StatelessWidget {
   /// Whether to show a dropdown arrow icon.
   final bool showDropdownIcon;
 
-  /// Size of the flag image.
+  /// Size allocated to the flag emoji.
   final Size flagSize;
 
   /// Border radius of the flag.

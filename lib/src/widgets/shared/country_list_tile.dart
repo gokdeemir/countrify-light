@@ -58,7 +58,7 @@ class CountryListTile extends StatelessWidget {
   /// Whether to show the dial code. Defaults to `true`.
   final bool showDialCode;
 
-  /// Size of the flag image.
+  /// Size allocated to the flag emoji.
   final Size flagSize;
 
   /// Border radius of the flag container.

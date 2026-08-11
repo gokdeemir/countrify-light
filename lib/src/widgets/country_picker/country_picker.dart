@@ -1169,23 +1169,18 @@ class _CountryPickerState extends State<CountryPicker>
       ),
       child: ClipRRect(
         borderRadius: borderRadius,
-        child: Image.asset(
-          country.flagImagePath,
-          fit: BoxFit.cover,
-          errorBuilder: (context, error, stackTrace) {
-            return ColoredBox(
-              color: Colors.grey.shade300,
-              child: Center(
-                child: Text(
-                  country.flagEmoji,
-                  style: theme.flagEmojiTextStyle?.copyWith(
-                        fontSize: flagWidth * 0.6,
-                      ) ??
-                      TextStyle(fontSize: flagWidth * 0.6),
-                ),
-              ),
-            );
-          },
+        child: Center(
+          child: Text(
+            country.flagEmoji,
+            style: theme.flagEmojiTextStyle?.copyWith(
+                  fontSize: flagWidth * 0.7,
+                ) ??
+                TextStyle(fontSize: flagWidth * 0.7),
+            textAlign: TextAlign.center,
+            maxLines: 1,
+            overflow: TextOverflow.clip,
+            textScaler: TextScaler.noScaling,
+          ),
         ),
       ),
     );

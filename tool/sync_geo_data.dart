@@ -2,9 +2,9 @@
 /// Regenerates `assets/geo/states/*.json` and `assets/geo/cities/*.json` from
 /// the dr5hn/countries-states-cities-database upstream.
 ///
-/// The package vendors a split, minified subset of the dataset. This script
-/// is the single source of truth for how that subset is produced so future
-/// refreshes stay reproducible.
+/// The package vendors a split, minified subset containing only the fields
+/// needed by its offline pickers. This script is the single source of truth
+/// for how that subset is produced so future refreshes stay reproducible.
 ///
 /// Usage:
 ///   dart run tool/sync_geo_data.dart               # pull master tarball
@@ -44,7 +44,8 @@ Future<void> main(List<String> args) async {
     final country = entry as Map<String, dynamic>;
     final iso2 = country['iso2'] as String?;
     if (iso2 == null) continue;
-    final states = (country['states'] as List? ?? const []).cast<Map<String, dynamic>>();
+    final states =
+        (country['states'] as List? ?? const []).cast<Map<String, dynamic>>();
     final compactStates = <Map<String, dynamic>>[];
     for (final state in states) {
       compactStates.add({
@@ -52,16 +53,13 @@ Future<void> main(List<String> args) async {
         'name': state['name'],
         'iso2': state['iso2'],
         'type': state['type'],
-        'lat': _asDouble(state['latitude']),
-        'lng': _asDouble(state['longitude']),
       });
-      final cities = (state['cities'] as List? ?? const []).cast<Map<String, dynamic>>();
+      final cities =
+          (state['cities'] as List? ?? const []).cast<Map<String, dynamic>>();
       final compactCities = cities
           .map((c) => {
                 'id': c['id'],
                 'name': c['name'],
-                'lat': _asDouble(c['latitude']),
-                'lng': _asDouble(c['longitude']),
               })
           .toList(growable: false);
       await File('${citiesDir.path}/${state['id']}.json')
@@ -72,18 +70,13 @@ Future<void> main(List<String> args) async {
     await File('${statesDir.path}/$iso2.json')
         .writeAsString(jsonEncode(compactStates));
   }
-  print('wrote ${data.length} state files, $stateCount states, $cityCount cities');
+  print(
+      'wrote ${data.length} state files, $stateCount states, $cityCount cities');
 }
 
 String? _flag(List<String> args, String name) {
   final idx = args.indexOf(name);
   return idx == -1 || idx + 1 >= args.length ? null : args[idx + 1];
-}
-
-double? _asDouble(Object? v) {
-  if (v == null) return null;
-  if (v is num) return v.toDouble();
-  return double.tryParse(v.toString());
 }
 
 Directory _findProjectRoot() {

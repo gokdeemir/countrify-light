@@ -1,8 +1,7 @@
 import 'package:countrify/src/models/country.dart';
 import 'package:flutter/material.dart';
 
-/// A standalone flag widget that displays a country's flag image with
-/// automatic emoji fallback.
+/// A standalone flag widget that displays a country's flag emoji.
 ///
 /// Example:
 /// ```dart
@@ -25,7 +24,7 @@ class CountryFlag extends StatelessWidget {
   /// The country whose flag to display.
   final Country country;
 
-  /// Size of the flag image.
+  /// Size allocated to the flag emoji.
   final Size size;
 
   /// Border radius of the flag container.
@@ -37,13 +36,14 @@ class CountryFlag extends StatelessWidget {
   /// Border width. Defaults to `0.5`.
   final double borderWidth;
 
-  /// Text style for the emoji fallback when the flag image fails to load.
+  /// Text style for the flag emoji.
   final TextStyle? emojiTextStyle;
 
   @override
   Widget build(BuildContext context) {
     return Semantics(
       label: 'Flag of ${country.name}',
+      excludeSemantics: true,
       child: SizedBox(
         width: size.width,
         height: size.height,
@@ -57,18 +57,14 @@ class CountryFlag extends StatelessWidget {
           ),
           child: ClipRRect(
             borderRadius: borderRadius,
-            child: Image.asset(
-              country.flagImagePath,
-              fit: BoxFit.cover,
-              errorBuilder: (_, __, ___) => ColoredBox(
-                color: Colors.grey.shade300,
-                child: Center(
-                  child: Text(
-                    country.flagEmoji,
-                    style: emojiTextStyle ??
-                        TextStyle(fontSize: size.width * 0.5),
-                  ),
-                ),
+            child: Center(
+              child: Text(
+                country.flagEmoji,
+                style: emojiTextStyle ?? TextStyle(fontSize: size.width * 0.7),
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                overflow: TextOverflow.clip,
+                textScaler: TextScaler.noScaling,
               ),
             ),
           ),

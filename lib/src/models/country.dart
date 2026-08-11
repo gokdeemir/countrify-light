@@ -48,7 +48,9 @@ class Country {
   /// Unicode flag emoji for the country
   final String flagEmoji;
 
-  /// Path to the flag image asset
+  /// Legacy flag asset path.
+  ///
+  /// Empty in the lightweight fork, which renders [flagEmoji] instead.
   final String flagImagePath;
 
   /// Capital city of the country

@@ -1,17 +1,21 @@
 <div align="center">
 
-# Countrify
+# Countrify Light
+
+This is a lightweight fork of
+[Arhamss/countrify](https://github.com/Arhamss/countrify). It preserves
+offline country, state, and city search while removing bundled PNG flags and
+unused geo coordinates. Flags render as platform emoji.
 
 ### The Ultimate Flutter Country Picker Package
 
 *Beautiful, Comprehensive, and Highly Customizable*
 
-[![pub package](https://img.shields.io/pub/v/countrify.svg?style=for-the-badge&color=blue)](https://pub.dev/packages/countrify)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![Flutter](https://img.shields.io/badge/Flutter-%3E%3D3.0.0-02569B?style=for-the-badge&logo=flutter)](https://flutter.dev)
 [![Dart](https://img.shields.io/badge/Dart-%3E%3D3.0.0-0175C2?style=for-the-badge&logo=dart)](https://dart.dev)
 
-**[GitHub](https://github.com/Arhamss/countrify)** | **[Example](https://github.com/Arhamss/countrify/tree/main/example)** | **[Codeable](https://gocodeable.com)**
+**[GitHub](https://github.com/gokdeemir/countrify-light)** | **[Upstream](https://github.com/Arhamss/countrify)** | **[Example](https://github.com/gokdeemir/countrify-light/tree/main/example)**
 
 <a href="https://buymeacoffee.com/abdullahzer" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="217" height="60"></a>
 
@@ -78,7 +82,7 @@ Countrify is the most feature-rich country picker for Flutter. It ships with **2
 |---|---|
 | Countries | 250 |
 | Language Translations | 132 (CLDR-based) |
-| Flag Assets | 250 PNG images |
+| Flag Assets | None (platform emoji) |
 | Utility Methods | 40+ |
 | Display Modes | 5 |
 | Built-in Themes | 4 |
@@ -87,7 +91,7 @@ Countrify is the most feature-rich country picker for Flutter. It ships with **2
 
 ### Key Features
 
-- **High-Quality Flag Images** — PNG flag assets for every country, bundled in the package
+- **Lightweight Emoji Flags** — platform emoji flags without bundled image assets
 - **5 Display Modes** — Bottom Sheet, Dialog, Full Screen, Dropdown, and Inline
 - **4 Built-in Themes** — Default (light), Dark, Material 3, and Custom color builder
 - **PhoneNumberField** — Complete phone number input widget with integrated country code picker
@@ -147,7 +151,10 @@ Add `countrify` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  countrify: ^2.1.0
+  countrify:
+    git:
+      url: https://github.com/gokdeemir/countrify-light.git
+      ref: <commit-sha>
 ```
 
 Then run:
@@ -661,7 +668,7 @@ dart run tool/sync_geo_data.dart --input path.json   # offline source
 
 Countrify exposes the internal building-block widgets so you can compose custom UIs:
 
-**`CountryFlag`** — Displays a country's flag image with automatic emoji fallback:
+**`CountryFlag`** — Displays a country's platform flag emoji:
 
 ```dart
 CountryFlag(
@@ -930,11 +937,9 @@ CountryPicker(
   // Custom country item
   customCountryBuilder: (context, country, isSelected) {
     return ListTile(
-      leading: Image.asset(
-        country.flagImagePath,
-        package: 'countrify',
-        width: 32,
-        height: 24,
+      leading: CountryFlag(
+        country: country,
+        size: const Size(32, 24),
       ),
       title: Text(country.name),
       subtitle: Text('+${country.callingCodes.first}'),
@@ -1265,7 +1270,7 @@ class Country {
   final String alpha3Code;                    // "USA"
   final String numericCode;                   // "840"
   final String flagEmoji;                     // Unicode flag emoji
-  final String flagImagePath;                 // Asset path for PNG flag
+  final String flagImagePath;                 // Empty legacy compatibility field
   final String capital;                       // "Washington, D.C."
   final String? largestCity;                  // "New York City"
   final String region;                        // "Americas"
@@ -1438,14 +1443,10 @@ CountryPicker(
       ),
       child: Row(
         children: [
-          ClipRRect(
+          CountryFlag(
+            country: country,
+            size: const Size(48, 36),
             borderRadius: BorderRadius.circular(4),
-            child: Image.asset(
-              country.flagImagePath,
-              package: 'countrify',
-              width: 48,
-              height: 36,
-            ),
           ),
           const SizedBox(width: 12),
           Expanded(
@@ -1479,39 +1480,20 @@ CountryFlag(
 )
 ```
 
-If you need direct asset access, include the `package` parameter:
-
-```dart
-Image.asset(
-  country.flagImagePath,
-  package: 'countrify',
-  width: 32,
-  height: 24,
-)
-```
-
 ---
 
 ## Troubleshooting
 
 <details>
-<summary><strong>Flag images not loading</strong></summary>
+<summary><strong>Flag emoji not rendering as expected</strong></summary>
 
-Use the `CountryFlag` widget for automatic fallback handling. If using `Image.asset` directly, always include the `package` parameter:
+Use the `CountryFlag` widget so sizing, clipping, and semantics stay
+consistent. Rendering follows the platform's emoji font.
 
 ```dart
-// Recommended:
 CountryFlag(
   country: country,
   size: const Size(32, 24),
-)
-
-// Or with Image.asset directly:
-Image.asset(
-  country.flagImagePath,
-  package: 'countrify',  // Don't forget this!
-  width: 32,
-  height: 24,
 )
 ```
 
@@ -1576,7 +1558,9 @@ Yes. Countrify works on iOS, Android, Web, macOS, Windows, and Linux.
 <details>
 <summary><strong>How large is the package?</strong></summary>
 
-Approximately 3–4 MB. Most of that is PNG flag images (~2.5 MB) and the built-in translation data for 132 languages (~1 MB). The translation data is compile-time constant and tree-shakable.
+This fork removes bundled PNG flags and unused geo coordinates. Exact app
+size impact depends on the target platform and release build; measure the
+final APK or App Bundle for your application.
 </details>
 
 <details>
@@ -1629,8 +1613,8 @@ Contributions are welcome! Here's how to get started:
 
 ```bash
 # Clone the repository
-git clone https://github.com/Arhamss/countrify.git
-cd countrify
+git clone https://github.com/gokdeemir/countrify-light.git
+cd countrify-light
 
 # Install dependencies
 flutter pub get
@@ -1717,7 +1701,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 <div align="center">
 
-**[GitHub](https://github.com/Arhamss/countrify)** | **[Issues](https://github.com/Arhamss/countrify/issues)** | **[Codeable](https://gocodeable.com)**
+**[GitHub](https://github.com/gokdeemir/countrify-light)** | **[Issues](https://github.com/gokdeemir/countrify-light/issues)** | **[Upstream](https://github.com/Arhamss/countrify)**
 
 <a href="https://buymeacoffee.com/abdullahzer" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="217" height="60"></a>
 
